@@ -1,0 +1,81 @@
+/*
+
+1. Add your custom Css styles below
+2. Place the this code in your template:
+
+ <link href="css/custom.css" rel="stylesheet">
+
+*/
+
+.header-inner {
+    background-color: #4a4a4a!important;
+}
+
+:lang(jp) {
+    font-family: YahooSans,'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
+:lang(en) {
+    font-family: "SHOWCARD GOTHIC", "Source Sans Pro", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+}
+
+:lang(cn) {
+    font-family: Arial, sans-serif;
+}
+
+.fa, .far, .fas {
+    font-family: "Font Awesome 5 Free" !important;
+}
+
+.fab {
+    font-family: "Font Awesome 5 Brands" !important;
+}
+
+.flag-icon {
+    border: 1px solid #cccccc;
+}
+
+[v-cloak] {
+    display: none;
+}
+
+.col-xs-1-10,
+.col-sm-1-10 {
+  position: relative;
+  min-height: 1px;
+}
+
+.col-xs-1-10 {
+  width: 10%;
+  float: left;
+}
+
+@media (min-width: 768px) {
+  .col-sm-1-10 {
+    width: 10%;
+    float: left;
+  }
+}
+
+@media (min-width: 992px) {
+  .col-md-1-10 {
+    width: 10%;
+    float: left;
+  }
+}
+
+@media (min-width: 1200px) {
+  .col-lg-1-10 {
+    width: 10%;
+    float: left;
+  }
+}
+
+.email {
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    margin-bottom: -5px;
+}
