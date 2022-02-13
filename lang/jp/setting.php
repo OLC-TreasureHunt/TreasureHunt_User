@@ -84,5 +84,6 @@ return [
     'lang_success_msg' => '言語設定が成功しました。',
     'lang_failed_msg' => '言語設定が失敗しました。',
     
-'select_file'       => 'ファイル選択'
+    'select_file'       => 'ファイル選択',
+    'referral'          => '紹介',
 ];

@@ -87,5 +87,6 @@ return [
     'lang_success_msg' => 'The language setting was updated.',
     'lang_failed_msg' => 'The language setting update was failed.',
 
-    'select_file'       => 'Select File'
+    'select_file'       => 'Select File',
+    'referral'          => 'Referral',
 ];

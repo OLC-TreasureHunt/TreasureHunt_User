@@ -32,7 +32,7 @@
 </head>
 <body>
     <!-- Body Inner -->
-    <div class="body-inner">
+    <div class="body-inner back-semi-theme">
         <!-- Header -->
         @include('layouts.header')
         <!-- end: Header -->

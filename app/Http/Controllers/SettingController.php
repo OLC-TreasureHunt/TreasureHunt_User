@@ -5,17 +5,23 @@ namespace App\Http\Controllers;
 use Auth;
 use Log;
 use App\Models\Country;
+use App\Models\Referral;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class SettingController extends Controller
 {
+    protected $marker = '/public/images/logo/QR.png';
+
     public function index() {
         $user = Auth::user();
 
         $countries = Country::all()->toArray();
         $data['country_list'] = $countries;
+        $data['register_url'] = env('APP_URL') . '/register?aid=' . $user->affiliate_id;
+        $data['referral'] = $user->hasMany(Referral::class, 'prev_parent_id')->count();
 
         return view('setting', $data);
     }
@@ -113,5 +119,16 @@ class SettingController extends Controller
         }
 
         return redirect()->route('setting')->with('success', trans('setting.pwd_success_msg'))->with('pwd_success', trans('setting.pwd_success_msg'));
+    }
+
+    public function createQrCode(Request $request) {
+        $user = Auth::user();
+        $info = env('APP_URL') . '/register?aid=' . $user->affiliate_id;
+
+        if (!extension_loaded('imagick')) {
+            return response()->json('imagick not installed');
+        }
+        $qr_code = base64_encode(QrCode::format('png')->size(250)->merge($this->marker, .3)->encoding('UTF-8')->eyeColor(0, 0, 0, 0, 149, 42, 200)->errorCorrection('H')->generate($info));
+        return response()->json($qr_code);
     }
 }

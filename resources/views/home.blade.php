@@ -6,14 +6,13 @@
     <!-- WELCOME -->
     <section id="welcome" class="p-b-0 p-t-0">
         <div id="slider" class="inspiro-slider slider-fullscreen dots-creative" data-fade="true">
-            <div class="slide welcome" data-bg-video="{{ cAsset('video/background.mp4') }}">
+            <div class="slide welcome" data-bg-image="{{ asset('images/background.webp') }}">
                 <div class="bg-overlay"></div>
                 <div class="container p-t-0">
                     <div class="slide-captions text-start text-light title">
                         <!-- Captions -->
                         <div class="heading-text heading-section text-light text-center" data-animate="animate__fadeInUp">
-                            <h2>{{ sprintf(trans('app.welcome'), env('APP_NAME')) }}</h2>
-                            <span class="lead p-t-10" style="display: block;">{{ trans('app.welcome_des') }}</span>
+                            <h2>Treasure Hunt</h2>
                         </div>
                         <!-- end: Captions -->
                     </div>
