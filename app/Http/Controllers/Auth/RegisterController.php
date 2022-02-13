@@ -95,6 +95,7 @@ class RegisterController extends Controller
             'country' => ['required', 'string', 'max:64'],
             'lang' => ['required', 'string', 'max:4'],  
             'address' => ['required', 'string', 'max:255'],
+            'city' => ['required', 'string', 'max:64'],
             'postal_code' => ['required', 'string', 'max:16', 'regex:/^\d{5}$/'],
         ], [
             'name' => trans('register.name'),
@@ -105,6 +106,7 @@ class RegisterController extends Controller
             'country' => trans('register.country'),
             'lang' => trans('register.lang'),
             'address' => trans('register.address'),
+            'city' => trans('register.city'),
             'postal_code' => trans('register.postal_code'),
         ]);
     }
@@ -132,6 +134,7 @@ class RegisterController extends Controller
             'lang'              => $data['lang'],
             'address'           => $data['address'],
             'postal_code'       => $data['postal_code'],
+            'city'              => $data['city'],
             'status'            => config('constants.user_status.invalid')
         ]);
 

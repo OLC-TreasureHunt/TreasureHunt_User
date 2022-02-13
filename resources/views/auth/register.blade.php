@@ -74,15 +74,6 @@
                             </div>
                             <div class="row">
                                 <div class="form-group col-md-6">
-                                    <label for="mobile" class="">{{ trans('register.mobile') }}</label>
-                                    <input class="form-control    @error('mobile') is-invalid @enderror" type="tel" name="mobile" placeholder="{{ trans('register.mobile') }}" value="{{ old('mobile') }}">
-                                    @error('mobile')
-                                        <div class="is-invalid">{{ $message }}</div>
-                                    @enderror
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="form-group col-md-6">
                                     <label for="country" class="">{{ trans('register.country') }}</label>
                                     <select name="country" class="form-select    @error('country') is-invalid @enderror" >
                                         <option value="">{{ trans('register.country_placeholder') }}</option>
@@ -91,6 +82,22 @@
                                         @endforeach
                                     </select>
                                     @error('country')
+                                        <div class="is-invalid">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="city" class="">{{ trans('register.city') }}</label>
+                                    <input type="text" class="form-control    @error('city') is-invalid @enderror" name="city" placeholder="{{ trans('register.city') }}" value="{{ old('city') }}">
+                                    @error('city')
+                                        <div class="is-invalid">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label for="mobile" class="">{{ trans('register.mobile') }}</label>
+                                    <input class="form-control    @error('mobile') is-invalid @enderror" type="tel" name="mobile" placeholder="{{ trans('register.mobile') }}" value="{{ old('mobile') }}">
+                                    @error('mobile')
                                         <div class="is-invalid">{{ $message }}</div>
                                     @enderror
                                 </div>
@@ -107,6 +114,7 @@
                                     @enderror
                                 </div>
                             </div>
+                            
                             <div class="row">
                                 <div class="form-group col-md-6">
                                     <label for="address" class="">{{ trans('register.address') }}</label>

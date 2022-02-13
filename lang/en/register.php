@@ -15,6 +15,7 @@ return [
     'password_confirmation' => 'Password Confirmation',
     'gender' => 'Gender',
     'gender_placeholder' => 'Select your gender',
+	'birthday_placeholder' => 'Select your birhtday',
     'birthday' => 'Birthday',
     'mobile' => 'Phone',
     'country' => 'Country',
@@ -22,6 +23,7 @@ return [
     'lang' => 'Language',
     'lang_placeholder' => 'Select your language',
     'address' => 'Address',
+	'city'		=> 'City',
     'postal_code' => 'Postal Code',
 
     'op_failed'     => 'Operation failed! Please Retry.',

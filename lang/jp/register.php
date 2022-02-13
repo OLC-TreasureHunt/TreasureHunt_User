@@ -15,6 +15,7 @@ return [
     'password_confirmation' => 'パスワード確認',
     'gender' => '性別',
     'gender_placeholder' => '性別を選択ください',
+	'birthday_placeholder' => '誕生日を選択ください',
     'birthday' => '生年月日',
     'mobile' => '携帯番号',
     'country' => '国',
@@ -24,6 +25,7 @@ return [
     'address' => '住所',
     'postal_code' => '郵便コード',
 	'agree'	=> '利用規約',
+	'city'		=> '都市',
 
     'op_failed'     => '操作に失敗しました! もう一度お試しください。',
 
