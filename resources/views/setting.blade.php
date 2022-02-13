@@ -56,6 +56,15 @@
                                         aria-controls="change_password" 
                                         aria-selected="true"><b>{{ trans('setting.change_pwd') }}</b></a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link no-border" 
+                                        id="referral-tab" 
+                                        data-bs-toggle="tab" 
+                                        href="#referral" 
+                                        role="tab" 
+                                        aria-controls="referral" 
+                                        aria-selected="true"><b>{{ trans('setting.referral') }}</b></a>
+                                </li>
                             </ul>
                         </div>
                         <div class="col-md-9">
@@ -215,6 +224,11 @@
                                                 </div>
                                             </form>
                                         </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fad" id="referral" role="tabpanel" aria-labelledby="referral-tab">
+                                    <div class="card">
+                                        
                                     </div>
                                 </div>
                             </div>

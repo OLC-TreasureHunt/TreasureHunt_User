@@ -211,13 +211,20 @@ class RegisterController extends Controller
                         $encBody = my_encrypt(json_encode($body), env('BICORN_API_KEY'));
                         $response = g_sendHttpRequest(config('app.BICORN_URL') . '/api/user/store', HTTP_METHOD_POST, ['body' => $encBody]);
 						
-                        $user->status = $response;
-						$user->token = '';
-                        $user->password_plain = '';
-						$user->save();
-
-						UserBalance::initUserBalance($user->id);
-						$ret = 0;
+                        if ($response == STATUS_ACTIVE) {
+                            $user->status = STATUS_ACTIVE;
+                            $user->token = '';
+                            $user->password_plain = '';
+                            $user->save();
+    
+                            UserBalance::initUserBalance($user->id);
+                            $ret = 0;
+                        } else {
+                            $user->status = STATUS_FAIL;
+                            $user->save();
+                            $ret = 4;
+                        }
+                        
 					} catch(\Exception $ex) {
 						Log::debug($ex->getMessage());
 						$ret = 4;
