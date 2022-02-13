@@ -10,7 +10,7 @@ return [
         'female'        => 'Female',
     ],
     'menu'      => [
-        'home'  => 'Home',
+        'home'      => 'Home',
         'news'      => 'News',
         'support'   => 'Support',
         'contact'   => 'Contact',
