@@ -67,7 +67,7 @@
                                 <div class="form-group col-md-6">
                                     <label for="birthday" class="">{{ trans('register.birthday') }}</label>
                                     <div class="input-group date" id="datepicker" data-target-input="nearest">
-                                        <input type="text" class="form-control datetimepicker-input   " data-target="#datepicker" data-toggle="datetimepicker" name="birthday" value="{{ old('birthday') }}"  placeholder="{{ trans('common.date_placeholder') }}" />
+                                        <input type="text" class="form-control datetimepicker-input   " data-target="#datepicker" data-toggle="datetimepicker" name="birthday" value="{{ old('birthday') }}"  placeholder="{{ trans('register.birthday_placeholder') }}" />
                                         <div class="input-group-text btn" data-target="#datepicker" data-toggle="datetimepicker"><i class="icon-calendar"></i></div>
                                     </div>
                                 </div>

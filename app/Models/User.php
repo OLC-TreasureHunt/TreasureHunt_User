@@ -33,6 +33,7 @@ class User extends Authenticatable
         'address',
         'kyc_status',
         'lang',
+        'city',
         'is_premiun',
         'is_binary_added',
         'status',
