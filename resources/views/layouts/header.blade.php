@@ -27,7 +27,7 @@
                             <a href="#"><i class="icon-globe"></i><span style="text-transform: uppercase; color: white;">{{ app()->getLocale() }}</span></a>
                             <ul class="p-dropdown-content select-language back-theme">
                                 @foreach($languages as $key => $info)
-                                    <li><a class="text-light" href="{{ route('lang', ['locale' => $info[2]]) }}"><i class="flag-icon flag-icon-{{$info[1]}}"></i>@lang($info[0])</a></li>
+                                    <li><a class="text-light" href="{{ route('lang', ['locale' => $info[2]]) }}"><i class="border-0 flag-icon flag-icon-{{$info[1]}}"></i>@lang($info[0])</a></li>
                                 @endforeach
                             </ul>
                         </div>
