@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', trans('app.header.home'))
+@section('title', trans('app.menu.home'))
 
 @section('contents')
     <!-- WELCOME -->
