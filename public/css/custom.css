@@ -6,17 +6,24 @@
  <link href="css/custom.css" rel="stylesheet">
 
 */
+@font-face {
+  font-family: 'M+ 1c medium';
+  src: url('../fonts/mplus-1c-medium-sub.eot');
+  src: url('../fonts/mplus-1c-medium-sub.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/mplus-1c-medium-sub.woff') format('woff'),
+  url('../fonts/mplus-1c-medium-sub.ttf') format('truetype');
+}
 
 .header-inner {
     background-color: #4a4a4a!important;
 }
 
 :lang(jp) {
-    font-family: YahooSans,'Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-family: 'M+ 1c medium', YahooSans,'Helvetica Neue',Helvetica,Arial,sans-serif !important;
 }
 
 :lang(en) {
-    font-family: "SHOWCARD GOTHIC", "Source Sans Pro", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+    font-family: "SHOWCARD GOTHIC", "Source Sans Pro", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif !important;
 }
 
 :lang(cn) {
