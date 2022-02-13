@@ -311,6 +311,14 @@
                     $('#referral_code').attr('src', 'data:image/png;base64, ' + result);
                 }
             })
+
+            $('select[name=country] option').each(function() {
+                var optionText = this.text;
+                var newOption = optionText.substring(0, 30);
+                if (newOption.length < optionText.length) {
+                    jQuery(this).text(newOption + '..');
+                }
+            });
         });
 
         function onShowAuthSetting() {
