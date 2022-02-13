@@ -41,4 +41,7 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/setting', [App\Http\Controllers\SettingController::class, 'index'])->name('setting');
     Route::post('/setting/updateprofile', [App\Http\Controllers\SettingController::class, 'updateProfile'])->name('setting.updateprofile');
     Route::post('/setting/updatepassword', [App\Http\Controllers\SettingController::class, 'updatePassword'])->name('setting.updatepassword');
+
+    Route::get('/createqrcode', [App\Http\Controllers\SettingController::class, 'createQrCode'])->name('payment.create_qr_code');
+
 });

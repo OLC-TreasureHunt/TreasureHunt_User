@@ -7,8 +7,9 @@
     $languages = config('lang');
     $genders = config('gender');
 ?>
-<section class="pt-5 pb-5 body-min-height">
+<section class="pt-5 pb-5 body-min-height back-theme position-relative">
     <div class="container-fluid d-flex flex-column">
+	<div class="background-login"></div>
         <div class="row align-items-center">
             <div class="col-md-6 col-lg-6 col-xl-6 mx-auto">
                 <div class="card shadow-lg border-panel">
@@ -40,7 +41,7 @@
                                     <label for="password" class="">{{ trans('register.password') }}</label>
                                     <div class="input-group show-hide-password">
                                         <input class="form-control    @error('password') is-invalid @enderror" name="password" placeholder="{{ trans('register.password') }}" value="{{ old('password') }}" type="password" >
-                                        <span class="input-group-text   "><i class="icon-eye-off" aria-hidden="true" style="cursor: pointer;"></i></span>
+                                        <span class="input-group-text "><i class="icon-eye-off" aria-hidden="true" style="cursor: pointer;"></i></span>
                                     </div>
                                     @error('password')
                                         <div class="is-invalid">{{ $message }}</div>
@@ -176,6 +177,32 @@
             $('#datepicker').datetimepicker({
                 format: 'L'
             });
+
+            var $showHidePassword = $(".show-hide-password");
+            if ($showHidePassword.length > 0) {
+                $showHidePassword.each(function() {
+                    var elem = $(this),
+                        $iconEye = "icon-eye",
+                        $iconClosedEye = "icon-eye-off",
+                        elemShowHideIcon = elem.find(".input-group-text i"),
+                        elemInput = elem.children("input");
+                    elem.find(".input-group-text i").css({
+                        cursor: "pointer",
+                    });
+                    elemShowHideIcon.on("click", function(event) {
+                        event.preventDefault();
+                        if (elem.children("input").attr("type") == "text") {
+                            elemInput.attr("type", "password");
+                            elemShowHideIcon.removeClass($iconEye);
+                            elemShowHideIcon.addClass($iconClosedEye);
+                        } else if (elem.children("input").attr("type") == "password") {
+                            elemInput.attr("type", "text");
+                            elemShowHideIcon.addClass($iconEye);
+                            elemShowHideIcon.removeClass($iconClosedEye);
+                        }
+                    });
+                });
+            }
         });
         
     </script>

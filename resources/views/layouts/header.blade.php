@@ -3,13 +3,18 @@
 ?>
 
 <header id="header" data-transparent="true" data-fullwidth="true" class="dark submenu-light">
-    <div class="header-inner">
+    <div class="header-inner back-theme">
         <div class="container">
             <!--Logo-->
             <div id="logo">
                 <a href="{{ route('home') }}">
-                    <span class="logo-default"><img src="{{ asset('images/logo.png') }}" class="img-fluid align-self-center" alt="branding logo" style="max-height: 60px;"></span>
-                    <span class="logo-dark"><img src="{{ asset('images/logo.png') }}" class="img-fluid align-self-center" alt="branding logo" style="max-height: 60px;"></span>
+                    <span class="logo-default">
+                        <img src="{{ asset('images/logo.png') }}" class="img-fluid align-self-center" alt="branding logo" style="max-height: 60px;">
+                    </span>
+                    <span class="logo-dark">
+                        <img src="{{ asset('images/logo.png') }}" class="img-fluid align-self-center" alt="branding logo" style="max-height: 60px;">
+                        <span class="d-md-inline d-sm-none d-none" style="font-size: 30px">{{ env('APP_NAME') }}</span>
+                    </span>
                 </a>
             </div>
             <!--End: Logo-->
@@ -54,8 +59,8 @@
                                     </ul>
                                 </li>
                             @else
-                                <li><a href="{{ route('login') }}"><i class="fa fa-sign-in-alt"></i></i> @lang('common.top_menu.login')</a></li>
-                                <li><a href="{{ route('register') }}"><i class="fa fa-registered"></i></i> @lang('common.top_menu.register')</a></li>
+                                <li><a href="{{ route('login') }}"><i class="fa fa-sign-in-alt"></i></i> @lang('register.btn.login')</a></li>
+                                <li><a href="{{ route('register') }}"><i class="fa fa-registered"></i></i> @lang('register.btn.register')</a></li>
                             @endif
                         </ul>
                     </nav>

@@ -4,7 +4,7 @@
 @section('contents')
     <div class="container body-min-height">
         <!-- Page title -->
-        <section id="page-title" class="page-title-left text-dark ">
+        <section id="page-title" class="page-title-left text-dark background-transparent">
             <div class="container">
                 <div class="page-title">
                     <h1>{{ trans('contact.page_title') }}</h1>
@@ -27,7 +27,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         @endif
-        <section id="page-content" class="">
+        <section id="page-content" class="background-transparent">
             <div class="container">
                 <div class="col-lg-8 m-auto">
                     <form action="{{ route('contact.send') }}" role="form" method="post">
@@ -38,7 +38,7 @@
                             <input type="email" 
                                 aria-required="true" 
                                 name="email" 
-                                class="form-control input-dark-bg text-dark required border-theme @error('email') is-invalid @enderror" 
+                                class="form-control back-semi-theme text-dark required border-theme @error('email') is-invalid @enderror" 
                                 placeholder="{{ trans('contact.email_placeholder') }}"
                                 value="{{ old('email')?? (Auth::user()? Auth::user()->email : '')}}" >
                             @error('email')
@@ -50,7 +50,7 @@
                             <input 
                                 type="text" 
                                 name="title" 
-                                class="form-control input-dark-bg text-dark  border-theme required @error('title') is-invalid @enderror" 
+                                class="form-control back-semi-theme text-dark  border-theme required @error('title') is-invalid @enderror" 
                                 value="{{ old('title')?? ''}}"
                                 placeholder="{{ trans('contact.subject_placeholder') }}">
                             @error('title')
@@ -63,7 +63,7 @@
                                 type="text" 
                                 name="content" 
                                 rows="5" 
-                                class="form-control input-dark-bg text-dark required border-theme @error('message') is-invalid @enderror" 
+                                class="form-control back-semi-theme text-dark required border-theme @error('message') is-invalid @enderror" 
                                 value="{{ old('content')?? ''}}"
                                 placeholder="{{ trans('contact.message_placeholder') }}">{{ old('content') }}</textarea>
                             @error('content')

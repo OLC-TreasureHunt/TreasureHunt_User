@@ -25,6 +25,9 @@ return [
     'address' => 'Address',
 	'city'		=> 'City',
     'postal_code' => 'Postal Code',
+	'affiliate' => 'Referral URL',
+	'qrcode'		=> 'Referral Code',
+	'people'		=> 'Peoples',
 
     'op_failed'     => 'Operation failed! Please Retry.',
 

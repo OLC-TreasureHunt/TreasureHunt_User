@@ -26,6 +26,9 @@ return [
     'postal_code' => '郵便コード',
 	'agree'	=> '利用規約',
 	'city'		=> '都市',
+	'affiliate' => '紹介URL',
+	'qrcode'		=> '紹介コード',
+	'people'		=> '招待人',
 
     'op_failed'     => '操作に失敗しました! もう一度お試しください。',
 
