@@ -26,6 +26,10 @@
     font-family: "SHOWCARD GOTHIC", "Source Sans Pro", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif !important;
 }
 
+.en-font {
+  font-family: "SHOWCARD GOTHIC", "Source Sans Pro", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif !important;
+}
+
 :lang(cn) {
     font-family: Arial, sans-serif;
 }
