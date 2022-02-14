@@ -11,7 +11,7 @@
                     <div class="slide-captions text-start text-light title">
                         <!-- Captions -->
                         <div class="heading-text heading-section text-light text-center" data-animate="animate__fadeInUp">
-                            <img class="mv-img" src="{{ asset('images/visual-text.png') }}"></div>
+                            <img id="mv-img" class="mv-img" src="{{ asset('images/visual-text.png') }}" />
                         </div>
                         <!-- end: Captions -->
                     </div>
