@@ -148,3 +148,7 @@
 #mainMenu nav > ul > li .dropdown-menu > li > a {
   color: white;
 }
+
+.mv-img {
+  max-width: 500px;
+}
