@@ -96,7 +96,7 @@ class RegisterController extends Controller
             'lang' => ['required', 'string', 'max:4'],  
             'address' => ['required', 'string', 'max:255'],
             'city' => ['required', 'string', 'max:64'],
-            'postal_code' => ['required', 'string', 'max:16', 'regex:/^\d{8}$/'],
+            'postal_code' => ['required', 'string', 'max:16', 'regex:/^\d{5,8}$/'],
         ], [
             'name' => trans('register.name'),
             'email' => trans('register.email'),

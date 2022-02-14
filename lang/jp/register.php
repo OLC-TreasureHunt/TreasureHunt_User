@@ -29,6 +29,7 @@ return [
 	'affiliate' => '紹介URL',
 	'qrcode'		=> '紹介コード',
 	'people'		=> '招待人',
+	'postal_code_placeholder'	=> 'ハイフンない',
 
     'op_failed'     => '操作に失敗しました! もう一度お試しください。',
 

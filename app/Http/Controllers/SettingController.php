@@ -36,7 +36,7 @@ class SettingController extends Controller
             'mobile' => ['required', 'string', 'max:20', 'regex:/^(\+\d{1,2}\s?)?1?\-?\.?\s?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/'],
             'country' => ['required', 'string', 'max:64'],
             'address' => ['required', 'string', 'max:255'],
-            'postal_code' => ['required', 'string', 'max:16', 'regex:/^\d{8}$/'],
+            'postal_code' => ['required', 'string', 'max:16', 'regex:/^\d{5,8}$/'],
         ], [
         ], [
             'avatar' => trans('setting.avatar'),

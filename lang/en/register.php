@@ -28,6 +28,7 @@ return [
 	'affiliate' => 'Referral URL',
 	'qrcode'		=> 'Referral Code',
 	'people'		=> 'Peoples',
+	'postal_code_placeholder'	=> 'hyphenless code',
 
     'op_failed'     => 'Operation failed! Please Retry.',
 
