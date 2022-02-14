@@ -33,10 +33,10 @@ class SettingController extends Controller
             'avatar' => ['nullable', 'mimes:jpg,bmp,jpeg,png'],
             'name' => ['required', 'string', 'max:128'],
             'birthday' => ['nullable', 'date'],
-            'mobile' => ['required', 'string', 'max:20', 'regex:/^(\+\d{1,2}\s?)?1?\-?\.?\s?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/'],
+            'mobile' => ['required', 'string', 'max:20'],
             'country' => ['required', 'string', 'max:64'],
             'address' => ['required', 'string', 'max:255'],
-            'postal_code' => ['required', 'string', 'max:16', 'regex:/^\d{5,8}$/'],
+            'postal_code' => ['required', 'string', 'max:16'],
         ], [
         ], [
             'avatar' => trans('setting.avatar'),
