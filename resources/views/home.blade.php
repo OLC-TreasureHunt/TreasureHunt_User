@@ -7,7 +7,6 @@
     <section id="welcome" class="p-b-0 p-t-0">
         <div id="slider" class="inspiro-slider slider-fullscreen dots-creative" data-fade="true">
             <div class="slide welcome" data-bg-image="{{ asset('images/background.webp') }}">
-                <div class="bg-overlay"></div>
                 <div class="container p-t-0">
                     <div class="slide-captions text-start text-light title">
                         <!-- Captions -->
