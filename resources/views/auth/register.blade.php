@@ -125,8 +125,8 @@
                                     @enderror
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label for="postal_code" class="">{{ trans('register.postal_code_placeholder') }}</label>
-                                    <input type="text" class="form-control    @error('postal_code') is-invalid @enderror" name="postal_code" placeholder="{{ trans('register.postal_code') }}" value="{{ old('postal_code') }}">
+                                    <label for="postal_code" class="">{{ trans('register.postal_code') }}</label>
+                                    <input type="text" class="form-control    @error('postal_code') is-invalid @enderror" name="postal_code" placeholder="{{ trans('register.postal_code_placeholder') }}" value="{{ old('postal_code') }}">
                                     @error('postal_code')
                                         <div class="is-invalid">{{ $message }}</div>
                                     @enderror
