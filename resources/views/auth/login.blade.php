@@ -7,8 +7,11 @@
     <div class="container-fluid d-flex flex-column">
         <div class="background-login d-none"></div>
         <div class="row align-items-center min-vh-100">
+            <div class="heading-text heading-section text-light text-center animate__animated animate__fadeInUp visible position-absolute" style="top: 100px;" data-animate="animate__fadeInUp">
+                <img id="mv-img" class="mv-img" src="{{ asset('images/visual-text.png') }}" />
+            </div>
             <div class="col-md-6 col-lg-4 col-xl-3 mx-auto">
-                  <div class="card back-semi-theme border-semi-theme">
+                  <div class="card back-semitrans-theme border-semi-theme">
                     <div class="card-body py-5 px-sm-5">
                         <div class="mb-5 text-center">
                             <h6 class="h3 mb-1">@lang('login.title')</h6>
@@ -20,14 +23,14 @@
                                 <div class="input-group">
                                     <input
                                         type="text"
-                                        class="form-control back-semi-theme border-theme {{ $errors->has('affiliate_id') || $errors->has('email') ? 'is-invalid' : '' }}"
+                                        class="form-control back-semitrans-theme border-theme {{ $errors->has('affiliate_id') || $errors->has('email') ? 'is-invalid' : '' }}"
                                         name="login"
                                         placeholder="{{ trans('login.login') }}"
                                         required=""
                                         value="{{ old('affiliate_id') ?: old('email') }}"
                                         autofocus>
 
-                                    <span class="input-group-text back-semi-theme border-theme "><i class="icon-user"></i></span>
+                                    <span class="input-group-text back-semitrans-theme border-theme "><i class="icon-user"></i></span>
                                 </div>
                                 @if ($errors->has('affiliate_id') || $errors->has('email'))
                                     <div class="is-invalid">{{ $errors->first('affiliate_id') ?: $errors->first('email') }}</div>
@@ -38,12 +41,12 @@
                                 <div class="input-group show-hide-password">
                                     <input
                                         type="password"
-                                        class="form-control back-semi-theme border-theme  @error('password') is-invalid @enderror"
+                                        class="form-control back-semitrans-theme border-theme  @error('password') is-invalid @enderror"
                                         name="password"
                                         placeholder="{{ trans('login.password') }}"
                                         type="password"
                                         required="">
-                                    <span class="input-group-text back-semi-theme border-theme "><i class="icon-eye-off" aria-hidden="true" style="cursor: pointer;"></i></span>
+                                    <span class="input-group-text back-semitrans-theme border-theme "><i class="icon-eye-off" aria-hidden="true" style="cursor: pointer;"></i></span>
                                 </div>
                             </div>
                             <div class="mt-4"><button type="submit" class="btn btn-primary btn-block btn-primary">@lang('login.title')</button></div>

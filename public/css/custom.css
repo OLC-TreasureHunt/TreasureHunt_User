@@ -88,6 +88,10 @@
   background-color: #d8b176 !important;
 }
 
+.back-semitrans-theme {
+  background-color: #d8b176DD !important;
+}
+
 .text-theme {
   color: #4e2716 !important;
 }
@@ -161,7 +165,7 @@
 }
 
 @media (max-width: 500px) {
-  .inspiro-slider .slide .slide-captions img.mv-img {
+  img#mv-img.mv-img {
     width: 90% !important;
     max-width: unset;
   }
