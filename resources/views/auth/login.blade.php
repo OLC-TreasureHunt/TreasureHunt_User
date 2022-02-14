@@ -3,9 +3,9 @@
 @section('title', trans('login.title'))
 
 @section('contents')
-<section class="pt-5 pb-5 back-theme position-relative">
+<section class="pt-5 pb-5 back-theme position-relative" data-bg-image="{{ asset('images/background.webp') }}">
     <div class="container-fluid d-flex flex-column">
-        <div class="background-login"></div>
+        <div class="background-login d-none"></div>
         <div class="row align-items-center min-vh-100">
             <div class="col-md-6 col-lg-4 col-xl-3 mx-auto">
                   <div class="card back-semi-theme border-semi-theme">

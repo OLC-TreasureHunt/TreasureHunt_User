@@ -10,6 +10,7 @@
                 <a href="{{ route('home') }}">
                     <span class="logo-default">
                         <img src="{{ asset('images/logo.png') }}" class="img-fluid align-self-center" alt="branding logo" style="max-height: 60px;">
+                        <span class="d-md-inline d-sm-none d-none text-white" style="font-size: 30px">{{ env('APP_NAME') }}</span>
                     </span>
                     <span class="logo-dark">
                         <img src="{{ asset('images/logo.png') }}" class="img-fluid align-self-center" alt="branding logo" style="max-height: 60px;">
