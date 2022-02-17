@@ -2,7 +2,8 @@
 
 @section('title', trans('contact.title'))
 @section('contents')
-    <div class="container body-min-height">
+<div class="body-min-height back-semitrans-theme">
+    <div class="container ">
         <!-- Page title -->
         <section id="page-title" class="page-title-left text-dark background-transparent">
             <div class="container">
@@ -79,6 +80,8 @@
             </div>
         </section>
     </div>
+</div>
+    
 @endsection
 
 @section('script')

@@ -92,6 +92,10 @@
   background-color: #d8b176 !important;
 }
 
+.back-img-transparent {
+  background-image: url(http://localhost/treasure/public/images/background.webp);
+}
+
 .back-semitrans-theme {
   background-color: #d8b176DD !important;
 }
