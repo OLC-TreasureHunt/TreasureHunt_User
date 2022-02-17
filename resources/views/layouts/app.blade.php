@@ -32,7 +32,7 @@
 </head>
 <body>
     <!-- Body Inner -->
-    <div class="body-inner back-semi-theme">
+    <div class="body-inner back-semi-theme back-img-transparent">
         <!-- Header -->
         @include('layouts.header')
         <!-- end: Header -->
