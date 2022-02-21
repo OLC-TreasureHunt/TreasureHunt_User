@@ -14,6 +14,14 @@
   url('../fonts/mplus-1c-medium-sub.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'Enchanted Land';
+  src: url('../fonts/CELTG___.TTF');
+  src: url('../fonts/CELTG___.TTF?#iefix') format('embedded-opentype'),
+  url('../fonts/CELTG___.TTF') format('woff'),
+  url('../fonts/CELTG___.TTF') format('truetype');
+}
+
 .header-inner {
     background-color: #4a4a4a!important;
 }
@@ -23,11 +31,11 @@
 }
 
 :lang(en) {
-    font-family: "SHOWCARD GOTHIC", "Source Sans Pro", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif !important;
+    font-family: "Enchanted Land", "Source Sans Pro", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif !important;
 }
 
 .en-font {
-  font-family: "SHOWCARD GOTHIC", "Source Sans Pro", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif !important;
+  font-family: "Enchanted Land", "Source Sans Pro", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif !important;
 }
 
 :lang(cn) {
