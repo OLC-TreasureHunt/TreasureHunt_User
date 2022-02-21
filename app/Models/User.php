@@ -86,8 +86,9 @@ class User extends Authenticatable
         return $ret;
     }
 
-    public function parentNodeOfBinary() {
+    public function binary() {
         return $this->hasOne(Binary::class);
     }
+
 
 }

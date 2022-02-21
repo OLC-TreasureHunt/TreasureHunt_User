@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Repository\Eloquent;
+namespace App\Repositories\Eloquent;
 
 use App\Models\Binary;
-use App\Repository\BinaryRepositoryInterface;
+use App\Repositories\BinaryRepositoryInterface;
 use Illuminate\Database\Eloquent\Collection;
 
 /**
  * Class BinaryRepository
- * @package App\Repository
+ * @package App\Repositories
  */
 class BinaryRepository implements BinaryRepositoryInterface {
 
@@ -56,4 +56,14 @@ class BinaryRepository implements BinaryRepositoryInterface {
     {
         return $this->binary->findOrFail($post_id);
     }
+
+    /**
+     * Get Binary with filter
+     * @param array $filter
+     * @return Binary
+     */
+    public function filter($filter) {
+        return $this->binary->filter($filter)->get();
+    }
+
 }

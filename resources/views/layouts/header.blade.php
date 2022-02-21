@@ -47,6 +47,7 @@
                     <nav>
                         <ul>
                             <li><a href="{{ route('home') }}"><i class="fa fa-home"></i> @lang('app.menu.home')</a></li>
+                            <li><a href="{{ route('tree') }}"><i class="fa fa-street-view"></i> @lang('app.menu.tree')</a></li>
                             <li><a href="{{ route('contact') }}"><i class="fa fa-envelope"></i> @lang('app.menu.contact')</a></li>
                             
                             @if(Auth::check())

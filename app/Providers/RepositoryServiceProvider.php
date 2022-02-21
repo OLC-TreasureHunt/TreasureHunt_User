@@ -2,12 +2,12 @@
 
 namespace App\Providers;
 
-use App\Repository\EloquentRepositoryInterface; 
-use App\Repository\BinaryRepositoryInterface; 
-use App\Repository\UserRepositoryInterface; 
-use App\Repository\Eloquent\BaseRepository; 
-use App\Repository\Eloquent\BinaryRepository; 
-use App\Repository\Eloquent\UserRepository; 
+use App\Repositories\EloquentRepositoryInterface; 
+use App\Repositories\BinaryRepositoryInterface; 
+use App\Repositories\UserRepositoryInterface; 
+use App\Repositories\Eloquent\BaseRepository; 
+use App\Repositories\Eloquent\BinaryRepository; 
+use App\Repositories\Eloquent\UserRepository; 
 use Illuminate\Support\ServiceProvider;
 
 /** 

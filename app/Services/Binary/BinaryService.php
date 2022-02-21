@@ -1,7 +1,9 @@
 <?php
 namespace App\Services\Binary;
 
-use App\Repository\BinaryRepositoryInterface;
+use App\Models\User;
+use App\Enums\BinaryStatus;
+use App\Repositories\BinaryRepositoryInterface;
 use App\Services\Service;
 use Psr\Log\LoggerInterface as Log;
 
@@ -37,8 +39,12 @@ class BinaryService extends Service {
      * @param $user_id
      * @return array
      */
-    public function tree($user_id) {
-        return array();
+    public function tree( $user_id ) {
+        $tree = $this->binaryTree( $user_id );
+        $tree->class = ['rootNode', 'tttt'];
+        $tree->extend = true;
+
+        return $tree;
     }
 
     /**
@@ -129,6 +135,42 @@ class BinaryService extends Service {
         }
     }
 
+    /**
+     * Generate a binary tree json representation.
+     * 
+     * @param $parnet_id
+     */
+    protected function binaryTree($parent_id) {
+        $children = $this->binary->filter([
+            'parent_id' => $parent_id,
+            'status'    => BinaryStatus::Valid
+        ]);
+        $parent = User::findOrFail($parent_id);
 
+        $result = new \stdClass();
+        $result->name = $parent->affiliate_id;
+        $result->image_url = $parent->avatar;
+        $result->extend = false;
+
+        $self = $this->binary->filter([
+            'user_id' => $parent_id
+        ]);
+        $result->own_loss = $self[0]->own_loss?? 0;
+        $result->left_loss = $self[0]->left_loss?? 0;
+        $result->right_loss = $self[0]->right_loss?? 0;
+        $result->left_count = $self[0]->left_count?? 0;
+        $result->right_count = $self[0]->right_count?? 0;
+
+        if (count($children) > 0) {
+            $result->children = [];
+        }
+
+        foreach ($children as $child) {
+            $childTree = $this->binaryTree( $child->user_id );
+            $result->children[] = $childTree;
+        }
+
+        return $result;
+    }
 
 }
