@@ -99,11 +99,13 @@ export default {
     .extend_handle:before {
         content: "";
         display: block;
-        width: 100%;
-        height: 100%;
+        /* width: 100%;
+        height: 100%; */
+        width: 10px;
+        height: 10px;
         box-sizing: border-box;
         border: 2px solid;
-        border-color: #ccc #ccc transparent transparent;
+        border-color: #4e2716 #4e2716 transparent transparent;
         transform: rotateZ(135deg);
         transform-origin: 50% 50% 0;
         transition: transform ease 300ms;
@@ -123,7 +125,7 @@ export default {
         left: 50%;
         bottom: 15px;
         height: 15px;
-        border-left: 2px solid #ccc;
+        border-left: 2px solid #4e2716;
         transform: translate3d(-1px, 0, 0)
     }
 
@@ -133,7 +135,7 @@ export default {
         left: 50%;
         bottom: 100%;
         height: 15px;
-        border-left: 2px solid #ccc;
+        border-left: 2px solid #4e2716;
         transform: translate3d(-1px, 0, 0)
     }
 
@@ -143,7 +145,7 @@ export default {
         left: 0;
         right: 0;
         top: -15px;
-        border-top: 2px solid #ccc;
+        border-top: 2px solid #4e2716;
     }
 
     .childLevel:first-child:before,
@@ -155,7 +157,7 @@ export default {
         left: 50%;
         height: 15px;
         border: 2px solid;
-        border-color: #ccc transparent transparent #ccc;
+        border-color: #4e2716 transparent transparent #4e2716;
         border-radius: 6px 0 0 0;
         transform: translate3d(1px, 0, 0)
     }
@@ -164,7 +166,7 @@ export default {
         right: 50%;
         height: 15px;
         border: 2px solid;
-        border-color: #ccc #ccc transparent transparent;
+        border-color: #4e2716 #4e2716 transparent transparent;
         border-radius: 0 6px 0 0;
         transform: translate3d(-1px, 0, 0)
     }
@@ -172,7 +174,7 @@ export default {
     .childLevel:first-child.childLevel:last-child::after {
         left: auto;
         border-radius: 0;
-        border-color: transparent #ccc transparent transparent;
+        border-color: transparent #4e2716 transparent transparent;
         transform: translate3d(1px, 0, 0)
     }
 
@@ -182,6 +184,12 @@ export default {
         margin: 0 1em;
         box-sizing: border-box;
         text-align: center;
+    }
+
+    .node>div {
+        border: 1px solid #4e2716;
+        border-radius: 10px;
+        padding: 10px;
     }
 
     .node .person {
@@ -199,7 +207,7 @@ export default {
         margin: auto;
         overflow: hidden;
         background: #fff;
-        border: 1px solid #ccc;
+        border: 1px solid #4e2716;
         box-sizing: border-box;
     }
 
@@ -221,7 +229,7 @@ export default {
         left: 2em;
         right: 2em;
         top: 2em;
-        border-top: 2px solid #ccc;
+        border-top: 2px solid #4e2716;
         z-index: 1;
     }
 
@@ -274,5 +282,18 @@ export default {
     .landscape .hasMate .person:last-child {
         left: -4em;
         margin-left: 0;
+    }
+
+    #tree-page .avat{
+        border-radius: 2em;
+        border-width:2px;
+    }
+
+    #tree-page .name{
+        font-weight:700;
+    }
+    
+    #tree-page .rootNode .name{
+        color: red;
     }
 </style>

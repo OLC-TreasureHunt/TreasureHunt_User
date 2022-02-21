@@ -105,5 +105,10 @@ import Vue from 'vue';
              return str.length < max ? this.leftPadding("0" + str, max) : str;
          }
      },
+     filters: {
+        number2format: function(value, decimal) {
+            return _number_format(value, decimal);
+        }
+    }
  })
 

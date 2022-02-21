@@ -26,6 +26,7 @@ class TreeController extends Controller
      * @return null
      */
     public function index() {
+        $this->binary();
         return view('tree');
     }
 

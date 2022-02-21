@@ -1,12 +1,12 @@
 <?php
-namespace App\Repository;
+namespace App\Repositories;
 
 use App\Models\Binary;
 use Illuminate\Database\Eloquent\Collection;
 
 /**
  * Interface BinaryRepositoryInterface
- * @package App\Repository
+ * @package App\Repositories
  */
 interface BinaryRepositoryInterface {
 
@@ -32,4 +32,11 @@ interface BinaryRepositoryInterface {
      * @return Binary
      */
     public function find($binary_id);
+    
+    /**
+     * Get Binary with filter
+     * @param array $filter
+     * @return Binary
+     */
+    public function filter(array $filter);
 }

@@ -17,5 +17,6 @@ return [
         'faq'       => 'Faq',
         'settings'   => '設定',
         'logout'    => 'ログアウト',
+        'tree'      => 'ツリー',
     ],
 ];
