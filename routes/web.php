@@ -44,4 +44,5 @@ Route::group(['middleware' => 'auth'], function() {
 
     Route::get('/createqrcode', [App\Http\Controllers\SettingController::class, 'createQrCode'])->name('payment.create_qr_code');
 
+    Route::get('/tree', [App\Http\Controllers\TreeController::class, 'binary'])->name('tree.binary');
 });
