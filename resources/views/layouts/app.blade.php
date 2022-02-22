@@ -27,6 +27,7 @@
             'csrfToken' => csrf_token(),
             'user'  => Auth::check()? Auth::user() : null,
             'baseUrl' => url('/'),
+            'serverTimeZone' => config('app.timezone')
         ]) !!};
     </script>
 </head>

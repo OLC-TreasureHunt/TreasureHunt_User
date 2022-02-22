@@ -1,6 +1,203 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/BonusHistoryTable.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/BonusHistoryTable.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var vue2_datatable_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue2-datatable-component */ "./node_modules/vue2-datatable-component/src/main.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  name: 'History',
+  props: ['trans'],
+  components: {
+    'datatable': vue2_datatable_component__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  data: function data() {
+    return {
+      columns: [],
+      data: [],
+      total: 0,
+      query: {},
+      lang: {}
+    };
+  },
+  created: function created() {
+    this.lang = JSON.parse(this.trans);
+    this.columns = [{
+      title: this.lang.table.no,
+      field: 'id',
+      thClass: 'text-center',
+      tdClass: 'text-center'
+    }, {
+      title: this.lang.table.date,
+      field: 'created_at',
+      sortable: true,
+      thClass: 'text-center',
+      tdClass: 'text-center'
+    }, {
+      title: this.lang.table.amount,
+      field: 'total_bet',
+      sortable: true,
+      thClass: 'text-center',
+      tdClass: 'text-end'
+    }, {
+      title: this.lang.table.bonus,
+      field: 'real_bonus',
+      sortable: true,
+      thClass: 'text-center',
+      tdClass: 'text-end'
+    }, {
+      title: this.lang.table.currency,
+      field: 'currency',
+      sortable: true,
+      thClass: 'text-center',
+      tdClass: 'text-center'
+    }, {
+      title: this.lang.table.status,
+      field: 'status',
+      thClass: 'text-center',
+      tdClass: 'text-center'
+    }];
+  },
+  mounted: function mounted() {},
+  methods: {},
+  watch: {
+    query: {
+      handler: function handler(query) {
+        var _this = this;
+
+        var page = this.query.offset / this.query.limit + 1;
+        this.query.page = page;
+        axios.get(window.Laravel.baseUrl + '/history/bonus', {
+          params: this.query
+        }).then(function (data) {
+          _this.data = data.data.data.map(function (obj) {
+            return _objectSpread(_objectSpread({}, obj), {}, {
+              created_at: _this.serverTime2LocalTime(obj['created_at']),
+              total_bet: _this.$options.filters.number2format(obj['total_bet'], 0)
+            });
+          });
+          _this.total = data.data.total;
+        });
+      },
+      deep: true
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/GameHistoryTable.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/GameHistoryTable.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var vue2_datatable_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue2-datatable-component */ "./node_modules/vue2-datatable-component/src/main.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  name: 'History',
+  props: ['trans'],
+  components: {
+    'datatable': vue2_datatable_component__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  data: function data() {
+    return {
+      columns: [],
+      data: [],
+      total: 0,
+      query: {},
+      lang: {}
+    };
+  },
+  created: function created() {
+    this.lang = JSON.parse(this.trans);
+    this.columns = [{
+      title: this.lang.table.no,
+      field: 'id',
+      thClass: 'text-center',
+      tdClass: 'text-center'
+    }, {
+      title: this.lang.table.date,
+      field: 'created_at',
+      sortable: true,
+      thClass: 'text-center',
+      tdClass: 'text-center'
+    }, {
+      title: this.lang.table.amount,
+      field: 'loss_jpy',
+      sortable: true,
+      thClass: 'text-center',
+      tdClass: 'text-end'
+    }, {
+      title: this.lang.table.status,
+      field: 'status',
+      thClass: 'text-center',
+      tdClass: 'text-center'
+    }];
+  },
+  mounted: function mounted() {},
+  methods: {},
+  watch: {
+    query: {
+      handler: function handler(query) {
+        var _this = this;
+
+        var page = this.query.offset / this.query.limit + 1;
+        this.query.page = page;
+        axios.get(window.Laravel.baseUrl + '/history/game', {
+          params: this.query
+        }).then(function (data) {
+          _this.data = data.data.data.map(function (obj) {
+            return _objectSpread(_objectSpread({}, obj), {}, {
+              created_at: _this.serverTime2LocalTime(obj['created_at']),
+              loss_jpy: _this.$options.filters.number2format(obj['loss_jpy'], 0) + _this.lang.table.jpy
+            });
+          });
+          _this.total = data.data.total;
+        });
+      },
+      deep: true
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./node_modules/vue2-datatable-component/src/HeaderSettings/ColumnGroup.vue?vue&type=style&index=0&lang=css&":
 /*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./node_modules/vue2-datatable-component/src/HeaderSettings/ColumnGroup.vue?vue&type=style&index=0&lang=css& ***!
@@ -7041,6 +7238,116 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/BonusHistoryTable.vue":
+/*!*******************************************************!*\
+  !*** ./resources/js/components/BonusHistoryTable.vue ***!
+  \*******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _BonusHistoryTable_vue_vue_type_template_id_ee144c04___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./BonusHistoryTable.vue?vue&type=template&id=ee144c04& */ "./resources/js/components/BonusHistoryTable.vue?vue&type=template&id=ee144c04&");
+/* harmony import */ var _BonusHistoryTable_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./BonusHistoryTable.vue?vue&type=script&lang=js& */ "./resources/js/components/BonusHistoryTable.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _BonusHistoryTable_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _BonusHistoryTable_vue_vue_type_template_id_ee144c04___WEBPACK_IMPORTED_MODULE_0__.render,
+  _BonusHistoryTable_vue_vue_type_template_id_ee144c04___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/BonusHistoryTable.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/GameHistoryTable.vue":
+/*!******************************************************!*\
+  !*** ./resources/js/components/GameHistoryTable.vue ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _GameHistoryTable_vue_vue_type_template_id_512e75d2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./GameHistoryTable.vue?vue&type=template&id=512e75d2& */ "./resources/js/components/GameHistoryTable.vue?vue&type=template&id=512e75d2&");
+/* harmony import */ var _GameHistoryTable_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./GameHistoryTable.vue?vue&type=script&lang=js& */ "./resources/js/components/GameHistoryTable.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _GameHistoryTable_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _GameHistoryTable_vue_vue_type_template_id_512e75d2___WEBPACK_IMPORTED_MODULE_0__.render,
+  _GameHistoryTable_vue_vue_type_template_id_512e75d2___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/GameHistoryTable.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/BonusHistoryTable.vue?vue&type=script&lang=js&":
+/*!********************************************************************************!*\
+  !*** ./resources/js/components/BonusHistoryTable.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BonusHistoryTable_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./BonusHistoryTable.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/BonusHistoryTable.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BonusHistoryTable_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/GameHistoryTable.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************!*\
+  !*** ./resources/js/components/GameHistoryTable.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_GameHistoryTable_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./GameHistoryTable.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/GameHistoryTable.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_GameHistoryTable_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
 /***/ "./node_modules/vue2-datatable-component/src/HeaderSettings/ColumnGroup.vue?vue&type=style&index=0&lang=css&":
 /*!*******************************************************************************************************************!*\
   !*** ./node_modules/vue2-datatable-component/src/HeaderSettings/ColumnGroup.vue?vue&type=style&index=0&lang=css& ***!
@@ -7511,6 +7818,40 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _vue_loader_lib_loaders_templateLoader_js_vue_loader_options_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_template_id_0608cf92___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _vue_loader_lib_loaders_templateLoader_js_vue_loader_options_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_template_id_0608cf92___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../vue-loader/lib/index.js??vue-loader-options!./index.vue?vue&type=template&id=0608cf92& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./node_modules/vue2-datatable-component/src/index.vue?vue&type=template&id=0608cf92&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/BonusHistoryTable.vue?vue&type=template&id=ee144c04&":
+/*!**************************************************************************************!*\
+  !*** ./resources/js/components/BonusHistoryTable.vue?vue&type=template&id=ee144c04& ***!
+  \**************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_BonusHistoryTable_vue_vue_type_template_id_ee144c04___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_BonusHistoryTable_vue_vue_type_template_id_ee144c04___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_BonusHistoryTable_vue_vue_type_template_id_ee144c04___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./BonusHistoryTable.vue?vue&type=template&id=ee144c04& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/BonusHistoryTable.vue?vue&type=template&id=ee144c04&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/GameHistoryTable.vue?vue&type=template&id=512e75d2&":
+/*!*************************************************************************************!*\
+  !*** ./resources/js/components/GameHistoryTable.vue?vue&type=template&id=512e75d2& ***!
+  \*************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GameHistoryTable_vue_vue_type_template_id_512e75d2___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GameHistoryTable_vue_vue_type_template_id_512e75d2___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GameHistoryTable_vue_vue_type_template_id_512e75d2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./GameHistoryTable.vue?vue&type=template&id=512e75d2& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/GameHistoryTable.vue?vue&type=template&id=512e75d2&");
 
 
 /***/ }),
@@ -8745,6 +9086,62 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/BonusHistoryTable.vue?vue&type=template&id=ee144c04&":
+/*!*****************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/BonusHistoryTable.vue?vue&type=template&id=ee144c04& ***!
+  \*****************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "datatable",
+    _vm._b({ attrs: { id: "bonus-history" } }, "datatable", _vm.$data, false)
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/GameHistoryTable.vue?vue&type=template&id=512e75d2&":
+/*!****************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/GameHistoryTable.vue?vue&type=template&id=512e75d2& ***!
+  \****************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "datatable",
+    _vm._b({ attrs: { id: "game-history" } }, "datatable", _vm.$data, false)
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js":
 /*!********************************************************************!*\
   !*** ./node_modules/vue-loader/lib/runtime/componentNormalizer.js ***!
@@ -9271,62 +9668,26 @@ if (typeof window !== 'undefined' && window.Vue) {
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be in strict mode.
+// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
-"use strict";
 /*!***************************************!*\
   !*** ./resources/js/pages/history.js ***!
   \***************************************/
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vue2_datatable_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue2-datatable-component */ "./node_modules/vue2-datatable-component/src/main.js");
-
+Vue.component('game-history', (__webpack_require__(/*! ../components/GameHistoryTable.vue */ "./resources/js/components/GameHistoryTable.vue")["default"]));
+Vue.component('bonus-history', (__webpack_require__(/*! ../components/BonusHistoryTable.vue */ "./resources/js/components/BonusHistoryTable.vue")["default"]));
 var history = new Vue({
   name: 'History',
   el: '#history-page',
-  components: {
-    'datatable': vue2_datatable_component__WEBPACK_IMPORTED_MODULE_0__["default"]
-  },
-  data: function data() {
+  date: function date() {
     return {
-      columns: [{
-        title: 'No',
-        field: 'id'
-      }, {
-        title: 'Date',
-        field: 'created_at',
-        sortable: true
-      }, {
-        title: 'Amount',
-        field: 'loss_jpy',
-        sortable: true
-      }, {
-        title: 'Status',
-        field: 'status'
-      }],
-      data: [],
-      total: 0,
-      query: {}
+      trans: trans,
+      temp: ''
     };
   },
-  mounted: function mounted() {},
-  methods: {},
-  watch: {
-    query: {
-      handler: function handler(query) {
-        var _this = this;
-
-        var page = this.query.offset / this.query.limit + 1;
-        this.query.page = page;
-        axios.get(window.Laravel.baseUrl + '/history/game', {
-          params: this.query
-        }).then(function (data) {
-          _this.data = data.data.data;
-          _this.total = data.data.total;
-        });
-      },
-      deep: true
-    }
-  }
+  mounted: function mounted() {
+    this.temp = 'dafafd';
+  },
+  components: {}
 });
 })();
 

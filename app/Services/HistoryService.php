@@ -49,7 +49,21 @@ class HistoryService extends Service {
     {
         $filter = $request->all();
 
-        
+        if ($filter['sort'] && $filter['order']) {
+            return $this->history->filter([
+                'user_id' => Auth::user()->id
+            ])->orderBy($filter['sort'], $filter['order'])
+            ->paginate($filter['limit']);
+        } else {
+            return $this->history->filter([
+                'user_id' => Auth::user()->id
+            ])->paginate($filter['limit']);
+        }
+    }
+
+    public function bonusHistory(Request $request) {
+        $filter = $request->all();
+
         if ($filter['sort'] && $filter['order']) {
             return $this->history->filter([
                 'user_id' => Auth::user()->id

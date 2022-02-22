@@ -49,4 +49,5 @@ Route::group(['middleware' => 'auth'], function() {
 
     Route::get('/history', [App\Http\Controllers\HistoryController::class, 'index'])->name('history');
     Route::get('/history/game', [App\Http\Controllers\HistoryController::class, 'game'])->name('history.game');
+    Route::get('/history/bonus', [App\Http\Controllers\HistoryController::class, 'bonus'])->name('history.bonus');
 });

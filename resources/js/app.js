@@ -31,6 +31,8 @@ import Vue from 'vue';
  import VueSweetalert2 from 'vue-sweetalert2';
  import 'sweetalert2/dist/sweetalert2.min.css';
  Vue.use(VueSweetalert2);
+
+ import moment from 'moment-timezone';
  
  Vue.mixin({
      methods: {
@@ -103,11 +105,25 @@ import Vue from 'vue';
          leftPadding: function(str, max) {
              str = str.toString();
              return str.length < max ? this.leftPadding("0" + str, max) : str;
-         }
+         },
+         serverTime2LocalTime: function(value) {
+            let toTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+            let fromTimeZone = window.Laravel.serverTimeZone;
+
+            return moment.tz(value, fromTimeZone).tz(toTimeZone).format(
+                'YYYY-MM-DD HH:mm:ss');
+        }
      },
      filters: {
         number2format: function(value, decimal) {
             return _number_format(value, decimal);
+        },
+        serverTime2LocalTime: function(value) {
+            let toTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+            let fromTimeZone = window.Laravel.serverTimeZone;
+
+            return moment.tz(value, fromTimeZone).tz(toTimeZone).format(
+                'YYYY-MM-DD HH:mm:ss');
         }
     }
  })

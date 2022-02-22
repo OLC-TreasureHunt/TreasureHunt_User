@@ -65,8 +65,8 @@
 }
 
 .col-xs-1-10 {
-  width: 10%;
-  float: left;
+    width: 10%;
+    float: left;
 }
 
 
@@ -82,6 +82,7 @@
 
 #mainMenu nav > ul > li > a, #mainMenu nav > ul > li:hover > a {
   color: white;
+  text-transform: unset;
 }
 
 .header-extras > ul > li a, .header-extras > ul > li i.icon-globe {

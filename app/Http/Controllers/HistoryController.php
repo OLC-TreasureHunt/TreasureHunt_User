@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\GameHistory;
 use App\Services\HistoryService;
 use Illuminate\Http\Request;
 
@@ -14,7 +13,7 @@ class HistoryController extends Controller
     protected $history;
 
     /**
-     * @param BinaryService $binary
+     * @param HistoryService $binary
      */
     public function __construct(HistoryService $history) {
         $this->history = $history;
@@ -26,5 +25,9 @@ class HistoryController extends Controller
 
     public function game(Request $request) {
         return response()->json($this->history->gameHistory($request));
+    }
+
+    public function bonus(Request $request) {
+        return response()->json($this->history->bonusHistory($request));
     }
 }

@@ -10,7 +10,8 @@
 
 @section('styles')
     <style>
-        #game_history div[name='HeaderSettings']>button {
+        #game_history div[name='HeaderSettings']>button,
+        #bonus_history div[name='HeaderSettings']>button {
             display: none;
         }
     </style>
@@ -62,15 +63,15 @@
                                     <div class="card back-semi-theme border-theme border-theme  ">
                                         <div class="card-body">
                                             <h6>@lang('history.game_history')</h6>
-                                            <game-history/>
-                                            <datatable v-bind="$data" />
+                                            <game-history trans='@json(trans('history'))'></game-history>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="tab-pane fade" id="bonus_history" role="tabpanel" aria-labelledby="bonus_history-tab">
                                     <div class="card back-semi-theme border-theme  border-theme ">
                                         <div class="card-body">
-                                            
+                                            <h6>@lang('history.bonus_history')</h6>
+                                            <bonus-history trans='@json(trans('history'))'></bonus-history>
                                         </div>
                                     </div>
                                 </div>
@@ -85,12 +86,13 @@
 @endsection
 
 @section('scripts')
+    <script>
+        let trans = @json(trans('tree'));
+    </script>
     <script src="{{ asset('plugins/clipboard/clipboard.min.js') }}"></script>
     <script src="{{ cAsset('plugins/moment/moment.min.js') }}"></script>
     <script src="{{ cAsset('plugins/bootstrap-datetimepicker/tempusdominus-bootstrap-4.js') }}"></script>
     <script src="{{ cAsset('js/pages/history.js') }}"></script>
-    <script>
-
-    </script>
+    
 
 @endsection
