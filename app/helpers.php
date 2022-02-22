@@ -1006,3 +1006,10 @@ function hideEmailAddress($email)
         return $hideEmailAddress;
     }
 }
+
+function serverTime2Local($time) {
+    $dt = new DateTime($time, new DateTimeZone(config('app.timezone')));
+    $dt->setTimezone(new DateTimeZone(date_default_timezone_get()));
+    $local = $dt->format('Y-m-d H:i:s');
+    return $local;
+}

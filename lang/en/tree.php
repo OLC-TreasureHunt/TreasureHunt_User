@@ -9,4 +9,10 @@ return [
     'button' => [
         'confirm' => 'Confirm'
     ],
+
+    'field' => [
+        'left'  => 'L',
+        'right' => 'R',
+        'jpy'   => 'JPY'
+    ]
 ];

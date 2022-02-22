@@ -1,5 +1,5 @@
 <?php
-namespace App\Services\Binary;
+namespace App\Services;
 
 use App\Models\User;
 use App\Enums\BinaryStatus;
@@ -10,7 +10,7 @@ use Psr\Log\LoggerInterface as Log;
 
 /**
  * Class BinaryService
- * @package App\Services\Binary
+ * @package App\Services
  */
 class BinaryService extends Service {
 

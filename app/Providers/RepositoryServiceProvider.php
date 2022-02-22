@@ -4,9 +4,11 @@ namespace App\Providers;
 
 use App\Repositories\EloquentRepositoryInterface; 
 use App\Repositories\BinaryRepositoryInterface; 
+use App\Repositories\HistoryRepositoryInterface; 
 use App\Repositories\UserRepositoryInterface; 
 use App\Repositories\Eloquent\BaseRepository; 
 use App\Repositories\Eloquent\BinaryRepository; 
+use App\Repositories\Eloquent\GameHistoryRepository; 
 use App\Repositories\Eloquent\UserRepository; 
 use Illuminate\Support\ServiceProvider;
 
@@ -26,6 +28,7 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(EloquentRepositoryInterface::class, BaseRepository::class);
         $this->app->bind(UserRepositoryInterface::class, UserRepository::class);
         $this->app->bind(BinaryRepositoryInterface::class, BinaryRepository::class);
+        $this->app->bind(HistoryRepositoryInterface::class, GameHistoryRepository::class);
     }
 
     /**

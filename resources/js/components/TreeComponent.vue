@@ -196,7 +196,7 @@ export default {
         position: relative;
         display: inline-block;
         z-index: 2;
-        width: 6em;
+        width: 8em;
         overflow: hidden;
     }
 
@@ -207,7 +207,7 @@ export default {
         margin: auto;
         overflow: hidden;
         background: #fff;
-        border: 1px solid #4e2716;
+        border: 1px solid white;
         box-sizing: border-box;
     }
 

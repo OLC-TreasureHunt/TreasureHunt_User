@@ -9,4 +9,10 @@ return [
     'button' => [
         'confirm' => '確認'
     ],
+
+    'field' => [
+        'left'  => '左',
+        'right' => '右',
+        'jpy'   => '円'
+    ]
 ];

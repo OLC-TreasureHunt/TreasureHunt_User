@@ -2353,7 +2353,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\ntable[data-v-15fe7f24] {\n    border-collapse: separate!important;\n    border-spacing: 0!important;\n}\ntd[data-v-15fe7f24] {\n    position: relative;\n    vertical-align: top;\n    padding: 0 0 50px 0;\n    text-align: center;\n}\n.extend_handle[data-v-15fe7f24] {\n    position: absolute;\n    left: 50%;\n    bottom: 30px;\n    width: 10px;\n    height: 10px;\n    padding: 10px;\n    transform: translate3d(-15px, 0, 0);\n    cursor: pointer;\n}\n.extend_handle[data-v-15fe7f24]:before {\n    content: \"\";\n    display: block;\n    /* width: 100%;\n    height: 100%; */\n    width: 10px;\n    height: 10px;\n    box-sizing: border-box;\n    border: 2px solid;\n    border-color: #4e2716 #4e2716 transparent transparent;\n    transform: rotateZ(135deg);\n    transform-origin: 50% 50% 0;\n    transition: transform ease 300ms;\n}\n.extend_handle[data-v-15fe7f24]:hover:before {\n    border-color: #333 #333 transparent transparent;\n}\n.extend .extend_handle[data-v-15fe7f24]:before {\n    transform: rotateZ(-45deg);\n}\n.extend[data-v-15fe7f24]::after {\n    content: \"\";\n    position: absolute;\n    left: 50%;\n    bottom: 15px;\n    height: 15px;\n    border-left: 2px solid #4e2716;\n    transform: translate3d(-1px, 0, 0)\n}\n.childLevel[data-v-15fe7f24]::before {\n    content: \"\";\n    position: absolute;\n    left: 50%;\n    bottom: 100%;\n    height: 15px;\n    border-left: 2px solid #4e2716;\n    transform: translate3d(-1px, 0, 0)\n}\n.childLevel[data-v-15fe7f24]::after {\n    content: \"\";\n    position: absolute;\n    left: 0;\n    right: 0;\n    top: -15px;\n    border-top: 2px solid #4e2716;\n}\n.childLevel[data-v-15fe7f24]:first-child:before,\n.childLevel[data-v-15fe7f24]:last-child:before {\n    display: none;\n}\n.childLevel[data-v-15fe7f24]:first-child:after {\n    left: 50%;\n    height: 15px;\n    border: 2px solid;\n    border-color: #4e2716 transparent transparent #4e2716;\n    border-radius: 6px 0 0 0;\n    transform: translate3d(1px, 0, 0)\n}\n.childLevel[data-v-15fe7f24]:last-child:after {\n    right: 50%;\n    height: 15px;\n    border: 2px solid;\n    border-color: #4e2716 #4e2716 transparent transparent;\n    border-radius: 0 6px 0 0;\n    transform: translate3d(-1px, 0, 0)\n}\n.childLevel:first-child.childLevel[data-v-15fe7f24]:last-child::after {\n    left: auto;\n    border-radius: 0;\n    border-color: transparent #4e2716 transparent transparent;\n    transform: translate3d(1px, 0, 0)\n}\n.node[data-v-15fe7f24] {\n    position: relative;\n    display: inline-block;\n    margin: 0 1em;\n    box-sizing: border-box;\n    text-align: center;\n}\n.node>div[data-v-15fe7f24] {\n    border: 1px solid #4e2716;\n    border-radius: 10px;\n    padding: 10px;\n}\n.node .person[data-v-15fe7f24] {\n    position: relative;\n    display: inline-block;\n    z-index: 2;\n    width: 6em;\n    overflow: hidden;\n}\n.node .person .avat[data-v-15fe7f24] {\n    display: block;\n    width: 4em;\n    height: 4em;\n    margin: auto;\n    overflow: hidden;\n    background: #fff;\n    border: 1px solid #4e2716;\n    box-sizing: border-box;\n}\n.node .person .avat img[data-v-15fe7f24] {\n    width: 100%;\n    height: 100%;\n}\n.node .person .name[data-v-15fe7f24] {\n    height: 2em;\n    line-height: 2em;\n    overflow: hidden;\n    width: 100%;\n}\n.node.hasMate[data-v-15fe7f24]::after {\n    content: \"\";\n    position: absolute;\n    left: 2em;\n    right: 2em;\n    top: 2em;\n    border-top: 2px solid #4e2716;\n    z-index: 1;\n}\n\n\n/* 横板 */\n.landscape[data-v-15fe7f24] {\n    transform: translate(-100%, 0) rotate(-90deg);\n    transform-origin: 100% 0;\n}\n.landscape .node[data-v-15fe7f24] {\n    text-align: left;\n    height: 8em;\n    width: 8em;\n}\n.landscape .person[data-v-15fe7f24] {\n    position: relative;\n    transform: rotate(90deg);\n    padding-left: 4.5em;\n    height: 4em;\n    top: 4em;\n    left: -1em;\n}\n.landscape .person .avat[data-v-15fe7f24] {\n    position: absolute;\n    left: 0;\n}\n.landscape .person .name[data-v-15fe7f24] {\n    height: 4em;\n    line-height: 4em;\n}\n.landscape .hasMate[data-v-15fe7f24] {\n    position: relative;\n}\n.landscape .hasMate .person[data-v-15fe7f24] {\n    position: absolute;\n}\n.landscape .hasMate .person[data-v-15fe7f24]:first-child {\n    left: auto;\n    right: -4em;\n}\n.landscape .hasMate .person[data-v-15fe7f24]:last-child {\n    left: -4em;\n    margin-left: 0;\n}\n#tree-page .avat[data-v-15fe7f24]{\n    border-radius: 2em;\n    border-width:2px;\n}\n#tree-page .name[data-v-15fe7f24]{\n    font-weight:700;\n}\n#tree-page .rootNode .name[data-v-15fe7f24]{\n    color: red;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\ntable[data-v-15fe7f24] {\n    border-collapse: separate!important;\n    border-spacing: 0!important;\n}\ntd[data-v-15fe7f24] {\n    position: relative;\n    vertical-align: top;\n    padding: 0 0 50px 0;\n    text-align: center;\n}\n.extend_handle[data-v-15fe7f24] {\n    position: absolute;\n    left: 50%;\n    bottom: 30px;\n    width: 10px;\n    height: 10px;\n    padding: 10px;\n    transform: translate3d(-15px, 0, 0);\n    cursor: pointer;\n}\n.extend_handle[data-v-15fe7f24]:before {\n    content: \"\";\n    display: block;\n    /* width: 100%;\n    height: 100%; */\n    width: 10px;\n    height: 10px;\n    box-sizing: border-box;\n    border: 2px solid;\n    border-color: #4e2716 #4e2716 transparent transparent;\n    transform: rotateZ(135deg);\n    transform-origin: 50% 50% 0;\n    transition: transform ease 300ms;\n}\n.extend_handle[data-v-15fe7f24]:hover:before {\n    border-color: #333 #333 transparent transparent;\n}\n.extend .extend_handle[data-v-15fe7f24]:before {\n    transform: rotateZ(-45deg);\n}\n.extend[data-v-15fe7f24]::after {\n    content: \"\";\n    position: absolute;\n    left: 50%;\n    bottom: 15px;\n    height: 15px;\n    border-left: 2px solid #4e2716;\n    transform: translate3d(-1px, 0, 0)\n}\n.childLevel[data-v-15fe7f24]::before {\n    content: \"\";\n    position: absolute;\n    left: 50%;\n    bottom: 100%;\n    height: 15px;\n    border-left: 2px solid #4e2716;\n    transform: translate3d(-1px, 0, 0)\n}\n.childLevel[data-v-15fe7f24]::after {\n    content: \"\";\n    position: absolute;\n    left: 0;\n    right: 0;\n    top: -15px;\n    border-top: 2px solid #4e2716;\n}\n.childLevel[data-v-15fe7f24]:first-child:before,\n.childLevel[data-v-15fe7f24]:last-child:before {\n    display: none;\n}\n.childLevel[data-v-15fe7f24]:first-child:after {\n    left: 50%;\n    height: 15px;\n    border: 2px solid;\n    border-color: #4e2716 transparent transparent #4e2716;\n    border-radius: 6px 0 0 0;\n    transform: translate3d(1px, 0, 0)\n}\n.childLevel[data-v-15fe7f24]:last-child:after {\n    right: 50%;\n    height: 15px;\n    border: 2px solid;\n    border-color: #4e2716 #4e2716 transparent transparent;\n    border-radius: 0 6px 0 0;\n    transform: translate3d(-1px, 0, 0)\n}\n.childLevel:first-child.childLevel[data-v-15fe7f24]:last-child::after {\n    left: auto;\n    border-radius: 0;\n    border-color: transparent #4e2716 transparent transparent;\n    transform: translate3d(1px, 0, 0)\n}\n.node[data-v-15fe7f24] {\n    position: relative;\n    display: inline-block;\n    margin: 0 1em;\n    box-sizing: border-box;\n    text-align: center;\n}\n.node>div[data-v-15fe7f24] {\n    border: 1px solid #4e2716;\n    border-radius: 10px;\n    padding: 10px;\n}\n.node .person[data-v-15fe7f24] {\n    position: relative;\n    display: inline-block;\n    z-index: 2;\n    width: 8em;\n    overflow: hidden;\n}\n.node .person .avat[data-v-15fe7f24] {\n    display: block;\n    width: 4em;\n    height: 4em;\n    margin: auto;\n    overflow: hidden;\n    background: #fff;\n    border: 1px solid white;\n    box-sizing: border-box;\n}\n.node .person .avat img[data-v-15fe7f24] {\n    width: 100%;\n    height: 100%;\n}\n.node .person .name[data-v-15fe7f24] {\n    height: 2em;\n    line-height: 2em;\n    overflow: hidden;\n    width: 100%;\n}\n.node.hasMate[data-v-15fe7f24]::after {\n    content: \"\";\n    position: absolute;\n    left: 2em;\n    right: 2em;\n    top: 2em;\n    border-top: 2px solid #4e2716;\n    z-index: 1;\n}\n\n\n/* 横板 */\n.landscape[data-v-15fe7f24] {\n    transform: translate(-100%, 0) rotate(-90deg);\n    transform-origin: 100% 0;\n}\n.landscape .node[data-v-15fe7f24] {\n    text-align: left;\n    height: 8em;\n    width: 8em;\n}\n.landscape .person[data-v-15fe7f24] {\n    position: relative;\n    transform: rotate(90deg);\n    padding-left: 4.5em;\n    height: 4em;\n    top: 4em;\n    left: -1em;\n}\n.landscape .person .avat[data-v-15fe7f24] {\n    position: absolute;\n    left: 0;\n}\n.landscape .person .name[data-v-15fe7f24] {\n    height: 4em;\n    line-height: 4em;\n}\n.landscape .hasMate[data-v-15fe7f24] {\n    position: relative;\n}\n.landscape .hasMate .person[data-v-15fe7f24] {\n    position: absolute;\n}\n.landscape .hasMate .person[data-v-15fe7f24]:first-child {\n    left: auto;\n    right: -4em;\n}\n.landscape .hasMate .person[data-v-15fe7f24]:last-child {\n    left: -4em;\n    margin-left: 0;\n}\n#tree-page .avat[data-v-15fe7f24]{\n    border-radius: 2em;\n    border-width:2px;\n}\n#tree-page .name[data-v-15fe7f24]{\n    font-weight:700;\n}\n#tree-page .rootNode .name[data-v-15fe7f24]{\n    color: red;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -4070,7 +4070,9 @@ var render = function () {
                       _vm._v(
                         _vm._s(
                           _vm._f("number2format")(_vm.treeData.own_loss, 0)
-                        ) + "円"
+                        ) +
+                          " " +
+                          _vm._s(_vm.trans.field.jpy)
                       ),
                     ]),
                   ]
@@ -4083,13 +4085,22 @@ var render = function () {
                       "icon-preview d-flex w-100 justify-content-between",
                   },
                   [
-                    _vm._m(1),
+                    _c("div", { staticClass: "icon-holder text-light" }, [
+                      _c("i", { staticClass: "fa fa-gamepad text-light" }),
+                      _vm._v(
+                        " " +
+                          _vm._s(_vm.trans.field.left) +
+                          "\n                                "
+                      ),
+                    ]),
                     _vm._v(" "),
                     _c("div", { staticClass: "icon-class text-light" }, [
                       _vm._v(
                         _vm._s(
                           _vm._f("number2format")(_vm.treeData.left_loss, 0)
-                        ) + "円"
+                        ) +
+                          " " +
+                          _vm._s(_vm.trans.field.jpy)
                       ),
                     ]),
                   ]
@@ -4102,13 +4113,22 @@ var render = function () {
                       "icon-preview d-flex w-100 justify-content-between",
                   },
                   [
-                    _vm._m(2),
+                    _c("div", { staticClass: "icon-holder text-light" }, [
+                      _c("i", { staticClass: "fa fa-gamepad text-light" }),
+                      _vm._v(
+                        " " +
+                          _vm._s(_vm.trans.field.right) +
+                          "\n                                "
+                      ),
+                    ]),
                     _vm._v(" "),
                     _c("div", { staticClass: "icon-class text-light" }, [
                       _vm._v(
                         _vm._s(
                           _vm._f("number2format")(_vm.treeData.right_loss, 0)
-                        ) + "円"
+                        ) +
+                          " " +
+                          _vm._s(_vm.trans.field.jpy)
                       ),
                     ]),
                   ]
@@ -4122,7 +4142,7 @@ var render = function () {
                         staticClass: "text-center border border-white rounded",
                       },
                       [
-                        _vm._m(3),
+                        _vm._m(1),
                         _vm._v(" "),
                         _c("div", { staticClass: "text-light" }, [
                           _c(
@@ -4141,7 +4161,7 @@ var render = function () {
                         ]),
                         _vm._v(" "),
                         _c("p", { staticClass: "m-0 text-light" }, [
-                          _vm._v("左"),
+                          _vm._v(_vm._s(_vm.trans.field.left)),
                         ]),
                       ]
                     ),
@@ -4154,7 +4174,7 @@ var render = function () {
                         staticClass: "text-center border border-white rounded",
                       },
                       [
-                        _vm._m(4),
+                        _vm._m(2),
                         _vm._v(" "),
                         _c("div", { staticClass: "text-light" }, [
                           _c(
@@ -4173,7 +4193,7 @@ var render = function () {
                         ]),
                         _vm._v(" "),
                         _c("p", { staticClass: "m-0 text-light" }, [
-                          _vm._v("右"),
+                          _vm._v(_vm._s(_vm.trans.field.right)),
                         ]),
                       ]
                     ),
@@ -4194,24 +4214,6 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "icon-holder" }, [
       _c("i", { staticClass: "fa fa-gamepad text-light" }),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "icon-holder text-light" }, [
-      _c("i", { staticClass: "fa fa-gamepad text-light" }),
-      _vm._v("左\n                                "),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "icon-holder text-light" }, [
-      _c("i", { staticClass: "fa fa-gamepad text-light" }),
-      _vm._v("右\n                                "),
     ])
   },
   function () {

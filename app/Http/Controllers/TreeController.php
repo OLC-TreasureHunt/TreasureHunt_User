@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Auth;
 use Illuminate\Http\Request;
-use App\Services\Binary\BinaryService;
+use App\Services\BinaryService;
 
 class TreeController extends Controller
 {

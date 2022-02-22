@@ -179,6 +179,11 @@
   max-width: unset;
 }
 
+.pull-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
 @media (min-width: 768px) {
   .col-sm-1-10 {
     width: 10%;

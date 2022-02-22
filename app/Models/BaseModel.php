@@ -24,6 +24,8 @@ class BaseModel extends Model
      */
     protected $boolFilterFields = ['status'];
 
+    protected $sortable = [];
+
     /**
      * add filtering.
      *

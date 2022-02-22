@@ -18,33 +18,33 @@
                                     <div class="icon-holder">
                                         <i class="fa fa-gamepad text-light"></i>
                                     </div>
-                                    <div class="icon-class text-light">{{ treeData.own_loss | number2format(0) }}円</div>
+                                    <div class="icon-class text-light">{{ treeData.own_loss | number2format(0) }} {{ trans.field.jpy }}</div>
                                 </div>
                                 <div class="icon-preview d-flex w-100 justify-content-between">
                                     <div class="icon-holder text-light">
-                                        <i class="fa fa-gamepad text-light"></i>左
+                                        <i class="fa fa-gamepad text-light"></i> {{ trans.field.left }}
                                     </div>
-                                    <div class="icon-class text-light">{{ treeData.left_loss | number2format(0) }}円</div>
+                                    <div class="icon-class text-light">{{ treeData.left_loss | number2format(0) }} {{ trans.field.jpy }}</div>
                                 </div>
                                 <div class="icon-preview d-flex w-100 justify-content-between">
                                     <div class="icon-holder text-light">
-                                        <i class="fa fa-gamepad text-light"></i>右
+                                        <i class="fa fa-gamepad text-light"></i> {{ trans.field.right }}
                                     </div>
-                                    <div class="icon-class text-light">{{ treeData.right_loss | number2format(0) }}円</div>
+                                    <div class="icon-class text-light">{{ treeData.right_loss | number2format(0) }} {{ trans.field.jpy }}</div>
                                 </div>
                                 <div class="row mt-1">
                                     <div class="col-6">
                                         <div class="text-center border border-white rounded">
                                             <div class="icon mt-2 mb-2"><i class="fa fa-male text-light"></i></div>
                                             <div class="text-light"> <span data-speed="3000" data-refresh-interval="12" data-to="114" data-from="50" data-seperator="true">{{ treeData.left_count }}</span> </div>
-                                            <p class="m-0 text-light">左</p>
+                                            <p class="m-0 text-light">{{ trans.field.left }}</p>
                                         </div>
                                     </div>
                                     <div class="col-6">
                                         <div class="text-center border border-white rounded">
                                             <div class="icon mt-2 mb-2"><i class="fa fa-male text-light"></i></div>
                                             <div class="text-light"> <span data-speed="3000" data-refresh-interval="12" data-to="114" data-from="50" data-seperator="true">{{ treeData.right_count }}</span> </div>
-                                            <p class="m-0 text-light">右</p>
+                                            <p class="m-0 text-light">{{ trans.field.right }}</p>
                                         </div>
                                     </div>
                                 </div>
