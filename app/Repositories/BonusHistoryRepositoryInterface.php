@@ -5,10 +5,10 @@ use App\Models\Binary;
 use Illuminate\Database\Eloquent\Collection;
 
 /**
- * Interface HistoryRepositoryInterface
+ * Interface BonusHistoryRepositoryInterface
  * @package App\Repositories
  */
-interface HistoryRepositoryInterface {
+interface BonusHistoryRepositoryInterface {
 
     /**
      * Binary Pagination

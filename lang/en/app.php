@@ -18,6 +18,12 @@ return [
         'settings'   => 'Settings',
         'logout'    => 'Logout',
         'tree'      => 'Tree',
+        'history'   => 'History',
+        'service'   => 'Services',
+        'support'   => 'Supports',
+        'download'  => 'Download',
+        'news'      => 'News',
+        'notice'    => 'Notice',
     ],
 
 ];

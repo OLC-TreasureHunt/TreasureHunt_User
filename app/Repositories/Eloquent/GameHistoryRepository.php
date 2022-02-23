@@ -3,14 +3,14 @@
 namespace App\Repositories\Eloquent;
 
 use App\Models\GameHistory;
-use App\Repositories\HistoryRepositoryInterface;
+use App\Repositories\GameHistoryRepositoryInterface;
 use Illuminate\Database\Eloquent\Collection;
 
 /**
  * Class GameHistoryRepository
  * @package App\Repositories
  */
-class GameHistoryRepository implements HistoryRepositoryInterface {
+class GameHistoryRepository implements GameHistoryRepositoryInterface {
 
     /**
      * @var GameHistory

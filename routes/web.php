@@ -36,6 +36,9 @@ Route::get('/news', [App\Http\Controllers\NewsController::class, 'index'])->name
 Route::get('/news/{id}', [App\Http\Controllers\NewsController::class, 'news'])->name('news.detail');
 Route::get('/faq', [App\Http\Controllers\FAQController::class, 'index'])->name('faqs');
 Route::get('/faq/{id}', [App\Http\Controllers\FAQController::class, 'faq'])->name('faq.detail');
+Route::get('/currency', [App\Http\Controllers\HistoryController::class, 'currency'])->name('currency');
+Route::get('/download', [App\Http\Controllers\FileController::class, 'index'])->name('download');
+Route::get('/download/files', [App\Http\Controllers\FileController::class, 'files'])->name('download.file');
 
 Route::group(['middleware' => 'auth'], function() {
     Route::get('/setting', [App\Http\Controllers\SettingController::class, 'index'])->name('setting');

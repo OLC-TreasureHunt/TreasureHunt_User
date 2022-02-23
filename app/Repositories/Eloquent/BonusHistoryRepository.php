@@ -3,14 +3,14 @@
 namespace App\Repositories\Eloquent;
 
 use App\Models\BonusHistory;
-use App\Repositories\HistoryRepositoryInterface;
+use App\Repositories\BonusHistoryRepositoryInterface;
 use Illuminate\Database\Eloquent\Collection;
 
 /**
  * Class BonusHistoryRepository
  * @package App\Repositories
  */
-class BonusHistoryRepository implements HistoryRepositoryInterface {
+class BonusHistoryRepository implements BonusHistoryRepositoryInterface {
 
     /**
      * @var BonusHistory

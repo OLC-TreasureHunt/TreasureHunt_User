@@ -2,21 +2,36 @@
 
 namespace App\Http\Controllers;
 
-use App\Services\HistoryService;
+use App\Services\GameHistoryService;
+use App\Services\BonusHistoryService;
+use App\Services\CryptoSettingService;
 use Illuminate\Http\Request;
 
 class HistoryController extends Controller
 {
     /**
-     * @var HistoryService
+     * @var GameHistoryService
      */
-    protected $history;
+    protected $gameHistory;
 
     /**
-     * @param HistoryService $binary
+     * @var BonusHistoryService
      */
-    public function __construct(HistoryService $history) {
-        $this->history = $history;
+    protected $bonusHistory;
+
+    /**
+     * @var CryptoSettingService
+     */
+    protected $cryptosetting;
+
+    /**
+     * @param GameHistoryService $binary
+     * @param BonusHistoryService $binary
+     */
+    public function __construct(GameHistoryService $history1, BonusHistoryService $history2, CryptoSettingService $cryptosetting) {
+        $this->gameHistory = $history1;
+        $this->bonusHistory = $history2;
+        $this->cryptosetting = $cryptosetting;
     }
 
     public function index() {
@@ -24,10 +39,21 @@ class HistoryController extends Controller
     }
 
     public function game(Request $request) {
-        return response()->json($this->history->gameHistory($request));
+        return response()->json($this->gameHistory->gameHistory($request));
     }
 
     public function bonus(Request $request) {
-        return response()->json($this->history->bonusHistory($request));
+        return response()->json($this->bonusHistory->bonusHistory($request));
+    }
+
+    public function currency() {
+        $currencies = $this->cryptosetting->all();
+
+        $result = [];
+        foreach ($currencies as $currency) {
+            $result[$currency['currency_url']] = $currency;
+        }
+
+        return response()->json($result);
     }
 }

@@ -89,6 +89,16 @@
                                                         <div class="col-lg-4 col-6 text-dark">{{ trans('setting.email')  }}</div>
                                                         <div class="col-lg-8 col-6 text-dark">{{ auth()->user()->email }}</div>
                                                     </div>
+                                                    <div class="form-group row">
+                                                        <div class="col-lg-4 col-6 text-dark">{{ trans('setting.user_plan')  }}</div>
+                                                        <div class="col-lg-8 col-6 text-dark">
+                                                            @if (auth()->user()->is_premium)
+                                                            <img src="{{ cAsset('images/award.png')}}" style="width:16px;" /><span class="text-light">{{ trans('setting.is_premium') }}</span>
+                                                            @else
+                                                            <i class="icon-x-circle text-danger"></i>&nbsp;<span class="text-light">{{ trans('setting.not_premium') }}</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>

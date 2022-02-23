@@ -18,5 +18,11 @@ return [
         'settings'   => '設定',
         'logout'    => 'ログアウト',
         'tree'      => 'ツリー',
+        'history'   => '履歴',
+        'service'  => 'サービス',
+        'support'  => 'サポート',
+        'download'  => 'ダウンロード',
+        'news'      => 'ニュース',
+        'notice'    => 'お知らせ',
     ],
 ];

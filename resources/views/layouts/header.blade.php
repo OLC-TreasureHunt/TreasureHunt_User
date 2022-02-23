@@ -47,7 +47,24 @@
                     <nav>
                         <ul>
                             <li><a href="{{ route('home') }}"><i class="fa fa-home"></i> @lang('app.menu.home')</a></li>
-                            <li><a href="{{ route('tree') }}"><i class="fa fa-street-view"></i> @lang('app.menu.tree')</a></li>
+                            
+                            <li class="dropdown">
+                                <a href="#"><i class="fa fa-gamepad"></i>@lang('app.menu.service')</a>
+                                <ul class="dropdown-menu back-theme">
+                                    <li><a href="{{ route('tree') }}"><i class="fa fa-street-view"></i> @lang('app.menu.tree')</a></li>
+                                    <li><a href="{{ route('history') }}"><i class="fa fa-history"></i> @lang('app.menu.history')</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="dropdown">
+                                <a href="#"><i class="fa fa-gamepad"></i>@lang('app.menu.support')</a>
+                                <ul class="dropdown-menu back-theme">
+                                    <li><a href="{{ route('tree') }}"><i class="fa fa-newspaper"></i> @lang('app.menu.news')</a></li>
+                                    <li><a href="{{ route('download') }}"><i class="icon-file"></i> @lang('app.menu.download')</a></li>
+                                    <li><a href="{{ route('history') }}"><i class="icon-bell"></i> @lang('app.menu.notice')</a></li>
+                                </ul>
+                            </li>
+
                             <li><a href="{{ route('contact') }}"><i class="fa fa-envelope"></i> @lang('app.menu.contact')</a></li>
                             
                             @if(Auth::check())

@@ -5500,6 +5500,12 @@ vue__WEBPACK_IMPORTED_MODULE_2__["default"].mixin({
       var toTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
       var fromTimeZone = window.Laravel.serverTimeZone;
       return moment_timezone__WEBPACK_IMPORTED_MODULE_3___default().tz(value, fromTimeZone).tz(toTimeZone).format('YYYY-MM-DD HH:mm:ss');
+    },
+    bytesToSize: function bytesToSize(bytes) {
+      var sizes = ['KB', 'MB', 'GB', 'TB'];
+      if (bytes == 0) return '0 Byte';
+      var i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)));
+      return Math.round(bytes / Math.pow(1024, i), 2) + ' ' + sizes[i];
     }
   }
 });

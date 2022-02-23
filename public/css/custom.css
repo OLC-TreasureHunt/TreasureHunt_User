@@ -185,6 +185,42 @@
   justify-content: flex-end;
 }
 
+.award-small {
+  background-image: url(../images/award.png);
+  width: 20px !important;
+  height: 30px !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  border-radius: 0 !important;
+  border-width: 0 !important;
+  border-color: unset !important;
+}
+
+.pagination-theme.pagination .page-item:not(.disabled).active > .page-link, 
+.pagination-theme.pagination .page-item:not(.disabled):active > .page-link, 
+.pagination-theme.pagination .page-item:not(.disabled):focus > .page-link, 
+.pagination-theme.pagination .page-item:not(.disabled):hover > .page-link {
+    background-color: #4e2716;
+    border-color: #4e2716;
+    color: white !important;
+}
+
+.pagination-theme.pagination .page-item.disabled > .page-link {
+    
+    background-color: #4e2716;
+    border-color: #4e2716;
+}
+
+.pagination-circle.pagination>li>a, .pagination-circle.pagination>li>span { 
+    border-radius: 50% !important;margin: 0 5px;
+}
+.pagination-circle .page-link {
+    padding: 0.3rem 0rem;
+    text-align: center;
+    height: 29px;
+    width: 29px;
+}
+
 @media (min-width: 768px) {
   .col-sm-1-10 {
     width: 10%;

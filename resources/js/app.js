@@ -124,6 +124,12 @@ import Vue from 'vue';
 
             return moment.tz(value, fromTimeZone).tz(toTimeZone).format(
                 'YYYY-MM-DD HH:mm:ss');
+        },
+        bytesToSize: function(bytes) {
+            var sizes = ['KB', 'MB', 'GB', 'TB'];
+            if (bytes == 0) return '0 Byte';
+            var i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)));
+            return Math.round(bytes / Math.pow(1024, i), 2) + ' ' + sizes[i];
         }
     }
  })

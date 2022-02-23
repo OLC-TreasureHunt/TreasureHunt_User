@@ -9,5 +9,8 @@ class GameHistory extends BaseModel
 {
     use HasFactory;
     protected $table = 'th_manual_input_data';
-    protected $sortable = ['created_at, loss_jpy'];
+    protected $sortable = [
+        'created_at',
+        'loss_jpy'
+    ];
 }

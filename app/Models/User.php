@@ -34,7 +34,7 @@ class User extends Authenticatable
         'kyc_status',
         'lang',
         'city',
-        'is_premiun',
+        'is_premium',
         'is_binary_added',
         'status',
         'avatar',

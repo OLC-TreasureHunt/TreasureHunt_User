@@ -5,7 +5,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class CryptoSettings extends Model
+class CryptoSettings extends BaseModel
 {
     protected $table = 'th_crypto_settings';
 

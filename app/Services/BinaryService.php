@@ -41,7 +41,7 @@ class BinaryService extends Service {
      */
     public function tree( $user_id ) {
         $tree = $this->binaryTree( $user_id );
-        $tree->class = ['rootNode', 'tttt'];
+        $tree->class = ['rootNode'];
         $tree->extend = true;
 
         return $tree;
@@ -150,6 +150,7 @@ class BinaryService extends Service {
         $result = new \stdClass();
         $result->name = $parent->affiliate_id;
         $result->image_url = $parent->avatar;
+        $result->is_premium = $parent->is_premium?? 0;
         $result->extend = false;
 
         $self = $this->binary->filter([
@@ -160,6 +161,7 @@ class BinaryService extends Service {
         $result->right_loss = $self[0]->right_loss?? 0;
         $result->left_count = $self[0]->left_count?? 0;
         $result->right_count = $self[0]->right_count?? 0;
+        
 
         if (count($children) > 0) {
             $result->children = [];
