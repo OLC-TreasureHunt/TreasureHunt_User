@@ -39,6 +39,7 @@ if ( !defined('API_HOST') ) {
     define('STATUS_BANNED', 0);
     define('STATUS_ACTIVE', 1);
     define('STATUS_FAIL', 2);
+    define('STATUS_ALREADY', 10);
     
     define('ORDER_STATUS_PENDING', 0);
     define('ORDER_STATUS_SETTLED', 1);

@@ -15,7 +15,7 @@
                             @if ($ret == 0)
                                 <div class="alert alert-success alert-dismissible" role="alert">
                                     <strong>
-                                        {{ trans('register.activation.success') }}
+                                        {!! trans('register.activation.success', ['treasure_id' => $treasure_id, 'bicorn_id' => $bicorn_id]) !!}
                                     </strong>
                                 </div>
                             @elseif($ret == 1)
@@ -36,10 +36,16 @@
                                         {{ trans('register.activation.expired_token') }}
                                     </strong>
                                 </div>
-                            @else
+                            @elseif ($ret == 4)
                                 <div class="alert alert-danger alert-dismissible" role="alert">
                                     <strong>
                                         {{ trans('register.activation.failed') }}
+                                    </strong>
+                                </div>
+                            @elseif ($ret == 5)
+                                <div class="alert alert-success alert-dismissible" role="alert">
+                                    <strong>
+                                        {!! trans('register.activation.already_exist', ['treasure_id' => $treasure_id, 'bicorn_id' => $bicorn_id]) !!}
                                     </strong>
                                 </div>
                             @endif

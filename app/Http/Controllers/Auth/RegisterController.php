@@ -192,9 +192,12 @@ class RegisterController extends Controller
 
     public function get_activation($token = "") {
 		$ret = 0;
+        $treasure_id = '';
+        $bicorn_id = '';
 
 		if (!empty($token)) {
 			$user = User::where('token', $token)->first();
+            $treasure_id = $user->affiliate_id;
 			if (!empty($user)) {
 				$createdAt = $user->created_at;
 				$chkDate = date('Y-m-d H:i:s', strtotime($createdAt . VALID_TOKEN_PERIOD));
@@ -205,24 +208,36 @@ class RegisterController extends Controller
 				} else {
 					try {
                         $parent_id = $user->parent->parent_id?? 1;
-                        $affiliate_code = User::find($parent_id)->affiliate_id;
+                        $affiliate_code = User::find($parent_id)->email;
                         $body = array_filter($user->toArray(), function($index) {
-                            return in_array($index, ['affiliate_id', 'email', 'name', 'birthday', 'gender', 'country', 'mobile', 'city', 'postal_code', 'address', 'password_plain']);
+                            return in_array($index, ['affiliate_id', 'email', 'name', 'birthday', 'gender', 'country', 'mobile', 'city', 'postal_code', 'address', 'password_plain', 'avatar']);
                         }, ARRAY_FILTER_USE_KEY);
                         $body['referral'] = $affiliate_code;
                         
                         $encBody = my_encrypt(json_encode($body), env('BICORN_API_KEY'));
                         $response = g_sendHttpRequest(config('app.BICORN_URL') . '/api/user/store', HTTP_METHOD_POST, ['body' => $encBody]);
+                        $response = json_decode($response, true);
 						
-                        if ($response == STATUS_ACTIVE) {
+                        if ($response['result'] == 1) {
                             $user->status = STATUS_ACTIVE;
-                            $user->token = '';
-                            $user->password_plain = '';
+                            // $user->token = '';
+                            // $user->password_plain = '';
                             $user->save();
+                            $bicorn_id = $response['userid'];
     
                             UserBalance::initUserBalance($user->id);
                             $ret = 0;
-                        } else {
+                        } else if ($response['result'] == 2) {
+                            $user->status = STATUS_ACTIVE;
+                            // $user->token = '';
+                            // $user->password_plain = '';
+                            $user->save();
+                            $bicorn_id = $response['userid'];
+    
+                            UserBalance::initUserBalance($user->id);
+                            $ret = 5;
+                        }
+                        else {
                             $user->status = STATUS_FAIL;
                             $user->save();
                             $ret = 4;
@@ -240,6 +255,6 @@ class RegisterController extends Controller
 			$ret = 1; //No Token
 		}
 
-		return view('auth.activation', ['ret' => $ret]);
+		return view('auth.activation', ['ret' => $ret, 'treasure_id' => $treasure_id, 'bicorn_id' => $bicorn_id]);
 	}
 }

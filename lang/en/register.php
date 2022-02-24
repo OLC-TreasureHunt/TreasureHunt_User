@@ -39,7 +39,8 @@ return [
 	'x_defi_not_registered'	=> "There's no information at X-DEFI! Please register to X-DEFI first!",
 
 	'activation'	=> [
-		'success'		=> 'Activated your account successfully.',
+		'success'		=> 'Activated your account successfully.<br> LoginID is :treasure_id. <br>LoginID of Bicorn is :bicorn_id and a password is same as this service.<br> You can reset password of Bicorn in that site.',
+		'already_exist'	=> 'Activated your account successfully.<br> LoginID is :treasure_id. <br>You can login Bicorn site with same Account ID(:bicorn_id) and Password as before. ',
 		'failed'		=> 'Activation of your account is failed. Please retry!',
 		'no_token'		=> 'No Token! Please retry to activate your account.',
 		'invalid_token'	=> 'Invalid Token! Please retry to activate your account.',
@@ -58,7 +59,9 @@ return [
 		'exist'			=> 'You are a user already exists.',
 		'not_exist'		=> 'Your email address is invalid.',
 		'not_register'	=> 'Your email address is invalid.',
-		'not_token'		=> 'This is an invalid token'
+		'not_token'		=> 'This is an invalid token',
+
+
 	],
     'verify'		=> [
 		'title'			=> 'Verify Your Email Address',

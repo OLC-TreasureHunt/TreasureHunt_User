@@ -56,7 +56,7 @@ class SettingController extends Controller
         $user = Auth::user();
 
         if (isset($data['avatar'])) {
-            $fileName = $user->login_id . '.' . $request->avatar->extension();
+            $fileName = $user->affiliate_id . '.' . $request->avatar->extension();
 
             $request->avatar->move(public_path('uploads/avatar'), $fileName);
             $avatar = url('uploads/avatar') . '/' . $fileName;
