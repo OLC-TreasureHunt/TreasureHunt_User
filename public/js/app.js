@@ -5400,6 +5400,11 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 vue__WEBPACK_IMPORTED_MODULE_2__["default"].use((vue_sweetalert2__WEBPACK_IMPORTED_MODULE_0___default()));
 
 vue__WEBPACK_IMPORTED_MODULE_2__["default"].mixin({
+  data: function data() {
+    return {
+      test: ''
+    };
+  },
   methods: {
     moment: function moment() {
       return moment_timezone__WEBPACK_IMPORTED_MODULE_3___default().apply(void 0, arguments);

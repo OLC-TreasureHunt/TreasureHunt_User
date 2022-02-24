@@ -6,3 +6,9 @@
   
 
 */
+
+jQuery( document ).ready(function() {
+    jQuery('body').on('click', document, function() {
+        jQuery('.p-dropdown').removeClass('dropdown-active');
+    })
+})

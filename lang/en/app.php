@@ -23,8 +23,12 @@ return [
         'support'   => 'Supports',
         'download'  => 'Download',
         'news'      => 'News',
-        'notice'    => 'Notice',
+        'notice'    => 'Notification',
         'page'      => 'Pages',
     ],
+
+    'footer' => [
+        'desc' => 'Binary Styled Affiliate System'
+    ]
 
 ];

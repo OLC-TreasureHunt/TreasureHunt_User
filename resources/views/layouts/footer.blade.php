@@ -5,7 +5,7 @@
                 <div class="col-lg-6">
                     <div class="widget">
                         <div class="widget-title">Treasure Hunt</div>
-                            <p class="mb-5">バイナリ バトル型アフィリエイトシステム<br>
+                            <p class="mb-5">@lang('app.footer.desc')<br>
                                 Ryuji’nCompany. All Rights Reserved.</p>
                             <a href="{{ route('login') }}" class="btn btn-inverted" target="_blank">@lang('register.btn.login')</a>
                         </div>
@@ -35,8 +35,8 @@
                                     <div class="widget-title">@lang('app.menu.support')</div>
                                     <ul class="list">
                                         <li><a href="{{ route('news') }}">@lang('app.menu.news')</a></li>
-                                        <li><a href="{{ route('news') }}">@lang('app.menu.download')</a></li>
-                                        <li><a href="{{ route('news') }}">@lang('app.menu.notice')</a></li>
+                                        <li><a href="{{ route('download') }}">@lang('app.menu.download')</a></li>
+                                        <li><a href="{{ route('notice') }}">@lang('app.menu.notice')</a></li>
                                         <li><a href="{{ route('contact') }}">@lang('app.menu.contact')</a></li>
                                     </ul>
                             </div>

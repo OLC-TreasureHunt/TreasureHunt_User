@@ -59,6 +59,7 @@
     <script src="{{ cAsset('plugins/toastr/toastr.min.js') }}"></script>
     <script src="{{ cAsset('plugins/datatables/datatables.min.js') }}"></script>
     <script src="{{ cAsset('js/__common.js') }}"></script>
+    <script src="{{ cAsset('js/custom.js') }}"></script>
 
     <script>
         let BASE_URL = '{{ cAsset('/') . '/' }}';

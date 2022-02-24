@@ -62,6 +62,7 @@ class NoticeService extends Service {
 
     public function getNotice($array) {
         return $this->notice->with('notice')
+            ->where('user_id', Auth::user()->id)
             ->orderBy('created_at', 'desc')
             ->paginate(10);
     }

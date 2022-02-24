@@ -25,6 +25,16 @@
                 <ul>
                     <li>
                         <div class="p-dropdown">
+                            <a href="#"><i class="icon-bell"></i><span style="text-transform: uppercase; color: white;">{{ '15' }}</span></a>
+                            <ul class="p-dropdown-content select-language back-theme">
+                                @foreach($languages as $key => $info)
+                                    <li>4234235423543534fgdfg</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="p-dropdown">
                             <a href="#"><i class="icon-globe"></i><span style="text-transform: uppercase; color: white;">{{ app()->getLocale() }}</span></a>
                             <ul class="p-dropdown-content select-language back-theme">
                                 @foreach($languages as $key => $info)

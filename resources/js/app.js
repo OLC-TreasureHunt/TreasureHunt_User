@@ -35,7 +35,12 @@ import Vue from 'vue';
  import moment from 'moment-timezone';
  
  Vue.mixin({
-     methods: {
+     data() { 
+         return{
+            test: ''
+        }
+    },
+    methods: {
          moment(...params) {
              return moment(...params)
          },
@@ -114,8 +119,8 @@ import Vue from 'vue';
             return moment.tz(value, fromTimeZone).tz(toTimeZone).format(
                 'YYYY-MM-DD HH:mm:ss');
         }
-     },
-     filters: {
+    },
+    filters: {
         number2format: function(value, decimal) {
             return _number_format(value, decimal);
         },
