@@ -1,10 +1,11 @@
 {
-    "/js/app.js": "/js/app.js?id=58ed86a0e38c3a925aa6",
+    "/js/app.js": "/js/app.js?id=afbd077fbc67a28597bb",
     "/js/pages/register.js": "/js/pages/register.js?id=042c1d5946e1879dc09d",
     "/js/pages/tree.js": "/js/pages/tree.js?id=70b762345233120c0db1",
     "/js/pages/history.js": "/js/pages/history.js?id=57b378b90aa4ad603735",
     "/js/pages/download.js": "/js/pages/download.js?id=47fe90eb59924822ee1e",
     "/js/pages/news.js": "/js/pages/news.js?id=c589374c5fc388fc9f67",
     "/js/pages/news-detail.js": "/js/pages/news-detail.js?id=8f5411f35ba24939eb57",
+    "/js/pages/notice.js": "/js/pages/notice.js?id=f8b479ad685b2f15c221",
     "/css/app.css": "/css/app.css?id=1ba4616002e30d600ff3"
 }

@@ -79,19 +79,20 @@ import Vue from 'vue';
              }
              return src.substr(0, i + 1);
          },
-         callSweetAlert: function(text, icon, button) {
+         callSweetAlert: function(title, text, icon, button) {
              this.$swal({
+                 title: title,
                  text: text,
                  type: "warning",
                  icon: icon,
                  iconColor: 'rgba(247,109,1,1)',
-                 allowOutsideClick: false,
+                 allowOutsideClick: true,
                  showCancelButton: false,
                  confirmButtonText: button,
                  customClass: {
                      actions: 'vertical-buttons',
                      container: 'swal-theme',
-                     confirmButton: 'btn btn-block rounded-pill btn-gradient-theme home-button btn-round',
+                     confirmButton: 'btn btn-block rounded-pill btn-gradient-theme home-button btn-round btn-w100',
                  }
              }).then(function ( result ) {}.bind(this)).catch(errors => {});
          },
