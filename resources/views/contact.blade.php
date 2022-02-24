@@ -84,7 +84,8 @@
     
 @endsection
 
-@section('script')
+@section('scripts')
+    <script src="{{ cAsset('js/pages/base.js') }}"></script>
     <script>
         $( document ).ready(function() {
             $('#top_contact').addClass('text-danger');

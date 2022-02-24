@@ -3809,17 +3809,19 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 var download = new Vue({
   name: 'Notice',
-  el: '#notice-page',
+  el: '#app',
   components: {
     'pagination': (laravel_vue_pagination__WEBPACK_IMPORTED_MODULE_1___default())
   },
   data: function data() {
     return {
       notices: {},
-      trans: trans
+      trans: trans,
+      intervalfunction: null
     };
   },
   mounted: function mounted() {
+    this.intervalfunction = setInterval(this.loadAlerts, 1000);
     this.loadNotices();
   },
   methods: {
@@ -3862,6 +3864,9 @@ var download = new Vue({
         if (value.id == notice.id) value.status = 1;
       });
     }
+  },
+  beforeDestroy: function beforeDestroy() {
+    clearInterval(this.loadAlerts);
   }
 });
 })();

@@ -2,16 +2,18 @@ import axios from "axios";
 
 var download = new Vue({
     name: 'News',
-    el: '#news-detail',
+    el: '#app',
     components: {
     },
     data() {
         return {
             popular: [],
-            news: news
+            news: news,
+            intervalfunction: null,
         }
     },
     mounted: function () {
+        this.intervalfunction = setInterval(this.loadAlerts, 1000);
         this.loadPopular();
     },
     methods: {
@@ -31,5 +33,8 @@ var download = new Vue({
         news_link: function (id) {
             return window.Laravel.baseUrl + '/news/' + id;
         }
-    }
+    },
+    beforeDestroy: function(){
+        clearInterval(this.loadAlerts);
+    },
 })

@@ -45,3 +45,8 @@
     <!-- END WHAT WE DO -->
 
 @endsection
+
+
+@section('scripts')
+    <script src="{{ cAsset('js/pages/base.js') }}"></script>
+@endsection

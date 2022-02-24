@@ -5,15 +5,17 @@ Vue.component('tree-dialog', require('../components/TreeDialog.vue').default);
 
 var tree = new Vue({
     name: 'BinaryTree',
-    el: '#tree-page',
+    el: '#app',
     data() {
         return {
             landscape: [],
             data: {},
-            trans: trans
+            trans: trans,
+            intervalfunction: null,
         }
     },
     mounted: function () {
+        this.intervalfunction = setInterval(this.loadAlerts, 1000);
         this.loadNodes();
     },
     methods: {
@@ -56,6 +58,9 @@ var tree = new Vue({
                 }
             }.bind(this)).catch(errors => {});
         }
-    }
+    },
+    beforeDestroy: function(){
+        clearInterval(this.loadAlerts);
+    },
 
 })

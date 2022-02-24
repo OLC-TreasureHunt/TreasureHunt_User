@@ -80,6 +80,18 @@
     margin-bottom: -5px;
 }
 
+.alert-text {
+    max-width: 160px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+.alert-text:hover {
+    cursor: pointer;
+}
+
 #mainMenu nav > ul > li > a, #mainMenu nav > ul > li:hover > a {
   color: white;
   text-transform: unset;
@@ -265,6 +277,10 @@
 .notice-hover:hover {
     cursor: pointer;
     text-decoration: underline
+}
+
+.badge-theme {
+  background-color: #4e2716;
 }
 
 @media (min-width: 768px) {

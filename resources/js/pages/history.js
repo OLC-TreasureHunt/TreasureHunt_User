@@ -3,16 +3,19 @@ Vue.component('bonus-history', require('../components/BonusHistoryTable.vue').de
 
 var history = new Vue({
     name: 'History',
-    el: '#history-page',
+    el: '#app',
     date() {
         return {
             trans: trans,
-            temp: ''
+            intervalfunction: null,
         }
     },
     mounted() {
-        this.temp = 'dafafd';
+        this.intervalfunction = setInterval(this.loadAlerts, 1000);
     },
     components: {
+    },
+    beforeDestroy: function(){
+        clearInterval(this.loadAlerts);
     },
 })

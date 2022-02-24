@@ -29677,7 +29677,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 new Vue({
-  el: '#register_form',
+  el: '#app',
   components: {
     'vuephonenumberinput': (vue_phone_number_input__WEBPACK_IMPORTED_MODULE_1___default())
   },
@@ -29687,16 +29687,23 @@ new Vue({
       // canSearchProfile:0,
       mobile: mobile,
       mobile_number: '',
-      country_code: ''
+      country_code: '',
+      intervalfunction: null
     };
   },
   created: function created() {//User value is from blade output
+  },
+  mounted: function mounted() {
+    this.intervalfunction = setInterval(this.loadAlerts, 1000);
   },
   methods: {
     update_phone_number: function update_phone_number(e) {
       this.country_code = e.countryCode;
       this.mobile_number = e.formatInternational;
     }
+  },
+  beforeDestroy: function beforeDestroy() {
+    clearInterval(this.loadAlerts);
   }
 });
 })();

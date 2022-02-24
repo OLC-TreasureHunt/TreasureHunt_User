@@ -3809,7 +3809,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 var download = new Vue({
   name: 'News',
-  el: '#news-page',
+  el: '#app',
   components: {
     'pagination': (laravel_vue_pagination__WEBPACK_IMPORTED_MODULE_1___default())
   },
@@ -3817,10 +3817,12 @@ var download = new Vue({
     return {
       news: {},
       popular: [],
-      top: {}
+      top: {},
+      intervalfunction: null
     };
   },
   mounted: function mounted() {
+    this.intervalfunction = setInterval(this.loadAlerts, 1000);
     this.loadNews();
     this.loadPopular();
     this.loadTopNews();
@@ -3910,6 +3912,9 @@ var download = new Vue({
     news_link: function news_link(id) {
       return window.Laravel.baseUrl + '/news/' + id;
     }
+  },
+  beforeDestroy: function beforeDestroy() {
+    clearInterval(this.loadAlerts);
   }
 });
 })();

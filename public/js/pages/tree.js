@@ -4459,15 +4459,17 @@ Vue.component('binary-tree', (__webpack_require__(/*! ../components/TreeComponen
 Vue.component('tree-dialog', (__webpack_require__(/*! ../components/TreeDialog.vue */ "./resources/js/components/TreeDialog.vue")["default"]));
 var tree = new Vue({
   name: 'BinaryTree',
-  el: '#tree-page',
+  el: '#app',
   data: function data() {
     return {
       landscape: [],
       data: {},
-      trans: trans
+      trans: trans,
+      intervalfunction: null
     };
   },
   mounted: function mounted() {
+    this.intervalfunction = setInterval(this.loadAlerts, 1000);
     this.loadNodes();
   },
   methods: {
@@ -4523,6 +4525,9 @@ var tree = new Vue({
         if (result.isConfirmed) {}
       }.bind(this))["catch"](function (errors) {});
     }
+  },
+  beforeDestroy: function beforeDestroy() {
+    clearInterval(this.loadAlerts);
   }
 });
 })();

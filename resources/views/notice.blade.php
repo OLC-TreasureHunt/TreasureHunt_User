@@ -26,7 +26,7 @@
                             <div class="row">
                                 <div class="col-sm-2">@{{ item.created_at | serverTime2LocalTime }}</div>
                                 <div class="col-sm-10 notice-hover" v-on:click="noticeClickHandler(item)">@{{ item.notice.title }}
-                                    <span class="badge badge-primary" v-if="item.status == 0">@lang('notice.new')</span>
+                                    <span class="badge badge-theme pt-2 pb-2" v-if="item.status == 0">@lang('notice.new')</span>
                                 </div>
                             </div>
                             

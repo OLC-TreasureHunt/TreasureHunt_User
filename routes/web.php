@@ -60,4 +60,5 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/notice', [App\Http\Controllers\NoticeController::class, 'index'])->name('notice');
     Route::get('/notice/list', [App\Http\Controllers\NoticeController::class, 'list'])->name('notice.list');
     Route::get('/notice/read/{id}', [App\Http\Controllers\NoticeController::class, 'read'])->name('notice.read');
+    Route::get('/notice/alert', [App\Http\Controllers\NoticeController::class, 'alert'])->name('notice.alert');
 });

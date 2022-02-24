@@ -3,17 +3,19 @@ import axios from "axios";
 
 var download = new Vue({
     name: 'Notice',
-    el: '#notice-page',
+    el: '#app',
     components: {
         'pagination': pagination,
     },
     data() {
         return {
             notices: {},
-            trans: trans
+            trans: trans,
+            intervalfunction: null,
         }
     },
     mounted: function () {
+        this.intervalfunction = setInterval(this.loadAlerts, 1000);
         this.loadNotices();
     },
     methods: {
@@ -42,5 +44,8 @@ var download = new Vue({
                 if (value.id == notice.id) value.status = 1;
             })
         }
-    }
+    },
+    beforeDestroy: function(){
+        clearInterval(this.loadAlerts);
+    },
 })

@@ -64,7 +64,20 @@ class NoticeService extends Service {
         return $this->notice->with('notice')
             ->where('user_id', Auth::user()->id)
             ->orderBy('created_at', 'desc')
-            ->paginate(10);
+            ->paginate(20);
+    }
+
+    public function getAlerts() {
+        if (Auth::check()) {
+            return $this->notice->with('notice')
+                ->active()
+                ->where('user_id', Auth::user()->id)
+                ->orderBy('created_at', 'desc')
+                ->get()
+                ->toArray();
+        } else {
+            return [];
+        }
     }
 
     public function setReadMark($notice_detail_id) {

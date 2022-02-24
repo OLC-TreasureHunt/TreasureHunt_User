@@ -33,7 +33,6 @@
         
         <section id="page-content" class="background-transparent">
             <div class="container" id="history-page">
-                @{{test}}
                 <div class="tabs tabs-vertical">
                     <div class="row">
                         <div class="col-md-3 tab-border-right mb-3">

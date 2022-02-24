@@ -291,6 +291,8 @@
     <script src="{{ asset('plugins/clipboard/clipboard.min.js') }}"></script>
     <script src="{{ cAsset('plugins/moment/moment.min.js') }}"></script>
     <script src="{{ cAsset('plugins/bootstrap-datetimepicker/tempusdominus-bootstrap-4.js') }}"></script>
+    <script src="{{ cAsset('js/pages/base.js') }}"></script>
+
     <script>
         var g_id_doc_cnt = 0;
         $( document ).ready(function() {

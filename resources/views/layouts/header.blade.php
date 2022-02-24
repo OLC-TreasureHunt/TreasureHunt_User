@@ -23,13 +23,15 @@
             <!--Header Extras-->
             <div class="header-extras">
                 <ul>
-                    <li>
+                    <li v-cloak>
                         <div class="p-dropdown">
-                            <a href="#"><i class="icon-bell"></i><span style="text-transform: uppercase; color: white;">{{ '15' }}</span></a>
-                            <ul class="p-dropdown-content select-language back-theme">
-                                @foreach($languages as $key => $info)
-                                    <li>4234235423543534fgdfg</li>
-                                @endforeach
+                            <a href="#"><i class="icon-bell"></i><span style="text-transform: uppercase; color: white;" v-if="alerts.count">@{{ alerts.count }}</span></a>
+                            <ul class="p-dropdown-content select-language back-theme" v-if="alerts.data !== undefined && alerts.data.length > 0">
+                                <li v-for="(item, key) in alerts.data">
+                                    <a class="text-light alert-text" href="#" v-on:click="noticeClickHandler(item)">@{{ item.notice.title }}</a>
+                                </li>
+                                <hr>
+                                <li class="text-light alert-text text-center"><a href="{{ route('notice') }}">@lang('notice.button.read_more')</a></li>
                             </ul>
                         </div>
                     </li>

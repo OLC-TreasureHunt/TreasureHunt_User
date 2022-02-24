@@ -25,15 +25,17 @@
     <script>
         window.Laravel = {!! json_encode([
             'csrfToken' => csrf_token(),
-            'user'  => Auth::check()? Auth::user() : null,
+            'user'  => Auth::check()? Auth::user()->id : null,
             'baseUrl' => url('/'),
             'serverTimeZone' => config('app.timezone')
         ]) !!};
+
+        let buttons = @json(trans('buttons'));
     </script>
 </head>
 <body>
     <!-- Body Inner -->
-    <div class="body-inner back-semi-theme back-img-transparent">
+    <div class="body-inner back-semi-theme back-img-transparent" id="app">
         <!-- Header -->
         @include('layouts.header')
         <!-- end: Header -->

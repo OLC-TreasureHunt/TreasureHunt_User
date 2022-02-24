@@ -28,4 +28,14 @@ class NoticeController extends Controller
     public function read(Request $request) {
         return response()->json($this->notice->setReadMark($request->route('id')));
     }
+
+    public function alert(Request $request) {
+        $alert = $this->notice->getAlerts();
+        $count = count($alert);
+        $alert = array_slice($alert, 0, 5);
+        return response()->json([
+            'count' => $count,
+            'data'  => $alert
+        ]);
+    }
 }

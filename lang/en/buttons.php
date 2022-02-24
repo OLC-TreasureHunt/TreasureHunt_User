@@ -31,4 +31,5 @@ return [
     'cancel'        => 'Cancel',
 
     'more'      => 'More',
+    'confirm'   => 'Confirm',
 ];

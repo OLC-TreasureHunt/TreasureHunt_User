@@ -3,17 +3,18 @@ import axios from "axios";
 
 var download = new Vue({
     name: 'Download',
-    el: '#download-page',
+    el: '#app',
     components: {
         'pagination': pagination,
     },
     data() {
         return {
-            files: {
-            },
+            files: {},
+            intervalfunction: null,
         }
     },
     mounted: function () {
+        this.intervalfunction = setInterval(this.loadAlerts, 1000);
         this.loadFiles();
     },
     methods: {
@@ -32,5 +33,8 @@ var download = new Vue({
                 .then( (data) => {
                 });
         },
-    }
+    },
+    beforeDestroy: function(){
+        clearInterval(this.loadAlerts);
+    },
 })

@@ -10488,17 +10488,20 @@ Vue.component('game-history', (__webpack_require__(/*! ../components/GameHistory
 Vue.component('bonus-history', (__webpack_require__(/*! ../components/BonusHistoryTable.vue */ "./resources/js/components/BonusHistoryTable.vue")["default"]));
 var history = new Vue({
   name: 'History',
-  el: '#history-page',
+  el: '#app',
   date: function date() {
     return {
       trans: trans,
-      temp: ''
+      intervalfunction: null
     };
   },
   mounted: function mounted() {
-    this.temp = 'dafafd';
+    this.intervalfunction = setInterval(this.loadAlerts, 1000);
   },
-  components: {}
+  components: {},
+  beforeDestroy: function beforeDestroy() {
+    clearInterval(this.loadAlerts);
+  }
 });
 })();
 
