@@ -3,6 +3,7 @@ namespace App\Services;
 
 use App\Models\User;
 use App\Enums\BinaryStatus;
+use App\Enums\UserBonusStatus;
 use App\Repositories\BinaryRepositoryInterface;
 use App\Services\Service;
 use Psr\Log\LoggerInterface as Log;

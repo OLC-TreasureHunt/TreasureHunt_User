@@ -2,6 +2,7 @@
 namespace App\Services;
 
 use Auth;
+use App\Enums\GameHistoryStatus;
 use App\Models\User;
 use App\Repositories\GameHistoryRepositoryInterface;
 use App\Services\Service;
@@ -48,17 +49,23 @@ class GameHistoryService extends Service {
     public function gameHistory(Request $request) 
     {
         $filter = $request->all();
-
+        
         if ($filter['sort'] && $filter['order']) {
-            return $this->history->filter([
+            $history = $this->history->filter([
                 'user_id' => Auth::user()->id
             ])->orderBy($filter['sort'], $filter['order'])
             ->paginate($filter['limit']);
         } else {
-            return $this->history->filter([
+            $history = $this->history->filter([
                 'user_id' => Auth::user()->id
             ])->paginate($filter['limit']);
         }
+
+        foreach ($history as $item) {
+            $item->settle_status = GameHistoryStatus::getDescription($item->settle_status);
+        }
+
+        return $history;
     }
 
 }

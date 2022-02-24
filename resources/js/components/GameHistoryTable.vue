@@ -24,7 +24,7 @@
                 { title: this.lang.table.no, field: 'id', thClass:'text-center', tdClass: 'text-center' },
                 { title: this.lang.table.date, field: 'created_at', sortable: true, thClass:'text-center', tdClass: 'text-center' },
                 { title: this.lang.table.amount, field: 'loss_jpy', sortable: true, thClass:'text-center', tdClass: 'text-end' },
-                { title: this.lang.table.status, field: 'status', thClass:'text-center', tdClass: 'text-center' },
+                { title: this.lang.table.status, field: 'settle_status', thClass:'text-center', tdClass: 'text-center' },
             ]
         },
         mounted: function () {

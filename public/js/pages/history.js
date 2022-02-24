@@ -93,7 +93,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       tdClass: 'text-center'
     }, {
       title: this.lang.table.status,
-      field: 'status',
+      field: 'apply_status',
       thClass: 'text-center',
       tdClass: 'text-center'
     }];
@@ -212,7 +212,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       tdClass: 'text-end'
     }, {
       title: this.lang.table.status,
-      field: 'status',
+      field: 'settle_status',
       thClass: 'text-center',
       tdClass: 'text-center'
     }];

@@ -28,7 +28,7 @@
                 { title: this.lang.table.amount, field: 'total_bet', sortable: true, thClass:'text-center', tdClass: 'text-end' },
                 { title: this.lang.table.bonus, field: 'real_bonus', sortable: true, thClass:'text-center', tdClass: 'text-end' },
                 { title: this.lang.table.currency, field: 'currency', sortable: true, thClass:'text-center', tdClass: 'text-center' },
-                { title: this.lang.table.status, field: 'status', thClass:'text-center', tdClass: 'text-center' },
+                { title: this.lang.table.status, field: 'apply_status', thClass:'text-center', tdClass: 'text-center' },
             ];
             this.loadCurrencies();
         },
