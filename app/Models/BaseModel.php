@@ -82,11 +82,6 @@ class BaseModel extends Model
      */
     public function scopeActive($builder, $state = 1)
     {
-        if ($state == 'all') {
-            $state = [0,1];
-        }
-
-        $state = array_wrap($state);
-        return $builder->whereIn("active", $state);
+        return $builder->where("status", $state);
     }
 }

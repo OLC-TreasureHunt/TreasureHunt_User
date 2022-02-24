@@ -10,6 +10,10 @@ return [
         'download'   => 'Download'
     ],
 
+    'message' => [
+        'no_data' => 'There is no data'
+    ],
+
     'filesize'      => 'FileSize',
     'date'          => 'Date'
 ];

@@ -10,6 +10,10 @@ return [
         'download'   => 'ダウンロード'
     ],
 
+    'message' => [
+        'no_data' => '資料がありません。'
+    ],
+
     'filesize'      => 'サイズ',
     'date'          => '日付'
 ];

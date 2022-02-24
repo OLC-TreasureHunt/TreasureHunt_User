@@ -1,9 +1,6 @@
 import pagination from 'laravel-vue-pagination';
 import axios from "axios";
 
-Vue.component('binary-tree', require('../components/TreeComponent.vue').default);
-Vue.component('tree-dialog', require('../components/TreeDialog.vue').default);
-
 var download = new Vue({
     name: 'Download',
     el: '#download-page',

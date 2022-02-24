@@ -3789,9 +3789,9 @@ var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be in strict mode.
 (() => {
 "use strict";
-/*!****************************************!*\
-  !*** ./resources/js/pages/download.js ***!
-  \****************************************/
+/*!************************************!*\
+  !*** ./resources/js/pages/news.js ***!
+  \************************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
@@ -3808,21 +3808,25 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 
 var download = new Vue({
-  name: 'Download',
-  el: '#download-page',
+  name: 'News',
+  el: '#news-page',
   components: {
     'pagination': (laravel_vue_pagination__WEBPACK_IMPORTED_MODULE_1___default())
   },
   data: function data() {
     return {
-      files: {}
+      news: {},
+      popular: [],
+      top: {}
     };
   },
   mounted: function mounted() {
-    this.loadFiles();
+    this.loadNews();
+    this.loadPopular();
+    this.loadTopNews();
   },
   methods: {
-    loadFiles: function loadFiles(page) {
+    loadNews: function loadNews(page) {
       var _this = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
@@ -3837,8 +3841,8 @@ var download = new Vue({
                   page = 1;
                 }
 
-                axios__WEBPACK_IMPORTED_MODULE_2___default().get(window.Laravel.baseUrl + '/download/files?page=' + page).then(function (response) {
-                  self.files = response.data;
+                axios__WEBPACK_IMPORTED_MODULE_2___default().get(window.Laravel.baseUrl + '/news/list?page=' + page).then(function (response) {
+                  self.news = response.data;
                 })["catch"](function (error) {
                   conosle.log(error);
                 }).then(function (data) {});
@@ -3850,6 +3854,61 @@ var download = new Vue({
           }
         }, _callee);
       }))();
+    },
+    loadPopular: function loadPopular() {
+      var _this2 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
+        var self;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                self = _this2;
+                axios__WEBPACK_IMPORTED_MODULE_2___default().get(window.Laravel.baseUrl + '/news/popular').then(function (response) {
+                  self.popular = response.data;
+                })["catch"](function (error) {
+                  conosle.log(error);
+                }).then(function (data) {
+                  console.log(data);
+                });
+
+              case 2:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2);
+      }))();
+    },
+    loadTopNews: function loadTopNews() {
+      var _this3 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee3() {
+        var self;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                self = _this3;
+                axios__WEBPACK_IMPORTED_MODULE_2___default().get(window.Laravel.baseUrl + '/news/top').then(function (response) {
+                  self.top = response.data;
+                })["catch"](function (error) {
+                  conosle.log(error);
+                }).then(function (data) {
+                  console.log(data);
+                });
+
+              case 2:
+              case "end":
+                return _context3.stop();
+            }
+          }
+        }, _callee3);
+      }))();
+    },
+    news_link: function news_link(id) {
+      return window.Laravel.baseUrl + '/news/' + id;
     }
   }
 });

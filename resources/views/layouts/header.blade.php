@@ -59,7 +59,7 @@
                             <li class="dropdown">
                                 <a href="#"><i class="fa fa-gamepad"></i>@lang('app.menu.support')</a>
                                 <ul class="dropdown-menu back-theme">
-                                    <li><a href="{{ route('tree') }}"><i class="fa fa-newspaper"></i> @lang('app.menu.news')</a></li>
+                                    <li><a href="{{ route('news') }}"><i class="fa fa-newspaper"></i> @lang('app.menu.news')</a></li>
                                     <li><a href="{{ route('download') }}"><i class="icon-file"></i> @lang('app.menu.download')</a></li>
                                     <li><a href="{{ route('history') }}"><i class="icon-bell"></i> @lang('app.menu.notice')</a></li>
                                 </ul>

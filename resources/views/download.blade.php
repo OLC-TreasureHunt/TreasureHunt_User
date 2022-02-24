@@ -25,28 +25,36 @@
         <section id="page-content" class="background-transparent">
             <div class="container" id="download-page" v-cloak>
                 <div class="card back-semi-theme border-theme border-theme  ">
-                    <div class="card-body">
-                        <div class="card border-theme" v-for="(file, index) in files.data" style="background-color: #cd9e5a;">
+                    <div class="card-body" v-if="files.data !== undefined && files.data.length > 0">
+                        <div class="card border-theme" 
+                            v-for="(file, index) in files.data" 
+                            style="background-color: #cd9e5a;" >
                             <div class="card-body">
                                 <div class="row">
+                                    <div class="col-12">
+                                        <div class="font-weight-600 text-theme">@{{ file.title }}</div>
+                                    </div>
+                                </div>
+
+                                <div class="row " v-for="(item, index) in file.files">
                                     <div class="col-md-5">
-                                        <div class="font-weight-600 text-theme">@{{ file.file_name }}</div>
+                                        <div class="font-weight-600 text-theme"><i class="fa fa-paperclip"></i> @{{ item.file_name }}</div>
                                     </div>
                                     <div class="col-md-2">
                                         <div class="file-date">@lang('download.filesize')</div>
-                                        <div class="file-date">@{{ file.file_size | bytesToSize }}</div>
+                                        <div class="file-date">@{{ item.file_size | bytesToSize }}</div>
                                     </div>
                                     <div class="col-md-3">
                                         <div class="file-date">@lang('download.date')</div>
-                                        <div class="file-date">@{{ file.created_at | serverTime2LocalTime }}</div>
+                                        <div class="file-date">@{{ item.created_at | serverTime2LocalTime }}</div>
                                     </div>
                                     <div class="col-md-2">
-                                        <a v-bind:href="file.url" class="btn btn-theme">@lang('download.button.download')</a>
+                                        <a v-bind:href="item.url" class="btn btn-theme">@lang('download.button.download')</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-        
+                        
                         <pagination 
                             class="pagination-flat justify-content-center mb-0 pagination-circle pagination-theme" 
                             style="padding-top: 15px; padding-bottom: 15px"
@@ -56,6 +64,9 @@
                             <span slot="prev-nav"><i class="icon-chevron-left"></i></span>
                             <span slot="next-nav"><i class="icon-chevron-right"></i></span>
                         </pagination>
+                    </div>
+                    <div class="card-body text-center" v-else>
+                        @lang('download.message.no_data')
                     </div>
                 </div>
                 

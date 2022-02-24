@@ -18,4 +18,7 @@ interface FileRepositoryInterface {
      */
     public function paginate(array $filter);
 
+    public function active($value);
+
+    public function with($value);
 }

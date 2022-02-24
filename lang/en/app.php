@@ -24,6 +24,7 @@ return [
         'download'  => 'Download',
         'news'      => 'News',
         'notice'    => 'Notice',
+        'page'      => 'Pages',
     ],
 
 ];

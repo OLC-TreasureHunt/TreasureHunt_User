@@ -33,7 +33,10 @@ Auth::routes(['verify' => true]);
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/news', [App\Http\Controllers\NewsController::class, 'index'])->name('news');
-Route::get('/news/{id}', [App\Http\Controllers\NewsController::class, 'news'])->name('news.detail');
+Route::get('/news/list', [App\Http\Controllers\NewsController::class, 'list'])->name('news.list');
+Route::get('/news/{id}', [App\Http\Controllers\NewsController::class, 'news'])->name('news.detail')->where('id', '\d+');
+Route::get('/news/popular', [App\Http\Controllers\NewsController::class, 'popular'])->name('news.popular');
+Route::get('/news/top', [App\Http\Controllers\NewsController::class, 'top'])->name('news.top');
 Route::get('/faq', [App\Http\Controllers\FAQController::class, 'index'])->name('faqs');
 Route::get('/faq/{id}', [App\Http\Controllers\FAQController::class, 'faq'])->name('faq.detail');
 Route::get('/currency', [App\Http\Controllers\HistoryController::class, 'currency'])->name('currency');
@@ -53,4 +56,6 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/history', [App\Http\Controllers\HistoryController::class, 'index'])->name('history');
     Route::get('/history/game', [App\Http\Controllers\HistoryController::class, 'game'])->name('history.game');
     Route::get('/history/bonus', [App\Http\Controllers\HistoryController::class, 'bonus'])->name('history.bonus');
+
+    Route::get('/notice', [App\Http\Controllers\NoticeController::class, 'index'])->name('notice');
 });
