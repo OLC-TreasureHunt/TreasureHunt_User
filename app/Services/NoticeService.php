@@ -70,7 +70,7 @@ class NoticeService extends Service {
     public function getAlerts() {
         if (Auth::check()) {
             return $this->notice->with('notice')
-                ->active()
+                ->active(0)
                 ->where('user_id', Auth::user()->id)
                 ->orderBy('created_at', 'desc')
                 ->get()
