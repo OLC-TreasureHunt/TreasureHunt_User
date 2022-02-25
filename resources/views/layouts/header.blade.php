@@ -81,7 +81,7 @@
                             
                             @if(Auth::check())
                                 <li class="dropdown">
-                                    <a href="#" class="avatar-a" title="{{ Auth::user()->email }}">
+                                    <a href="#" class="avatar-a" title="">
                                         <span class="email">{{ hideEmailAddress(Auth::user()->email) }}</span>&nbsp;<img  src="{{ cAsset(Auth::user()->avatar) }}" class="avatar avatar-25rem">
                                     </a>
                                     <ul class="dropdown-menu back-theme">
