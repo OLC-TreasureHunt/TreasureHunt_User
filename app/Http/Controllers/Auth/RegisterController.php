@@ -219,21 +219,25 @@ class RegisterController extends Controller
                         $response = json_decode($response, true);
 						
                         if ($response['result'] == 1) {
-                            $user->status = STATUS_ACTIVE;
-                            // $user->token = '';
-                            // $user->password_plain = '';
-                            $user->save();
                             $bicorn_id = $response['userid'];
-    
+
+                            $user->status = STATUS_ACTIVE;
+                            $user->token = '';
+                            $user->password_plain = '';
+                            $user->bicorn_id = $bicorn_id;
+                            $user->save();
+                            
                             UserBalance::initUserBalance($user->id);
                             $ret = 0;
                         } else if ($response['result'] == 2) {
-                            $user->status = STATUS_ACTIVE;
-                            // $user->token = '';
-                            // $user->password_plain = '';
-                            $user->save();
                             $bicorn_id = $response['userid'];
-    
+
+                            $user->status = STATUS_ACTIVE;
+                            $user->token = '';
+                            $user->password_plain = '';
+                            $user->bicorn_id = $bicorn_id;
+                            $user->save();
+                            
                             UserBalance::initUserBalance($user->id);
                             $ret = 5;
                         }
