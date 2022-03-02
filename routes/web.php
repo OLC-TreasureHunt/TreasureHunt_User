@@ -53,9 +53,9 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/tree', [App\Http\Controllers\TreeController::class, 'index'])->name('tree');
     Route::get('/tree/binary', [App\Http\Controllers\TreeController::class, 'binary'])->name('tree.binary');
 
-    Route::get('/history', [App\Http\Controllers\HistoryController::class, 'index'])->name('history');
-    Route::get('/history/game', [App\Http\Controllers\HistoryController::class, 'game'])->name('history.game');
-    Route::get('/history/bonus', [App\Http\Controllers\HistoryController::class, 'bonus'])->name('history.bonus');
+    Route::get('/history/{id}', [App\Http\Controllers\HistoryController::class, 'index'])->name('history');
+    Route::get('/history/list/game', [App\Http\Controllers\HistoryController::class, 'game'])->name('history.game');
+    Route::get('/history/list/bonus', [App\Http\Controllers\HistoryController::class, 'bonus'])->name('history.bonus');
 
     Route::get('/notice', [App\Http\Controllers\NoticeController::class, 'index'])->name('notice');
     Route::get('/notice/list', [App\Http\Controllers\NoticeController::class, 'list'])->name('notice.list');

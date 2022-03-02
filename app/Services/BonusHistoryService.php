@@ -49,7 +49,7 @@ class BonusHistoryService extends Service {
     public function bonusHistory(Request $request) {
         $filter = $request->all();
         
-        if ($filter['sort'] && $filter['order']) {
+        if (isset($filter['sort']) && isset($filter['order'])) {
             $history = $this->history->filter([
                 'user_id' => Auth::user()->id
             ])->orderBy($filter['sort'], $filter['order'])

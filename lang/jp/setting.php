@@ -88,5 +88,6 @@ return [
     'referral'          => '紹介',
     'user_plan'         => 'プラン',
     'is_premium'        => 'プレミアム',
-    'not_premium'       => 'ノーマル'
+    'not_premium'       => 'ノーマル',
+    'bicorn_id'         => 'ゲームサイト ID',
 ];

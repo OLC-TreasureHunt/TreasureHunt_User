@@ -37,7 +37,8 @@
                 handler (query) {
                     let page = this.query.offset / this.query.limit + 1;
                     this.query.page = page;
-                    axios.get(window.Laravel.baseUrl + '/history/game', {
+                    alert(this.query);
+                    axios.get(window.Laravel.baseUrl + '/history/list/game', {
                             params: this.query
                         })
                         .then( (data) => {

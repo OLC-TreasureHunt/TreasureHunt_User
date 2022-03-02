@@ -133,7 +133,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
         var page = this.query.offset / this.query.limit + 1;
         this.query.page = page;
-        axios.get(window.Laravel.baseUrl + '/history/bonus', {
+        axios.get(window.Laravel.baseUrl + '/history/list/bonus', {
           params: this.query
         }).then(function (data) {
           _this2.data = data.data.data.map(function (obj) {
@@ -226,7 +226,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
         var page = this.query.offset / this.query.limit + 1;
         this.query.page = page;
-        axios.get(window.Laravel.baseUrl + '/history/game', {
+        alert(this.query);
+        axios.get(window.Laravel.baseUrl + '/history/list/game', {
           params: this.query
         }).then(function (data) {
           _this.data = data.data.data.map(function (obj) {

@@ -86,6 +86,10 @@
                                                         <div class="col-lg-8 col-6 text-dark">{{ auth()->user()->affiliate_id }}</div>
                                                     </div>
                                                     <div class="form-group row">
+                                                        <div class="col-lg-4 col-6 text-dark">{{ trans('setting.bicorn_id')  }}</div>
+                                                        <div class="col-lg-8 col-6 text-dark">{{ auth()->user()->bicorn_id }}</div>
+                                                    </div>
+                                                    <div class="form-group row">
                                                         <div class="col-lg-4 col-6 text-dark">{{ trans('setting.email')  }}</div>
                                                         <div class="col-lg-8 col-6 text-dark">{{ hideEmailAddress(auth()->user()->email) }}</div>
                                                     </div>

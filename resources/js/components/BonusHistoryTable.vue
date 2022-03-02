@@ -53,7 +53,7 @@
                 handler (query) {
                     let page = this.query.offset / this.query.limit + 1;
                     this.query.page = page;
-                    axios.get(window.Laravel.baseUrl + '/history/bonus', {
+                    axios.get(window.Laravel.baseUrl + '/history/list/bonus', {
                             params: this.query
                         })
                         .then( (data) => {

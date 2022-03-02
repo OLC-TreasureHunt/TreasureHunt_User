@@ -25,7 +25,7 @@
                 <ul>
                     <li v-cloak>
                         <div class="p-dropdown">
-                            <a href="#"><i class="icon-bell"></i><span style="text-transform: uppercase; color: white;" v-if="alerts.count">@{{ alerts.count }}</span></a>
+                            <a href="#"><i class="icon-bell"></i><span style="text-transform: uppercase; color: white;" v-if="alerts.count"><span class="badge bg-danger" style="border-radius: 0.2rem; line-height:1.3">@{{ alerts.count }}</span></span></a>
                             <ul class="p-dropdown-content select-language back-theme" v-if="alerts.data !== undefined && alerts.data.length > 0">
                                 <li v-for="(item, key) in alerts.data">
                                     <a class="text-light alert-text" href="#" v-on:click="noticeClickHandler(item)">@{{ item.notice.title }}</a>
@@ -61,19 +61,20 @@
                             <li><a href="{{ route('home') }}"><i class="fa fa-home"></i> @lang('app.menu.home')</a></li>
                             
                             <li class="dropdown">
-                                <a href="#"><i class="fa fa-gamepad"></i>@lang('app.menu.service')</a>
+                                <a href="#"><i class="fa fa-gamepad"></i>@lang('app.menu.binary')</a>
                                 <ul class="dropdown-menu back-theme">
                                     <li><a href="{{ route('tree') }}"><i class="fa fa-street-view"></i> @lang('app.menu.tree')</a></li>
-                                    <li><a href="{{ route('history') }}"><i class="fa fa-history"></i> @lang('app.menu.history')</a></li>
+                                    <li><a href="{{ route('history', ['id' => 'game']) }}"><i class="fa fa-history"></i> @lang('app.menu.history')</a></li>
+                                    <li><a href="{{ route('history', ['id' => 'bonus']) }}"><i class="fa fa-history"></i> @lang('app.menu.bonus')</a></li>
                                 </ul>
                             </li>
 
                             <li class="dropdown">
-                                <a href="#"><i class="fa fa-gamepad"></i>@lang('app.menu.support')</a>
+                                <a href="#"><i class="icon-bell"></i>@lang('app.menu.support')</a>
                                 <ul class="dropdown-menu back-theme">
                                     <li><a href="{{ route('news') }}"><i class="fa fa-newspaper"></i> @lang('app.menu.news')</a></li>
-                                    <li><a href="{{ route('download') }}"><i class="icon-file"></i> @lang('app.menu.download')</a></li>
                                     <li><a href="{{ route('notice') }}"><i class="icon-bell"></i> @lang('app.menu.notice')</a></li>
+                                    <li><a href="{{ route('download') }}"><i class="icon-file"></i> @lang('app.menu.download')</a></li>
                                 </ul>
                             </li>
 

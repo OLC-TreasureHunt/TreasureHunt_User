@@ -91,5 +91,6 @@ return [
     'referral'          => 'Referral',
     'user_plan'         => 'Plan',
     'is_premium'        => 'Premium',
-    'not_premium'       => 'Normal'
+    'not_premium'       => 'Normal',
+    'bicorn_id'         => 'Bicorn ID',
 ];

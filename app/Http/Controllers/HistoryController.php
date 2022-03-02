@@ -34,8 +34,11 @@ class HistoryController extends Controller
         $this->cryptosetting = $cryptosetting;
     }
 
-    public function index() {
-        return view('history');
+    public function index(Request $request) {
+        $param = $request->route('id')?? 'game';
+        return view('history', [
+            'param' => $param
+        ]);
     }
 
     public function game(Request $request) {

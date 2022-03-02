@@ -23,10 +23,11 @@
                             </div>
                             <div class="col-lg-4">
                                 <div class="widget">
-                                    <div class="widget-title">@lang('app.menu.service')</div>
+                                    <div class="widget-title">@lang('app.menu.binary')</div>
                                     <ul class="list">
                                         <li><a href="{{ route('tree') }}">@lang('app.menu.tree')</a></li>
-                                        <li><a href="{{ route('history') }}">@lang('app.menu.history')</a></li>
+                                        <li><a href="{{ route('history', ['id' => 'game']) }}">@lang('app.menu.history')</a></li>
+                                        <li><a href="{{ route('history', ['id' => 'bonus']) }}">@lang('app.menu.bonus')</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -35,8 +36,8 @@
                                     <div class="widget-title">@lang('app.menu.support')</div>
                                     <ul class="list">
                                         <li><a href="{{ route('news') }}">@lang('app.menu.news')</a></li>
-                                        <li><a href="{{ route('download') }}">@lang('app.menu.download')</a></li>
                                         <li><a href="{{ route('notice') }}">@lang('app.menu.notice')</a></li>
+                                        <li><a href="{{ route('download') }}">@lang('app.menu.download')</a></li>
                                         <li><a href="{{ route('contact') }}">@lang('app.menu.contact')</a></li>
                                     </ul>
                             </div>
