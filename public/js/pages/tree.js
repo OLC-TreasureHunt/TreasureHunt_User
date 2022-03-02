@@ -4486,7 +4486,7 @@ var tree = new Vue({
                 axios__WEBPACK_IMPORTED_MODULE_1___default().get(window.Laravel.baseUrl + '/tree/binary').then(function (response) {
                   self.data = response.data;
                 })["catch"](function (error) {
-                  conosle.log(error);
+                  console.log(error);
                 }).then(function (data) {});
 
               case 2:

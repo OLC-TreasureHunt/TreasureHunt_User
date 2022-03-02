@@ -1,31 +1,28 @@
-import pagination from 'laravel-vue-pagination';
 import axios from "axios";
 
-var download = new Vue({
-    name: 'Download',
+Vue.component('home-tree', require('../components/HomeTreeComponent.vue').default);
+
+var tree = new Vue({
+    name: 'HomeTree',
     el: '#app',
-    components: {
-        'pagination': pagination,
-    },
     data() {
         return {
-            files: {},
+            landscape: [],
+            data: {},
+            trans: trans,
             intervalfunction: null,
         }
     },
     mounted: function () {
         this.intervalfunction = setInterval(this.loadAlerts, 1000);
-        this.loadFiles();
+        this.loadNodes();
     },
     methods: {
-        async loadFiles(page) {
+        async loadNodes() {
             let self = this;
-            if (typeof page === 'undefined') {
-                page = 1;
-            }
-            axios.get(window.Laravel.baseUrl + '/download/files?page=' + page)
+            axios.get(window.Laravel.baseUrl + '/home/tree')
                 .then( (response) => {
-                    self.files = response.data;
+                    self.data = response.data;
                 })
                 .catch( (error) => {
                     console.log(error);
@@ -37,4 +34,5 @@ var download = new Vue({
     beforeDestroy: function(){
         clearInterval(this.loadAlerts);
     },
+
 })

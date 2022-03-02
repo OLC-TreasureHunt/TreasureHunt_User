@@ -63,7 +63,7 @@ class BinaryRepository implements BinaryRepositoryInterface {
      * @return Binary
      */
     public function filter($filter) {
-        return $this->binary->filter($filter)->get();
+        return $this->binary->filter($filter)->orderBy('parent_id', 'asc')->get();
     }
 
 }

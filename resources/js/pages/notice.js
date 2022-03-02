@@ -29,7 +29,7 @@ var download = new Vue({
                     self.notices = response.data;
                 })
                 .catch( (error) => {
-                    conosle.log(error);
+                    console.log(error);
                 })
                 .then( (data) => {
                 });

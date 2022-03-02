@@ -3842,7 +3842,7 @@ var download = new Vue({
                 axios__WEBPACK_IMPORTED_MODULE_2___default().get(window.Laravel.baseUrl + '/download/files?page=' + page).then(function (response) {
                   self.files = response.data;
                 })["catch"](function (error) {
-                  conosle.log(error);
+                  console.log(error);
                 }).then(function (data) {});
 
               case 3:

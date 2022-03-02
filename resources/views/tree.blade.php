@@ -28,14 +28,14 @@
         <!-- Content -->
         
         <section id="page-content" class="background-transparent">
-            <div class="container" id="tree-page">
+            <div class="container">
                 <div class="card back-semi-theme border-theme  border-theme p-20">
                     <div class="card-body table-responsive p-0">
                         <label class="d-none">
                             LandOrPortable
                             <input type="checkbox" v-model="landscape" value="1">
                         </label>
-                        <binary-tree 
+                        <binary-tree id="tree-page"
                             :json="data" 
                             :class="{landscape: landscape.length}" 
                             :trans="trans"

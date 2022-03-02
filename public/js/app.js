@@ -5533,7 +5533,7 @@ vue__WEBPACK_IMPORTED_MODULE_3__["default"].mixin({
                   axios.get(window.Laravel.baseUrl + '/notice/alert').then(function (response) {
                     self.alerts = response.data;
                   })["catch"](function (error) {
-                    conosle.log(error);
+                    console.log(error);
                   }).then(function (data) {});
                 }
 

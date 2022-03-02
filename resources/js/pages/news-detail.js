@@ -24,7 +24,7 @@ var download = new Vue({
                     self.popular = response.data;
                 })
                 .catch( (error) => {
-                    conosle.log(error);
+                    console.log(error);
                 })
                 .then( (data) => {
                     console.log(data);

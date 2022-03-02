@@ -32,7 +32,7 @@ var download = new Vue({
                     self.news = response.data;
                 })
                 .catch( (error) => {
-                    conosle.log(error);
+                    console.log(error);
                 })
                 .then( (data) => {
                 });
@@ -44,7 +44,7 @@ var download = new Vue({
                     self.popular = response.data;
                 })
                 .catch( (error) => {
-                    conosle.log(error);
+                    console.log(error);
                 })
                 .then( (data) => {
                     console.log(data);
@@ -57,7 +57,7 @@ var download = new Vue({
                     self.top = response.data;
                 })
                 .catch( (error) => {
-                    conosle.log(error);
+                    console.log(error);
                 })
                 .then( (data) => {
                     console.log(data);

@@ -312,6 +312,14 @@
   animation: marquee 40s linear infinite;
 }
 
+.home-tree table {
+  margin: 0 auto;
+}
+
+.back-theme-trans {
+  background-color: #4e2716EE !important;
+}
+
 @media (min-width: 768px) {
   .col-sm-1-10 {
     width: 10%;

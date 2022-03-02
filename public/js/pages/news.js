@@ -3846,7 +3846,7 @@ var download = new Vue({
                 axios__WEBPACK_IMPORTED_MODULE_2___default().get(window.Laravel.baseUrl + '/news/list?page=' + page).then(function (response) {
                   self.news = response.data;
                 })["catch"](function (error) {
-                  conosle.log(error);
+                  console.log(error);
                 }).then(function (data) {});
 
               case 3:
@@ -3870,7 +3870,7 @@ var download = new Vue({
                 axios__WEBPACK_IMPORTED_MODULE_2___default().get(window.Laravel.baseUrl + '/news/popular').then(function (response) {
                   self.popular = response.data;
                 })["catch"](function (error) {
-                  conosle.log(error);
+                  console.log(error);
                 }).then(function (data) {
                   console.log(data);
                 });
@@ -3896,7 +3896,7 @@ var download = new Vue({
                 axios__WEBPACK_IMPORTED_MODULE_2___default().get(window.Laravel.baseUrl + '/news/top').then(function (response) {
                   self.top = response.data;
                 })["catch"](function (error) {
-                  conosle.log(error);
+                  console.log(error);
                 }).then(function (data) {
                   console.log(data);
                 });

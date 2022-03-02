@@ -26,7 +26,7 @@ var tree = new Vue({
                     self.data = response.data;
                 })
                 .catch( (error) => {
-                    conosle.log(error);
+                    console.log(error);
                 })
                 .then( (data) => {
                 });

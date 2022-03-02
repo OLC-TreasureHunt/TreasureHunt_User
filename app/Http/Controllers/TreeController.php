@@ -39,4 +39,9 @@ class TreeController extends Controller
         $tree = $this->binary->tree(Auth::user()->id);
         return $tree;
     }
+
+    public function homeTree() {
+        $tree = $this->binary->homeTree(Auth::user()->id);
+        return $tree;
+    }
 }

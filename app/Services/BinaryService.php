@@ -41,7 +41,7 @@ class BinaryService extends Service {
      * @return array
      */
     public function tree( $user_id ) {
-        $tree = $this->binaryTree( $user_id );
+        $tree = $this->binaryTree( $user_id, 0, 0 );
         $tree->class = ['rootNode'];
         $tree->extend = true;
 
@@ -141,7 +141,7 @@ class BinaryService extends Service {
      * 
      * @param $parnet_id
      */
-    protected function binaryTree($parent_id) {
+    protected function binaryTree($parent_id, $limit = 0, $deep) {
         $children = $this->binary->filter([
             'parent_id' => $parent_id,
             'status'    => BinaryStatus::Valid
@@ -168,9 +168,70 @@ class BinaryService extends Service {
             $result->children = [];
         }
 
+        if ($limit != 0 && $limit == $deep) {
+            return $result;
+        }
+
+        $newDeep = $deep + 1;
         foreach ($children as $child) {
-            $childTree = $this->binaryTree( $child->user_id );
+            $childTree = $this->binaryTree( $child->user_id, $limit, $newDeep );
             $result->children[] = $childTree;
+        }
+
+        return $result;
+    }
+
+    public function homeTree($user_id) {
+        $children = $this->binary->filter([
+            'parent_id' => $user_id,
+            'status'    => BinaryStatus::Valid
+        ]);
+        $parent = User::findOrFail($user_id);
+
+        $result = new \stdClass();
+        $result->name = $parent->affiliate_id;
+        $result->image_url = $parent->avatar;
+        $result->extend = true;
+        $result->class = ['rootNode'];
+        $result->selected = 0;
+
+        $self = $this->binary->filter([
+            'user_id' => $user_id
+        ]);
+        $result->direction = $self[0]->left_loss <= $self[0]->right_loss? 1 : 2; 
+        $result->text = trans('home.bets', [
+            'amount' => _number_format($self[0]->own_loss?? 0, 0)
+        ]);
+        
+        if (count($children) > 0) {
+            $result->children = [];
+        }
+
+        foreach ($children as $child) {
+            $userInfo = User::findOrFail($child->user_id);
+            $node = new \stdClass();
+            $node->name = $userInfo->affiliate_id;
+            $node->image_url = $userInfo->avatar;
+            $node->extend = false;
+
+            if ($child->position == 1) {
+                $node->text = trans('home.loss', [
+                    'amount' => _number_format($self[0]->left_loss?? 0, 0)
+                ]);;
+            } else if ($child->position == 2) {
+                $node->text = trans('home.loss', [
+                    'amount' => _number_format($self[0]->right_loss?? 0, 0)
+                ]);;
+            }
+
+            if ($child->position == $result->direction) {
+                $node->selected = 1;
+                $node->class=["selected_node"];
+            } else {
+                $node->selected = 0;
+            }
+            
+            $result->children[] = $node;
         }
 
         return $result;

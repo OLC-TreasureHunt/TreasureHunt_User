@@ -3241,7 +3241,7 @@ var download = new Vue({
                 axios__WEBPACK_IMPORTED_MODULE_1___default().get(window.Laravel.baseUrl + '/news/popular').then(function (response) {
                   self.popular = response.data;
                 })["catch"](function (error) {
-                  conosle.log(error);
+                  console.log(error);
                 }).then(function (data) {
                   console.log(data);
                 });

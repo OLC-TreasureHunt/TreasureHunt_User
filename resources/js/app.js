@@ -131,7 +131,7 @@ import Vue from 'vue';
                         self.alerts = response.data;
                     })
                     .catch( (error) => {
-                        conosle.log(error);
+                        console.log(error);
                     })
                     .then( (data) => {
                     });
