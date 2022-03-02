@@ -3,9 +3,13 @@
 if (!defined('LANG_JP')) {
     define('LANG_JP', 'jp');
     define('LANG_EN', 'en');
+    define('LANG_ZH', 'zh');
+    define('LANG_ID', 'id');
 }
 
 return [
     LANG_JP     => ['app.lang.jp', 'jp', 'jp'],
     LANG_EN     => ['app.lang.en', 'gb', 'en'],
+    LANG_ZH     => ['app.lang.zh', 'cn', 'zh'],
+    LANG_ID     => ['app.lang.id', 'id', 'id'],
 ];

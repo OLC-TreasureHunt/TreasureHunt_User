@@ -4,6 +4,8 @@ return [
     'lang'  => [
         'jp'            => '日本語',
         'en'            => 'English',
+        'zh'            => '简体中国',
+        'id'            => 'Indonesia'
     ],
     'gender'    => [
         'male'          => '男性',

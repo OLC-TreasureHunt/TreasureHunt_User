@@ -55,9 +55,8 @@
     <script src="{{ cAsset('js/jquery.js') }}"></script>
     <script src="{{ cAsset('js/plugins.js') }}"></script>
     <!--Template functions-->
-    <script src="{{ cAsset('js/functions.js') }}"></script>
+    
     <script src="{{ mix('js/app.js') }}"></script>
-
     <script src="{{ cAsset('plugins/toastr/toastr.min.js') }}"></script>
     <script src="{{ cAsset('plugins/datatables/datatables.min.js') }}"></script>
     <script src="{{ cAsset('js/__common.js') }}"></script>
@@ -72,4 +71,6 @@
         });
     </script>
     @yield('scripts')
+
+    <script src="{{ cAsset('js/functions.js') }}"></script>
 </body>
