@@ -7,7 +7,7 @@
     <meta name="description" content="Themeforest Template Polo, html template">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <link rel="icon" type="image/png" href="{{ cAsset('favicon.png') }}">
+    <link rel="icon" type="image/png" href="{{ cAsset('favicon.ico') }}">
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
