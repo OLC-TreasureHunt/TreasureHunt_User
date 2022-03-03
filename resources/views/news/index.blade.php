@@ -28,7 +28,7 @@
                     <div class="card-body" v-if="news.data !== undefined && news.data.length > 0">
                         <div class="row top-news">
                             <div class="col-md-9 col-sm-12">
-                                <div class="row mb-4 d-none d-sm-block" v-if="top.id !== undefined">
+                                <div class="row mb-4 d-none d-sm-flex" v-if="top.id !== undefined">
                                     <div class="col-md-7 col-12">
                                         <a v-bind:href="news_link(top.id)" ><img class="img-fluid" :src="top.image"></a>
                                     </div>

@@ -145,11 +145,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           params: this.query
         }).then(function (data) {
           _this2.data = data.data.data.map(function (obj) {
+            var direct = parseInt(obj['left_bonus']) <= parseInt(obj['right_bonus']) ? 1 : 2;
             return _objectSpread(_objectSpread({}, obj), {}, {
               created_at: _this2.serverTime2LocalTime(obj['created_at'], 'YYYY-MM'),
               total_bet: _this2.$options.filters.number2format(obj['total_bet'], 0) + _this2.lang.table.jpy,
-              left_bonus: _this2.$options.filters.number2format(obj['left_bonus'], 0) + _this2.lang.table.jpy,
-              right_bonus: _this2.$options.filters.number2format(obj['right_bonus'], 0) + _this2.lang.table.jpy,
+              left_bonus: (direct == 1 ? '★' : '') + _this2.$options.filters.number2format(obj['left_bonus'], 0) + _this2.lang.table.jpy,
+              right_bonus: (direct == 2 ? '★' : '') + _this2.$options.filters.number2format(obj['right_bonus'], 0) + _this2.lang.table.jpy,
               bonus: _this2.$options.filters.number2format(obj['bonus'], 0) + _this2.lang.table.jpy,
               level: obj['level_info']['level'],
               bonus_rate: _this2.$options.filters.number2format(obj['bonus_rate'], 0) + '%'

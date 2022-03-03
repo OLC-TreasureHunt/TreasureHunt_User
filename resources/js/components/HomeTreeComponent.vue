@@ -198,6 +198,7 @@ export default {
         z-index: 2;
         overflow: hidden;
         background-color: #4e2716EE !important;
+        min-width: 100px;
     }
 
     .node .person .avat {

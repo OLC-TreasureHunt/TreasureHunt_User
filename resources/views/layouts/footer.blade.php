@@ -7,7 +7,9 @@
                         <div class="widget-title">Treasure Hunt</div>
                             <p class="mb-5">@lang('app.footer.desc')<br>
                                 Ryuji’nCompany. All Rights Reserved.</p>
-                            <a href="{{ route('login') }}" class="btn btn-inverted" target="_blank">@lang('register.btn.login')</a>
+                            @if(!Auth::check())
+                                <a href="{{ route('login') }}" class="btn btn-inverted" target="_blank">@lang('register.btn.login')</a>
+                            @endauth
                         </div>
                     </div>
                     <div class="col-lg-6">

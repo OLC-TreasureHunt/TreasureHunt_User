@@ -60,12 +60,13 @@
                         })
                         .then( (data) => {
                             this.data = data.data.data.map( obj => {
+                                let direct = parseInt(obj['left_bonus']) <= parseInt(obj['right_bonus'])? 1 : 2;
                                 return {
                                     ...obj, 
                                     created_at: this.serverTime2LocalTime(obj['created_at'], 'YYYY-MM'),
                                     total_bet: this.$options.filters.number2format(obj['total_bet'], 0) + this.lang.table.jpy,
-                                    left_bonus: this.$options.filters.number2format(obj['left_bonus'], 0) + this.lang.table.jpy,
-                                    right_bonus: this.$options.filters.number2format(obj['right_bonus'], 0) + this.lang.table.jpy,
+                                    left_bonus: (direct == 1 ? '★' : '') + this.$options.filters.number2format(obj['left_bonus'], 0) + this.lang.table.jpy,
+                                    right_bonus: (direct == 2 ? '★' : '') + this.$options.filters.number2format(obj['right_bonus'], 0) + this.lang.table.jpy,
                                     bonus: this.$options.filters.number2format(obj['bonus'], 0) + this.lang.table.jpy,
                                     level: obj['level_info']['level'], 
                                     bonus_rate: this.$options.filters.number2format(obj['bonus_rate'], 0) + '%',

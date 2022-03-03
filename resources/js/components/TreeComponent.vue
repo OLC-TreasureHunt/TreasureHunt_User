@@ -198,7 +198,7 @@ export default {
         position: relative;
         display: inline-block;
         z-index: 2;
-        width: 8em;
+        min-width: 8em;
         overflow: hidden;
     }
 
