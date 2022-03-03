@@ -23,14 +23,14 @@
         created: function() {
             this.lang = JSON.parse(this.trans);
             this.columns = [
-                { title: this.lang.table.date, field: 'created_at', sortable: true, thClass:'text-center, word-keep', tdClass: 'text-center' },
-                { title: this.lang.table.amount, field: 'total_bet', sortable: true, thClass:'text-center, word-keep', tdClass: 'text-end' },
-                { title: this.lang.table.binaryl, field: 'left_bonus', thClass:'text-center, word-keep', tdClass: 'text-end' },
-                { title: this.lang.table.binaryr, field: 'right_bonus', thClass:'text-center, word-keep', tdClass: 'text-end' },
-                { title: this.lang.table.level, field: 'level', thClass:'text-center, word-keep', tdClass: 'text-center, word-keep' },
-                { title: this.lang.table.rate, field: 'bonus_rate', thClass:'text-center, word-keep', tdClass: 'text-end' },
-                { title: this.lang.table.bonus, field: 'bonus', thClass:'text-center, word-keep', tdClass: 'text-end' },
-                { title: this.lang.table.status, field: 'apply_status', thClass:'text-center, word-keep', tdClass: 'text-center, word-keep' },
+                { title: this.lang.table.date, field: 'created_at', sortable: true, thClass:'text-center word-keep', tdClass: 'text-center' },
+                { title: this.lang.table.amount, field: 'total_bet', sortable: true, thClass:'text-center word-keep', tdClass: 'text-end' },
+                { title: this.lang.table.binaryl, field: 'left_bonus', thClass:'text-center word-keep', tdClass: 'text-end' },
+                { title: this.lang.table.binaryr, field: 'right_bonus', thClass:'text-center word-keep', tdClass: 'text-end' },
+                { title: this.lang.table.level, field: 'level', thClass:'text-center word-keep', tdClass: 'text-center word-keep' },
+                { title: this.lang.table.rate, field: 'bonus_rate', thClass:'text-center word-keep', tdClass: 'text-end' },
+                { title: this.lang.table.bonus, field: 'bonus', thClass:'text-center word-keep', tdClass: 'text-end' },
+                { title: this.lang.table.status, field: 'apply_status', thClass:'text-center word-keep', tdClass: 'text-center word-keep' },
             ];
             this.loadCurrencies();
         },
