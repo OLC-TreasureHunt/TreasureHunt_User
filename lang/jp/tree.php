@@ -13,6 +13,6 @@ return [
     'field' => [
         'left'  => '左',
         'right' => '右',
-        'jpy'   => '円'
+        'jpy'   => '￥'
     ]
 ];

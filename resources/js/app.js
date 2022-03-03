@@ -116,12 +116,12 @@ import Vue from 'vue';
             str = str.toString();
             return str.length < max ? this.leftPadding("0" + str, max) : str;
         },
-        serverTime2LocalTime: function(value) {
+        serverTime2LocalTime: function(value, format = 'YYYY-MM-DD HH:mm:ss') {
             let toTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
             let fromTimeZone = window.Laravel.serverTimeZone;
 
             return moment.tz(value, fromTimeZone).tz(toTimeZone).format(
-                'YYYY-MM-DD HH:mm:ss');
+                format);
         },
         async loadAlerts() {
             if (window.Laravel.user !== undefined && window.Laravel.user !== null) {
@@ -146,12 +146,12 @@ import Vue from 'vue';
         number2format: function(value, decimal) {
             return _number_format(value, decimal);
         },
-        serverTime2LocalTime: function(value) {
+        serverTime2LocalTime: function(value, format = 'YYYY-MM-DD HH:mm:ss') {
             let toTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
             let fromTimeZone = window.Laravel.serverTimeZone;
 
             return moment.tz(value, fromTimeZone).tz(toTimeZone).format(
-                'YYYY-MM-DD HH:mm:ss');
+                format);
         },
         bytesToSize: function(bytes) {
             var sizes = ['KB', 'MB', 'GB', 'TB'];

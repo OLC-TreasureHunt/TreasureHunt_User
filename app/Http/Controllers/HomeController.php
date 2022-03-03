@@ -2,18 +2,23 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
+use App\Services\ManualInputService;
+use App\Models\ManualInput;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
+    protected $manualInput;
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(ManualInputService $manualInput)
     {
         $this->middleware('auth');
+        $this->manualInput = $manualInput;
     }
 
     /**
@@ -23,6 +28,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $user = Auth::user();
+        $lastData = $this->manualInput->last();
+        return view('home')
+            ->withLastData($lastData)
+            ->withUserInfo($user);
     }
 }

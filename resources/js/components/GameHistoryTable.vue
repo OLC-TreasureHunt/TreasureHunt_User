@@ -21,10 +21,13 @@
         created: function() {
             this.lang = JSON.parse(this.trans);
             this.columns = [
-                { title: this.lang.table.no, field: 'id', thClass:'text-center', tdClass: 'text-center' },
                 { title: this.lang.table.date, field: 'created_at', sortable: true, thClass:'text-center', tdClass: 'text-center' },
                 { title: this.lang.table.amount, field: 'loss_jpy', sortable: true, thClass:'text-center', tdClass: 'text-end' },
-                { title: this.lang.table.status, field: 'settle_status', thClass:'text-center', tdClass: 'text-center' },
+                { title: this.lang.table.binaryl, field: '', thClass:'text-center', tdClass: 'text-center' },
+                { title: this.lang.table.binaryr, field: 'settle_status', thClass:'text-center', tdClass: 'text-center' },
+                { title: this.lang.table.level, field: 'settle_status', thClass:'text-center', tdClass: 'text-center' },
+                { title: this.lang.table.rate, field: 'settle_status', thClass:'text-center', tdClass: 'text-center' },
+                { title: this.lang.table.bonus, field: 'settle_status', thClass:'text-center', tdClass: 'text-center' },
             ]
         },
         mounted: function () {
@@ -37,7 +40,6 @@
                 handler (query) {
                     let page = this.query.offset / this.query.limit + 1;
                     this.query.page = page;
-                    alert(this.query);
                     axios.get(window.Laravel.baseUrl + '/history/list/game', {
                             params: this.query
                         })

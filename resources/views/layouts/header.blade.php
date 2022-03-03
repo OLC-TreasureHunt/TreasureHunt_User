@@ -25,7 +25,7 @@
                 <ul>
                     <li v-cloak>
                         <div class="p-dropdown">
-                            <a href="#"><i class="icon-bell"></i><span style="text-transform: uppercase; color: white;" v-if="alerts.count"><span class="badge bg-danger" style="border-radius: 0.2rem; line-height:1.3">@{{ alerts.count }}</span></span></a>
+                            <a href="#"><i class="icon-bell text-white"></i><span style="text-transform: uppercase; color: white;" v-if="alerts.count"><span class="badge bg-danger" style="border-radius: 0.2rem; line-height:1.3">@{{ alerts.count }}</span></span></a>
                             <ul class="p-dropdown-content select-language back-theme" v-if="alerts.data !== undefined && alerts.data.length > 0">
                                 <li v-for="(item, key) in alerts.data">
                                     <a class="text-light alert-text" href="#" v-on:click="noticeClickHandler(item)">@{{ item.notice.title }}</a>
@@ -64,8 +64,7 @@
                                 <a href="#"><i class="fa fa-gamepad"></i>@lang('app.menu.binary')</a>
                                 <ul class="dropdown-menu back-theme">
                                     <li><a href="{{ route('tree') }}"><i class="fa fa-street-view"></i> @lang('app.menu.tree')</a></li>
-                                    <li><a href="{{ route('history', ['id' => 'game']) }}"><i class="fa fa-history"></i> @lang('app.menu.history')</a></li>
-                                    <li><a href="{{ route('history', ['id' => 'bonus']) }}"><i class="fa fa-history"></i> @lang('app.menu.bonus')</a></li>
+                                    <li><a href="{{ route('history') }}"><i class="fa fa-history"></i> @lang('app.menu.history')</a></li>
                                 </ul>
                             </li>
 

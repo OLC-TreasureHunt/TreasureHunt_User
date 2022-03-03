@@ -44,4 +44,8 @@ class BonusHistoryRepository implements BonusHistoryRepositoryInterface {
     public function filter($filter) {
         return $this->history->filter($filter);
     }
+
+    public function with($relation) {
+        return $this->history->with($relation);
+    }
 }

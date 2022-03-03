@@ -6,9 +6,8 @@ use BenSampo\Enum\Enum;
 use BenSampo\Enum\Contracts\LocalizedEnum;
 
 /**
- * @method static static OptionOne()
- * @method static static OptionTwo()
- * @method static static OptionThree()
+ * @method static static CarryOver()
+ * @method static static Withdraw()
  */
 final class UserBonusStatus extends Enum implements LocalizedEnum
 {

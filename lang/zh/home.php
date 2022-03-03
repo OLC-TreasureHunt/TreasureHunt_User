@@ -2,7 +2,7 @@
 
 return [
     'at_moment'     => ':time时点的合计',
-    'your_level'    => '现在你的装备是:level。',
+    'your_level'    => '现在你的装备是<span class="text-pink">:level</span>。',
     'can_upgrade'   => '后:amount床上设备升级。',
     'may_graydown'  => '二进制:direct因:amount损失导致设备降级。',
 

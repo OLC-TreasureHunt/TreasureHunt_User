@@ -5515,9 +5515,10 @@ vue__WEBPACK_IMPORTED_MODULE_3__["default"].mixin({
       return str.length < max ? this.leftPadding("0" + str, max) : str;
     },
     serverTime2LocalTime: function serverTime2LocalTime(value) {
+      var format = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'YYYY-MM-DD HH:mm:ss';
       var toTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
       var fromTimeZone = window.Laravel.serverTimeZone;
-      return moment_timezone__WEBPACK_IMPORTED_MODULE_4___default().tz(value, fromTimeZone).tz(toTimeZone).format('YYYY-MM-DD HH:mm:ss');
+      return moment_timezone__WEBPACK_IMPORTED_MODULE_4___default().tz(value, fromTimeZone).tz(toTimeZone).format(format);
     },
     loadAlerts: function loadAlerts() {
       var _this = this;
@@ -5555,9 +5556,10 @@ vue__WEBPACK_IMPORTED_MODULE_3__["default"].mixin({
       return _number_format(value, decimal);
     },
     serverTime2LocalTime: function serverTime2LocalTime(value) {
+      var format = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'YYYY-MM-DD HH:mm:ss';
       var toTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
       var fromTimeZone = window.Laravel.serverTimeZone;
-      return moment_timezone__WEBPACK_IMPORTED_MODULE_4___default().tz(value, fromTimeZone).tz(toTimeZone).format('YYYY-MM-DD HH:mm:ss');
+      return moment_timezone__WEBPACK_IMPORTED_MODULE_4___default().tz(value, fromTimeZone).tz(toTimeZone).format(format);
     },
     bytesToSize: function bytesToSize(bytes) {
       var sizes = ['KB', 'MB', 'GB', 'TB'];

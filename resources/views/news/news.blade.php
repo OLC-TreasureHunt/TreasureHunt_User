@@ -30,7 +30,7 @@
                                     </div>
                                     <div class="col-12">
                                         <div class="post-item-description">
-                                            <div class="post-content" v-html="news.content"></div>
+                                            <div class="" v-html="news.content"></div>
                                         </div>
                                     </div>
                                 </div>

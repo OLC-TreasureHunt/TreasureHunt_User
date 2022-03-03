@@ -2,6 +2,7 @@
 namespace App\Services;
 
 use Auth;
+use App\Enums\TreeType;
 use App\Enums\UserBonusStatus;
 use App\Models\User;
 use App\Repositories\BonusHistoryRepositoryInterface;
@@ -48,17 +49,19 @@ class BonusHistoryService extends Service {
 
     public function bonusHistory(Request $request) {
         $filter = $request->all();
-        
-        if (isset($filter['sort']) && isset($filter['order'])) {
-            $history = $this->history->filter([
-                'user_id' => Auth::user()->id
-            ])->orderBy($filter['sort'], $filter['order'])
-            ->paginate($filter['limit']);
-        } else {
-            $history = $this->history->filter([
-                'user_id' => Auth::user()->id
-            ])->paginate($filter['limit']);
+
+        if (!isset($filter['sort'])) {
+            $filter['sort'] = 'created_at';
         }
+        if (!isset($filter['order'])) {
+            $filter['order'] = 'desc';
+        }
+
+        $history = $this->history->with('levelInfo')->filter([
+                'user_id' => Auth::user()->id
+            ])->type(TreeType::BinaryTree)
+            ->orderBy($filter['sort'], $filter['order'])
+            ->paginate($filter['limit']);
 
         foreach ($history as $item) {
             $item->apply_status = UserBonusStatus::getDescription($item->apply_status);

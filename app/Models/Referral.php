@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Referral extends Model
+class Referral extends BaseModel
 {
     protected $table = 'th_referral';
     use HasFactory;

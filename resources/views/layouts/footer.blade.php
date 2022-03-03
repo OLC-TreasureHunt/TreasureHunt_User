@@ -26,8 +26,7 @@
                                     <div class="widget-title">@lang('app.menu.binary')</div>
                                     <ul class="list">
                                         <li><a href="{{ route('tree') }}">@lang('app.menu.tree')</a></li>
-                                        <li><a href="{{ route('history', ['id' => 'game']) }}">@lang('app.menu.history')</a></li>
-                                        <li><a href="{{ route('history', ['id' => 'bonus']) }}">@lang('app.menu.bonus')</a></li>
+                                        <li><a href="{{ route('history') }}">@lang('app.menu.history')</a></li>
                                     </ul>
                                 </div>
                             </div>

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\TreeType;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -91,5 +92,15 @@ class User extends Authenticatable
         return $this->hasOne(Binary::class);
     }
 
+    public function battleInfo() {
+        return $this->hasOne(UserInfo::class);
+    }
 
+    public function binaryGradeDown() {
+        return $this->hasOne(GradeDown::class)->type(TreeType::BinaryTree);
+    }
+
+    public function binaryGradeUp() {
+        return $this->hasOne(GradeUp::class)->type(TreeType::BinaryTree);
+    }
 }

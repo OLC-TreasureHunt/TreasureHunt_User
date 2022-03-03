@@ -10,7 +10,6 @@ use App\Models\Country;
 use App\Models\Master;
 use App\Models\Referral;
 use App\Models\User;
-use App\Models\UserBalance;
 use App\MailManager;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
@@ -227,7 +226,6 @@ class RegisterController extends Controller
                             $user->bicorn_id = $bicorn_id;
                             $user->save();
                             
-                            UserBalance::initUserBalance($user->id);
                             $ret = 0;
                         } else if ($response['result'] == 2) {
                             $bicorn_id = $response['userid'];
@@ -238,7 +236,6 @@ class RegisterController extends Controller
                             $user->bicorn_id = $bicorn_id;
                             $user->save();
                             
-                            UserBalance::initUserBalance($user->id);
                             $ret = 5;
                         }
                         else {

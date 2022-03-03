@@ -84,4 +84,8 @@ class BaseModel extends Model
     {
         return $builder->where("status", $state);
     }
+
+    public function scopeType($builder, $type) {
+        return $builder->where('type', $type);
+    }
 }

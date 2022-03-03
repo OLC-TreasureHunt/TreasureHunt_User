@@ -35,10 +35,7 @@ class HistoryController extends Controller
     }
 
     public function index(Request $request) {
-        $param = $request->route('id')?? 'game';
-        return view('history', [
-            'param' => $param
-        ]);
+        return view('history');
     }
 
     public function game(Request $request) {

@@ -16,4 +16,8 @@ class BonusHistory extends BaseModel
         'real_bonus',
         'created_at'
     ];
+
+    public function levelInfo() {
+        return $this->belongsTo(BonusRateSetting::class, 'level');
+    }
 }

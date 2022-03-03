@@ -9,7 +9,7 @@ use Litipk\BigNumbers\Decimal;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Master extends Model
+class Master extends BaseModel
 {
     protected $table = 'th_master';
     use HasFactory;

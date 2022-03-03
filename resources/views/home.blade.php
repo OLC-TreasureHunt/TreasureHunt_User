@@ -5,37 +5,56 @@
 @section('contents')
     <!-- WELCOME -->
     <section id="welcome" class="p-b-0 p-t-0">
-        <div id="slider" class="inspiro-slider slider-fullscreen dots-creative" data-fade="true">
-            <div class="slide welcome" data-bg-image="{{ asset('images/background.webp') }}">
-                <div class="container p-t-0">
-                    <div class="slide-captions text-start text-light title">
-                        <!-- Captions -->
-                        <div class="heading-text heading-section text-light text-center mb-7" data-animate="animate__fadeInUp">
-                            <img id="mv-img" class="mv-img" src="{{ asset('images/visual-text.png') }}" />
-                        </div>
-                        <!-- end: Captions -->
-
-                        <div class="col-lg-5 left text-light animate__animated text-center" 
-                             data-animate="animate__fadeInLeft">
-                            <img class="img-fluid" src="{{ asset('images/1.png') }}" />
-                        </div>
-                        <div class="col-lg-7 right text-light animate__animated rounded"
-                            data-animate="animate__fadeInRight">
-                            <div class="hero-heading-2 text-light back-theme-trans">
-                            <h4 class="m-b-0">@lang('home.at_moment')</h4>
-                            <h3 class="m-t-0 text-bold text-pink">{!! trans('home.your_level') !!}</h3>
-                            <p class="lead">@lang('home.can_upgrade')</p>
-                            <p class="lead mb-0">@lang('home.may_graydown')</p>
-                        </div>
-                    </div>
+        <div class="container p-t-0">
+            <div class="slide-captions text-start text-light title pt-4">
+                <!-- Captions -->
+                <div class="heading-text heading-section text-light text-center mb-7 animate__animated pt-4" 
+                    data-animate="animate__fadeInUp">
+                    <img id="mv-img" class="mv-img" src="{{ asset('images/visual-text.png') }}" />
                 </div>
-                <div class="container table-responsive home-tree mt-0 pt-5">
-                    <home-tree id="tree-page"
-                        :json="data" 
-                        :class="{landscape: landscape.length}" 
-                        :trans="trans"></home-tree>
+                <!-- end: Captions -->
+
+                <div class="col-lg-5 col-12 left text-light animate__animated text-center" 
+                        data-animate="animate__fadeInLeft">
+                    <img class="img-fluid mb-sm-5" src="{{ $userInfo->battleInfo->levelInfo->image }}" />
+                </div>
+                <div class="col-lg-7 col-12 right text-light animate__animated rounded"
+                    data-animate="animate__fadeInRight">
+                    <div class="hero-heading-2 text-light back-theme-trans">
+                    @if ($lastData)
+                        <h4 class="m-b-0">@lang('home.at_moment', ['time' => serverTime2Local($lastData->input_date)])</h4>
+                    @endif
+                    <h3 class="m-t-0 text-bold pink-emphass">
+                        {!! trans('home.your_level', ['level' => $userInfo->battleInfo->levelInfo->level]) !!}
+                    </h3>
+                    @if ($userInfo->binaryGradeUp)
+                        <p class="lead">@lang('home.can_upgrade', [
+                            'amount' => _number_format($userInfo->binaryGradeUp->need_bet, 0)
+                    ])</p>
+                    @endif
+                    <?php
+                        if ($userInfo->binaryGradeDown) {
+                            if (intval($userInfo->binaryGradeDown->left_loss) <= intval($userInfo->binaryGradeDown->right_loss)) {
+                                $direct = 1;
+                            } else {
+                                $direct = 2;
+                            }
+                        }
+                    ?>
+                    @if ($userInfo->binaryGradeDown)
+                    <p class="lead mb-0">@lang('home.may_graydown', [
+                        'direct' => $direct == 1? trans('home.direct.left') : trans('home.direct.right'),
+                        'amount' => $direct == 1? _number_format($userInfo->binaryGradeDown->left_loss, 0) : _number_format($userInfo->binaryGradeDown->right_loss, 0)
+                    ])</p>
+                    @endif
                 </div>
             </div>
+        </div>
+        <div class="container table-responsive home-tree mt-0 pt-5">
+            <home-tree id="tree-page"
+                :json="data" 
+                :class="{landscape: landscape.length}" 
+                :trans="trans"></home-tree>
         </div>
     </section>
     <!-- end: WELCOME -->

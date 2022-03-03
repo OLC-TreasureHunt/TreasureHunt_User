@@ -25,4 +25,6 @@ interface BonusHistoryRepositoryInterface {
      */
     public function filter(array $filter);
 
+    public function with($relation);
+
 }

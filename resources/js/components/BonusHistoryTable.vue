@@ -23,12 +23,14 @@
         created: function() {
             this.lang = JSON.parse(this.trans);
             this.columns = [
-                { title: this.lang.table.no, field: 'id', thClass:'text-center', tdClass: 'text-center' },
-                { title: this.lang.table.date, field: 'created_at', sortable: true, thClass:'text-center', tdClass: 'text-center' },
-                { title: this.lang.table.amount, field: 'total_bet', sortable: true, thClass:'text-center', tdClass: 'text-end' },
-                { title: this.lang.table.bonus, field: 'real_bonus', sortable: true, thClass:'text-center', tdClass: 'text-end' },
-                { title: this.lang.table.currency, field: 'currency', sortable: true, thClass:'text-center', tdClass: 'text-center' },
-                { title: this.lang.table.status, field: 'apply_status', thClass:'text-center', tdClass: 'text-center' },
+                { title: this.lang.table.date, field: 'created_at', sortable: true, thClass:'text-center, word-keep', tdClass: 'text-center' },
+                { title: this.lang.table.amount, field: 'total_bet', sortable: true, thClass:'text-center, word-keep', tdClass: 'text-end' },
+                { title: this.lang.table.binaryl, field: 'left_bonus', thClass:'text-center, word-keep', tdClass: 'text-end' },
+                { title: this.lang.table.binaryr, field: 'right_bonus', thClass:'text-center, word-keep', tdClass: 'text-end' },
+                { title: this.lang.table.level, field: 'level', thClass:'text-center, word-keep', tdClass: 'text-center, word-keep' },
+                { title: this.lang.table.rate, field: 'bonus_rate', thClass:'text-center, word-keep', tdClass: 'text-end' },
+                { title: this.lang.table.bonus, field: 'bonus', thClass:'text-center, word-keep', tdClass: 'text-end' },
+                { title: this.lang.table.status, field: 'apply_status', thClass:'text-center, word-keep', tdClass: 'text-center, word-keep' },
             ];
             this.loadCurrencies();
         },
@@ -60,9 +62,13 @@
                             this.data = data.data.data.map( obj => {
                                 return {
                                     ...obj, 
-                                    created_at: this.serverTime2LocalTime(obj['created_at']),
+                                    created_at: this.serverTime2LocalTime(obj['created_at'], 'YYYY-MM'),
                                     total_bet: this.$options.filters.number2format(obj['total_bet'], 0) + this.lang.table.jpy,
-                                    real_bonus: this.$options.filters.number2format(obj['real_bonus'], this.currencies[obj['currency']]['rate_decimals'])
+                                    left_bonus: this.$options.filters.number2format(obj['left_bonus'], 0) + this.lang.table.jpy,
+                                    right_bonus: this.$options.filters.number2format(obj['right_bonus'], 0) + this.lang.table.jpy,
+                                    bonus: this.$options.filters.number2format(obj['bonus'], 0) + this.lang.table.jpy,
+                                    level: obj['level_info']['level'], 
+                                    bonus_rate: this.$options.filters.number2format(obj['bonus_rate'], 0) + '%',
                                 }
                             })
                             this.total = data.data.total;
@@ -73,3 +79,9 @@
         }
     }
 </script>
+
+<style scoped>
+    #bonus-history div[name="SimpleTable"] {
+        overflow-x: auto;
+    }
+</style>
