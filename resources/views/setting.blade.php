@@ -80,7 +80,7 @@
                                                 <div class="col-lg-3 text-center">
                                                     <img src="{{ auth()->user()->avatar ? auth()->user()->avatar : asset('images/user-avatar.png') }}" class="avatar avatar-xl" id="avatar_preview">
                                                 </div>
-                                                <div class="col-lg-9">
+                                                <div class="col-lg-6">
                                                     <div class="form-group row">
                                                         <div class="col-lg-4 col-6 text-dark">{{ trans('setting.login_id')  }}</div>
                                                         <div class="col-lg-8 col-6 text-dark">{{ auth()->user()->affiliate_id }}</div>
@@ -103,6 +103,10 @@
                                                             @endif
                                                         </div>
                                                     </div>
+                                                </div>
+                                                <div class="col-lg-3 text-center">
+                                                    <img src="{{ auth()->user()->battleInfo->levelInfo->image }}" class="avatar avatar-xl" id="">
+                                                    <h5>{{ auth()->user()->battleInfo->levelInfo->level }}</h5>
                                                 </div>
                                             </div>
                                         </div>

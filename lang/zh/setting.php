@@ -1,9 +1,9 @@
 <?php
 
 return [
-    'title' => '设置',
+    'title' => '会员中心',
 
-    'page_title' => '设置',
+    'page_title' => '会员中心',
     'page_title_desc' => '账户设置',
 
     'account_info' => '账户信息',
@@ -92,5 +92,5 @@ return [
     'user_plan'         => '设备',
     'is_premium'        => '高级会员',
     'not_premium'       => '发现会员',
-    'bicorn_id'         => '战头ID',
+    'bicorn_id'         => '游戏ID',
 ];

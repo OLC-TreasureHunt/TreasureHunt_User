@@ -45,10 +45,8 @@
                                 <a href="{{ route('news') }}" class="btn btn-rounded">@lang('news.button.back')</a>
                             </div>
                         </div>
-                        
                     </div>
                 </div>
-                
             </div>
         </section>
     </div>
