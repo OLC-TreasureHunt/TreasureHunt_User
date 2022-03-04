@@ -196,8 +196,8 @@ class RegisterController extends Controller
 
 		if (!empty($token)) {
 			$user = User::where('token', $token)->first();
-            $treasure_id = $user->affiliate_id;
-			if (!empty($user)) {
+            if (!empty($user)) {
+                $treasure_id = $user->affiliate_id;
 				$createdAt = $user->created_at;
 				$chkDate = date('Y-m-d H:i:s', strtotime($createdAt . VALID_TOKEN_PERIOD));
 				$today = date('Y-m-d H:i:s');
