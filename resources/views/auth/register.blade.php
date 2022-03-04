@@ -135,17 +135,15 @@
                                     @enderror
                                 </div>
                             </div>
+                            @if ( $affiliate )
                             <div class="row">
                                 <div class="form-group col-md-12">
                                     <label for="affiliate" class="">{{ trans('register.affiliate') }}</label>
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text background-secondary" id="basic-addon3" style="border-top-right-radius: 0; border-bottom-right-radius: 0">{{ $register_url }}</span>
-                                        </div>
-                                        <input type="text" class="form-control back-semitrans-theme" id="affiliate" name="affiliate" aria-describedby="basic-addon3" value="{{ old('affiliate')? old('affiliate') : $affiliate}}" readonly>
-                                    </div>
+                                    <input type="text" class="form-control back-semitrans-theme" id="affiliate_url" name="affiliate_url" aria-describedby="basic-addon3" value="{{ $register_url }}{{ old('affiliate')? old('affiliate') : $affiliate}}">
+                                    <input type="hidden" id="affiliate" name="affiliate" value="{{ old('affiliate')? old('affiliate') : $affiliate}}" readonly>
                                 </div>
                             </div>
+                            @endif
                             <div class="form-check mb-1 mt-5">
                                 <input type="checkbox" name="agree" id="agree" class="form-check-input" value="{{ old('agree') }}" required>
                                 <label class="form-check-label " for="agree">{{ sprintf(trans('register.agree_desc'), env('APP_NAME')) }}</label>
