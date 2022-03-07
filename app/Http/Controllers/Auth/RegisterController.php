@@ -143,7 +143,7 @@ class RegisterController extends Controller
         $user->token = $token;
         $user->save();
 
-        if ($data['affiliate']) {
+        if (isset($data['affiliate'])) {
             $parent = User::where('affiliate_id', $data['affiliate'])->first();
             $parent_id = $parent? $parent->id : 1;
         } else {
