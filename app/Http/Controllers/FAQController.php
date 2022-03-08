@@ -16,4 +16,9 @@ class FAQController extends Controller
         $faqs = $this->faq->faqs();
         return view('faq', ['faqs' => $faqs]);
     }
+
+    public function terms() {
+        $locale = app()->getLocale();
+        return view("terms.$locale");
+    }
 }

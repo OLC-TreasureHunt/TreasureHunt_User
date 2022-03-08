@@ -35,8 +35,5 @@ class HomeController extends Controller
             ->withUserInfo($user);
     }
 
-    public function terms() {
-        $locale = app()->getLocale();
-        return view("terms.$locale");
-    }
+    
 }

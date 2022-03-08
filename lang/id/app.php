@@ -4,7 +4,7 @@ return [
     'lang'  => [
         'jp'            => '日本語',
         'en'            => 'English',
-        'zh'            => '简体中国',
+        'zh'            => '简体中文',
         'id'            => 'Indonesia'
     ],
     'gender'    => [

@@ -95,6 +95,7 @@
 #mainMenu nav > ul > li > a, #mainMenu nav > ul > li:hover > a {
   color: white;
   text-transform: unset;
+  padding: 10px 10px;
 }
 
 .header-extras > ul > li a, .header-extras > ul > li i.icon-globe {
