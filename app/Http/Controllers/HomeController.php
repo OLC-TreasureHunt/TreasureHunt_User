@@ -34,4 +34,9 @@ class HomeController extends Controller
             ->withLastData($lastData)
             ->withUserInfo($user);
     }
+
+    public function terms() {
+        $locale = app()->getLocale();
+        return view("terms.$locale");
+    }
 }

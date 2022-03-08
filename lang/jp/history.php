@@ -34,7 +34,7 @@ return [
         'clear_local_settings_backup_and_restore' => 'ローカル設定をクリアして復元',
         'using_local_settings' => 'ローカル設定を使用中', 
         'no_data' => 'データがありません。',
-        'total' => 'すべて',
+        'total' => '全',
         'comma' => '、',
         'items_page' => '項目／ページ',
     ]

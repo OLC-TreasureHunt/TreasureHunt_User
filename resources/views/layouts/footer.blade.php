@@ -38,8 +38,10 @@
                                     <ul class="list">
                                         <li><a href="{{ route('news') }}">@lang('app.menu.news')</a></li>
                                         <li><a href="{{ route('notice') }}">@lang('app.menu.notice')</a></li>
+                                        <li><a href="{{ route('faq') }}">@lang('app.menu.faq')</a></li>
                                         <li><a href="{{ route('download') }}">@lang('app.menu.download')</a></li>
                                         <li><a href="{{ route('contact') }}">@lang('app.menu.contact')</a></li>
+                                        <li><a href="{{ route('terms') }}">@lang('app.menu.terms')</a></li>
                                     </ul>
                             </div>
                         </div>

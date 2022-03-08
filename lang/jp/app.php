@@ -4,7 +4,7 @@ return [
     'lang'  => [
         'jp'            => '日本語',
         'en'            => 'English',
-        'zh'            => '简体中国',
+        'zh'            => '简体中文',
         'id'            => 'Indonesia'
     ],
     'gender'    => [
@@ -16,7 +16,7 @@ return [
         'news'      => 'ニュース',
         'support'   => 'サポート',
         'contact'   => 'お問い合わせ',
-        'faq'       => 'Faq',
+        'faq'       => 'よくある質問',
         'settings'  => '設定',
         'logout'    => 'ログアウト',
         'tree'      => 'バイナリツリー',
@@ -28,6 +28,7 @@ return [
         'news'      => 'ニュース',
         'notice'    => '運営からのお知らせ',
         'page'      => '会員ページ',
+        'terms'     => '利用規約'
     ],
 
     'footer' => [

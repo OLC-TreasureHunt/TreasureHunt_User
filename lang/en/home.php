@@ -11,6 +11,6 @@ return [
         'left' => 'Left',
     ],
 
-    'bets' => ':amountJPY Bet',
-    'loss' => ':amountJPY Loss',
+    'bets' => 'Bet\:amount',
+    'loss' => 'Loss\:amount',
 ];

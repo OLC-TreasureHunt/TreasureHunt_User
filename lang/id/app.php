@@ -28,6 +28,7 @@ return [
         'news'      => 'Berita',
         'notice'    => 'Pemberitahuan Sistem',
         'page'      => 'Halaman',
+        'terms'     => 'Syarat Penggunaan'
     ],
 
     'footer' => [

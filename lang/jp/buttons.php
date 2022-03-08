@@ -20,7 +20,7 @@ return [
     'all_news' => '全てのニュース',
     'all_notifications' => '全ての通知',
 
-    'send' => 'メッセージ発送',
+    'send' => 'メッセージ送信',
     'save' => '保存',
     'upload' => 'アップロード',
 

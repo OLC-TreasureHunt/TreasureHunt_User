@@ -14,7 +14,6 @@
             <div class="container">
                 <div class="page-title">
                     <h1>{{ trans('download.page_title') }}</h1>
-                    <span>{{ trans('download.page_title_desc') }}</span>
                 </div>
             </div>
         </section>

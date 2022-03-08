@@ -9,7 +9,8 @@ use App\Repositories\GameHistoryRepositoryInterface;
 use App\Repositories\FileRepositoryInterface; 
 use App\Repositories\NewsRepositoryInterface;
 use App\Repositories\ManualInputRepositoryInterface;
-use App\Repositories\NoticeRepositoryInterface; 
+use App\Repositories\NoticeRepositoryInterface;
+use App\Repositories\FaqRepositoryInterface; 
 use App\Repositories\CryptoSettingRepositoryInterface; 
 use App\Repositories\UserRepositoryInterface; 
 use App\Repositories\Eloquent\BaseRepository; 
@@ -19,6 +20,7 @@ use App\Repositories\Eloquent\GameHistoryRepository;
 use App\Repositories\Eloquent\NoticeRepository; 
 use App\Repositories\Eloquent\FileRepository; 
 use App\Repositories\Eloquent\NewsRepository;
+use App\Repositories\Eloquent\FaqRepository;
 use App\Repositories\Eloquent\ManualInputRepository;
 use App\Repositories\Eloquent\CryptoSettingRepository; 
 use App\Repositories\Eloquent\UserRepository; 
@@ -47,6 +49,7 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(NewsRepositoryInterface::class, NewsRepository::class);
         $this->app->bind(NoticeRepositoryInterface::class, NoticeRepository::class);
         $this->app->bind(ManualInputRepositoryInterface::class, ManualInputRepository::class);
+        $this->app->bind(FaqRepositoryInterface::class, FaqRepository::class);
     }
 
     /**

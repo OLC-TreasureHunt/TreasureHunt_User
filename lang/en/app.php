@@ -4,7 +4,7 @@ return [
     'lang'  => [
         'jp'            => '日本語',
         'en'            => 'English',
-        'zh'            => '简体中国',
+        'zh'            => '简体中文',
         'id'            => 'Indonesia'
     ],
     'gender'    => [
@@ -28,6 +28,7 @@ return [
         'news'      => 'News',
         'notice'    => 'System Notification',
         'page'      => 'Pages',
+        'terms'     => 'Terms of use'
     ],
 
     'footer' => [

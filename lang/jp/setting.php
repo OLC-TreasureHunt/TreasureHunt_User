@@ -87,7 +87,7 @@ return [
     'select_file'       => 'ファイル選択',
     'referral'          => '紹介',
     'user_plan'         => 'プラン',
-    'is_premium'        => 'プレミアム',
-    'not_premium'       => 'ノーマル',
+    'is_premium'        => 'プレミアムユーザー',
+    'not_premium'       => '一般ユーザー',
     'bicorn_id'         => 'ゲームサイト ID',
 ];

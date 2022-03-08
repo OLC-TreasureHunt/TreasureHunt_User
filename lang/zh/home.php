@@ -11,6 +11,6 @@ return [
         'left' => '左',
     ],
 
-    'bets' => ':amountJPY投注',
-    'loss' => ':amountJPY损失',
+    'bets' => '投注\:amount',
+    'loss' => '损失\:amount',
 ];

@@ -10,7 +10,6 @@
             <div class="container">
                 <div class="page-title">
                     <h1>{{ trans('notice.page_title') }}</h1>
-                    <span>{{ trans('notice.page_title_desc') }}</span>
                 </div>
             </div>
         </section>

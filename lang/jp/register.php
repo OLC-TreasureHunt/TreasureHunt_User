@@ -4,7 +4,7 @@ return [
     'title' => '登録',
 
     'page_title' => '登録',
-    'page_title_desc' => '次の情報を入力して、アカウントを登録します。',
+    'page_title_desc' => '次へ情報を入力して、アカウントを登録します。',
 
     'sub_title' => 'アカウント情報',
 
@@ -28,7 +28,7 @@ return [
 	'city'		=> '都市',
 	'affiliate' => '紹介URL',
 	'qrcode'		=> '紹介コード',
-	'people'		=> '招待人',
+	'people'		=> 'ご紹介人数',
 	'postal_code_placeholder'	=> 'ハイフンない',
 
     'op_failed'     => '操作に失敗しました! もう一度お試しください。',

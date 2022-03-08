@@ -9,7 +9,6 @@
             <div class="container">
                 <div class="page-title">
                     <h1>{{ trans('contact.page_title') }}</h1>
-                    <span>{{ trans('contact.page_title_desc') }}</span>
                 </div>
             </div>
         </section>
@@ -72,7 +71,7 @@
                             @enderror
                         </div>
                         <div class="m-auto text-center">
-                            <button class="btn btn-gradient-theme border-theme" type="submit" id="form-submit"><i class="fa fa-paper-plane"></i>&nbsp;{{ trans('buttons.send') }}</button>
+                            <button class="btn btn-gradient-theme" type="submit" id="form-submit"><i class="fa fa-paper-plane"></i>&nbsp;{{ trans('buttons.send') }}</button>
                         </div>
                         
                     </form>
