@@ -57,7 +57,7 @@ class BonusHistoryService extends Service {
             $filter['order'] = 'desc';
         }
 
-        $history = $this->history->with('levelInfo')->filter([
+        $history = $this->history->with('levelInfo')->with('settleInfo')->filter([
                 'user_id' => Auth::user()->id
             ])->type(TreeType::BinaryTree)
             ->orderBy($filter['sort'], $filter['order'])

@@ -20,4 +20,8 @@ class BonusHistory extends BaseModel
     public function levelInfo() {
         return $this->belongsTo(BonusRateSetting::class, 'level');
     }
+
+    public function settleInfo() {
+        return $this->belongsTo(Settle::class, 'settle_id', 'id');
+    }
 }
