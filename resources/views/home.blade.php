@@ -22,7 +22,7 @@
                     data-animate="animate__fadeInRight">
                     <div class="hero-heading-2 text-light back-theme-trans">
                     @if ($lastData)
-                        <h4 class="m-b-0">@lang('home.at_moment', ['time' => serverTime2Local($lastData->input_date)])</h4>
+                        <h4 class="m-b-0">@lang('home.at_moment', ['time' => serverTime2Local($lastData->created_at)])</h4>
                     @endif
                     <h3 class="m-t-0 text-bold pink-emphass">
                         {!! trans('home.your_level', ['level' => $userInfo->battleInfo->levelInfo->level]) !!}
