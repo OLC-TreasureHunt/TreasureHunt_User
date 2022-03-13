@@ -202,4 +202,5 @@ return [
     'APP_VERSION' => '0.01',
 
     'BICORN_URL' => env('BICORN_URL', ''),
+
 ];

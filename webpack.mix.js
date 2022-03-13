@@ -22,6 +22,6 @@ mix.js('resources/js/app.js', 'public/js')
     .js('resources/js/pages/home.js', 'public/js/pages')
     .js('resources/js/pages/base.js', 'public/js/pages')
     .sass('resources/sass/app.scss', 'public/css')
-    // .sourceMaps()
+    .sourceMaps()
     .vue()
     .version();
