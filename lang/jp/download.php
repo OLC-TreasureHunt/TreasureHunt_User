@@ -11,7 +11,7 @@ return [
     ],
 
     'message' => [
-        'no_data' => '資料がありません。'
+        'no_data' => 'ファイルがありません。'
     ],
 
     'filesize'      => 'サイズ',
