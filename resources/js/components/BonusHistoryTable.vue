@@ -62,7 +62,7 @@
                                 let direct = parseInt(obj['left_bonus']) <= parseInt(obj['right_bonus'])? 1 : 2;
                                 return {
                                     ...obj, 
-                                    created_at: obj['settle_info']['settle_month'],
+                                    created_at: obj['settle_info']['settle_month'].replace('-', '/'),
                                     total_bet: this.lang.table.jpy + this.$options.filters.number2format(obj['total_bet'], 0),
                                     left_bonus: (direct == 1 ? '★' : '') + this.lang.table.jpy + this.$options.filters.number2format(obj['left_bonus'], 0),
                                     right_bonus: (direct == 2 ? '★' : '') + this.lang.table.jpy + this.$options.filters.number2format(obj['right_bonus'], 0),
