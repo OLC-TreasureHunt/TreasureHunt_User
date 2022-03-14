@@ -27,7 +27,7 @@
                 <div class="card back-semi-theme border-0">
                     <div class="card-body" v-if="news.data !== undefined && news.data.length > 0">
                         <div class="row top-news">
-                            <div class="col-md-9 col-sm-12">
+                            <div class="col-lg-9 col-md-12">
                                 <div class="row mb-4 d-none d-sm-flex" v-if="top.id !== undefined">
                                     <div class="col-md-7 col-12">
                                         <a v-bind:href="news_link(top.id)" ><img class="img-fluid" :src="top.image"></a>
@@ -42,7 +42,7 @@
                                 </div>
 
                                 <div class="row">
-                                    <div class="col-lg-3 col-md-6 col-sm-12 col-12 d-flex align-items-stretch" 
+                                    <div class="col-lg-4 col-md-6 col-sm-12 col-12 d-flex align-items-stretch" 
                                         v-for="(item, index) in news.data" >
                                         <div class="card border-0 background-transparent">
                                             <div class="">
@@ -72,7 +72,7 @@
                                     <span slot="next-nav"><i class="icon-chevron-right"></i></span>
                                 </pagination>
                             </div>
-                            <div class="col-md-3 col-sm-12">
+                            <div class="col-lg-3 col-md-12">
                                 @include('news.sidebar')
                             </div>
                         </div>
