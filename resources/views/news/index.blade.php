@@ -42,7 +42,7 @@
                                 </div>
 
                                 <div class="row">
-                                    <div class="col-md-4 col-sm-6 col-12 d-flex align-items-stretch" 
+                                    <div class="col-lg-3 col-md-6 col-sm-12 col-12 d-flex align-items-stretch" 
                                         v-for="(item, index) in news.data" >
                                         <div class="card border-0 background-transparent">
                                             <div class="">
