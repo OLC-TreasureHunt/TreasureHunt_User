@@ -48,7 +48,7 @@
                                         <div class="file-date">@{{ item.created_at | serverTime2LocalTime }}</div>
                                     </div>
                                     <div class="col-md-2">
-                                        <a v-bind:href="item.url" class="btn btn-theme" download>@lang('download.button.download')</a>
+                                        <a v-bind:href="item.url" class="btn btn-theme" download target="_blank">@lang('download.button.download')</a>
                                     </div>
                                 </div>
                             </div>
