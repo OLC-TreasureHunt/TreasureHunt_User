@@ -101,7 +101,7 @@ if (environment == 'production') {
             str = str.toString();
             return str.length < max ? this.leftPadding("0" + str, max) : str;
         },
-        serverTime2LocalTime: function(value, format = 'YYYY-MM-DD HH:mm:ss') {
+        serverTime2LocalTime: function(value, format = 'YYYY/MM/DD HH:mm:ss') {
             let toTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
             let fromTimeZone = window.Laravel.serverTimeZone;
 
@@ -131,7 +131,7 @@ if (environment == 'production') {
         number2format: function(value, decimal) {
             return _number_format(value, decimal);
         },
-        serverTime2LocalTime: function(value, format = 'YYYY-MM-DD HH:mm:ss') {
+        serverTime2LocalTime: function(value, format = 'YYYY/MM/DD HH:mm:ss') {
             let toTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
             let fromTimeZone = window.Laravel.serverTimeZone;
 
