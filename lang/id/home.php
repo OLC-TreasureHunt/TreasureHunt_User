@@ -12,6 +12,6 @@ return [
         'left' => 'Kiri',
     ],
 
-    'bets' => 'Bertaruh:amount jpy',
-    'loss' => 'Kehilangan:amount jpy',
+    'bets' => 'Bertaruh :amount jpy',
+    'loss' => 'Kehilangan :amount jpy',
 ];
