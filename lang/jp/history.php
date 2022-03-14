@@ -14,8 +14,8 @@ return [
 
     'table' => [
         'no'        => '番号',
-        'date'      => '日付',
-        'amount'    => '数量',
+        'date'      => '年月',
+        'amount'    => 'ベット',
         'status'    => '状態',
         'jpy'       => '￥',
         'bonus'     => 'ボーナス',
