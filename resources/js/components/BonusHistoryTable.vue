@@ -63,10 +63,10 @@
                                 return {
                                     ...obj, 
                                     created_at: obj['settle_info']['settle_month'],
-                                    total_bet: this.$options.filters.number2format(obj['total_bet'], 0) + this.lang.table.jpy,
-                                    left_bonus: (direct == 1 ? '★' : '') + this.$options.filters.number2format(obj['left_bonus'], 0) + this.lang.table.jpy,
-                                    right_bonus: (direct == 2 ? '★' : '') + this.$options.filters.number2format(obj['right_bonus'], 0) + this.lang.table.jpy,
-                                    bonus: this.$options.filters.number2format(obj['bonus'], 0) + this.lang.table.jpy,
+                                    total_bet: this.lang.table.jpy + this.$options.filters.number2format(obj['total_bet'], 0),
+                                    left_bonus: (direct == 1 ? '★' : '') + this.lang.table.jpy + this.$options.filters.number2format(obj['left_bonus'], 0),
+                                    right_bonus: (direct == 2 ? '★' : '') + this.lang.table.jpy + this.$options.filters.number2format(obj['right_bonus'], 0),
+                                    bonus: this.lang.table.jpy + this.$options.filters.number2format(obj['bonus'], 0),
                                     level: obj['level_info']['level'], 
                                     bonus_rate: this.$options.filters.number2format(obj['bonus_rate'], 0) + '%',
                                 }
