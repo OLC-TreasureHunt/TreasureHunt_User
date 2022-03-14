@@ -344,6 +344,14 @@ h3.pink-emphass span.text-pink {
   height: 160px; 
 }
 
+.post-thumbnail-list .post-thumbnail-entry .post-thumbnail-content a {
+  word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    display: -webkit-box;
+}
+
 @media (min-width: 768px) {
   .col-sm-1-10 {
     width: 10%;
