@@ -1,38 +1,23 @@
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
-
 require('./bootstrap');
 
 window.Vue = require('vue').default;
 require('./bootstrap');
+
 import Vue from 'vue';
+import VueSweetalert2 from 'vue-sweetalert2';
+import 'sweetalert2/dist/sweetalert2.min.css';
+import moment from 'moment-timezone';
 
-/**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
+Vue.use(VueSweetalert2);
 
-// const files = require.context('./', true, /\.vue$/i)
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
-
-
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
-
- import VueSweetalert2 from 'vue-sweetalert2';
- import 'sweetalert2/dist/sweetalert2.min.css';
- Vue.use(VueSweetalert2);
-
- import moment from 'moment-timezone';
+let environment = jQuery('input[name=environment]').val();
+const url = environment == 'local'? 'http://localhost:8484' : 'https://cmm.eternal-dreams.net';
+if (environment == 'production') {
+    Vue.config.devtools = false;
+    Vue.config.debug = false;
+    Vue.config.silent = true; 
+    Vue.config.productionTip = false;
+}
  
  Vue.mixin({
      data() { 
@@ -154,7 +139,7 @@ import Vue from 'vue';
                 format);
         },
         bytesToSize: function(bytes) {
-            var sizes = ['KB', 'MB', 'GB', 'TB'];
+            var sizes = ['byte', 'KB', 'MB', 'GB', 'TB'];
             if (bytes == 0) return '0 Byte';
             var i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)));
             return Math.round(bytes / Math.pow(1024, i), 2) + ' ' + sizes[i];

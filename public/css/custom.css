@@ -223,11 +223,11 @@
     color: white !important;
 }
 
-.pagination-theme.pagination .page-item.disabled > .page-link {
+/* .pagination-theme.pagination .page-item.disabled > .page-link {
     
     background-color: #4e2716;
     border-color: #4e2716;
-}
+} */
 
 .pagination-circle.pagination>li>a, .pagination-circle.pagination>li>span { 
     border-radius: 50% !important;margin: 0 5px;
@@ -338,6 +338,10 @@ h3.pink-emphass span.text-pink {
 
 .word-keep {
   word-break: keep-all;
+}
+
+.post-image img { 
+  height: 160px; 
 }
 
 @media (min-width: 768px) {

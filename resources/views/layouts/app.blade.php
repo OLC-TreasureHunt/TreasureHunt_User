@@ -21,6 +21,7 @@
     <link href="{{ asset('css/plugins.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
+    <input type="hidden" name="environment" value="{{ env('APP_ENV', 'localhost') }}" />
 
     @yield('styles')
     <script>
