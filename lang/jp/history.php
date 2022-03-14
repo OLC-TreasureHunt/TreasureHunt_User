@@ -21,8 +21,8 @@ return [
         'bonus'     => 'ボーナス',
         'currency'  => '通貨',
         'bet'       => 'ベット',
-        'binaryr'   => 'バイナリ左',
-        'binaryl'   => 'バイナリ右',
+        'binaryr'   => 'バイナリ右',
+        'binaryl'   => 'バイナリ左',
         'level'     => '装備',
         'rate'      => '報酬レート',
         'bonus'     => '報酬額'
