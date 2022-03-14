@@ -39,7 +39,7 @@ class FileService extends Service {
      */
     public function paginate(array $filter)
     {
-        return $this->file->with('files')->active()->paginate(5);
+        return $this->file->with('files')->active()->orderBy('created_at', 'desc')->paginate(5);
     }
 
 }
