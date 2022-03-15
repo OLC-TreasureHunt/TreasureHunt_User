@@ -4,7 +4,7 @@ return [
     'title' => '통지',
 
     'page_title' => '통지',
-    'page_title_desc' => '체계통지를 확인하세요',
+    'page_title_desc' => '시스템통지를 확인하세요',
 
     'button' => [
         'read_more'   => '더 보기',

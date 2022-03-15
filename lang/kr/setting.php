@@ -15,7 +15,7 @@ return [
     'id_verify' => '본인 확인',
     'step_auth' => '2단계 인증',
     'data_download' => '자료 다운로드',
-    'login_history' => '로그인 이력/IP',
+    'login_history' => '로그인 내역/IP',
     'language' => '언어',
 
     'login_id' => '회원 ID',
@@ -58,7 +58,7 @@ return [
     'register_datetime' => '등록 일시',
     'download' => '다운로드',
 
-    'login_history_desc' => '로그인 이력을 확인하세요.',
+    'login_history_desc' => '로그인 내역을 확인하세요.',
     'ip' => 'IP',
     'device' => '디바이스',
     'platform' => '플랫폼',

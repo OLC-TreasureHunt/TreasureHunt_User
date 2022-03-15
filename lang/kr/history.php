@@ -1,12 +1,12 @@
 <?php
 
 return [
-    'title' => '배틀이력',
+    'title' => '배틀내역',
 
-    'page_title' => '배틀이력',
-    'page_title_desc' => '배틀이력과 보너스를 확인하세요',
-    'game_history'  => '배틀이력',
-    'bonus_history' => '배틀이력',
+    'page_title' => '배틀내역',
+    'page_title_desc' => '배틀내역과 보너스를 확인하세요',
+    'game_history'  => '배틀내역',
+    'bonus_history' => '배틀내역',
 
     'button' => [
         'confirm'   => '확인'
