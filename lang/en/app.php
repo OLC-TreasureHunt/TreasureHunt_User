@@ -5,7 +5,8 @@ return [
         'jp'            => '日本語',
         'en'            => 'English',
         'zh'            => '简体中文',
-        'id'            => 'Indonesia'
+        'id'            => 'Indonesia',
+        'kr'            => '한국어'
     ],
     'gender'    => [
         'male'          => 'Male',
