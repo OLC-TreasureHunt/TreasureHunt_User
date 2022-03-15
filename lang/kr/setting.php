@@ -4,13 +4,13 @@ return [
     'title' => '설정',
 
     'page_title' => '설정',
-    'page_title_desc' => '계정 설정',
+    'page_title_desc' => '회원 설정',
 
-    'account_info' => '계정 정보',
+    'account_info' => '회원 정보',
     'api_info'      => 'Api 정보',
     'api_key'       => 'Api 키',
     'secret_key'       => '비밀 Key',
-    'account_info_update' => '계정 정보 갱신',
+    'account_info_update' => '회원 정보 갱신',
     'change_pwd' => '암호 변경',
     'id_verify' => '본인 확인',
     'step_auth' => '2단계 인증',

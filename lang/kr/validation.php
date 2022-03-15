@@ -157,7 +157,7 @@ return [
         'name'			=> '이름',
         'roma_letter'	=> 'ローマ字',
 	    'age'			=> '나이',
-        'userid'		=> '계정ID',
+        'userid'		=> '회원ID',
 	    'id'			=> 'ID',
         'password'		=> '암혼',
 		'firstname'		=> '이름',
