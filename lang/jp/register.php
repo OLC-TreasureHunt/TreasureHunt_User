@@ -4,7 +4,7 @@ return [
     'title' => '登録',
 
     'page_title' => '登録',
-    'page_title_desc' => '次へ情報を入力して、アカウントを登録します。',
+    'page_title_desc' => '登録するには次の情報を入力してください。',
 
     'sub_title' => 'アカウント情報',
 
