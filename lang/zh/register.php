@@ -76,10 +76,10 @@ return [
 		'already_exist'		=> 'You are a user already exists.',
     ],
     'btn'			=> [
-		'login'			=> 'Login',
-		'register'		=> 'Register',
+		'login'			=> '登录',
+		'register'		=> '注册',
 		'reset_pass'	=> 'Reset Password',
-		'forgot_pass'	=> 'Forgot Your Password?',
+		'forgot_pass'	=> '忘记密码了吗？',
 	],
 
 ];
