@@ -7,7 +7,7 @@
     $languages = config('lang');
     $genders = config('gender');
 ?>
-<section class="pt-5 pb-5 body-min-height back-theme position-relative" data-bg-image="{{ asset('images/background.webp') }}">
+<section class="pt-5 pb-5 body-min-height back-theme position-relative" data-bg-image="{{ asset('images/background.webp') }}" style="background-attachment: fixed">
     <div class="container-fluid d-flex flex-column">
 	<div class="background-login d-none"></div>
         <div class="row align-items-center">
