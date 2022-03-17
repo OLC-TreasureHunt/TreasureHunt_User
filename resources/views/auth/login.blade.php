@@ -86,34 +86,4 @@
 
 @section('scripts')
     <!--Bootstrap Datetimepicker component-->
-    <script>
-        jQuery(document).ready(function() {
-            var $showHidePassword = $(".show-hide-password");
-            if ($showHidePassword.length > 0) {
-                $showHidePassword.each(function() {
-                    var elem = $(this),
-                        $iconEye = "icon-eye",
-                        $iconClosedEye = "icon-eye-off",
-                        elemShowHideIcon = elem.find(".input-group-text i"),
-                        elemInput = elem.children("input");
-                    elem.find(".input-group-text i").css({
-                        cursor: "pointer",
-                    });
-                    elemShowHideIcon.on("click", function(event) {
-                        event.preventDefault();
-                        if (elem.children("input").attr("type") == "text") {
-                            elemInput.attr("type", "password");
-                            elemShowHideIcon.removeClass($iconEye);
-                            elemShowHideIcon.addClass($iconClosedEye);
-                        } else if (elem.children("input").attr("type") == "password") {
-                            elemInput.attr("type", "text");
-                            elemShowHideIcon.addClass($iconEye);
-                            elemShowHideIcon.removeClass($iconClosedEye);
-                        }
-                    });
-                });
-            }
-        });
-        
-    </script>
 @endsection
