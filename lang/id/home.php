@@ -16,5 +16,6 @@ return [
     'loss' => 'HP :amount JPY',
     'left_node' => 'Pohon Kiri',
     'right_node' => 'Pohon Kanan',
-    'bet_month' => 'Jumlah tempat tidur bulan ini'
+    'bet_month' => 'Jumlah tempat tidur bulan ini',
+    'welcome' => 'Selamat Datang di Treasure Hunt',
 ];

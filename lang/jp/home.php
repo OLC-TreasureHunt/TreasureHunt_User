@@ -15,5 +15,6 @@ return [
     'loss' => 'HP :amount JPY',
     'left_node' => '左ツリー',
     'right_node' => '右ツリー',
-    'bet_month' => '今月のベット総額'
+    'bet_month' => '今月のベット総額',
+    'welcome' => '新規会員登録おめでとうございます。',
 ];

@@ -15,5 +15,6 @@ return [
     'loss' => 'HP :amount JPY',
     'left_node' => 'Left Tree',
     'right_node' => 'Right Tree',
-    'bet_month' => 'Total bet of this month'
+    'bet_month' => 'Total bet of this month',
+    'welcome' => 'Welcome to Treasure Hunt',
 ];

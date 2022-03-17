@@ -15,5 +15,6 @@ return [
     'loss' => 'HP :amount JPY',
     'left_node' => '왼쪽트리',
     'right_node' => '오른쪽트리',
-    'bet_month' => '이달총베트액'
+    'bet_month' => '이달총베트액',
+    'welcome' => 'Treasure Hunt에 오신것을 환영합니다.',
 ];

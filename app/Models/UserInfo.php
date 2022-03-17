@@ -11,6 +11,19 @@ class UserInfo extends BaseModel
 
     protected $table = 'th_users_info';
 
+    protected $fillable = [
+        'user_id',
+        'date',
+        'type', 
+        'level',
+        'total_bet',
+        'left_bonus',
+        'right_bonus',
+        'basic_bonus',
+        'basic_percent',
+        'bonus_rate'
+    ];
+
     public function levelInfo() {
         return $this->belongsTo(BonusRateSetting::class, 'level', 'id');
     }

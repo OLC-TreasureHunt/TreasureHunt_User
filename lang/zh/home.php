@@ -15,5 +15,6 @@ return [
     'loss' => 'HP :amount JPY',
     'left_node' => '左樹',
     'right_node' => '右樹',
-    'bet_month' => '本月投注總額'
+    'bet_month' => '本月投注總額',
+    'welcome' => '欢迎光临来到寻宝游戏',
 ];
