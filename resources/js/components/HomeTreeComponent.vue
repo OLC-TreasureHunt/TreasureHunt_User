@@ -106,7 +106,7 @@ export default {
         height: 10px;
         box-sizing: border-box;
         border: 2px solid;
-        border-color: #4e2716 #4e2716 transparent transparent;
+        border-color: red red transparent transparent;
         transform: rotateZ(135deg);
         transform-origin: 50% 50% 0;
         transition: transform ease 300ms;

@@ -102,11 +102,9 @@ export default {
         cursor: pointer;
     }
 
-    .extend_handle:before {
+    .extend_handle::before {
         content: "";
         display: block;
-        /* width: 100%;
-        height: 100%; */
         width: 10px;
         height: 10px;
         box-sizing: border-box;
@@ -121,7 +119,7 @@ export default {
         border-color: #333 #333 transparent transparent;
     }
 
-    .extend .extend_handle:before {
+    .extend .extend_handle::before {
         transform: rotateZ(-45deg);
         border-color: red red transparent transparent;
     }
