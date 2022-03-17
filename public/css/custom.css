@@ -353,7 +353,8 @@ h3.pink-emphass span.text-pink {
 }
 
 h4 span:not(.btn-label).pink-red {
-  color: #ff00ff !important
+  color: #ff00ff !important;
+  font-weight: 800;
 }
 
 .home-tool {
