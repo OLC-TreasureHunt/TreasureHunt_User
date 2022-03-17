@@ -90,4 +90,6 @@ return [
 		'forgot_pass'	=> 'Forgot Your Password?',
 	],
 
+	'desc' => 'Registration and login of the affiliated site "Bicorn:<a href=\'https://www.bicorn.world\'>https://www.bicorn.world/</a>" after registeration of「TREASURE HUNT」<br>■For users who have not registered "Bicorn"<br>The same email address and password registered in TREASURE HUNT will also be registered in Bicorn.<br>After registration, you can log in to Bicon with the same email address and password registered in TREASURE HUNT.<br>■Already a member of "Bicorn"<br>After completing the registration of TREASURE HUNT, you can log in with the email address (login ID) and password registered with Bicon.',
+
 ];

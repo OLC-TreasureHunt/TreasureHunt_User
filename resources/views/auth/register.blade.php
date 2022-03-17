@@ -155,10 +155,12 @@
                                 <input type="checkbox" name="agree" id="agree" class="form-check-input" value="{{ old('agree') }}" required>
                                 <label class="form-check-label " for="agree">{{ sprintf(trans('register.agree_desc'), env('APP_NAME')) }}</label>
                             </div>
+                            <p>{!! trans('register.desc') !!}</p>
                             <button type="submit" class="btn btn-pink m-t-30 mt-3">{{ trans('register.btn.register') }}</button>
                         </form>
                         <div class="mt-4"><small class="text-gray">{{ trans('register.already_desc') }}</small> <a href="{{route('login')}}" class="small fw-bold">{{ trans('register.btn.login') }}</a>
                         </div>
+                        
                     </div>
                 </div>
             </div>

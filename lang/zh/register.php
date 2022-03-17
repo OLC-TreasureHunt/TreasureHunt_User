@@ -82,4 +82,5 @@ return [
 		'forgot_pass'	=> '忘记密码了吗？',
 	],
 
+	'desc' => '關於登錄"TREASURE"後的合作網站"Bicorn:<a href=\'https://www.bicorn.world\'>https://www.bicorn.world/</a>"的登錄和登錄<br>■未注册"Bicorn"的用戶<br>"TREASURE HUNT"中登錄的相同电子邮件和密碼，在"Bicorn"中也登錄。<br>登錄完成後，可使用"TREASURE HUNT"中登錄的相同电子邮件、密碼登錄"Bicorn"。<br>■已注册"Bicorn"的用户<br>"TREASURE HUNT"登錄完成後，也可使用以"Bicorn"登錄的电子邮件（登錄ID）和密碼登錄。',
 ];

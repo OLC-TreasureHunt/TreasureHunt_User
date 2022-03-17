@@ -15,6 +15,7 @@
 {{ trans('message.activate.txt5') }}<br>
 <a href="{{ $url }}">{{ $url }}</a><br>
 <br>
+{!! trans('register.desc') !!}<br>
 {{ trans('message.activate.txt6') }}<br>
 {{ trans('message.activate.txt7') }}<br>
 <br>

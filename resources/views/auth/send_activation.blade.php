@@ -14,7 +14,8 @@
                     <div class="alert alert-success alert-dismissible" role="alert">
                         <strong>
                             <i class="zmdi zmdi-check"></i>
-                            {{ trans('register.activation.sent_token') }}
+                            {{ trans('register.activation.sent_token') }}<br>
+                            <p class="text-start text-light">{!! trans('register.desc') !!}</p>
                         </strong><br>
                     </div>
                 @else

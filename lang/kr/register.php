@@ -87,4 +87,5 @@ return [
 		'forgot_pass'	=> '암호를 잃어버렸나요?',
 	],
 
+	'desc' => '「TREASURE HUNT」등록후의 제휴사이트「바이콘：<a href="https://www.bicorn.world">https://www.bicorn.world/</a>」의 회원가입과 로그인에 대하여<br>■「바이콘」미등록 사용자분<br>「TREASURE HUNT」에 등록한 같은 메일주소와 패스워드로「바이콘」에도 등록됩니다.<br>등록완료후「TREASURE HUNT」에 등록한 같은 메일주소와 패스워드로 「바이콘」에 로그인할수 있습니다.<br>■이미「바이콘」회원인 분<br>「TREASURE HUNT」등록완료후에도「바이콘」에 등록되어있는 메일주소（회원ID）・패스워드로 로그인할수 있습니다.',
 ];

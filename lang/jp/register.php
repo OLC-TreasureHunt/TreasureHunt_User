@@ -89,4 +89,6 @@ return [
 		'forgot_pass'	=> 'パスワードをお忘れですか？',
 	],
 	'birthday_error' => '正しい生年月日をYYYY/MM/DDで入力してください。',
+
+	'desc' => '「TREASURE HUNT」登録後の提携サイト「バイコーン：<a href="https://www.bicorn.world">https://www.bicorn.world/</a>」の登録とログインについて<br>■「バイコーン」未登録ユーザーの方<br>「TREASURE HUNT」に登録した同じメールアドレスとパスワードで「バイコーン」にも登録されます。<br>登録完了後、「TREASURE HUNT」に登録した同じメールアドレス・パスワードで「バイコーン」にログインができます。<br>■すでに「バイコーン」会員の方<br>「TREASURE HUNT」登録完了後も「バイコーン」で登録されているメールアドレス（ログインID）・パスワードでログインができます。',
 ];

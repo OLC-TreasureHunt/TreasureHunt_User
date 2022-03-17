@@ -88,4 +88,6 @@ return [
 		'forgot_pass'	=> 'Lupa Kata Sandi Anda?',
 	],
 
+	'desc' => 'Tentang pendaftaran dan login ke situs afiliasi setelah pendaftaran "TREASURE: <a href=\'https://www.bicorn.world\'>https://www.bicorn.world/</a>"<br>■Pengguna yang tidak terdaftar "Bicorn"<br>Ini juga terdaftar di "Bicorn" dengan alamat email dan sandi yang sama yang terdaftar di "TREASURE HUNT".<br>Setelah pendaftaran selesai, Anda dapat login ke "Bicorn" dengan password alamat email yang sama yang Anda daftarkan ke "TREASURE HUNT".<br>■Mereka yang sudah menjadi anggota "Bicorn"<br>Setelah pendaftaran "TREASURE HUNT" selesai, Anda masih dapat log in dengan alamat email (ID login) password password yang terdaftar dengan "Bicorn".',
+
 ];
