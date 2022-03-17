@@ -21,7 +21,7 @@ class FAQController extends Controller
     public function terms() {
         $locale = app()->getLocale();
 
-        $temp = Term::where('lang', $locale)->first();
+        $temp = Term::where('lang', $locale)->get();
         return view("term")->withData($temp);
     }
 }
