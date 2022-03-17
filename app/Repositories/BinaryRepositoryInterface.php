@@ -39,4 +39,6 @@ interface BinaryRepositoryInterface {
      * @return Binary
      */
     public function filter(array $filter);
+
+    public function orderBy($column, $direction);
 }

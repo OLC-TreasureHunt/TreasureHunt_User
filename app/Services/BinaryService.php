@@ -44,7 +44,7 @@ class BinaryService extends Service {
      */
     public function tree( $user_id ) {
         $tree = $this->binaryTree( $user_id, 0, 0 );
-        $tree->class = ['rootNode'];
+        $tree->class = ['rootNode selected_node'];
         $tree->extend = true;
 
         return $tree;
@@ -144,10 +144,10 @@ class BinaryService extends Service {
      * @param $parnet_id
      */
     protected function binaryTree($user_id, $limit = 0, $deep) {
-        $children = $this->binary->filter([
+        $children = $this->binary->orderBy('position', 'asc')->filter([
             'parent_id' => $user_id,
             'status'    => BinaryStatus::Valid
-        ]);
+        ])->get();
         $parent = User::findOrFail($user_id);
 
         $result = new \stdClass();
@@ -158,7 +158,7 @@ class BinaryService extends Service {
         $result->paid = trans('home.bet_month');
         $result->image_url = $parent->avatar;
         $result->extend = true;
-        $result->class = ['rootNode'];
+        $result->class = ['rootNode selected_node'];
         $result->selected = 0;
 
         $self = $this->binary->filter([
@@ -221,10 +221,10 @@ class BinaryService extends Service {
     }
 
     public function homeTree($user_id) {
-        $children = $this->binary->filter([
+        $children = $this->binary->orderBy('position', 'asc')->filter([
             'parent_id' => $user_id,
             'status'    => BinaryStatus::Valid
-        ]);
+        ])->get();
         $parent = User::findOrFail($user_id);
 
         $result = new \stdClass();
@@ -232,7 +232,7 @@ class BinaryService extends Service {
         $result->desc = trans('home.bet_month');
         $result->image_url = $parent->avatar;
         $result->extend = true;
-        $result->class = ['rootNode'];
+        $result->class = ['rootNode selected_node'];
         $result->selected = 0;
 
         $self = $this->binary->filter([
