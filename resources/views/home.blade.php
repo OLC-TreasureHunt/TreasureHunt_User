@@ -20,9 +20,9 @@
                     @if ($lastData)
                         <h4 class="m-b-0">@lang('home.at_moment', ['time' => serverTime2Local($lastData->created_at)])</h4>
                     @endif
-                    <h3 class="m-t-0 text-bold pink-emphass">
+                    <h4 class="m-t-0 text-bold pink-emphass">
                         {!! trans('home.your_level', ['level' => $userInfo->battleInfo->levelInfo->level]) !!}
-                    </h3>
+                    </h4>
                     @if ($userInfo->binaryGradeUp)
                         <p class="lead">@lang('home.can_upgrade', [
                             'amount' => _number_format($userInfo->binaryGradeUp->need_bet, 0)

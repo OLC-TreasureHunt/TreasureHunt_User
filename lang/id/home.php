@@ -2,7 +2,7 @@
 
 return [
     'at_moment'     => 'Agregasi pada :time',
-    'your_level'    => 'Saat ini anda adalah <span class="pink-red">:level</span> saat ini',
+    'your_level'    => 'Saat ini anda adalah <span class="pink-red h3">:level</span> saat ini',
     'can_upgrade'   => 'Posisi Anda dapat ditingkatkan dengan :amount taruhan',
     'may_graydown'  => 'Posisi anda mungkin downgrade dengan :direct binary \'s :amount',
 

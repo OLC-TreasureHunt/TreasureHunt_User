@@ -204,6 +204,7 @@ export default {
         z-index: 2;
         min-width: 8em;
         overflow: hidden;
+        min-width: 300px;
     }
 
     .node .person .avat {
@@ -315,18 +316,23 @@ export default {
         min-width: 100px;
         padding: 10px 30px;
         border: 2px solid #6666ff !important;
+        min-width: 260px;
     }
 
     .person.selected_node {
         border: 2px solid red !important;
     }
 
-    .childLevel.selected::after {
+    .childLevel.selected:last-child:after {
         border-color: red red transparent transparent;
     }
 
     .extend::after {
         border-left: 2px solid red;
+    }
+
+    .childLevel.selected:first-child:after {
+        border-color: red transparent transparent red;
     }
     
 </style>

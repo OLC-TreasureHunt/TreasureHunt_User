@@ -190,6 +190,7 @@ class BinaryService extends Service {
                 $node->paid = trans('tree.field.total_paid', ['amount' => _number_format($self[0]->left_win, 0)]);
                 $node->user_id = $child->user_id;
                 $hp = $self[0]->left_loss? $self[0]->left_loss * $rate / 100 : 0;
+                if ($hp < 0) $hp = 0;
                 $node->text = trans('home.loss', [
                     'amount' => _number_format($hp, 0)
                 ]);
@@ -200,6 +201,7 @@ class BinaryService extends Service {
                 $node->paid = trans('tree.field.total_paid', ['amount' => _number_format($self[0]->right_win, 0)]);
                 $node->user_id = $child->user_id;
                 $hp = $self[0]->right_loss? $self[0]->right_loss * $rate / 100 : 0;
+                if ($hp < 0) $hp = 0;
                 $node->text = trans('home.loss', [
                     'amount' => _number_format($hp, 0)
                 ]);;
@@ -245,6 +247,9 @@ class BinaryService extends Service {
             $result->children = [];
         }
 
+        $rate = BasicRateSetting::where('type', TreeType::BinaryTree)->first()? 
+            BasicRateSetting::where('type', TreeType::BinaryTree)->first()->basic_percent : 0;
+
         foreach ($children as $child) {
             $userInfo = User::findOrFail($child->user_id);
             $node = new \stdClass();
@@ -254,13 +259,17 @@ class BinaryService extends Service {
 
             if ($child->position == 1) {
                 $node->title = trans('home.left_node');
+                $hp = $self[0]->left_loss? $self[0]->left_loss * $rate / 100 : 0;
+                if ($hp < 0) $hp = 0;
                 $node->text = trans('home.loss', [
-                    'amount' => _number_format($self[0]->left_loss?? 0, 0)
-                ]);;
+                    'amount' => _number_format($hp, 0)
+                ]);
             } else if ($child->position == 2) {
                 $node->title = trans('home.right_node');
+                $hp = $self[0]->right_loss? $self[0]->right_loss * $rate / 100 : 0;
+                if ($hp < 0) $hp = 0;
                 $node->text = trans('home.loss', [
-                    'amount' => _number_format($self[0]->right_loss?? 0, 0)
+                    'amount' => _number_format($hp, 0)
                 ]);;
             }
 

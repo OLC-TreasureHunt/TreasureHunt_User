@@ -2,7 +2,7 @@
 
 return [
     'at_moment'     => ':time　時点でのバトル状態',
-    'your_level'    => 'あなたの現在の装備は<span class="pink-red">:level</span>です。',
+    'your_level'    => 'あなたの現在の装備は<span class="pink-red h3">:level</span>です。',
     'can_upgrade'   => 'あと:amountベットで、装備がグレードアップします。',
     'may_graydown'  => 'バイナリ:directが:amount損失で装備がグレードダウンします。',
 
