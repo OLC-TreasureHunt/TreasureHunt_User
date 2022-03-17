@@ -18,8 +18,8 @@
         <section id="page-content" class="background-transparent">
             <div class="container">
                 @foreach ($data as $item)
-                    <h4>{!! $data->title !!}</h4>
-                    <p>{!! $data->content !!}</p>
+                    <h4>{!! $item->title !!}</h4>
+                    <p>{!! $item->content !!}</p>
                 @endforeach
             </div>
         </section>
