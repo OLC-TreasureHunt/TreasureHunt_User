@@ -121,7 +121,6 @@ export default {
 
     .extend .extend_handle::before {
         transform: rotateZ(-45deg);
-        border-color: red red transparent transparent;
     }
 
     .extend::after {
