@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Term;
 use App\Services\FaqService;
 use Illuminate\Http\Request;
 
@@ -19,6 +20,8 @@ class FAQController extends Controller
 
     public function terms() {
         $locale = app()->getLocale();
-        return view("terms.$locale");
+
+        $temp = Term::where('lang', $locale)->first();
+        return view("term")->withData($temp);
     }
 }
