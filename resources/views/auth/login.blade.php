@@ -16,7 +16,7 @@
                         <div class="row">
                             <div class="col-md-6 col-sm-12 col-12 align-self-center mb-1 mt-1 px-1 py-0 text-center">
                                 @if($setting->content_type == 1)
-                                    <img class="img-fuild" src="{{ $setting->content_url }}"/>
+                                    <img class="img-fuild w-100" src="{{ $setting->content_url }}"/>
                                 @elseif($setting->content_type == 2)
                                     <video class="login-video v-center" width="100%" autoplay muted loop playsinline>
                                         <source src="{{ $setting->content_url }}" type="video/mp4">
