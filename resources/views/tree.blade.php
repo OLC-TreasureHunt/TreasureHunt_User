@@ -35,7 +35,7 @@
                     loader="dots" ></loading>
 
                 <div class="card back-semi-theme border-theme  border-theme p-20">
-                    <div class="card-body table-responsive p-0">
+                    <div class="card-body table-responsive p-0 d-flex justify-content-center">
                         <label class="d-none">
                             LandOrPortable
                             <input type="checkbox" v-model="landscape" value="1">

@@ -16,7 +16,7 @@
 
                 <div class="col-lg-6 col-12 center text-light animate__animated rounded"
                     data-animate="animate__fadeInRight">
-                    <div class="hero-heading-2 text-light back-theme-trans">
+                    <div class="hero-heading-2 text-light back-theme-trans" style="border: 2px solid #6666ff">
                     @if ($lastData)
                         <h4 class="m-b-0">@lang('home.at_moment', ['time' => serverTime2Local($lastData->created_at)])</h4>
                     @endif

@@ -31,7 +31,7 @@
             </td>
         </tr>
         <tr v-if="Array.isArray(treeData.children) && treeData.children.length && treeData.extend">
-            <td v-for="(children, index) in treeData.children" :key="index" colspan="2" class="childLevel">
+            <td v-for="(children, index) in treeData.children" :key="index" colspan="2" class="childLevel" :class="{'selected': children.selected}">
                 <TreeChart :json="children" @click-node="$emit('click-node', $event)"/>
             </td>
         </tr>
@@ -200,7 +200,8 @@ export default {
         overflow: hidden;
         background-color: #4e2716EE !important;
         min-width: 100px;
-        padding: 10px 30px
+        padding: 10px 30px;
+        border: 2px solid #6666ff !important;
     }
 
     .node .person .avat {
@@ -304,7 +305,15 @@ export default {
         font-weight:700;
     }
     
-    .selected_node {
+    .person.selected_node {
         border: 2px solid red !important;
+    }
+
+    .childLevel.selected::after {
+        border-color: red red transparent transparent;
+    }
+
+    .extend::after {
+        border-left: 2px solid red;
     }
 </style>
