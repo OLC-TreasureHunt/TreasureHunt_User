@@ -13,6 +13,9 @@ return [
     'field' => [
         'left'  => '左',
         'right' => '右',
-        'jpy'   => 'JPY'
+        'jpy'   => 'JPY',
+        'child_count' => '人数 :count 名',
+        'total_bet'     => '投注总额 :amount JPY',
+        'total_paid'    => '支付总额 :amount JPY',
     ]
 ];

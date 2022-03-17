@@ -14,11 +14,11 @@
                 </div>
                 <!-- end: Captions -->
 
-                <div class="col-lg-5 col-12 left text-light animate__animated text-center" 
+                <div class="col-lg-12 col-12 left text-light animate__animated text-center d-none" 
                         data-animate="animate__fadeInLeft">
                     <img class="img-fluid mb-sm-5" src="{{ $userInfo->battleInfo->levelInfo->image }}" />
                 </div>
-                <div class="col-lg-7 col-12 right text-light animate__animated rounded"
+                <div class="col-lg-6 col-12 center text-light animate__animated rounded"
                     data-animate="animate__fadeInRight">
                     <div class="hero-heading-2 text-light back-theme-trans">
                     @if ($lastData)

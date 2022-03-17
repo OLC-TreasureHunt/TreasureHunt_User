@@ -352,6 +352,10 @@ h3.pink-emphass span.text-pink {
     display: -webkit-box;
 }
 
+h3 span:not(.btn-label).pink-red {
+  color: #ff00ff !important
+}
+
 @media (min-width: 768px) {
   .col-sm-1-10 {
     width: 10%;

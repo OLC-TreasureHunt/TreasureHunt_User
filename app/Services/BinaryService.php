@@ -2,7 +2,9 @@
 namespace App\Services;
 
 use App\Models\User;
+use App\Models\BasicRateSetting;
 use App\Enums\BinaryStatus;
+use App\Enums\TreeType;
 use App\Enums\UserBonusStatus;
 use App\Repositories\BinaryRepositoryInterface;
 use App\Services\Service;
@@ -141,41 +143,76 @@ class BinaryService extends Service {
      * 
      * @param $parnet_id
      */
-    protected function binaryTree($parent_id, $limit = 0, $deep) {
+    protected function binaryTree($user_id, $limit = 0, $deep) {
         $children = $this->binary->filter([
-            'parent_id' => $parent_id,
+            'parent_id' => $user_id,
             'status'    => BinaryStatus::Valid
         ]);
-        $parent = User::findOrFail($parent_id);
+        $parent = User::findOrFail($user_id);
 
         $result = new \stdClass();
-        $result->name = $parent->affiliate_id;
+        $result->title = $parent->affiliate_id;
+        $result->user_id = $user_id;
+        $result->count = '';
+        $result->bet = '';
+        $result->paid = trans('home.bet_month');
         $result->image_url = $parent->avatar;
-        $result->is_premium = $parent->is_premium?? 0;
-        $result->extend = false;
+        $result->extend = true;
+        $result->class = ['rootNode'];
+        $result->selected = 0;
 
         $self = $this->binary->filter([
-            'user_id' => $parent_id
+            'user_id' => $user_id
         ]);
-        $result->own_loss = $self[0]->total_bet?? 0;
-        $result->left_loss = $self[0]->left_loss?? 0;
-        $result->right_loss = $self[0]->right_loss?? 0;
-        $result->left_count = $self[0]->left_count?? 0;
-        $result->right_count = $self[0]->right_count?? 0;
+        $result->direction = $self[0]->left_loss <= $self[0]->right_loss? 1 : 2; 
+        $result->text = trans('home.bets', [
+            'amount' => _number_format($self[0]->own_bet?? 0, 0)
+        ]);
         
-
         if (count($children) > 0) {
             $result->children = [];
         }
 
-        if ($limit != 0 && $limit == $deep) {
-            return $result;
-        }
+        $rate = BasicRateSetting::where('type', TreeType::BinaryTree)->first()? 
+            BasicRateSetting::where('type', TreeType::BinaryTree)->first()->basic_percent : 0;
 
-        $newDeep = $deep + 1;
         foreach ($children as $child) {
-            $childTree = $this->binaryTree( $child->user_id, $limit, $newDeep );
-            $result->children[] = $childTree;
+            $userInfo = User::findOrFail($child->user_id);
+            $node = new \stdClass();
+            $node->desc = '';
+            $node->image_url = $userInfo->avatar;
+            $node->extend = false;
+
+            if ($child->position == 1) {
+                $node->title = trans('home.left_node');
+                $node->count = trans('tree.field.child_count', ['count' => _number_format($self[0]->left_count, 0)]);
+                $node->bet = trans('tree.field.total_bet', ['amount' => _number_format($self[0]->left_bet, 0)]);
+                $node->paid = trans('tree.field.total_paid', ['amount' => _number_format($self[0]->left_win, 0)]);
+                $node->user_id = $child->user_id;
+                $hp = $self[0]->left_loss? $self[0]->left_loss * $rate / 100 : 0;
+                $node->text = trans('home.loss', [
+                    'amount' => _number_format($hp, 0)
+                ]);
+            } else if ($child->position == 2) {
+                $node->title = trans('home.right_node');
+                $node->count = trans('tree.field.child_count', ['count' => _number_format($self[0]->right_count, 0)]);
+                $node->bet =  trans('tree.field.total_bet', ['amount' => _number_format($self[0]->right_bet, 0)]);
+                $node->paid = trans('tree.field.total_paid', ['amount' => _number_format($self[0]->left_win, 0)]);
+                $node->user_id = $child->user_id;
+                $hp = $self[0]->right_loss? $self[0]->right_loss * $rate / 100 : 0;
+                $node->text = trans('home.loss', [
+                    'amount' => _number_format($hp, 0)
+                ]);;
+            }
+
+            if ($child->position == $result->direction) {
+                $node->selected = 1;
+                $node->class=["selected_node"];
+            } else {
+                $node->selected = 0;
+            }
+            
+            $result->children[] = $node;
         }
 
         return $result;
@@ -189,7 +226,8 @@ class BinaryService extends Service {
         $parent = User::findOrFail($user_id);
 
         $result = new \stdClass();
-        $result->name = $parent->affiliate_id;
+        $result->title = $parent->affiliate_id;
+        $result->desc = trans('home.bet_month');
         $result->image_url = $parent->avatar;
         $result->extend = true;
         $result->class = ['rootNode'];
@@ -200,7 +238,7 @@ class BinaryService extends Service {
         ]);
         $result->direction = $self[0]->left_loss <= $self[0]->right_loss? 1 : 2; 
         $result->text = trans('home.bets', [
-            'amount' => _number_format($self[0]->total_bet?? 0, 0)
+            'amount' => _number_format($self[0]->own_bet?? 0, 0)
         ]);
         
         if (count($children) > 0) {
@@ -210,15 +248,17 @@ class BinaryService extends Service {
         foreach ($children as $child) {
             $userInfo = User::findOrFail($child->user_id);
             $node = new \stdClass();
-            $node->name = $userInfo->affiliate_id;
+            $node->desc = '';
             $node->image_url = $userInfo->avatar;
             $node->extend = false;
 
             if ($child->position == 1) {
+                $node->title = trans('home.left_node');
                 $node->text = trans('home.loss', [
                     'amount' => _number_format($self[0]->left_loss?? 0, 0)
                 ]);;
             } else if ($child->position == 2) {
+                $node->title = trans('home.right_node');
                 $node->text = trans('home.loss', [
                     'amount' => _number_format($self[0]->right_loss?? 0, 0)
                 ]);;
@@ -236,5 +276,6 @@ class BinaryService extends Service {
 
         return $result;
     }
+
 
 }

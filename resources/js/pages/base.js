@@ -15,6 +15,6 @@ var base = new Vue({
     methods: {
     },
     beforeDestroy: function(){
-        clearInterval(this.loadAlerts);
+        clearInterval(this.intervalfunction);
     },
 })

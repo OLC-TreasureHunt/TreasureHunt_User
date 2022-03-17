@@ -15,7 +15,7 @@ return [
     'password_confirmation' => 'Konfirmasi Kata Sandi',
     'gender' => 'Jenis Kelamin',
     'gender_placeholder' => 'Pilih jenis kelamin Anda',
-	'birthday_placeholder' => 'Pilih hari lahir Anda',
+	'birthday_placeholder' => 'YYYY/MM/DD',
     'birthday' => 'Ulang Tahun',
     'mobile' => 'Telepon',
     'country' => 'Negara',

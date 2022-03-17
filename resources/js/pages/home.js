@@ -32,7 +32,7 @@ var tree = new Vue({
         },
     },
     beforeDestroy: function(){
-        clearInterval(this.loadAlerts);
+        clearInterval(this.intervalfunction);
     },
 
 })

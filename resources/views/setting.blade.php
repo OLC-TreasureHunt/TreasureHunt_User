@@ -150,12 +150,16 @@
                                                     <div class="form-group col-md-6">
                                                         <label for="birthday" class="text-dark">{{ trans('setting.birthday') }}</label>
                                                         <div class="input-group date" id="datepicker" data-target-input="nearest">
-                                                            <input type="text" class="form-control datetimepicker-input text-dark back-semi-theme border-theme " data-target="#datepicker" name="birthday" value="{{ old('birthday') ? old('birthday') : date('m/d/Y', strtotime(auth()->user()->birthday))}}"  placeholder="{{ trans('common.date_placeholder') }}" />
-                                                            <div class="input-group-text btn btn-light text-dark back-semi-theme border-theme" data-target="#datepicker" data-toggle="datetimepicker"><i class="icon-calendar"></i></div>
+                                                            <date-input type="text" 
+                                                                class="form-control datetimepicker-input text-dark back-semi-theme border-theme @error('birthday') is-invalid @enderror" 
+                                                                name="birthday" 
+                                                                v-model="birthday"  
+                                                                placeholder="{{ trans('common.date_placeholder') }}"></date-input>
+                                                            @error('birthday')
+                                                                <div class="is-invalid" v-if="!hasBirthdayError">{{ $message }}</div>
+                                                            @enderror
+                                                            <div class="is-invalid" v-if="hasBirthdayError">@lang('register.birthday_error')</div>
                                                         </div>
-                                                        @error('birthday')
-                                                            <div class="is-invalid">{{ $message }}</div>
-                                                        @enderror
                                                     </div>
                                                 </div>
                                                 <div class="row">
@@ -299,14 +303,11 @@
     <script src="{{ asset('plugins/clipboard/clipboard.min.js') }}"></script>
     <script src="{{ cAsset('plugins/moment/moment.min.js') }}"></script>
     <script src="{{ cAsset('plugins/bootstrap-datetimepicker/tempusdominus-bootstrap-4.js') }}"></script>
-    <script src="{{ cAsset('js/pages/base.js') }}"></script>
-
+    
     <script>
+        var birthday = "{{ old('birthday') ? old('birthday') : date('Y/m/d', strtotime(auth()->user()->birthday))}}";
         var g_id_doc_cnt = 0;
         $( document ).ready(function() {
-            $('#datepicker').datetimepicker({
-                format: 'L'
-            });
 
             $('#top_setting').addClass('text-danger');
 
@@ -360,5 +361,6 @@
         }
         
     </script>
+    <script src="{{ cAsset('js/pages/setting.js') }}"></script>
 
 @endsection

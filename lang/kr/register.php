@@ -15,7 +15,7 @@ return [
     'password_confirmation' => '암호확인',
     'gender' => '성별',
     'gender_placeholder' => '성별선택',
-	'birthday_placeholder' => '생일선택',
+	'birthday_placeholder' => 'YYYY/MM/DD',
     'birthday' => '생일',
     'mobile' => '전화번호',
     'country' => '나라',

@@ -15,7 +15,7 @@ return [
     'password_confirmation' => 'パスワード確認',
     'gender' => '性別',
     'gender_placeholder' => '性別を選択ください',
-	'birthday_placeholder' => '誕生日を選択ください',
+	'birthday_placeholder' => 'YYYY/MM/DD',
     'birthday' => '生年月日',
     'mobile' => '携帯番号',
     'country' => '国',
@@ -88,4 +88,5 @@ return [
 		'reset_pass'	=> 'パスワードリセット',
 		'forgot_pass'	=> 'パスワードをお忘れですか？',
 	],
+	'birthday_error' => '正しい生年月日をYYYY/MM/DDで入力してください。',
 ];

@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'at_moment'     => ':time　時点での集計',
-    'your_level'    => 'あなたの現在の装備は<span class="text-pink">:level</span>です。',
+    'at_moment'     => ':time　時点でのバトル状態',
+    'your_level'    => 'あなたの現在の装備は<span class="pink-red">:level</span>です。',
     'can_upgrade'   => 'あと:amountベットで、装備がグレードアップします。',
     'may_graydown'  => 'バイナリ:directが:amount損失で装備がグレードダウンします。',
 
@@ -11,6 +11,9 @@ return [
         'left' => '左',
     ],
 
-    'bets' => 'ベット￥:amount',
-    'loss' => '損失￥:amount',
+    'bets' => 'ATK :amount JPY',
+    'loss' => 'HP :amount JPY',
+    'left_node' => '左ツリー',
+    'right_node' => '右ツリー',
+    'bet_month' => '今月のベット総額'
 ];

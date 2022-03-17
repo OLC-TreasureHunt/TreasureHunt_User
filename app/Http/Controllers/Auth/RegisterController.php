@@ -89,14 +89,14 @@ class RegisterController extends Controller
                     return $query->where('email', $data['email']);
                 })],
             'password' => ['required', 'string', 'min:8', 'max:255', 'confirmed', 'regex:/(?=.*[a-zA-Z])(?=.*[0-9])/'],
-            'birthday' => ['nullable', 'date'],
+            'birthday' => ['required', 'date', 'regex:/^[+-]?\d{4}\/(0[1-9]|1[0-2])\/(0[1-9]|[12][0-9]|3[01])$/'],
             'mobile' => ['required', 'string', 'max:20'],
             'country' => ['required', 'string', 'max:64'],
             'lang' => ['required', 'string', 'max:4'],  
             'address' => ['required', 'string', 'max:255'],
             'city' => ['required', 'string', 'max:64'],
             'postal_code' => ['required', 'string', 'max:16'],
-        ], [
+        ], [], [
             'name' => trans('register.name'),
             'email' => trans('register.email'),
             'password' => trans('register.password'),

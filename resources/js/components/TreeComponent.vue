@@ -1,5 +1,5 @@
 <template>
-    <table v-if="treeData.name">
+    <table v-if="treeData.title">
         <tr>
             <td :colspan="Array.isArray(treeData.children) ? treeData.children.length * 2 : 1" 
                 :class="{parentLevel: Array.isArray(treeData.children) && treeData.children.length, extend: Array.isArray(treeData.children) && treeData.children.length && treeData.extend}" >
@@ -7,26 +7,30 @@
                     <div class="person" 
                         :class="Array.isArray(treeData.class) ? treeData.class : []"
                         @click="$emit('click-node', treeData)" >
+                        <div class="name">{{ treeData.title }}</div>
                         <div class="avat">
                             <img :src="treeData.image_url" />
                             <img v-if="treeData.is_premium" class="bottom-0 end-0 award-small position-absolute" />
                         </div>
-                    <div class="name">{{treeData.name}}</div>
-                </div>
+                        <div class="name" v-if="treeData.count.length !== 0">{{treeData.count}}</div>
+                        <div class="name" v-if="treeData.bet.length !== 0">{{treeData.bet}}</div>
+                        <div class="name" v-if="treeData.paid.length !== 0">{{treeData.paid}}</div>
+                        <div class="name" v-if="treeData.text.length !== 0">{{treeData.text}}</div>
+                    </div>
                 
-                <template v-if="Array.isArray(treeData.mate) && treeData.mate.length">
-                    <div class="person" v-for="(mate, mateIndex) in treeData.mate" :key="treeData.name+mateIndex"
-                        :class="Array.isArray(mate.class) ? mate.class : []"
-                        @click="$emit('click-node', mate)" >
-                        <div class="avat">
-                            <img :src="mate.image_url" />
-                            <img v-if="mate.is_premium" class="bottom-0 end-0 award-small position-absolute" />
-                        </div>
-                        <div class="name">{{mate.name}}</div>
+                    <template v-if="Array.isArray(treeData.mate) && treeData.mate.length">
+                        <div class="person" v-for="(mate, mateIndex) in treeData.mate" :key="treeData.name+mateIndex"
+                            :class="Array.isArray(mate.class) ? mate.class : []"
+                            @click="$emit('click-node', mate)" >
+                            <div class="avat">
+                                <img :src="mate.image_url" />
+                                <img v-if="mate.is_premium" class="bottom-0 end-0 award-small position-absolute" />
+                            </div>
+                            <div class="name">{{mate.name}}</div>
+                    </div>
+                    </template>
                 </div>
-                </template>
-            </div>
-            <div class="extend_handle" v-if="Array.isArray(treeData.children) && treeData.children.length" @click="toggleExtend(treeData)"></div>
+                <div class="extend_handle" v-if="Array.isArray(treeData.children) && treeData.children.length" @click="toggleExtend(treeData)"></div>
             </td>
         </tr>
         <tr v-if="Array.isArray(treeData.children) && treeData.children.length && treeData.extend">
@@ -300,9 +304,20 @@ export default {
 
     #tree-page .name{
         font-weight:700;
+        color: white;
+    }
+
+    .node .person {
+        display: inline-block;
+        z-index: 2;
+        overflow: hidden;
+        background-color: #4e2716EE !important;
+        min-width: 100px;
+        padding: 10px 30px;
+    }
+
+    .selected_node {
+        border: 2px solid red !important;
     }
     
-    #tree-page .rootNode .name{
-        color: red;
-    }
 </style>

@@ -8,7 +8,7 @@
                             <p class="mb-5">@lang('app.footer.desc')<br>
                                 Ryuji’nCompany. All Rights Reserved.</p>
                             @if(!Auth::check())
-                                <a href="{{ route('login') }}" class="btn btn-inverted" target="_blank">@lang('register.btn.login')</a>
+                                <a href="{{ route('login') }}" class="btn btn-inverted">@lang('register.btn.login')</a>
                             @endauth
                         </div>
                     </div>

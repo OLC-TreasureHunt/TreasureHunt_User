@@ -28,7 +28,12 @@
         <!-- Content -->
         
         <section id="page-content" class="background-transparent">
-            <div class="container">
+            <div class="container vld-parent">
+                <loading v-model:active="isLoading"
+                    :can-cancel="true"
+                    :is-full-page="false"
+                    loader="dots" ></loading>
+
                 <div class="card back-semi-theme border-theme  border-theme p-20">
                     <div class="card-body table-responsive p-0">
                         <label class="d-none">

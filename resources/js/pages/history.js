@@ -33,6 +33,6 @@ var history = new Vue({
     components: {
     },
     beforeDestroy: function(){
-        clearInterval(this.loadAlerts);
+        clearInterval(this.intervalfunction);
     },
 })

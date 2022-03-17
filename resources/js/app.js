@@ -27,7 +27,6 @@ if (environment == 'production') {
         }
     },
     mounted: function() {
-        // this.intervalfunction = setInterval(this.loadAlerts, 1000);
     },
     methods: {
         moment(...params) {
@@ -149,7 +148,6 @@ if (environment == 'production') {
         }
     },
     beforeDestroy: function(){
-        clearInterval(this.intervalfunction);
     },
  })
 

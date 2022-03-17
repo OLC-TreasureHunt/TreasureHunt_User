@@ -35,6 +35,6 @@ var download = new Vue({
         }
     },
     beforeDestroy: function(){
-        clearInterval(this.loadAlerts);
+        clearInterval(this.intervalfunction);
     },
 })

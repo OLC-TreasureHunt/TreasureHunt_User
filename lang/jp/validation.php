@@ -154,7 +154,7 @@ return [
     */
     'attributes' => [
         'title'     => 'タイトル',
-        'content'   => 'コンテンツ'
+        'content'   => 'コンテンツ',
     ],
 
 ];

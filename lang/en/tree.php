@@ -13,6 +13,9 @@ return [
     'field' => [
         'left'  => 'L',
         'right' => 'R',
-        'jpy'   => 'JPY'
+        'jpy'   => 'JPY',
+        'child_count' => 'Group :count people',
+        'total_bet'     => 'Total bet :amount JPY',
+        'total_paid'    => 'Total Paid :amount JPY',
     ]
 ];

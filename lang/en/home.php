@@ -2,7 +2,7 @@
 
 return [
     'at_moment'     => 'Aggregation at :time',
-    'your_level'    => 'Currently you are a <span class="text-pink">:level</span> at this moment',
+    'your_level'    => 'Currently you are a <span class="pink-red">:level</span> at this moment',
     'can_upgrade'   => 'Your position can be upgraded with :amount bets',
     'may_graydown'  => 'Your position may be downgrade with :direct binary \'s :amount',
 
@@ -11,6 +11,9 @@ return [
         'left' => 'Left',
     ],
 
-    'bets' => 'Bet :amount jpy',
-    'loss' => 'Loss :amount jpy',
+    'bets' => 'ATK :amount JPY',
+    'loss' => 'HP :amount JPY',
+    'left_node' => 'Left Tree',
+    'right_node' => 'Right Tree',
+    'bet_month' => 'Total bet of this month'
 ];

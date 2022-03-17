@@ -366,9 +366,9 @@ function normalizeComponent (
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
-/*!****************************************!*\
-  !*** ./resources/js/pages/register.js ***!
-  \****************************************/
+/*!***************************************!*\
+  !*** ./resources/js/pages/setting.js ***!
+  \***************************************/
 Vue.component('date-input', (__webpack_require__(/*! ../components/DateInput.vue */ "./resources/js/components/DateInput.vue")["default"]));
 new Vue({
   el: '#app',

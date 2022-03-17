@@ -15,7 +15,7 @@ return [
     'password_confirmation' => 'Password Confirmation',
     'gender' => 'Gender',
     'gender_placeholder' => 'Select your gender',
-	'birthday_placeholder' => 'Select your birhtday',
+	'birthday_placeholder' => 'YYYY/MM/DD',
     'birthday' => 'Birthday',
     'mobile' => 'Phone',
     'country' => 'Country',

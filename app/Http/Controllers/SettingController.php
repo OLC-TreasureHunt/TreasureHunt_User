@@ -32,7 +32,7 @@ class SettingController extends Controller
         $validator = Validator::make($data, [
             'avatar' => ['nullable', 'mimes:jpg,bmp,jpeg,png'],
             'name' => ['required', 'string', 'max:128'],
-            'birthday' => ['nullable', 'date'],
+            'birthday' => ['required', 'date', 'regex:/^[+-]?\d{4}\/(0[1-9]|1[0-2])\/(0[1-9]|[12][0-9]|3[01])$/'],
             'mobile' => ['required', 'string', 'max:20'],
             'country' => ['required', 'string', 'max:64'],
             'address' => ['required', 'string', 'max:255'],

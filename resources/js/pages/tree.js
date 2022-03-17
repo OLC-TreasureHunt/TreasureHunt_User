@@ -2,6 +2,8 @@ import axios from "axios";
 
 Vue.component('binary-tree', require('../components/TreeComponent.vue').default);
 Vue.component('tree-dialog', require('../components/TreeDialog.vue').default);
+import Loading from 'vue-loading-overlay';
+import 'vue-loading-overlay/dist/vue-loading.css';
 
 var tree = new Vue({
     name: 'BinaryTree',
@@ -12,7 +14,11 @@ var tree = new Vue({
             data: {},
             trans: trans,
             intervalfunction: null,
+            isLoading: false,
         }
+    },
+    components: {
+        Loading
     },
     mounted: function () {
         this.intervalfunction = setInterval(this.loadAlerts, 1000);
@@ -31,36 +37,43 @@ var tree = new Vue({
                 .then( (data) => {
                 });
         },
+        async loadUpward(id) {
+            if (id == window.Laravel.user) {
+                return;
+            }
+            let self = this;
+            axios.get(window.Laravel.baseUrl + '/tree/upward/' + id)
+                .then( (response) => {
+                    self.data = response.data;
+                })
+                .catch( (error) => {
+                    console.log(error);
+                })
+                .then( (data) => {
+                });
+        },
+        async loadDownward(id) {
+            let self = this;
+            axios.get(window.Laravel.baseUrl + '/tree/downward/' + id)
+                .then( (response) => {
+                    self.data = response.data;
+                })
+                .catch( (error) => {
+                    console.log(error);
+                })
+                .then( (data) => {
+                });
+        },
         clickNode: function(node){
-            this.$swal({
-                html: '<div id="VueSweetAlert2"></div>',
-                allowOutsideClick: true,
-                showCancelButton: false,
-                confirmButtonText: this.trans.button.confirm,
-                customClass: {
-                    actions: 'horizontal-buttons',
-                    container: 'swal-theme',
-                    confirmButton: 'btn btn-outline btn-rounded btn-light',
-                },
-                willOpen: () => {
-                    let ComponentClass = Vue.extend(Vue.component('tree-dialog'));
-                    let instance = new ComponentClass({
-                        propsData: {
-                            treeData: node,
-                            trans: this.trans
-                        }
-                    });
-                    instance.$mount();
-                    document.getElementById('VueSweetAlert2').appendChild(instance.$el);
-                }
-            }).then( function(result) {
-                if ( result.isConfirmed ) {
-                }
-            }.bind(this)).catch(errors => {});
+            if (node.count == '') {
+                this.loadUpward(node.user_id);
+            } else {
+                this.loadDownward(node.user_id);
+            }
         }
     },
     beforeDestroy: function(){
-        clearInterval(this.loadAlerts);
+        clearInterval(this.intervalfunction);
     },
 
 })

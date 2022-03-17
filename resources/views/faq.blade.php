@@ -26,7 +26,7 @@
                             @foreach ($faq->questions as $j => $question)
                             <div @class(["ac-item", "ac-active" => $j == 0])>
                                 <h5 class="ac-title"><i class="fa fa-question-circle"></i>{{ $question->question }}</h5>
-                                <div style="" class="ac-content">{{ $question->answer }}</div>
+                                <div style="" class="ac-content">{!! $question->answer !!}</div>
                             </div>
                             @endforeach
                         </div>

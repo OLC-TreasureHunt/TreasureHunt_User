@@ -20,7 +20,7 @@
                         <h3 class="text-pink">{{ trans('register.page_title') }}</h3>
                         <p class="text-gray">{{ trans('register.page_title_desc') }}</p>
                         <hr>
-                        <form method="post" id="register_form" class="form-validate mt-5" action="{{ route('register') }}">
+                        <form method="post" id="register_form" class="form-validate mt-5" action="{{ route('register') }}" v-cloak>
                             @csrf
                             <div class="h5 mb-4 ">{{ trans('register.sub_title') }}</div>
                             <div class="row">
@@ -53,7 +53,7 @@
                                 <div class="form-group col-md-6">
                                     <label for="password_confirmation" class="">{{ trans('register.password_confirmation') }}</label>
                                     <div class="input-group show-hide-password">
-                                        <input class="form-control back-semitrans-theme   " name="password_confirmation" placeholder="{{ trans('register.password_confirmation') }}" type="password" >
+                                        <input class="form-control back-semitrans-theme " name="password_confirmation" placeholder="{{ trans('register.password_confirmation') }}" type="password" >
                                         <span class="input-group-text back-semitrans-theme  "><i class="icon-eye-off" aria-hidden="true" style="cursor: pointer;"></i></span>
                                     </div>
                                 </div>
@@ -70,9 +70,16 @@
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="birthday" class="">{{ trans('register.birthday') }}</label>
-                                    <div class="input-group date" id="datepicker" data-target-input="nearest">
-                                        <input type="text" class="form-control datetimepicker-input back-semitrans-theme  " data-target="#datepicker" data-toggle="datetimepicker" name="birthday" value="{{ old('birthday') }}"  placeholder="{{ trans('register.birthday_placeholder') }}" />
-                                        <div class="input-group-text back-semitrans-theme" data-target="#datepicker" data-toggle="datetimepicker"><i class="icon-calendar"></i></div>
+                                    <div class="input-group date" id="datepicker">
+                                        <date-input type="text" 
+                                            class="form-control datetimepicker-input rounded back-semitrans-theme @error('birthday') is-invalid @enderror" 
+                                            name="birthday" 
+                                            v-model="birthday"  
+                                            placeholder="{{ trans('register.birthday_placeholder') }}"></date-input>
+                                        @error('birthday')
+                                            <div class="is-invalid" v-if="!hasBirthdayError">{{ $message }}</div>
+                                        @enderror
+                                        <div class="is-invalid" v-if="hasBirthdayError">@lang('register.birthday_error')</div>
                                     </div>
                                 </div>
                             </div>
@@ -161,11 +168,12 @@
 @endsection
 
 @section('scripts')
-    <!--Bootstrap Datetimepicker component-->
     <script src="{{ asset('plugins/moment/moment.min.js') }}"></script>
     <script src="{{ asset('plugins/bootstrap-datetimepicker/tempusdominus-bootstrap-4.js') }}"></script>
-
+    
     <script>
+        var birthday = "{{ old('birthday') ? old('birthday') : request()->get('birthday') }}";
+
         jQuery(document).ready(function() {
             $('select[name=country] option').each(function() {
                 var optionText = this.text;
@@ -175,10 +183,6 @@
                 }
             });
             
-            $('#datepicker').datetimepicker({
-                format: 'L'
-            });
-
             var $showHidePassword = $(".show-hide-password");
             if ($showHidePassword.length > 0) {
                 $showHidePassword.each(function() {
@@ -207,4 +211,6 @@
         });
         
     </script>
+
+<script src="{{ cAsset('js/pages/register.js') }}"></script>
 @endsection

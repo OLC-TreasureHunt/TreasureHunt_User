@@ -13,6 +13,9 @@ return [
     'field' => [
         'left'  => '좌',
         'right' => '우',
-        'jpy'   => 'JPY'
+        'jpy'   => 'JPY',
+        'child_count' => '인원수 :count 명',
+        'total_bet'     => '베트총액 :amount JPY',
+        'total_paid'    => '지출총액 :amount JPY',
     ]
 ];

@@ -54,6 +54,8 @@ Route::group(['middleware' => 'auth'], function() {
 
     Route::get('/tree', [App\Http\Controllers\TreeController::class, 'index'])->name('tree');
     Route::get('/tree/binary', [App\Http\Controllers\TreeController::class, 'binary'])->name('tree.binary');
+    Route::get('/tree/upward/{id}', [App\Http\Controllers\TreeController::class, 'upward'])->name('tree.upward');
+    Route::get('/tree/downward/{id}', [App\Http\Controllers\TreeController::class, 'downward'])->name('tree.downward');
     
     Route::get('/history', [App\Http\Controllers\HistoryController::class, 'index'])->name('history');
     Route::get('/history/list/game', [App\Http\Controllers\HistoryController::class, 'game'])->name('history.game');
