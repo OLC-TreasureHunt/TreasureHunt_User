@@ -95,7 +95,7 @@
 #mainMenu nav > ul > li > a, #mainMenu nav > ul > li:hover > a {
   color: white;
   text-transform: unset;
-  padding: 10px 10px;
+  padding: 10px 8px;
 }
 
 .header-extras > ul > li a, .header-extras > ul > li i.icon-globe {
@@ -356,6 +356,10 @@ h3 span:not(.btn-label).pink-red {
   color: #ff00ff !important
 }
 
+.home-tool {
+  left: 280px;
+}
+
 @media (min-width: 768px) {
   .col-sm-1-10 {
     width: 10%;
@@ -381,5 +385,24 @@ h3 span:not(.btn-label).pink-red {
   img#mv-img.mv-img {
     width: 90% !important;
     max-width: unset;
+  }
+}
+
+
+@media (max-width: 1200px) {
+  .home-tool {
+    left: 235px;
+  }
+}
+
+@media (max-width: 991px) {
+  .home-tool {
+    left: 80px;
+  }
+}
+
+@media (max-width: 767px) {
+  .home-tool {
+    left: 0px;
   }
 }
