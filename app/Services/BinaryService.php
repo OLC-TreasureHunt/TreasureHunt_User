@@ -197,7 +197,7 @@ class BinaryService extends Service {
                 $node->title = trans('home.right_node');
                 $node->count = trans('tree.field.child_count', ['count' => _number_format($self[0]->right_count, 0)]);
                 $node->bet =  trans('tree.field.total_bet', ['amount' => _number_format($self[0]->right_bet, 0)]);
-                $node->paid = trans('tree.field.total_paid', ['amount' => _number_format($self[0]->left_win, 0)]);
+                $node->paid = trans('tree.field.total_paid', ['amount' => _number_format($self[0]->right_win, 0)]);
                 $node->user_id = $child->user_id;
                 $hp = $self[0]->right_loss? $self[0]->right_loss * $rate / 100 : 0;
                 $node->text = trans('home.loss', [

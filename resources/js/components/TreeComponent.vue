@@ -314,9 +314,10 @@ export default {
         background-color: #4e2716EE !important;
         min-width: 100px;
         padding: 10px 30px;
+        border: 2px solid #6666ff !important;
     }
 
-    .selected_node {
+    .person.selected_node {
         border: 2px solid red !important;
     }
     
