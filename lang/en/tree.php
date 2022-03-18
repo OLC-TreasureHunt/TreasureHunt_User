@@ -4,7 +4,7 @@ return [
     'title' => 'Binary Tree',
 
     'page_title' => 'Binary Tree',
-    'page_title_desc' => 'You can see the Binary Tree here.',
+    'page_title_desc' => 'Date at :date',
 
     'button' => [
         'confirm' => 'Confirm'

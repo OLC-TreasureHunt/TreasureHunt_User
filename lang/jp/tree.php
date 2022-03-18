@@ -4,7 +4,7 @@ return [
     'title' => 'バイナリツリー',
 
     'page_title' => 'バイナリツリー',
-    'page_title_desc' => 'バイナリツリーを確認できます。',
+    'page_title_desc' => ':date 時点のデータ',
 
     'button' => [
         'confirm' => '確認'

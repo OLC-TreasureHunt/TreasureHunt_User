@@ -4,7 +4,7 @@ return [
     'title' => 'Pohon Biner',
 
     'page_title' => 'Pohon Biner',
-    'page_title_desc' => 'Anda dapat melihat Pohon Binary di sini.',
+    'page_title_desc' => 'Data pada titik :date',
 
     'button' => [
         'confirm' => 'Konfirmasi'

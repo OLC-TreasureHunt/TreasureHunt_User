@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use Auth;
 use App\Models\User;
-use Illuminate\Http\Request;
+use App\Services\ManualInputService;
 use App\Services\BinaryService;
+use Illuminate\Http\Request;
+
 
 class TreeController extends Controller
 {
@@ -13,12 +15,14 @@ class TreeController extends Controller
      * @var BinaryService
      */
     protected $binary;
+    protected $manualInput;
 
     /**
      * @param BinaryService $binary
      */
-    public function __construct(BinaryService $binary) {
+    public function __construct(BinaryService $binary, ManualInputService $manualInput) {
         $this->binary = $binary;
+        $this->manualInput = $manualInput;
     }
 
     /**
@@ -27,8 +31,9 @@ class TreeController extends Controller
      * @return null
      */
     public function index() {
-        $this->binary();
-        return view('tree');
+        $lastData = $this->manualInput->last();
+        return view('tree')
+            ->withLastData($lastData);
     }
 
     /**

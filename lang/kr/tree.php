@@ -4,7 +4,7 @@ return [
     'title' => '배틀트리',
 
     'page_title' => '배틀트리',
-    'page_title_desc' => '배틀트리를 확인하세요.',
+    'page_title_desc' => ':date 시점의 데이터',
 
     'button' => [
         'confirm' => '확인'

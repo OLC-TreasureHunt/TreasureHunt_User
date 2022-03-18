@@ -4,7 +4,7 @@ return [
     'title' => '双叉树',
 
     'page_title' => '双叉树',
-    'page_title_desc' => '这里可以双叉树。',
+    'page_title_desc' => '在 :date 时刻的数据',
 
     'button' => [
         'confirm' => '确认'

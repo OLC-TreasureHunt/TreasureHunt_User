@@ -19,7 +19,9 @@
             <div class="container">
                 <div class="page-title">
                     <h1>{{ trans('tree.page_title') }}</h1>
-                    <span>{{ trans('tree.page_title_desc') }}</span>
+                    @if ($lastData)
+                    <span>@lang('tree.page_title_desc', ['date' => serverTime2Local($lastData->display_time?? $lastData->created_at)])</span>
+                    @endif
                 </div>
             </div>
         </section>
