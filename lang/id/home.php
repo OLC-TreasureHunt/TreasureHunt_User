@@ -17,5 +17,5 @@ return [
     'left_node' => 'Pohon Kiri',
     'right_node' => 'Pohon Kanan',
     'bet_month' => 'Jumlah tempat tidur bulan ini',
-    'welcome' => 'Selamat Datang di Treasure Hunt',
+    'welcome' => 'Setelah kinerja bermain tercermin, <br>status pertempuran Anda akan ditampilkan.',
 ];

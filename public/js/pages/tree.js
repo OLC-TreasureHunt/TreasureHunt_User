@@ -4655,12 +4655,11 @@ var tree = new Vue({
         }, _callee3);
       }))();
     },
-    clickNode: function clickNode(node) {
-      if (node.count == '') {
-        this.loadUpward(node.user_id);
-      } else {
-        this.loadDownward(node.user_id);
-      }
+    clickNode: function clickNode(node) {// if (node.count == '') {
+      //     this.loadUpward(node.user_id);
+      // } else {
+      //     this.loadDownward(node.user_id);
+      // }
     }
   },
   beforeDestroy: function beforeDestroy() {

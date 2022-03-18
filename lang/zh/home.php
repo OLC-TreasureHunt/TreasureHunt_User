@@ -16,5 +16,5 @@ return [
     'left_node' => '左樹',
     'right_node' => '右樹',
     'bet_month' => '本月投注總額',
-    'welcome' => '欢迎光临来到寻宝游戏',
+    'welcome' => '如果反映出比赛成绩的话，就会显示你的战斗状态。',
 ];

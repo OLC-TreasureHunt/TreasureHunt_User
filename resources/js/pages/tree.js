@@ -65,11 +65,11 @@ var tree = new Vue({
                 });
         },
         clickNode: function(node){
-            if (node.count == '') {
-                this.loadUpward(node.user_id);
-            } else {
-                this.loadDownward(node.user_id);
-            }
+            // if (node.count == '') {
+            //     this.loadUpward(node.user_id);
+            // } else {
+            //     this.loadDownward(node.user_id);
+            // }
         }
     },
     beforeDestroy: function(){

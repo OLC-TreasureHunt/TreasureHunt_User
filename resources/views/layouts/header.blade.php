@@ -60,6 +60,7 @@
                         <ul>
                             <li><a href="{{ route('home') }}"><i class="fa fa-home"></i> @lang('app.menu.home')</a></li>
                             
+                            @auth
                             <li class="dropdown">
                                 <a href="#"><i class="fa fa-gamepad"></i>@lang('app.menu.binary')</a>
                                 <ul class="dropdown-menu back-theme">
@@ -67,6 +68,7 @@
                                     <li><a href="{{ route('history') }}"><i class="fa fa-history"></i> @lang('app.menu.history')</a></li>
                                 </ul>
                             </li>
+                            @endauth
 
                             <li class="dropdown">
                                 <a href="#"><i class="icon-bell"></i>@lang('app.menu.support')</a>

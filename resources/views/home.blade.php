@@ -47,7 +47,7 @@
                             ])</p>
                             @endif
                         @else
-                            <h4 class="m-b-0 text-center">@lang('home.welcome')</h4>
+                            <h4 class="m-b-0 text-center">{!! trans('home.welcome') !!}</h4>
                         @endif
                     </div>
                 </div>

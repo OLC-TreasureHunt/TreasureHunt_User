@@ -16,5 +16,5 @@ return [
     'left_node' => 'Left Tree',
     'right_node' => 'Right Tree',
     'bet_month' => 'Total bet of this month',
-    'welcome' => 'Welcome to Treasure Hunt',
+    'welcome' => 'Your aggregation will be displayed,<br> after your performance is ready',
 ];
