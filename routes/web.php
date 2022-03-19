@@ -45,6 +45,10 @@ Route::get('/download/files', [App\Http\Controllers\FileController::class, 'file
 Route::get('/faq', [App\Http\Controllers\FAQController::class, 'index'])->name('faq');
 Route::get('/terms', [App\Http\Controllers\FAQController::class, 'terms'])->name('terms');
 
+Route::get('/notice/alert', [App\Http\Controllers\NoticeController::class, 'alert'])->name('notice.alert');
+Route::get('/maintenance', [App\Http\Controllers\ErrorController::class, 'maintenance'])->name('maintenance');
+Route::get('/nock', [App\Http\Controllers\ErrorController::class, 'nock'])->name('nock');
+
 Route::group(['middleware' => 'auth'], function() {
     Route::get('/setting', [App\Http\Controllers\SettingController::class, 'index'])->name('setting');
     Route::post('/setting/updateprofile', [App\Http\Controllers\SettingController::class, 'updateProfile'])->name('setting.updateprofile');
@@ -64,7 +68,6 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/notice', [App\Http\Controllers\NoticeController::class, 'index'])->name('notice');
     Route::get('/notice/list', [App\Http\Controllers\NoticeController::class, 'list'])->name('notice.list');
     Route::get('/notice/read/{id}', [App\Http\Controllers\NoticeController::class, 'read'])->name('notice.read');
-    Route::get('/notice/alert', [App\Http\Controllers\NoticeController::class, 'alert'])->name('notice.alert');
-
+    
     Route::get('/home/tree', [App\Http\Controllers\TreeController::class, 'homeTree'])->name('home.tree');
 });

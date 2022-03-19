@@ -33,6 +33,7 @@
                                                 </div><span class="clearfix"></span>
                                                 <form method="post" class="form-validate" action="{{ route('login') }}">
                                                     @csrf
+                                                    <input type="hidden" name="access_token" value="{{ $access_token?? '' }}">
                                                     <div class="form-group">
                                                         <label for="email">@lang('login.login')</label>
                                                         <div class="input-group">
@@ -85,5 +86,5 @@
 @endsection
 
 @section('scripts')
-    <!--Bootstrap Datetimepicker component-->
+    <script src="{{ cAsset('js/pages/base.js') }}"></script>
 @endsection

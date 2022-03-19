@@ -108,8 +108,8 @@ if (environment == 'production') {
                 format);
         },
         async loadAlerts() {
+            let self = this;
             if (window.Laravel.user !== undefined && window.Laravel.user !== null) {
-                let self = this;
                 axios.get(window.Laravel.baseUrl + '/notice/alert')
                     .then( (response) => {
                         self.alerts = response.data;
@@ -120,6 +120,20 @@ if (environment == 'production') {
                     .then( (data) => {
                     });
             }
+
+            if (accessToken != undefined && accessToken != '') return;
+            axios.get(window.Laravel.baseUrl + '/nock')
+                .then( (response) => {
+                    let mode = response.data.mode;
+                    if (mode == 0) {
+                    } else {
+                        window.location.href = window.Laravel.baseUrl + '/';
+                    }
+                })
+                .catch( (error) => {
+                })
+                .then( (data) => {
+                });
         },
         noticeClickHandler( notice ) {
             axios.get(window.Laravel.baseUrl + '/notice/read/' + notice.id)

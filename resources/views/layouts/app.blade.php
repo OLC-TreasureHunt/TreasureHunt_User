@@ -36,6 +36,14 @@
     </script>
 </head>
 <body>
+    <?php
+    $is_maintenance = Session::get('is_maintenance', false);
+    $access_token = Request::get('access_token');
+    if (!\App\Models\MaintenanceToken::isValid($access_token)) {
+        $access_token = '';
+    }
+    ?>
+
     <!-- Body Inner -->
     <div class="body-inner back-semi-theme back-img-transparent" id="app">
         <!-- Header -->
@@ -58,6 +66,13 @@
     <script src="{{ cAsset('js/plugins.js') }}"></script>
     <!--Template functions-->
     
+    
+    <script>
+        let accessToken = '{{ isset($access_token) ? $access_token : '' }}';
+        if (accessToken == '') {
+            accessToken = '{{ Session::get('access_token', '') }}';
+        }
+    </script>
     <script src="{{ mix('js/app.js') }}"></script>
     <script src="{{ cAsset('plugins/toastr/toastr.min.js') }}"></script>
     <script src="{{ cAsset('plugins/datatables/datatables.min.js') }}"></script>

@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Session;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use App\Models\MaintenanceToken;
 use App\Models\LoginSetting;
 
 class LoginController extends Controller
@@ -42,10 +44,17 @@ class LoginController extends Controller
         $this->username = $this->findUsername();
     }
 
-    public function showLoginForm()
+    public function showLoginForm(Request $request)
     {
+        $access_token = $request->get('access_token');
+        if (!MaintenanceToken::isValid($access_token)) $access_token = '';
+        Session::put('access_token', $access_token);
+
         $setting = LoginSetting::latest()->first();
-        return view('auth.login', ["setting"=> $setting]);
+        return view('auth.login', [
+            "setting"           => $setting,
+            'access_token'      => $access_token,
+        ]);
     }
 
     public function findUsername()

@@ -1,5 +1,5 @@
 {
-    "/js/app.js": "/js/app.js?id=959c606f09b6b9102446",
+    "/js/app.js": "/js/app.js?id=0da7620f6c738a411f7a",
     "/js/pages/register.js": "/js/pages/register.js?id=5ff6523e36137fc8bea8",
     "/js/pages/tree.js": "/js/pages/tree.js?id=03dc045253480adeecd4",
     "/js/pages/history.js": "/js/pages/history.js?id=62b9815de855a10c9e9e",
@@ -10,5 +10,6 @@
     "/js/pages/home.js": "/js/pages/home.js?id=5ba4cbb0d2f229d203df",
     "/js/pages/setting.js": "/js/pages/setting.js?id=4631da4b38d01702de08",
     "/js/pages/base.js": "/js/pages/base.js?id=886184091c4d377730a9",
+    "/js/pages/maintence.js": "/js/pages/maintence.js?id=a5897c352ec49ff4d452",
     "/css/app.css": "/css/app.css?id=1ba4616002e30d600ff3"
 }

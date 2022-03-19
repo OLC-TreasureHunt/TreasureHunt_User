@@ -67,6 +67,7 @@
                 'X-CSRF-TOKEN': '{{ csrf_token() }}'
             }
         });
+        
     </script>
     @yield('scripts')
 </body>

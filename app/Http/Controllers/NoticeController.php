@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use App\Services\NoticeService;
 use Illuminate\Http\Request;
 
@@ -30,12 +31,17 @@ class NoticeController extends Controller
     }
 
     public function alert(Request $request) {
-        $alert = $this->notice->getAlerts();
-        $count = count($alert);
-        $alert = array_slice($alert, 0, 5);
-        return response()->json([
-            'count' => $count,
-            'data'  => $alert
-        ]);
+        if (Auth::check()) {
+            $alert = $this->notice->getAlerts();
+            $count = count($alert);
+            $alert = array_slice($alert, 0, 5);
+            return response()->json([
+                'count' => $count,
+                'data'  => $alert
+            ]);
+        } else {
+            return response()->json([], 200);
+        }
+        
     }
 }
