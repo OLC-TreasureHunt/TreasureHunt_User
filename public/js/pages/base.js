@@ -2438,7 +2438,8 @@ var base = new Vue({
     };
   },
   mounted: function mounted() {
-    this.intervalfunction = setInterval(this.loadAlerts, 1000);
+    console.log('mount');
+    this.intervalfunction = setInterval(this.loadAlerts, 10000);
   },
   methods: {},
   beforeDestroy: function beforeDestroy() {

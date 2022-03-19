@@ -24,18 +24,6 @@ class CheckMaintenance
         // $user_agent = $_SERVER['HTTP_USER_AGENT'];
         $url = $request->fullUrl();
 
-        // Notify
-        // $notify_url = route('nock');
-        // if ($url == $notify_url || $url == str_replace('https', 'http', $notify_url)) {
-        //     return $next($request);
-        // }
-
-        // Lang
-        // $lang_url = route('lang');
-        // if (stripos($url, $lang_url) !== false || stripos($url, str_replace('https', 'http', $lang_url)) !== false) {
-        //     return $next($request);
-        // }
-
         $mode = Master::getValue("MAINTENANCE_MODE");
         if ($mode == 0) {
             Session::forget('access_token');

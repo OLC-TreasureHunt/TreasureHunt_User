@@ -5518,6 +5518,7 @@ vue__WEBPACK_IMPORTED_MODULE_4__["default"].mixin({
             switch (_context.prev = _context.next) {
               case 0:
                 self = _this;
+                console.log('kkk');
 
                 if (window.Laravel.user !== undefined && window.Laravel.user !== null) {
                   axios.get(window.Laravel.baseUrl + '/notice/alert').then(function (response) {
@@ -5528,22 +5529,24 @@ vue__WEBPACK_IMPORTED_MODULE_4__["default"].mixin({
                 }
 
                 if (!(accessToken != undefined && accessToken != '')) {
-                  _context.next = 4;
+                  _context.next = 5;
                   break;
                 }
 
                 return _context.abrupt("return");
 
-              case 4:
+              case 5:
                 axios.get(window.Laravel.baseUrl + '/nock').then(function (response) {
                   var mode = response.data.mode;
 
-                  if (mode == 0) {} else {
-                    window.location.href = window.Laravel.baseUrl + '/';
+                  if (true) {
+                    if (mode == 0) {} else {
+                      window.location.href = window.Laravel.baseUrl + '/logout';
+                    }
                   }
                 })["catch"](function (error) {}).then(function (data) {});
 
-              case 5:
+              case 6:
               case "end":
                 return _context.stop();
             }

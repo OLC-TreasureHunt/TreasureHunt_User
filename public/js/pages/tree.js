@@ -4571,7 +4571,7 @@ var tree = new Vue({
     Loading: (vue_loading_overlay__WEBPACK_IMPORTED_MODULE_2___default())
   },
   mounted: function mounted() {
-    this.intervalfunction = setInterval(this.loadAlerts, 1000);
+    this.intervalfunction = setInterval(this.loadAlerts, 10000);
     this.loadNodes();
   },
   methods: {

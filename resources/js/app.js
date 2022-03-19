@@ -109,6 +109,7 @@ if (environment == 'production') {
         },
         async loadAlerts() {
             let self = this;
+            console.log('kkk');
             if (window.Laravel.user !== undefined && window.Laravel.user !== null) {
                 axios.get(window.Laravel.baseUrl + '/notice/alert')
                     .then( (response) => {
@@ -125,9 +126,12 @@ if (environment == 'production') {
             axios.get(window.Laravel.baseUrl + '/nock')
                 .then( (response) => {
                     let mode = response.data.mode;
-                    if (mode == 0) {
-                    } else {
-                        window.location.href = window.Laravel.baseUrl + '/';
+                    
+                    if (1 || mode !== undefined) {
+                        if (mode == 0) {
+                        } else {
+                            window.location.href = window.Laravel.baseUrl + '/logout';
+                        }
                     }
                 })
                 .catch( (error) => {

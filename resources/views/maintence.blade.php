@@ -29,7 +29,7 @@
         $(function() {
             setInterval(function() {
                 checkServerMaintenance();
-            }, 1 * 1000); //
+            }, 5 * 1000); //
         });
 
         function checkServerMaintenance() {

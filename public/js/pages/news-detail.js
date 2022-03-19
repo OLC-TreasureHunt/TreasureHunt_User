@@ -3224,7 +3224,7 @@ var download = new Vue({
     };
   },
   mounted: function mounted() {
-    this.intervalfunction = setInterval(this.loadAlerts, 1000);
+    this.intervalfunction = setInterval(this.loadAlerts, 10000);
     this.loadPopular();
   },
   methods: {

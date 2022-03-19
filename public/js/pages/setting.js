@@ -383,7 +383,7 @@ new Vue({
   },
   created: function created() {},
   mounted: function mounted() {
-    this.intervalfunction = setInterval(this.loadAlerts, 1000);
+    this.intervalfunction = setInterval(this.loadAlerts, 10000);
   },
   methods: {},
   beforeDestroy: function beforeDestroy() {

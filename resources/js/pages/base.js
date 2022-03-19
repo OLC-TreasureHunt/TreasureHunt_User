@@ -10,7 +10,8 @@ var base = new Vue({
         }
     },
     mounted: function () {
-        this.intervalfunction = setInterval(this.loadAlerts, 1000);
+        console.log('mount');
+        this.intervalfunction = setInterval(this.loadAlerts, 10000);
     },
     methods: {
     },

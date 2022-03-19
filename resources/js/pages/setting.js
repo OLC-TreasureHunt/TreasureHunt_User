@@ -15,7 +15,7 @@ new Vue({
     created: function() {
     },
     mounted: function() {
-        this.intervalfunction = setInterval(this.loadAlerts, 1000);
+        this.intervalfunction = setInterval(this.loadAlerts, 10000);
     },
     methods: {
     },
