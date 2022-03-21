@@ -81,7 +81,7 @@
                 </div>
             </div>
 
-            <div class="col-xl-8 col-lg-12 col-md-12 col-12 mx-auto" id="alliance" style="display: none">
+            {{-- <div class="col-xl-8 col-lg-12 col-md-12 col-12 mx-auto" id="alliance" style="display: none">
                 <div class="p-t-0">
                     <h4 class="text-primary">@lang('home.alliance')</h4>
                     <div class="row">
@@ -96,10 +96,10 @@
                         @endforeach
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>   
-    <div id="arrows-examples">
+    <div id="arrows-examples d-none">
         <div class="arrow-up" id="alliance-show" v-on:click="showAlliance"></div>
     </div>
 </section>
