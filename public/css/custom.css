@@ -361,6 +361,18 @@ h4 span:not(.btn-label).pink-red {
   left: 280px;
 }
 
+.arrow-up {
+  width: 0px;
+    height: 0px;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 20px solid #4e2716;
+    margin: 0 auto;
+}
+
+[data-bg-image]::before {
+  display: none;
+}
 
 @media (min-width: 768px) {
   .col-sm-1-10 {

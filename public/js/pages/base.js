@@ -2441,7 +2441,11 @@ var base = new Vue({
     console.log('mount');
     this.intervalfunction = setInterval(this.loadAlerts, 10000);
   },
-  methods: {},
+  methods: {
+    showAlliance: function showAlliance() {
+      $('#alliance').slideToggle();
+    }
+  },
   beforeDestroy: function beforeDestroy() {
     clearInterval(this.intervalfunction);
   }

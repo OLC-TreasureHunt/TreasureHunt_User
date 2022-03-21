@@ -106,7 +106,7 @@
                                                 </div>
                                                 <div class="col-lg-3 col-12 text-center">
                                                     <img src="{{ auth()->user()->battleInfo->levelInfo->image }}" class="avatar-xl" id="">
-                                                    <h5>{{ auth()->user()->battleInfo->levelInfo->level }}</h5>
+                                                    <h5>{{ auth()->user()->battleInfo->levelInfo->name->level }}</h5>
                                                 </div>
                                             </div>
                                         </div>

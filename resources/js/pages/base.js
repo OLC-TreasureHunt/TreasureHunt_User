@@ -14,6 +14,9 @@ var base = new Vue({
         this.intervalfunction = setInterval(this.loadAlerts, 10000);
     },
     methods: {
+        showAlliance: function() {
+            $('#alliance').slideToggle();
+        }
     },
     beforeDestroy: function(){
         clearInterval(this.intervalfunction);

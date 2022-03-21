@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use App\Services\AllianceService;
 use App\Models\MaintenanceToken;
 use App\Models\LoginSetting;
 
@@ -32,13 +33,16 @@ class LoginController extends Controller
      */
     protected $redirectTo = '/';
 
+    protected $allianceService;
+
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(AllianceService $allianceService)
     {
+        $this->allianceService = $allianceService;
         $this->middleware('guest')->except('logout');
 
         $this->username = $this->findUsername();
@@ -51,9 +55,12 @@ class LoginController extends Controller
         Session::put('access_token', $access_token);
 
         $setting = LoginSetting::latest()->first();
+        $alliances = $this->allianceService->alliances();
+
         return view('auth.login', [
             "setting"           => $setting,
             'access_token'      => $access_token,
+            'alliances'         => $alliances
         ]);
     }
 

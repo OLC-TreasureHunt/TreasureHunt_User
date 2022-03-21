@@ -3,8 +3,8 @@
 @section('title', trans('login.title'))
 
 @section('contents')
-<section class="pt-5 pb-5 back-theme position-relative" data-bg-image="{{ asset('images/background.webp') }}">
-    <div class="container-fluid d-flex flex-column">
+<section class="pt-5 back-theme position-relative pb-0" data-bg-image="{{ asset('images/background.webp') }}">
+    <div class="container-fluid d-flex flex-column pb-5 ">
         <div class="background-login d-none"></div>
         <div class="row align-items-center min-vh-100">
             <div class="heading-text heading-section text-light text-center animate__animated animate__fadeInUp visible position-absolute" style="top: 100px;" data-animate="animate__fadeInUp">
@@ -80,9 +80,30 @@
                     </div>
                 </div>
             </div>
+
+            <div class="col-xl-8 col-lg-12 col-md-12 col-12 mx-auto" id="alliance" style="display: none">
+                <div class="p-t-0">
+                    <h4 class="text-primary">@lang('home.alliance')</h4>
+                    <div class="row">
+                        @foreach ($alliances as $alliance)
+                            <div class="col-lg-3 col-md-3 col-sm-4 col-md-4">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <a class="w-100 d-flex justify-center align-items-center" href="{{ $alliance->site_url}}"><img class="img_fluid w-100" src="{{ $alliance->site_image}}" /></a>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
         </div>
+    </div>   
+    <div id="arrows-examples">
+        <div class="arrow-up" id="alliance-show" v-on:click="showAlliance"></div>
     </div>
 </section>
+
 @endsection
 
 @section('scripts')

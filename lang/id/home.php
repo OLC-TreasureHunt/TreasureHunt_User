@@ -18,4 +18,6 @@ return [
     'right_node' => 'Pohon Kanan',
     'bet_month' => 'Jumlah tempat tidur bulan ini',
     'welcome' => 'Setelah kinerja bermain tercermin, <br>status pertempuran Anda akan ditampilkan.',
+
+    'alliance' => 'Situs kolaboratif',
 ];

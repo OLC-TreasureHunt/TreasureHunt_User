@@ -9,4 +9,8 @@ class MaintenanceContent extends Model
 {
     use HasFactory;
     protected $table = 'th_maintenance_contents';
+
+    public function scopeLocale($builder, $locale) {
+        return $builder->where("lang", $locale);
+    }
 }

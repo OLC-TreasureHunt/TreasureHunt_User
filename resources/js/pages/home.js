@@ -30,6 +30,10 @@ var tree = new Vue({
                 .then( (data) => {
                 });
         },
+        showAlliance: function() {
+            debugger
+            $('#alliance').slideToggle();
+        }
     },
     beforeDestroy: function(){
         clearInterval(this.intervalfunction);

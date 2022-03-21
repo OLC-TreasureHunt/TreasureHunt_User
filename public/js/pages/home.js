@@ -4123,6 +4123,10 @@ var tree = new Vue({
           }
         }, _callee);
       }))();
+    },
+    showAlliance: function showAlliance() {
+      debugger;
+      $('#alliance').slideToggle();
     }
   },
   beforeDestroy: function beforeDestroy() {

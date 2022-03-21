@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
-@section('title', trans('register.title'))
+@section('title', '')
 
 @section('contents')
 <div class="row mt-4 mb-5">
     <div class="col-xl-2 col-md-2 col-2 "></div>
     <div class="col-xl-8 col-md-8 col-8 d-flex justify-content-center">
-        <div class="card auth-card bg-transparent shadow-none rounded-0 mb-0 w-100">
+        <div class="card auth-card bg-transparent shadow-none rounded-0 mb-0 w-100 border-0">
             <div class="card-body text-center">
                 <div clas="row">
                     <div class="col-12 col-md-6 m-auto">

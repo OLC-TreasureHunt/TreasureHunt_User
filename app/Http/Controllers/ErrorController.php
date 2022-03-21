@@ -4,19 +4,25 @@ namespace App\Http\Controllers;
 
 use Auth;
 use App\Models\Master;
-use App\Models\MaintenanceContent;
+use App\Services\MaintenanceService;
 use Illuminate\Http\Request;
 
 class ErrorController extends Controller
 {
+    protected $maintenance;
     //
+
+    public function __construct(MaintenanceService $maintenance) {
+        $this->maintenance = $maintenance;
+    }
+
     public function index() {
     }
 
     public function maintenance() {
-        $content = MaintenanceContent::first()? MaintenanceContent::first()->content : '';
+        $content = $this->maintenance->content();
         Auth::logout();
-        return view('maintence')->withContent($content);
+        return view('maintence')->withContent($content? $content->content : '');
     }
 
     public function nock() {
