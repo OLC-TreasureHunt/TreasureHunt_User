@@ -24,6 +24,11 @@ class CheckMaintenance
         // $user_agent = $_SERVER['HTTP_USER_AGENT'];
         $url = $request->fullUrl();
 
+        $locale = $request->route('locale');
+        if (isset($locale) && ($locale != null) && ($locale != '')) {
+            return $next($request);
+        }
+
         $mode = Master::getValue("MAINTENANCE_MODE");
         if ($mode == 0) {
             Session::forget('access_token');
