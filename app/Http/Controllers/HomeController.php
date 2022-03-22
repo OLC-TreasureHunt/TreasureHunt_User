@@ -37,7 +37,7 @@ class HomeController extends Controller
 
         return view('home')
             ->withLastData($lastData)
-            ->withUserInfo($user);
+            ->withUserInfo($user)
             ->withAlliances($alliances);
     }
 
