@@ -69,7 +69,7 @@
             </div>
         </section>
         
-        {{-- <section class="background-transparent" id="alliance" style="display: none">
+        <section class="background-transparent" id="alliance" style="display: none">
             <div class="container p-t-0">
                 <h4 class="text-primary">@lang('home.alliance')</h4>
                 <div class="row">
@@ -88,7 +88,7 @@
 
         <div id="arrows-examples">
             <div class="arrow-up" id="alliance-show" v-on:click="showAlliance"></div>
-        </div> --}}
+        </div>
     </div>
     
 @endsection
