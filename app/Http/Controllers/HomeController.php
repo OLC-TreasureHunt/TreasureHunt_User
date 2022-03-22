@@ -33,12 +33,12 @@ class HomeController extends Controller
     {
         $user = Auth::user();
         $lastData = $this->manualInput->last();
-        // $alliances = $this->allianceService->alliances();
+        $alliances = $this->allianceService->alliances();
 
         return view('home')
             ->withLastData($lastData)
             ->withUserInfo($user);
-            // ->withAlliances($alliances);
+            ->withAlliances($alliances);
     }
 
     

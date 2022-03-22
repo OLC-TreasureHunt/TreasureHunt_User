@@ -55,12 +55,12 @@ class LoginController extends Controller
         Session::put('access_token', $access_token);
 
         $setting = LoginSetting::latest()->first();
-        // $alliances = $this->allianceService->alliances();
+        $alliances = $this->allianceService->alliances();
 
         return view('auth.login', [
             "setting"           => $setting,
             'access_token'      => $access_token,
-            // 'alliances'         => $alliances
+            'alliances'         => $alliances
         ]);
     }
 
