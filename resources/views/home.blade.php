@@ -74,7 +74,7 @@
                 <h4 class="text-primary">@lang('home.alliance')</h4>
                 <div class="row">
                     @foreach ($alliances as $alliance)
-                        <div class="col-lg-3 col-md-3 col-sm-4 col-md-4">
+                        <div class="col-lg-3 col-md-3 col-sm-4 col-6">
                             <div class="card">
                                 <div class="card-body">
                                     <a class="w-100 d-flex justify-center align-items-center" href="{{ $alliance->site_url}}"><img class="img_fluid w-100" src="{{ $alliance->site_image}}" /></a>
