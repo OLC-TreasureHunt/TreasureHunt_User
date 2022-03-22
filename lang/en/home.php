@@ -18,5 +18,5 @@ return [
     'bet_month' => 'Total bet of this month',
     'welcome' => 'Your aggregation will be displayed,<br> after your performance is ready',
 
-    'alliance' => '',
+    'alliance' => 'Websites',
 ];
