@@ -13,7 +13,7 @@
                         <img src="{{ cAsset('app-assets/images/pages/maintenance.png') }}" class="img-fluid align-self-center" alt="branding logo">
                         <div class="alert alert-success alert-dismissible" role="alert">
                             <strong>
-                                <p class="text-start text-light">{!! $content->content !!}</p>
+                                <p class="text-start text-light">{!! $content !!}</p>
                             </strong>
                         </div>
                     </div>

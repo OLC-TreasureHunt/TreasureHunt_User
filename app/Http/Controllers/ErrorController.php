@@ -22,7 +22,7 @@ class ErrorController extends Controller
     public function maintenance() {
         $content = $this->maintenance->content();
         Auth::logout();
-        return view('maintence')->withContent($content);
+        return view('maintence')->withContent($content? $content->content : '');
     }
 
     public function nock() {
