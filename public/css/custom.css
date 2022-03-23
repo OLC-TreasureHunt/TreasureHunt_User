@@ -374,6 +374,23 @@ h4 span:not(.btn-label).pink-red {
   display: none;
 }
 
+.img_alliance {
+    height: 70px;
+}
+
+.grid li.alliance-item {
+  padding: 10px;
+}
+
+.grid li.alliance-item:hover {
+  cursor: pointer;
+  background-color: unset;
+}
+
+.grid li.alliance-item:before, .grid li.alliance-item:after {
+  border: none !important;
+}
+
 @media (min-width: 768px) {
   .col-sm-1-10 {
     width: 10%;
@@ -407,6 +424,10 @@ h4 span:not(.btn-label).pink-red {
   .home-tool {
     left: 235px;
   }
+
+  .img_alliance {
+    height: 60px;
+  }
 }
 
 @media (max-width: 991px) {
@@ -418,5 +439,11 @@ h4 span:not(.btn-label).pink-red {
 @media (max-width: 767px) {
   .home-tool {
     left: 0px;
+  }
+}
+
+@media (max-width: 600px) {
+  .img_alliance {
+    height: 46px;
   }
 }

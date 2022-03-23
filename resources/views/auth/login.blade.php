@@ -91,17 +91,17 @@
     <section class="background-transparent" id="alliance" style="display: none">
         <div class="container p-t-0">
             <h4 class="text-primary">@lang('home.alliance')</h4>
-            <div class="row">
+            <ul class="grid grid-4-columns">
                 @foreach ($alliances as $alliance)
-                    <div class="col-lg-3 col-md-3 col-sm-4 col-6">
+                    <li class="alliance-item border-0">
                         <div class="card">
                             <div class="card-body">
-                                <a class="w-100 d-flex justify-center align-items-center" href="{{ $alliance->site_url}}"><img class="img_fluid w-100" src="{{ $alliance->site_image}}" /></a>
+                                <a href="{{ $alliance->site_url}}" target="_blank"><img class="img_alliance" src="{{ $alliance->site_image}}" /></a>
                             </div>
                         </div>
-                    </div>
+                    </li>
                 @endforeach
-            </div>
+            </ul>
         </div>
     </section>
 

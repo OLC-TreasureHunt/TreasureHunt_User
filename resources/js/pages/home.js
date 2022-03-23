@@ -31,7 +31,6 @@ var tree = new Vue({
                 });
         },
         showAlliance: function() {
-            debugger
             $('#alliance').slideToggle();
         }
     },

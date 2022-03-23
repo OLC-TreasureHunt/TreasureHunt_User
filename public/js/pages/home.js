@@ -4125,7 +4125,6 @@ var tree = new Vue({
       }))();
     },
     showAlliance: function showAlliance() {
-      debugger;
       $('#alliance').slideToggle();
     }
   },
