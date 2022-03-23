@@ -90,12 +90,12 @@
     
     <section class="background-transparent" id="alliance" style="display: none">
         <div class="container p-t-0">
-            <h4 class="text-primary">@lang('home.alliance')</h4>
+            <h4 class="text-primary"><span class="text-light back-theme p-10 rounded">@lang('home.alliance')</span></h4>
             <ul class="grid grid-4-columns">
                 @foreach ($alliances as $alliance)
                     <li class="alliance-item border-0">
-                        <div class="card">
-                            <div class="card-body">
+                        <div class="card border-0 background-transparent">
+                            <div class="card-body p-0 background-transparent">
                                 <a href="{{ $alliance->site_url}}" target="_blank"><img class="img_alliance" src="{{ $alliance->site_image}}" /></a>
                             </div>
                         </div>
