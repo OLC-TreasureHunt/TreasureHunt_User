@@ -13,10 +13,13 @@ return [
 
     'bets' => 'ATK :amount JPY',
     'loss' => 'HP :amount JPY',
+    'bonus_loss' => 'ボーナスHP :amount JPY',
     'left_node' => '左ツリー',
     'right_node' => '右ツリー',
     'bet_month' => '今月のベット総額',
     'welcome' => 'プレイ実績が反映されたら、<br>あなたのバトル状態が表示されます。',
 
     'alliance' => '連携サイト',
+    'current_bonus' => '現在の報酬額は:amountJPY',
+    'basic_bonus' => '報酬基準額',
 ];

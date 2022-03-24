@@ -13,10 +13,13 @@ return [
 
     'bets' => 'ATK :amount JPY',
     'loss' => 'HP :amount JPY',
+    'bonus_loss' => 'Bonus HP :amount JPY',
     'left_node' => 'Left Tree',
     'right_node' => 'Right Tree',
     'bet_month' => 'Total bet of this month',
     'welcome' => 'Your aggregation will be displayed,<br> after your performance is ready',
 
     'alliance' => 'Websites',
+    'current_bonus' => 'Currently your bonus is :amountJPY',
+    'basic_bonus' => 'Basic Bonus',
 ];

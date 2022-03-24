@@ -27,6 +27,12 @@
                                 <h4 class="m-t-0 text-bold pink-emphass">
                                     {!! trans('home.your_level', ['level' => $userInfo->battleInfo->levelInfo->name->level]) !!}
                                 </h4>
+
+                                <h4 class="m-t-0 text-bold pink-emphass">
+                                    {{ trans('home.current_bonus', [
+                                        'amount' => _number_format($userInfo->battleInfo->basic_bonus * $userInfo->battleInfo->bonus_rate / 100, 0)
+                                    ])}}
+                                </h4>
                                 
                                 @if ($userInfo->binaryGradeUp)
                                     <p class="lead">@lang('home.can_upgrade', [

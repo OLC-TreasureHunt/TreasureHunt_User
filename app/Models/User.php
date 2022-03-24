@@ -93,7 +93,7 @@ class User extends Authenticatable
     }
 
     public function battleInfo() {
-        return $this->hasOne(UserInfo::class)->type(TreeType::BinaryTree)->latest();
+        return $this->hasOne(UserInfo::class)->type(TreeType::BinaryTree)->where('date', '2022-03')->latest();
     }
 
     public function binaryGradeDown() {

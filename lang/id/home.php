@@ -14,10 +14,13 @@ return [
 
     'bets' => 'ATK :amount JPY',
     'loss' => 'HP :amount JPY',
+    'bonus_loss' => 'Jumlah HP :amount JPY',
     'left_node' => 'Pohon Kiri',
     'right_node' => 'Pohon Kanan',
     'bet_month' => 'Jumlah tempat tidur bulan ini',
     'welcome' => 'Setelah kinerja bermain tercermin, <br>status pertempuran Anda akan ditampilkan.',
 
     'alliance' => 'Situs kolaboratif',
+    'current_bonus' => 'Saat ini bonus Anda adalah 10 :amountJPY',
+    'basic_bonus' => 'Kompensasi dasar',
 ];

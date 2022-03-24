@@ -13,10 +13,13 @@ return [
 
     'bets' => 'ATK :amount JPY',
     'loss' => 'HP :amount JPY',
+    'bonus_loss' => '奖金 HP :amount JPY',
     'left_node' => '左樹',
     'right_node' => '右樹',
     'bet_month' => '本月投注總額',
     'welcome' => '如果反映出比赛成绩的话，就会显示你的战斗状态。',
 
     'alliance' => '联合网站',
+    'current_bonus' => '现在你的奖金 :amountJPY',
+    'basic_bonus' => '标准报酬额',
 ];

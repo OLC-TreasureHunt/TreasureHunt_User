@@ -7,10 +7,9 @@
                     <div class="person" 
                         :class="Array.isArray(treeData.class) ? treeData.class : []"
                         @click="$emit('click-node', treeData)" >
-                        <div class="name">{{ treeData.title }}</div>
-                        <div class="avat">
+                        <div class="name title">{{ treeData.title }}</div>
+                        <div class="avat" v-if="treeData.image_url.length !== 0">
                             <img :src="treeData.image_url" />
-                            <img v-if="treeData.is_premium" class="bottom-0 end-0 award-small position-absolute" />
                         </div>
                         <div class="name" v-if="treeData.count.length !== 0">{{treeData.count}}</div>
                         <div class="name" v-if="treeData.bet.length !== 0">{{treeData.bet}}</div>
@@ -317,6 +316,10 @@ export default {
         min-width: 260px;
     }
 
+    .node .person.child_node {
+        padding: 30px;
+    }
+
     .person.selected_node {
         border: 2px solid red !important;
     }
@@ -331,6 +334,10 @@ export default {
 
     .childLevel.selected:first-child:after {
         border-color: red transparent transparent red;
+    }
+
+    .child_node div.name.title {
+        margin-bottom: 20px;
     }
     
 </style>

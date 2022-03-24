@@ -7,12 +7,12 @@
                     <div class="person" 
                         :class="Array.isArray(treeData.class) ? treeData.class : []"
                         @click="$emit('click-node', treeData)" >
-                        <div class="name">{{ treeData.title }}</div>
-                        <div class="avat">
+                        <div class="name title">{{ treeData.title }}</div>
+                        <div class="avat" v-if="treeData.image_url.length !== 0">
                             <img :src="treeData.image_url" />
                         </div>
-                        <div class="name" v-if="treeData.desc.length !== 0">{{treeData.desc}}<i class="fa fa-star text-pink ml-1 m-l-5" v-if="treeData.selected"></i></div>
-                        <div class="name">{{treeData.text}}</div>
+                        <div class="name" v-if="treeData.desc.length !== 0">{{treeData.desc}}</div>
+                        <div class="name text">{{treeData.text}}</div>
                     </div>
                 
                     <template v-if="Array.isArray(treeData.mate) && treeData.mate.length">
@@ -100,8 +100,6 @@ export default {
     .extend_handle:before {
         content: "";
         display: block;
-        /* width: 100%;
-        height: 100%; */
         width: 10px;
         height: 10px;
         box-sizing: border-box;
@@ -199,10 +197,14 @@ export default {
         z-index: 2;
         overflow: hidden;
         background-color: #4e2716EE !important;
-        min-width: 100px;
         padding: 10px 30px;
         border: 2px solid #6666ff !important;
-        min-width: 180px;
+        min-width: 220px;
+        min-height: 150px;
+    }
+
+    .node .person.child_node {
+        padding: 20px;
     }
 
     .node .person .avat {
@@ -320,5 +322,13 @@ export default {
 
     .childLevel.selected:first-child:after {
         border-color: red transparent transparent red;
+    }
+
+    .use_guaranty div.name.text {
+        color: #ff00ff
+    }
+
+    .child_node div.name.title {
+        margin-bottom: 20px;
     }
 </style>

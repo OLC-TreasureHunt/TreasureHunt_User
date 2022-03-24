@@ -13,10 +13,13 @@ return [
 
     'bets' => 'ATK :amount JPY',
     'loss' => 'HP :amount JPY',
+    'bonus_loss' => '보너스 HP :amount JPY',
     'left_node' => '왼쪽트리',
     'right_node' => '오른쪽트리',
     'bet_month' => '이달총베트액',
     'welcome' => '플레이 실적이 반영되면 귀하의 배틀 상태가 표시됩니다.',
 
     'alliance' => '연계사이트',
+    'current_bonus' => '현재의 보수액 :amountJPY',
+    'basic_bonus' => '기준보수액',
 ];

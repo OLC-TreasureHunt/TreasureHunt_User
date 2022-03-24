@@ -180,38 +180,39 @@ class BinaryService extends Service {
             $userInfo = User::findOrFail($child->user_id);
             $node = new \stdClass();
             $node->desc = '';
-            $node->image_url = $userInfo->avatar;
+            $node->image_url = '';
             $node->extend = false;
 
             if ($child->position == 1) {
                 $node->title = trans('home.left_node');
                 $node->count = trans('tree.field.child_count', ['count' => _number_format($self[0]->left_count, 0)]);
                 $node->bet = trans('tree.field.total_bet', ['amount' => _number_format($self[0]->left_bet, 0)]);
-                $node->paid = trans('tree.field.total_paid', ['amount' => _number_format($self[0]->left_win, 0)]);
+                $node->paid = '';
                 $node->user_id = $child->user_id;
                 $hp = $self[0]->left_loss? $self[0]->left_loss * $rate / 100 : 0;
                 if ($hp < 0) $hp = 0;
-                $node->text = trans('home.loss', [
+                $node->text = trans('home.basic_bonus') . trans('home.loss', [
                     'amount' => _number_format($hp, 0)
                 ]);
             } else if ($child->position == 2) {
                 $node->title = trans('home.right_node');
                 $node->count = trans('tree.field.child_count', ['count' => _number_format($self[0]->right_count, 0)]);
                 $node->bet =  trans('tree.field.total_bet', ['amount' => _number_format($self[0]->right_bet, 0)]);
-                $node->paid = trans('tree.field.total_paid', ['amount' => _number_format($self[0]->right_win, 0)]);
+                $node->paid = '';
                 $node->user_id = $child->user_id;
                 $hp = $self[0]->right_loss? $self[0]->right_loss * $rate / 100 : 0;
                 if ($hp < 0) $hp = 0;
-                $node->text = trans('home.loss', [
+                $node->text = trans('home.basic_bonus') . trans('home.loss', [
                     'amount' => _number_format($hp, 0)
                 ]);;
             }
 
             if ($child->position == $result->direction) {
                 $node->selected = 1;
-                $node->class=["selected_node"];
+                $node->class=["selected_node child_node"];
             } else {
                 $node->selected = 0;
+                $node->class=["child_node"];
             }
             
             $result->children[] = $node;
@@ -253,8 +254,8 @@ class BinaryService extends Service {
         foreach ($children as $child) {
             $userInfo = User::findOrFail($child->user_id);
             $node = new \stdClass();
-            $node->desc = '';
-            $node->image_url = $userInfo->avatar;
+            $node->desc = trans('home.basic_bonus');
+            $node->image_url = '';
             $node->extend = false;
 
             if ($child->position == 1) {
@@ -270,14 +271,23 @@ class BinaryService extends Service {
                 if ($hp < 0) $hp = 0;
                 $node->text = trans('home.loss', [
                     'amount' => _number_format($hp, 0)
-                ]);;
+                ]);
             }
 
             if ($child->position == $result->direction) {
                 $node->selected = 1;
-                $node->class=["selected_node"];
+                $node->class=["selected_node", "child_node"];
             } else {
                 $node->selected = 0;
+                $node->class=["child_node"];
+            }
+
+            if (isset($userInfo->battleInfo) && $userInfo->battleInfo->use_guaranty == 1) {
+                $node->desc = '';
+                $node->text = trans('home.bonus_loss', [
+                    'amount' => _number_format($hp, 0)
+                ]);
+                $node->class[] = "use_guaranty";
             }
             
             $result->children[] = $node;
