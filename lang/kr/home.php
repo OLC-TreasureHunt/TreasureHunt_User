@@ -20,6 +20,7 @@ return [
     'welcome' => '플레이 실적이 반영되면 귀하의 배틀 상태가 표시됩니다.',
 
     'alliance' => '연계사이트',
-    'current_bonus' => '현재의 보수액 :amountJPY',
+    'current_bonus' => '예상보수액은 :amountJPY입니다.',
     'basic_bonus' => '기준보수액',
+    'current_is_max' => '현재의 장비는 최고레벨입니다.',
 ];

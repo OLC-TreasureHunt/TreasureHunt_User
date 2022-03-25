@@ -20,6 +20,7 @@ return [
     'welcome' => 'Your aggregation will be displayed,<br> after your performance is ready',
 
     'alliance' => 'Websites',
-    'current_bonus' => 'Currently your bonus is :amountJPY',
+    'current_bonus' => 'Estimated bonus is :amountJPY',
     'basic_bonus' => 'Basic Bonus',
+    'current_is_max' => 'The current equipment is at the highest level',
 ];

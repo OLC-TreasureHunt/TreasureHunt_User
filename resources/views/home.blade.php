@@ -34,17 +34,22 @@
                                     ])}}
                                 </h4>
                                 
-                                @if (isset($userInfo->binaryGradeUp))
-                                    <p class="lead">@lang('home.can_upgrade', [
-                                        'amount' => _number_format($userInfo->binaryGradeUp->need_bet, 0)
-                                ])</p>
+                                @if ($userInfo->battleInfo->level == 10)
+                                    <h4 class="m-t-0 text-bold pink-emphass">@lang('home.current_is_max')</h4>
+                                @else
+                                    @if (isset($userInfo->binaryGradeUp))
+                                        <h4 class="m-t-0 text-bold pink-emphass">@lang('home.can_upgrade', [
+                                            'amount' => _number_format($userInfo->binaryGradeUp->need_bet, 0)
+                                    ])</h4>
+                                    @endif
                                 @endif
-                                @if (isset($userInfo->binaryGradeDown))
-                                <p class="lead mb-0">@lang('home.may_graydown', [
+                                
+                                {{-- @if (isset($userInfo->binaryGradeDown) && $userInfo->binaryGradeDown->need_loss != 0)
+                                <h4 class="lead mb-0">@lang('home.may_graydown', [
                                     'direct' => $userInfo->binaryGradeDown->position == 1? trans('home.direct.left') : trans('home.direct.right'),
                                     'amount' => _number_format($userInfo->binaryGradeDown->need_loss, 0)
-                                ])</p>
-                                @endif
+                                ])</h4>
+                                @endif --}}
                             @else
                                 <h4 class="m-b-0 text-center">{!! trans('home.welcome') !!}</h4>
                             @endif

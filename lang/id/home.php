@@ -21,6 +21,7 @@ return [
     'welcome' => 'Setelah kinerja bermain tercermin, <br>status pertempuran Anda akan ditampilkan.',
 
     'alliance' => 'Situs kolaboratif',
-    'current_bonus' => 'Saat ini bonus Anda adalah 10 :amountJPY',
+    'current_bonus' => 'Jumlah yang diharapkan adalash :amountJPY',
     'basic_bonus' => 'Kompensasi dasar',
+    'current_is_max' => 'Peralatan saat ini berada di tingkat tertinggi.',
 ];
