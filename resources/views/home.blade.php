@@ -34,24 +34,15 @@
                                     ])}}
                                 </h4>
                                 
-                                @if ($userInfo->binaryGradeUp)
+                                @if (isset($userInfo->binaryGradeUp))
                                     <p class="lead">@lang('home.can_upgrade', [
                                         'amount' => _number_format($userInfo->binaryGradeUp->need_bet, 0)
                                 ])</p>
                                 @endif
-                                <?php
-                                    if ($userInfo->binaryGradeDown) {
-                                        if (intval($userInfo->binaryGradeDown->left_loss) <= intval($userInfo->binaryGradeDown->right_loss)) {
-                                            $direct = 1;
-                                        } else {
-                                            $direct = 2;
-                                        }
-                                    }
-                                ?>
-                                @if ($userInfo->binaryGradeDown)
+                                @if (isset($userInfo->binaryGradeDown))
                                 <p class="lead mb-0">@lang('home.may_graydown', [
-                                    'direct' => $direct == 1? trans('home.direct.left') : trans('home.direct.right'),
-                                    'amount' => $direct == 1? _number_format($userInfo->binaryGradeDown->left_loss, 0) : _number_format($userInfo->binaryGradeDown->right_loss, 0)
+                                    'direct' => $userInfo->binaryGradeDown->position == 1? trans('home.direct.left') : trans('home.direct.right'),
+                                    'amount' => _number_format($userInfo->binaryGradeDown->need_loss, 0)
                                 ])</p>
                                 @endif
                             @else
