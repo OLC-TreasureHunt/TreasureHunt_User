@@ -2218,6 +2218,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "TreeChart",
   props: ["json"],
@@ -3778,8 +3779,14 @@ var render = function () {
                         : _vm._e(),
                       _vm._v(" "),
                       _vm.treeData.desc.length !== 0
-                        ? _c("div", { staticClass: "name" }, [
+                        ? _c("div", { staticClass: "name desc" }, [
                             _vm._v(_vm._s(_vm.treeData.desc)),
+                          ])
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _vm.treeData.hp.length !== 0
+                        ? _c("div", { staticClass: "name hp" }, [
+                            _vm._v(_vm._s(_vm.treeData.hp)),
                           ])
                         : _vm._e(),
                       _vm._v(" "),

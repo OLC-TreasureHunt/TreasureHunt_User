@@ -11,7 +11,8 @@
                         <div class="avat" v-if="treeData.image_url.length !== 0">
                             <img :src="treeData.image_url" />
                         </div>
-                        <div class="name" v-if="treeData.desc.length !== 0">{{treeData.desc}}</div>
+                        <div class="name desc" v-if="treeData.desc.length !== 0">{{treeData.desc}}</div>
+                        <div class="name hp" v-if="treeData.hp.length !== 0">{{treeData.hp}}</div>
                         <div class="name text">{{treeData.text}}</div>
                     </div>
                 

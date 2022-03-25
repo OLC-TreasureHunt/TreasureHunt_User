@@ -232,6 +232,7 @@ class BinaryService extends Service {
         $result = new \stdClass();
         $result->title = $parent->affiliate_id;
         $result->desc = trans('home.bet_month');
+        $result->hp = '';
         $result->image_url = $parent->avatar;
         $result->extend = true;
         $result->class = ['rootNode selected_node'];
@@ -264,14 +265,14 @@ class BinaryService extends Service {
                 $node->title = trans('home.left_node');
                 $hp = $self[0]->left_loss? $self[0]->left_loss * $rate / 100 : 0;
                 if ($hp < 0) $hp = 0;
-                $node->text = trans('home.loss', [
+                $node->hp = trans('home.loss', [
                     'amount' => _number_format($hp, 0)
                 ]);
             } else if ($child->position == 2) {
                 $node->title = trans('home.right_node');
                 $hp = $self[0]->right_loss? $self[0]->right_loss * $rate / 100 : 0;
                 if ($hp < 0) $hp = 0;
-                $node->text = trans('home.loss', [
+                $node->hp = trans('home.loss', [
                     'amount' => _number_format($hp, 0)
                 ]);
             }
@@ -279,19 +280,18 @@ class BinaryService extends Service {
             if ($child->position == $result->direction) {
                 $node->selected = 1;
                 $node->class=["selected_node", "child_node"];
+
+                if (isset($parent->battleInfo) && $parent->battleInfo->use_guaranty == 1) {
+                    $node->text = trans('home.bonus_loss', [
+                        'amount' => _number_format($guaranty, 0)
+                    ]);
+                    $node->class[] = "use_guaranty";
+                }
             } else {
                 $node->selected = 0;
                 $node->class=["child_node"];
             }
 
-            if (isset($userInfo->battleInfo) && $userInfo->battleInfo->use_guaranty == 1) {
-                $node->desc = '';
-                $node->text = trans('home.bonus_loss', [
-                    'amount' => _number_format($guaranty, 0)
-                ]);
-                $node->class[] = "use_guaranty";
-            }
-            
             $result->children[] = $node;
         }
 
