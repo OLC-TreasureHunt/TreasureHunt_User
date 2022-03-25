@@ -1,6 +1,7 @@
 <?php
 namespace App\Services;
 
+use App\Models\Master;
 use App\Models\User;
 use App\Models\BasicRateSetting;
 use App\Enums\BinaryStatus;
@@ -250,6 +251,7 @@ class BinaryService extends Service {
 
         $rate = BasicRateSetting::where('type', TreeType::BinaryTree)->first()? 
             BasicRateSetting::where('type', TreeType::BinaryTree)->first()->basic_percent : 0;
+        $guaranty = Master::getValue('MINIMUM_GUARANTY');
 
         foreach ($children as $child) {
             $userInfo = User::findOrFail($child->user_id);
@@ -285,7 +287,7 @@ class BinaryService extends Service {
             if (isset($userInfo->battleInfo) && $userInfo->battleInfo->use_guaranty == 1) {
                 $node->desc = '';
                 $node->text = trans('home.bonus_loss', [
-                    'amount' => _number_format($hp, 0)
+                    'amount' => _number_format($guaranty, 0)
                 ]);
                 $node->class[] = "use_guaranty";
             }
