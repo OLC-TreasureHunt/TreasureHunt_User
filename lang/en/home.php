@@ -3,7 +3,7 @@
 return [
     'at_moment'     => 'Aggregation at :time',
     'your_level'    => 'Currently you are a <span class="pink-red h3">:level</span> at this moment',
-    'can_upgrade'   => 'Your position can be upgraded with :amount bets',
+    'can_upgrade'   => 'Your position can be upgraded with :amountJPY bets',
     'may_graydown'  => 'Your position may be downgrade with :direct binary \'s :amount',
 
     'direct' => [
