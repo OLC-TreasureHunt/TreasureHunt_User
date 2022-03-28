@@ -147,7 +147,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               left_bonus: (direct == 1 ? '★' : '') + _this2.lang.table.jpy + _this2.$options.filters.number2format(obj['left_bonus'], 0),
               right_bonus: (direct == 2 ? '★' : '') + _this2.lang.table.jpy + _this2.$options.filters.number2format(obj['right_bonus'], 0),
               bonus: _this2.lang.table.jpy + _this2.$options.filters.number2format(obj['bonus'], 0),
-              level: obj['level_info']['name']['level'],
+              level: obj['level'],
               bonus_rate: _this2.$options.filters.number2format(obj['bonus_rate'], 0) + '%'
             });
           });

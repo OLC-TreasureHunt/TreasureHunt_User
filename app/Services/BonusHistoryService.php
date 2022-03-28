@@ -65,6 +65,7 @@ class BonusHistoryService extends Service {
 
         foreach ($history as $item) {
             $item->apply_status = UserBonusStatus::getDescription($item->apply_status);
+            $item->level = $item->levelInfo->name->level;
         }
 
         return $history;

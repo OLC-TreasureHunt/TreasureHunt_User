@@ -459,4 +459,9 @@ h4 span:not(.btn-label).pink-red {
   .img_alliance {
     height: 46px;
   }
+
+  .container-tree {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }

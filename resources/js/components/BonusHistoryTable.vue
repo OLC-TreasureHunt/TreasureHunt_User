@@ -67,7 +67,7 @@
                                     left_bonus: (direct == 1 ? '★' : '') + this.lang.table.jpy + this.$options.filters.number2format(obj['left_bonus'], 0),
                                     right_bonus: (direct == 2 ? '★' : '') + this.lang.table.jpy + this.$options.filters.number2format(obj['right_bonus'], 0),
                                     bonus: this.lang.table.jpy + this.$options.filters.number2format(obj['bonus'], 0),
-                                    level: obj['level_info']['name']['level'], 
+                                    level: obj['level'], 
                                     bonus_rate: this.$options.filters.number2format(obj['bonus_rate'], 0) + '%',
                                 }
                             })

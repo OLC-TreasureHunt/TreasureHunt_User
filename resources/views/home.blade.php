@@ -64,7 +64,7 @@
                 </div>
                 @endif
             </div>
-            <div class="container table-responsive home-tree mt-0 pt-5 position-relative">
+            <div class="container home-tree mt-0 pt-5 position-relative container-tree">
                 <home-tree id="tree-page"
                     :json="data" 
                     :class="{landscape: landscape.length}" 

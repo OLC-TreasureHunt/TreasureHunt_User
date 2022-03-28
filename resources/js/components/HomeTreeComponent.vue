@@ -104,7 +104,7 @@ export default {
         width: 10px;
         height: 10px;
         box-sizing: border-box;
-        border: 2px solid;
+        border: 4px solid;
         border-color: red red transparent transparent;
         transform: rotateZ(135deg);
         transform-origin: 50% 50% 0;
@@ -123,10 +123,11 @@ export default {
         content: "";
         position: absolute;
         left: 50%;
-        bottom: 15px;
-        height: 15px;
+        bottom: 10px;
+        height: 21px;
         border-left: 3px solid #4e2716;
-        transform: translate3d(-1px, 0, 0)
+        transform: translate3d(-1px, 0, 0);
+        z-index: 100;
     }
 
     .childLevel::before {
@@ -155,20 +156,22 @@ export default {
 
     .childLevel:first-child:after {
         left: 50%;
-        height: 15px;
-        border: 3px solid;
+        height: 21px;
+        border: 5px solid;
         border-color: #4e2716 transparent transparent #4e2716;
         border-radius: 6px 0 0 0;
-        transform: translate3d(1px, 0, 0)
+        transform: translate3d(1px, 0, 0);
+        border-right-width: 0;
     }
 
     .childLevel:last-child:after {
         right: 50%;
-        height: 15px;
-        border: 3px solid;
+        height: 21px;
+        border: 5px solid;
         border-color: #4e2716 #4e2716 transparent transparent;
         border-radius: 0 6px 0 0;
-        transform: translate3d(-1px, 0, 0)
+        transform: translate3d(-1px, 0, 0);
+        border-left-width: 0;
     }
 
     .childLevel:first-child.childLevel:last-child::after {
@@ -199,7 +202,7 @@ export default {
         overflow: hidden;
         background-color: #4e2716EE !important;
         padding: 10px 30px;
-        border: 2px solid #6666ff !important;
+        border: 4px solid #6666ff !important;
         min-width: 220px;
         min-height: 150px;
     }
@@ -298,8 +301,6 @@ export default {
     }
 
     #tree-page .avat {
-        /* border-radius: 2em;
-        border-width:2px; */
         background-color: #ffffff00;
         border: 0;
         position: relative;
@@ -310,7 +311,7 @@ export default {
     }
     
     .person.selected_node {
-        border: 2px solid red !important;
+        border: 4px solid red !important;
     }
 
     .childLevel.selected:last-child:after {
@@ -318,7 +319,7 @@ export default {
     }
 
     .extend::after {
-        border-left: 2px solid red;
+        border-left: 3px solid red;
     }
 
     .childLevel.selected:first-child:after {
@@ -331,5 +332,53 @@ export default {
 
     .child_node div.name.title {
         margin-bottom: 20px;
+    }
+
+    @media (max-width: 911px) {
+        .node .person .name { 
+            font-size: 12px;
+        }
+
+        .node .person.child_node {
+            padding: 5px;
+            min-width: 200px;
+            min-height: 130px;
+        }
+    }
+
+    @media (max-width: 525px) {
+        .node .person .name { 
+            font-size: 11px;
+        }
+
+        .node .person.child_node {
+            padding: 5px;
+            min-width: 180px;
+            min-height: 120px;
+        }
+    }
+
+    @media (max-width: 425px) {
+        .node .person .name { 
+            font-size: 10px;
+        }
+
+        .node .person.child_node {
+            padding: 5px;
+            min-width: 160px;
+            min-height: 110px;
+        }
+    }
+
+    @media (max-width: 390px) {
+        .node .person .name { 
+            font-size: 9px;
+        }
+
+        .node .person.child_node {
+            padding: 5px;
+            min-width: 150px;
+            min-height: 110px;
+        }
     }
 </style>
