@@ -57,13 +57,14 @@
                     </div>
                 </div>
             </div>
-            <div class="container table-responsive home-tree mt-0 pt-5 position-relative">
+            <div class="container home-tree mt-0 position-relative">
                 @if (isset($userInfo->battleInfo))
-                <div class="position-absolute home-tool" data-animate="animate__fadeInLeft">
-                    <img class="img-fluid mb-sm-5" src="{{ $userInfo->battleInfo->levelInfo->image }}" width="140"/>
+                <div class="equipment home-tool text-center" data-animate="animate__fadeInLeft">
+                    <img class="img-fluid mb-sm-5 pt-5" src="{{ $userInfo->battleInfo->levelInfo->image }}"/>
                 </div>
                 @endif
-    
+            </div>
+            <div class="container table-responsive home-tree mt-0 pt-5 position-relative">
                 <home-tree id="tree-page"
                     :json="data" 
                     :class="{landscape: landscape.length}" 
