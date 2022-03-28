@@ -72,7 +72,7 @@
             </div>
         </section>
         
-        <section class="background-transparent" id="alliance">
+        <section class="background-transparent pt-0" id="alliance">
             <div class="container p-t-0">
                 <h4 class="text-primary p-10"><span class="text-light back-theme p-10 rounded">@lang('home.alliance')</span></h4>
                 <ul class="grid grid-4-columns">
