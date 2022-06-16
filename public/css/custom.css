@@ -401,7 +401,9 @@ h5 span:not(.btn-label).pink-red {
 }
 
 .tabs.tabs-clean #home-tab.nav-tabs .nav-link {
-  color: #4e2716
+  background-color: #d3a75a !important;
+  border-color: #d3a75a;
+  color: #c78210;
 }
 
 .tabs.tabs-clean #home-tab.nav-tabs .nav-link.active {
