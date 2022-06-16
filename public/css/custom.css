@@ -417,6 +417,10 @@ table#real-summary td {
   border: 1px solid gray;
 }
 
+.table-hover>tbody>tr:hover>* {
+  --bs-table-accent-bg: rgb(191 154 99);
+}
+
 @media (min-width: 768px) {
   .col-sm-1-10 {
     width: 10%;

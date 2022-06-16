@@ -105,7 +105,7 @@ class ReferralService extends Service {
                 $user = User::find($child->id);
                 $childrens = count($user->currentChildren?? array());
                 $child->children_count = $childrens;
-                $child->affiliate_id = $user->affiliate_id;
+                $child->affiliate_id = $user->affiliate_id?? '';
             } catch (\Exception $e) {
                 Log::channel('appsolution')->info($child);
             }
