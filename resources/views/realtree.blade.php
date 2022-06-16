@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', trans('tree.title'))
+@section('title', trans('real.title'))
 
 @section('contents')
 
@@ -18,9 +18,9 @@
         <section id="page-title" class="page-title-left text-dark background-transparent">
             <div class="container">
                 <div class="page-title">
-                    <h1>{{ trans('tree.page_title') }}</h1>
+                    <h1>{{ trans('real.page_title') }}</h1>
                     @if ($lastData)
-                    <span>@lang('tree.page_title_desc', ['date' => serverTime2Local($lastData->display_time?? $lastData->created_at)])</span>
+                    <span>@lang('real.page_title_desc', ['date' => serverTime2Local($lastData->display_time?? $lastData->created_at)])</span>
                     @endif
                 </div>
             </div>
