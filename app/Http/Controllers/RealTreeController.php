@@ -33,7 +33,7 @@ class RealTreeController extends Controller
     public function index() {
         $user = Auth::user();
         $lastData = $this->manualInput->last();
-        $childrens = $user->actvieChildrens()->count();
+        $childrens = $user->activeChildren()->count();
         $referral = $user->referral;
         $userInfo = $user->userInfo()->type(TreeType::RealTree)->get()->last();
         if ($userInfo) {

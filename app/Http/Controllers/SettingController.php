@@ -22,7 +22,7 @@ class SettingController extends Controller
         $countries = Country::all()->toArray();
         $data['country_list'] = $countries;
         $data['register_url'] = env('APP_URL') . '/register?aid=' . $user->affiliate_id;
-        $data['referral'] = $user->currentChildren()->count();
+        $data['referral'] = $user->activeChildren()->count();
 
         $invitor_id = $user->referral->parent_id;
         try{
