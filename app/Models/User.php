@@ -88,20 +88,28 @@ class User extends Authenticatable
         return $ret;
     }
 
-    public function binary() {
-        return $this->hasOne(Binary::class);
+    public function userInfo() {
+        return $this->hasMany(UserInfo::class);
     }
 
-    public function battleInfo() {
-        $date = date('Y-m', strtotime('now'));
-        return $this->hasOne(UserInfo::class)->type(TreeType::BinaryTree)->latest();
+    public function gradeDown() {
+        return $this->hasOne(GradeDown::class);
     }
 
-    public function binaryGradeDown() {
-        return $this->hasOne(GradeDown::class)->type(TreeType::BinaryTree);
+    public function gradeUp() {
+        return $this->hasOne(GradeUp::class);
     }
 
-    public function binaryGradeUp() {
-        return $this->hasOne(GradeUp::class)->type(TreeType::BinaryTree);
+    public function referral() {
+        return $this->hasOne(Referral::class);
     }
+
+    public function children() {
+        return $this->hasMany(Referral::class, 'prev_parent_id');
+    }
+
+    public function currentChildren() {
+        return $this->hasMany(Referral::class, 'parent_id');
+    }
+
 }

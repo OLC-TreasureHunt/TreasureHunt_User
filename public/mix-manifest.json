@@ -1,15 +1,16 @@
 {
-    "/js/app.js": "/js/app.js?id=c1517f92d013d870a402",
+    "/js/app.js": "/js/app.js?id=c20e3e6cf42fb42408ef",
     "/js/pages/register.js": "/js/pages/register.js?id=360cc6b7c40be813c9a3",
-    "/js/pages/tree.js": "/js/pages/tree.js?id=b8395a81f8ca049ac7a7",
-    "/js/pages/history.js": "/js/pages/history.js?id=0c06c11fd5c47d3d7179",
+    "/js/pages/tree.js": "/js/pages/tree.js?id=9bd9dc9b7f1f317c4051",
+    "/js/pages/history.js": "/js/pages/history.js?id=5312f83d9a9c7e947f98",
     "/js/pages/download.js": "/js/pages/download.js?id=371566e80d6b66c1a296",
     "/js/pages/news.js": "/js/pages/news.js?id=762a93fb191b109e4e11",
     "/js/pages/news-detail.js": "/js/pages/news-detail.js?id=f64a1ad6d7826c8669c2",
     "/js/pages/notice.js": "/js/pages/notice.js?id=ff30c0d8e9cc8fb7665b",
-    "/js/pages/home.js": "/js/pages/home.js?id=df10073af3328cabbd5f",
+    "/js/pages/home.js": "/js/pages/home.js?id=acf62932aa6335f105a3",
     "/js/pages/setting.js": "/js/pages/setting.js?id=5b10b9b4090d6c687eec",
     "/js/pages/base.js": "/js/pages/base.js?id=715f6b685ad99733ed3b",
     "/js/pages/maintence.js": "/js/pages/maintence.js?id=a5897c352ec49ff4d452",
+    "/js/pages/real.js": "/js/pages/real.js?id=1615e19aa90444284e1e",
     "/css/app.css": "/css/app.css?id=1ba4616002e30d600ff3"
 }

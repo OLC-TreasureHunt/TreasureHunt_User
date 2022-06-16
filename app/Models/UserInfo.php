@@ -27,4 +27,8 @@ class UserInfo extends BaseModel
     public function levelInfo() {
         return $this->belongsTo(BonusRateSetting::class, 'level', 'id');
     }
+
+    public function user() {
+        return $this->hasOne(User::class);
+    }
 }

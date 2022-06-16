@@ -93,6 +93,12 @@
                                                         <div class="col-lg-4 col-6 text-dark">{{ trans('setting.email')  }}</div>
                                                         <div class="col-lg-8 col-6 text-dark">{{ hideEmailAddress(auth()->user()->email) }}</div>
                                                     </div>
+                                                    @if ($invitor_id)
+                                                        <div class="form-group row">
+                                                            <div class="col-lg-4 col-6 text-dark">{{ trans('setting.invitor')  }}</div>
+                                                            <div class="col-lg-8 col-6 text-dark">{{ $invitor_id }}</div>
+                                                        </div>
+                                                    @endif
                                                     <div class="form-group row">
                                                         <div class="col-lg-4 col-6 text-dark"></div>
                                                         <div class="col-lg-8 col-6 text-dark">
@@ -104,12 +110,6 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                @if (isset(auth()->user()->battleInfo))
-                                                    <div class="col-lg-3 col-12 text-center">
-                                                        <img src="{{ auth()->user()->battleInfo->levelInfo->image }}" class="avatar-xl" id="">
-                                                        <h5>{{ auth()->user()->battleInfo->levelInfo->name->level }}</h5>
-                                                    </div>
-                                                @endif
                                             </div>
                                         </div>
                                     </div>

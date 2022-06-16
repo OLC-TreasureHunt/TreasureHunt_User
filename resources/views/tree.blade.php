@@ -30,7 +30,7 @@
         <!-- Content -->
         
         <section id="page-content" class="background-transparent">
-            <div class="container vld-parent">
+            <div class="container vld-parent p-0">
                 <loading v-model:active="isLoading"
                     :can-cancel="true"
                     :is-full-page="false"
@@ -42,7 +42,7 @@
                             LandOrPortable
                             <input type="checkbox" v-model="landscape" value="1">
                         </label>
-                        <binary-tree id="tree-page"
+                        <binary-tree class="tree-page"
                             :json="data" 
                             :class="{landscape: landscape.length}" 
                             :trans="trans"

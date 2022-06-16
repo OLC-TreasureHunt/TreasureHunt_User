@@ -7,14 +7,15 @@
                     <div class="person" 
                         :class="Array.isArray(treeData.class) ? treeData.class : []"
                         @click="$emit('click-node', treeData)" >
-                        <div class="name title">{{ treeData.title }}</div>
-                        <div class="avat" v-if="treeData.image_url.length !== 0">
-                            <img :src="treeData.image_url" />
+                        <div class="person-container">
+                            <div class="name title" v-if="treeData.image_url.length !== 0">{{ treeData.title }}</div>
+                            <div class="avat" v-if="treeData.image_url.length !== 0">
+                                <img :src="treeData.image_url" />
+                            </div>
+                            <div class="name desc" v-if="treeData.desc.length !== 0">{{treeData.desc}}</div>
+                            <div class="name hp" v-if="treeData.hp.length !== 0">{{treeData.hp}}</div>
+                            <div class="name text" v-if="treeData.text.length !== 0">{{treeData.text}}</div>
                         </div>
-                        <div class="name" v-if="treeData.count.length !== 0">{{treeData.count}}</div>
-                        <div class="name" v-if="treeData.bet.length !== 0">{{treeData.bet}}</div>
-                        <div class="name" v-if="treeData.paid.length !== 0">{{treeData.paid}}</div>
-                        <div class="name" v-if="treeData.text.length !== 0">{{treeData.text}}</div>
                     </div>
                 
                     <template v-if="Array.isArray(treeData.mate) && treeData.mate.length">
@@ -70,8 +71,6 @@ export default {
     },
     methods: {
         toggleExtend: function(treeData){
-            treeData.extend = !treeData.extend;
-            this.$forceUpdate();
         }
     }
 }
@@ -101,13 +100,13 @@ export default {
         cursor: pointer;
     }
 
-    .extend_handle::before {
+    .extend_handle:before {
         content: "";
         display: block;
         width: 10px;
         height: 10px;
         box-sizing: border-box;
-        border: 2px solid;
+        border: 4px solid;
         border-color: red red transparent transparent;
         transform: rotateZ(135deg);
         transform-origin: 50% 50% 0;
@@ -118,7 +117,7 @@ export default {
         border-color: #333 #333 transparent transparent;
     }
 
-    .extend .extend_handle::before {
+    .extend .extend_handle:before {
         transform: rotateZ(-45deg);
     }
 
@@ -126,10 +125,11 @@ export default {
         content: "";
         position: absolute;
         left: 50%;
-        bottom: 15px;
-        height: 15px;
-        border-left: 2px solid #4e2716;
-        transform: translate3d(-1px, 0, 0)
+        bottom: 10px;
+        height: 21px;
+        border-left: 3px solid #4e2716;
+        transform: translate3d(-1px, 0, 0);
+        z-index: 100;
     }
 
     .childLevel::before {
@@ -158,20 +158,22 @@ export default {
 
     .childLevel:first-child:after {
         left: 50%;
-        height: 15px;
-        border: 2px solid;
+        height: 21px;
+        border: 5px solid;
         border-color: #4e2716 transparent transparent #4e2716;
         border-radius: 6px 0 0 0;
-        transform: translate3d(1px, 0, 0)
+        transform: translate3d(1px, 0, 0);
+        border-right-width: 0;
     }
 
     .childLevel:last-child:after {
         right: 50%;
-        height: 15px;
-        border: 2px solid;
+        height: 21px;
+        border: 5px solid;
         border-color: #4e2716 #4e2716 transparent transparent;
         border-radius: 0 6px 0 0;
-        transform: translate3d(-1px, 0, 0)
+        transform: translate3d(-1px, 0, 0);
+        border-left-width: 0;
     }
 
     .childLevel:first-child.childLevel:last-child::after {
@@ -199,9 +201,18 @@ export default {
         position: relative;
         display: inline-block;
         z-index: 2;
-        min-width: 8em;
         overflow: hidden;
-        min-width: 300px;
+        background-color: #4e2716EE !important;
+        padding: 10px 30px;
+        min-width: 220px;
+        min-height: 150px;
+    }
+
+    .node .person.child_node {
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .node .person .avat {
@@ -229,6 +240,7 @@ export default {
         line-height: 2em;
         overflow: hidden;
         width: 100%;
+        color: white;
     }
 
     .node.hasMate::after {
@@ -292,36 +304,18 @@ export default {
         margin-left: 0;
     }
 
-    .tree-page .avat {
-        /* border-radius: 2em;
-        border-width:2px; */
+    #realtree-page .avat {
         background-color: #ffffff00;
         border: 0;
         position: relative;
     }
 
-    .tree-page .name{
+    #realtree-page .name {
         font-weight:700;
-        color: white;
     }
-
-    .node .person {
-        display: inline-block;
-        z-index: 2;
-        overflow: hidden;
-        background-color: #4e2716EE !important;
-        min-width: 100px;
-        padding: 10px 30px;
-        border: 2px solid #6666ff !important;
-        min-width: 260px;
-    }
-
-    .node .person.child_node {
-        padding: 30px;
-    }
-
+    
     .person.selected_node {
-        border: 2px solid red !important;
+        border: 4px solid red !important;
     }
 
     .childLevel.selected:last-child:after {
@@ -329,15 +323,66 @@ export default {
     }
 
     .extend::after {
-        border-left: 2px solid red;
+        border-left: 3px solid red;
     }
 
     .childLevel.selected:first-child:after {
         border-color: red transparent transparent red;
     }
 
+    .use_guaranty div.name.text {
+        color: #ff00ff
+    }
+
     .child_node div.name.title {
         margin-bottom: 20px;
     }
-    
+
+    @media (max-width: 911px) {
+        .node .person .name { 
+            font-size: 12px;
+        }
+
+        .node .person.child_node {
+            padding: 5px;
+            min-width: 200px;
+            min-height: 130px;
+        }
+    }
+
+    @media (max-width: 525px) {
+        .node .person .name { 
+            font-size: 11px;
+        }
+
+        .node .person.child_node {
+            padding: 5px;
+            min-width: 180px;
+            min-height: 120px;
+        }
+    }
+
+    @media (max-width: 425px) {
+        .node .person .name { 
+            font-size: 10px;
+        }
+
+        .node .person.child_node {
+            padding: 5px;
+            min-width: 160px;
+            min-height: 110px;
+        }
+    }
+
+    @media (max-width: 390px) {
+        .node .person .name { 
+            font-size: 9px;
+        }
+
+        .node .person.child_node {
+            padding: 5px;
+            min-width: 150px;
+            min-height: 110px;
+        }
+    }
 </style>

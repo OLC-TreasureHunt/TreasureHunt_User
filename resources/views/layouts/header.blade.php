@@ -59,11 +59,11 @@
                     <nav>
                         <ul>
                             <li><a href="{{ route('home') }}"><i class="fa fa-home"></i> @lang('app.menu.home')</a></li>
-                            
                             @auth
                             <li class="dropdown">
-                                <a href="#"><i class="fa fa-gamepad"></i>@lang('app.menu.binary')</a>
+                                <a href="#"><i class="fa fa-gamepad"></i>@lang('app.menu.bonus_menu')</a>
                                 <ul class="dropdown-menu back-theme">
+                                    <li><a href="{{ route('realtree') }}"><i class="fa fa-street-view"></i> @lang('app.menu.realtree')</a></li>
                                     <li><a href="{{ route('tree') }}"><i class="fa fa-street-view"></i> @lang('app.menu.tree')</a></li>
                                     <li><a href="{{ route('history') }}"><i class="fa fa-history"></i> @lang('app.menu.history')</a></li>
                                 </ul>

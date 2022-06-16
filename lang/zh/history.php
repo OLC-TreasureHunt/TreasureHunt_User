@@ -7,6 +7,8 @@ return [
     'page_title_desc' => '可以战头和奖金史记',
     'game_history'  => '战头史记',
     'bonus_history' => '奖金实际',
+    'realtree'      => '真正的树',
+    'binarytree'    => '二叉树',
 
     'button' => [
         'confirm'   => '确认'
@@ -25,7 +27,10 @@ return [
         'binaryl'   => '右叶',
         'level'     => '装备',
         'rate'      => '率',
-        'bonus'     => '奖金'
+        'bonus'     => '奖金',
+        'tree'      => '树',
+        'basic'     => '标准报酬金额',
+        'sum'       => '計',
     ],
 
 

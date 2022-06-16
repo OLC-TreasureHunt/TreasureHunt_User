@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Auth;
 use Log;
+use App\Models\User;
 use App\Models\Country;
 use App\Models\Referral;
 use Illuminate\Support\Facades\Hash;
@@ -21,8 +22,16 @@ class SettingController extends Controller
         $countries = Country::all()->toArray();
         $data['country_list'] = $countries;
         $data['register_url'] = env('APP_URL') . '/register?aid=' . $user->affiliate_id;
-        $data['referral'] = $user->hasMany(Referral::class, 'prev_parent_id')->count();
+        $data['referral'] = $user->children()->count();
 
+        $invitor_id = $user->referral->prev_parent_id;
+        try{
+            $invitor_id = User::find($invitor_id)->affiliate_id;
+            $data['invitor_id'] = $invitor_id;
+        } catch(\Exception $e) {
+            $data['invitor_id'] = '';
+        }
+        
         return view('setting', $data);
     }
 

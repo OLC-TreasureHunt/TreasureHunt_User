@@ -7,6 +7,8 @@ return [
     'page_title_desc' => 'Anda dapat melihat sejarah bermain dan bonus.',
     'game_history'  => 'Riwayat Permainan',
     'bonus_history' => 'Riwayat Bonus',
+    'realtree'      => 'Pohon asli',
+    'binarytree'    => 'Pohon biner',
 
     'button' => [
         'confirm'   => 'Konfirmasi'
@@ -25,7 +27,10 @@ return [
         'binaryl'   => 'Biner Kanan',
         'level'     => 'peralatan',
         'rate'      => 'Tingkat kompensasi',
-        'bonus'     => 'Jumlah kompensasi'
+        'bonus'     => 'Jumlah kompensasi',
+        'tree'      => 'Pohon',
+        'basic'     => 'Standar',
+        'sum'       => 'Total',
     ],
 
     'template' => [

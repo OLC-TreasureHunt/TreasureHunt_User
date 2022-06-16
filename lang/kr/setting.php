@@ -93,4 +93,5 @@ return [
     'is_premium'        => '프리미엄',
     'not_premium'       => '일반',
     'bicorn_id'         => '바이콘 ID',
+    'invitor'           => '초대자 ID',
 ];

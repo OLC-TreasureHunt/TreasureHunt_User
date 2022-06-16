@@ -70,4 +70,8 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/notice/read/{id}', [App\Http\Controllers\NoticeController::class, 'read'])->name('notice.read');
     
     Route::get('/home/tree', [App\Http\Controllers\TreeController::class, 'homeTree'])->name('home.tree');
+    Route::get('/home/real', [App\Http\Controllers\TreeController::class, 'homeRealTree'])->name('home.realtree');
+
+    Route::get('/realtree', [App\Http\Controllers\RealTreeController::class, 'index'])->name('realtree');
+    Route::get('/tree/real', [App\Http\Controllers\RealTreeController::class, 'realTree'])->name('tree.real');
 });

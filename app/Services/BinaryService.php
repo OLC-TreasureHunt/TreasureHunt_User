@@ -8,6 +8,7 @@ use App\Enums\BinaryStatus;
 use App\Enums\TreeType;
 use App\Enums\UserBonusStatus;
 use App\Repositories\BinaryRepositoryInterface;
+use App\Repositories\ReferralRepositoryInterface;
 use App\Services\Service;
 use Psr\Log\LoggerInterface as Log;
 
@@ -22,6 +23,7 @@ class BinaryService extends Service {
      * @var BinaryRepositoryInterface
      */
     protected $binary;
+
     /**
      * @var Log
      */
@@ -281,7 +283,8 @@ class BinaryService extends Service {
                 $node->selected = 1;
                 $node->class=["selected_node", "child_node"];
 
-                if (isset($parent->battleInfo) && $parent->battleInfo->use_guaranty == 1) {
+                $battleInfo = $parent->userInfo()->type(TreeType::BinaryTree)->get()->last();
+                if (isset($battleInfo) && $battleInfo->use_guaranty == 1) {
                     $node->text = trans('home.bonus_loss', [
                         'amount' => _number_format($guaranty, 0)
                     ]);

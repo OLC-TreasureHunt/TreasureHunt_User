@@ -90,4 +90,5 @@ return [
     'is_premium'        => 'プレミアムユーザー',
     'not_premium'       => '一般ユーザー',
     'bicorn_id'         => 'ゲームサイト ID',
+    'invitor'           => '招待者ID',
 ];

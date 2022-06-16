@@ -26,8 +26,9 @@
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="widget">
-                                        <div class="widget-title">@lang('app.menu.binary')</div>
+                                        <div class="widget-title">@lang('app.menu.bonus_menu')</div>
                                         <ul class="list">
+                                            <li><a href="{{ route('realtree') }}">@lang('app.menu.realtree')</a></li>
                                             <li><a href="{{ route('tree') }}">@lang('app.menu.tree')</a></li>
                                             <li><a href="{{ route('history') }}">@lang('app.menu.history')</a></li>
                                         </ul>

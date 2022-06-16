@@ -4,7 +4,8 @@ namespace App\Providers;
 
 use App\Repositories\AllianceRepositoryInterface;
 use App\Repositories\EloquentRepositoryInterface; 
-use App\Repositories\BinaryRepositoryInterface; 
+use App\Repositories\BinaryRepositoryInterface;
+use App\Repositories\ReferralRepositoryInterface; 
 use App\Repositories\BonusHistoryRepositoryInterface;
 use App\Repositories\GameHistoryRepositoryInterface; 
 use App\Repositories\FileRepositoryInterface; 
@@ -18,6 +19,7 @@ use App\Repositories\UserRepositoryInterface;
 use App\Repositories\Eloquent\AllianceRepository;
 use App\Repositories\Eloquent\BaseRepository; 
 use App\Repositories\Eloquent\BinaryRepository; 
+use App\Repositories\Eloquent\ReferralRepository;
 use App\Repositories\Eloquent\BonusHistoryRepository; 
 use App\Repositories\Eloquent\GameHistoryRepository; 
 use App\Repositories\Eloquent\NoticeRepository; 
@@ -46,6 +48,7 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(EloquentRepositoryInterface::class, BaseRepository::class);
         $this->app->bind(UserRepositoryInterface::class, UserRepository::class);
         $this->app->bind(BinaryRepositoryInterface::class, BinaryRepository::class);
+        $this->app->bind(ReferralRepositoryInterface::class, ReferralRepository::class);
         $this->app->bind(GameHistoryRepositoryInterface::class, GameHistoryRepository::class);
         $this->app->bind(BonusHistoryRepositoryInterface::class, BonusHistoryRepository::class);
         $this->app->bind(CryptoSettingRepositoryInterface::class, CryptoSettingRepository::class);

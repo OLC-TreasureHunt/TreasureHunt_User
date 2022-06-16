@@ -64,6 +64,7 @@
                                                                   name="password"
                                                                   placeholder="{{ trans('login.password') }}"
                                                                   type="password"
+                                                                  value=""
                                                                   required="">
                                                               <span class="input-group-text back-semitrans-theme border-theme "><i class="icon-eye-off" aria-hidden="true" style="cursor: pointer;"></i></span>
                                                           </div>

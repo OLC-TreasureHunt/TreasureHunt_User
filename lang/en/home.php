@@ -2,8 +2,10 @@
 
 return [
     'at_moment'     => 'Aggregation at :time',
-    'your_level'    => 'Currently you are a <span class="pink-red h3">:level</span> at this moment',
-    'can_upgrade'   => 'Your position can be upgraded with :amountJPY bets',
+    'your_binary_level'    => 'Armor <span class="pink-red h4">:level</span> at this moment',
+    'your_real_level'    => 'Weapon <span class="pink-red h4">:level</span> at this moment',
+    'can_binary_upgrade'   => 'Your Armor can be upgraded with :amountJPY bets',
+    'can_real_upgrade'   => 'Your Weapon can be upgraded with :amountJPY bets',
     'may_graydown'  => 'Your position may be downgrade with :direct binary \'s :amount',
 
     'direct' => [
@@ -20,7 +22,14 @@ return [
     'welcome' => 'Your aggregation will be displayed,<br> after your performance is ready',
 
     'alliance' => 'Websites',
-    'current_bonus' => 'Estimated bonus is :amountJPY',
+    'current_bonus' => 'Expected reward :amountJPY',
     'basic_bonus' => 'Basic Bonus',
     'current_is_max' => 'The current equipment is at the highest level',
+
+    'realdesc' => 'RealTree Battle',
+    'binarydesc' => 'BinaryTree Battle',
+    'realtree' => 'Real Tree',
+    'binarytree' => 'Binary Tree',
+    'realloss' => 'Bonus HP :amount JPY',
+    'realagents' => 'Agents :count people(s)'
 ];

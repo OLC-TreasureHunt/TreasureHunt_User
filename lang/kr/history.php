@@ -7,6 +7,8 @@ return [
     'page_title_desc' => '배틀내역과 보너스를 확인하세요',
     'game_history'  => '배틀내역',
     'bonus_history' => '배틀내역',
+    'realtree'      => '리얼트리',
+    'binarytree'    => '바이너리트리',
 
     'button' => [
         'confirm'   => '확인'
@@ -25,7 +27,10 @@ return [
         'binaryl'   => '좌',
         'level'     => '장비',
         'rate'      => '프로수',
-        'bonus'     => '보너스'
+        'bonus'     => '보너스',
+        'tree'      => '나무',
+        'basic'     => '기준보수액',
+        'sum'       => '계',
     ],
 
     'template' => [

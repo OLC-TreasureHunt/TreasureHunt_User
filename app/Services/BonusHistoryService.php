@@ -57,15 +57,46 @@ class BonusHistoryService extends Service {
             $filter['order'] = 'desc';
         }
 
-        $history = $this->history->with('levelInfo')->with('settleInfo')->filter([
+        $history = $this->history->filter([
                 'user_id' => Auth::user()->id
-            ])->type(TreeType::BinaryTree)
-            ->orderBy($filter['sort'], $filter['order'])
+            ])
+            ->groupBy('settle_id')
+            ->select('settle_id')
             ->paginate($filter['limit']);
 
         foreach ($history as $item) {
-            $item->apply_status = UserBonusStatus::getDescription($item->apply_status);
-            $item->level = $item->levelInfo->name->level;
+            $dump = $this->history->with('levelInfo')->with('settleInfo')->filter([
+                'user_id' => Auth::user()->id,
+                'settle_id' => $item->settle_id
+            ])->orderBy('type')->get()->keyBy('type');
+
+            $sum = 0;
+            $records = array();
+            $settle_month = 0;
+            $total_bet = 0;
+            foreach ($dump as $type => $data) {
+                $data->level = $data->levelInfo->name->level;
+                if ($type == 1) {
+                    $records[] = $data;
+                } else if ($type == 2 && count($records) == 1) {
+                    $records[] = $data;
+                } else if ($type == 2 && count($records) == 0) {
+                    $records[] = [
+                        'basic_bonus' => '0',
+                        'bonus_rate' => '0',
+                        'level'   => '',
+                        'bonus' => '0'
+                    ];
+                    $records[] = $data;
+                }
+                $sum = $sum + $data->bonus;
+                $settle_month = $data->settleInfo->settle_month;
+                $total_bet = $data->total_bet;
+            }
+            $item->data = $records;
+            $item->sum = $sum;
+            $item->settle_month = $settle_month;
+            $item->total_bet = $total_bet;
         }
 
         return $history;

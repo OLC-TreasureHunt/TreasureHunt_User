@@ -306,7 +306,7 @@ export default {
         position: relative;
     }
 
-    #tree-page .name{
+    #tree-page .name {
         font-weight:700;
     }
     

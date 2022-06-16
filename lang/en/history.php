@@ -7,6 +7,8 @@ return [
     'page_title_desc' => 'You can see the history of playing and bonus.',
     'game_history'  => 'Battle History',
     'bonus_history' => 'Battle History',
+    'realtree'      => 'RealTree',
+    'binarytree'    => 'BinaryTree',
 
     'button' => [
         'confirm'   => 'Confirm'
@@ -25,7 +27,10 @@ return [
         'binaryl'   => 'Binary L',
         'level'     => 'Level',
         'rate'      => 'Rate',
-        'bonus'     => 'Bonus'
+        'bonus'     => 'Bonus',
+        'tree'      => 'Tree',
+        'basic'     => 'Basic',
+        'sum'       => 'Total',
     ],
 
     'template' => [

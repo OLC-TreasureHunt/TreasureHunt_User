@@ -7,6 +7,8 @@ return [
     'page_title_desc' => 'バトル実績の履歴を確認できます。',
     'game_history'  => 'バトル履歴',
     'bonus_history' => 'バトル履歴',
+    'realtree'      => 'リアルツリー',
+    'binarytree'    => 'バイナリツリー',    
 
     'button' => [
         'confirm'   => '確認'
@@ -25,7 +27,10 @@ return [
         'binaryl'   => 'バイナリ左',
         'level'     => '装備',
         'rate'      => '報酬レート',
-        'bonus'     => '報酬額'
+        'bonus'     => '報酬額',
+        'tree'      => 'ツリー',
+        'basic'     => '基準報酬額',
+        'sum'       => '計',
     ],
 
     'template' => [

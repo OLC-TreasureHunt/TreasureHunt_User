@@ -2,8 +2,10 @@
 
 return [
     'at_moment'     => ':time　時点でのバトル状態',
-    'your_level'    => 'あなたの現在の装備は<span class="pink-red h3">:level</span>です。',
-    'can_upgrade'   => 'あと :amountJPY ベットで装備がレベルアップします。',
+    'your_binary_level'    => '防具　<span class="pink-red h4">:level</span>',
+    'your_real_level'    => '武器　<span class="pink-red h4">:level</span>',
+    'can_binary_upgrade'   => 'あと :amountJPY ベットで防具がレベルアップします。',
+    'can_real_upgrade'   => 'あと :amountJPY ベットで武器がレベルアップします。',
     'may_graydown'  => 'バイナリ:directが:amount損失で装備がグレードダウンします。',
 
     'direct' => [
@@ -20,7 +22,14 @@ return [
     'welcome' => 'プレイ実績が反映されたら、<br>あなたのバトル状態が表示されます。',
 
     'alliance' => '連携サイト',
-    'current_bonus' => '見込み報酬額は :amountJPY です。',
-    'basic_bonus' => '報酬基準額',
+    'current_bonus' => '見込み報酬 :amountJPY',
+    'basic_bonus' => '基準報酬額',
     'current_is_max' => '現在の装備は最高レベルです。',
+
+    'realdesc' => 'リアルツリーバトル',
+    'binarydesc' => 'バイナリツリーバトル',
+    'realtree' => 'リアルツリー',
+    'binarytree' => 'バイナリツリー',
+    'realloss' => '基準報酬額 :amount JPY',
+    'realagents' => 'エージェント人数 :count 人'
 ];

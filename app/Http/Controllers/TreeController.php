@@ -6,6 +6,7 @@ use Auth;
 use App\Models\User;
 use App\Services\ManualInputService;
 use App\Services\BinaryService;
+use App\Services\ReferralService;
 use Illuminate\Http\Request;
 
 
@@ -16,12 +17,14 @@ class TreeController extends Controller
      */
     protected $binary;
     protected $manualInput;
+    protected $referral;
 
     /**
      * @param BinaryService $binary
      */
-    public function __construct(BinaryService $binary, ManualInputService $manualInput) {
+    public function __construct(BinaryService $binary, ReferralService $referral, ManualInputService $manualInput) {
         $this->binary = $binary;
+        $this->referral = $referral;
         $this->manualInput = $manualInput;
     }
 
@@ -48,6 +51,11 @@ class TreeController extends Controller
 
     public function homeTree() {
         $tree = $this->binary->homeTree(Auth::user()->id);
+        return $tree;
+    }
+
+    public function homeRealTree() {
+        $tree = $this->referral->homeRealTree(Auth::user()->id);
         return $tree;
     }
 

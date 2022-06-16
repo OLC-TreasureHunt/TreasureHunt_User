@@ -93,4 +93,5 @@ return [
     'is_premium'        => '高级会员',
     'not_premium'       => '发现会员',
     'bicorn_id'         => '游戏ID',
+    'invitor'           => '邀请ID',
 ];

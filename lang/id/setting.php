@@ -93,4 +93,5 @@ return [
     'is_premium'        => 'Premi',
     'not_premium'       => 'Normal',
     'bicorn_id'         => 'Bicorn ID',
+    'invitor'           => 'MengundangID',
 ];

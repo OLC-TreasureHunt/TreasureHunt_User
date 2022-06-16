@@ -2256,6 +2256,97 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/RealTreeComponent.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/RealTreeComponent.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  name: "TreeChart",
+  props: ["json"],
+  data: function data() {
+    return {
+      treeData: {}
+    };
+  },
+  watch: {
+    json: {
+      handler: function handler(Props) {
+        var extendKey = function extendKey(jsonData) {
+          jsonData.extend = jsonData.extend === void 0 ? true : !!jsonData.extend;
+
+          if (Array.isArray(jsonData.children)) {
+            jsonData.children.forEach(function (c) {
+              extendKey(c);
+            });
+          }
+
+          return jsonData;
+        };
+
+        if (Props) {
+          this.treeData = extendKey(Props);
+        }
+      },
+      immediate: true
+    }
+  },
+  methods: {
+    toggleExtend: function toggleExtend(treeData) {}
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/HomeTreeComponent.vue?vue&type=style&index=0&id=bff214f6&scoped=true&lang=css&":
 /*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/HomeTreeComponent.vue?vue&type=style&index=0&id=bff214f6&scoped=true&lang=css& ***!
@@ -2273,7 +2364,31 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\ntable[data-v-bff214f6] {\n    border-collapse: separate!important;\n    border-spacing: 0!important;\n}\ntd[data-v-bff214f6] {\n    position: relative;\n    vertical-align: top;\n    padding: 0 0 50px 0;\n    text-align: center;\n}\n.extend_handle[data-v-bff214f6] {\n    position: absolute;\n    left: 50%;\n    bottom: 30px;\n    width: 10px;\n    height: 10px;\n    padding: 10px;\n    transform: translate3d(-15px, 0, 0);\n    cursor: pointer;\n}\n.extend_handle[data-v-bff214f6]:before {\n    content: \"\";\n    display: block;\n    width: 10px;\n    height: 10px;\n    box-sizing: border-box;\n    border: 4px solid;\n    border-color: red red transparent transparent;\n    transform: rotateZ(135deg);\n    transform-origin: 50% 50% 0;\n    transition: transform ease 300ms;\n}\n.extend_handle[data-v-bff214f6]:hover:before {\n    border-color: #333 #333 transparent transparent;\n}\n.extend .extend_handle[data-v-bff214f6]:before {\n    transform: rotateZ(-45deg);\n}\n.extend[data-v-bff214f6]::after {\n    content: \"\";\n    position: absolute;\n    left: 50%;\n    bottom: 10px;\n    height: 21px;\n    border-left: 3px solid #4e2716;\n    transform: translate3d(-1px, 0, 0);\n    z-index: 100;\n}\n.childLevel[data-v-bff214f6]::before {\n    content: \"\";\n    position: absolute;\n    left: 50%;\n    bottom: 100%;\n    height: 15px;\n    border-left: 2px solid #4e2716;\n    transform: translate3d(-1px, 0, 0)\n}\n.childLevel[data-v-bff214f6]::after {\n    content: \"\";\n    position: absolute;\n    left: 0;\n    right: 0;\n    top: -15px;\n    border-top: 2px solid #4e2716;\n}\n.childLevel[data-v-bff214f6]:first-child:before,\n.childLevel[data-v-bff214f6]:last-child:before {\n    display: none;\n}\n.childLevel[data-v-bff214f6]:first-child:after {\n    left: 50%;\n    height: 21px;\n    border: 5px solid;\n    border-color: #4e2716 transparent transparent #4e2716;\n    border-radius: 6px 0 0 0;\n    transform: translate3d(1px, 0, 0);\n    border-right-width: 0;\n}\n.childLevel[data-v-bff214f6]:last-child:after {\n    right: 50%;\n    height: 21px;\n    border: 5px solid;\n    border-color: #4e2716 #4e2716 transparent transparent;\n    border-radius: 0 6px 0 0;\n    transform: translate3d(-1px, 0, 0);\n    border-left-width: 0;\n}\n.childLevel:first-child.childLevel[data-v-bff214f6]:last-child::after {\n    left: auto;\n    border-radius: 0;\n    border-color: transparent #4e2716 transparent transparent;\n    transform: translate3d(1px, 0, 0)\n}\n.node[data-v-bff214f6] {\n    position: relative;\n    display: inline-block;\n    margin: 0 1em;\n    box-sizing: border-box;\n    text-align: center;\n}\n.node>div[data-v-bff214f6] {\n    border: 1px solid #4e2716;\n    border-radius: 10px;\n    padding: 10px;\n}\n.node .person[data-v-bff214f6] {\n    position: relative;\n    display: inline-block;\n    z-index: 2;\n    overflow: hidden;\n    background-color: #4e2716EE !important;\n    padding: 10px 30px;\n    border: 4px solid #6666ff !important;\n    min-width: 220px;\n    min-height: 150px;\n}\n.node .person.child_node[data-v-bff214f6] {\n    padding: 20px;\n}\n.node .person .avat[data-v-bff214f6] {\n    display: block;\n    width: 4em;\n    height: 4em;\n    margin: auto;\n    overflow: hidden;\n    background: #fff;\n    border: 1px solid white;\n    box-sizing: border-box;\n}\n.node .person .avat img[data-v-bff214f6] {\n    width: 100%;\n    height: 100%;\n    border-radius: 2em;\n    border-width: 2px;\n    border: 2px solid white;\n    background-color: transparent;\n}\n.node .person .name[data-v-bff214f6] {\n    height: 2em;\n    line-height: 2em;\n    overflow: hidden;\n    width: 100%;\n    color: white;\n}\n.node.hasMate[data-v-bff214f6]::after {\n    content: \"\";\n    position: absolute;\n    left: 2em;\n    right: 2em;\n    top: 2em;\n    border-top: 2px solid #4e2716;\n    z-index: 1;\n}\n\n\n/* 横板 */\n.landscape[data-v-bff214f6] {\n    transform: translate(-100%, 0) rotate(-90deg);\n    transform-origin: 100% 0;\n}\n.landscape .node[data-v-bff214f6] {\n    text-align: left;\n    height: 8em;\n    width: 8em;\n}\n.landscape .person[data-v-bff214f6] {\n    position: relative;\n    transform: rotate(90deg);\n    padding-left: 4.5em;\n    height: 4em;\n    top: 4em;\n    left: -1em;\n}\n.landscape .person .avat[data-v-bff214f6] {\n    position: absolute;\n    left: 0;\n}\n.landscape .person .name[data-v-bff214f6] {\n    height: 4em;\n    line-height: 4em;\n}\n.landscape .hasMate[data-v-bff214f6] {\n    position: relative;\n}\n.landscape .hasMate .person[data-v-bff214f6] {\n    position: absolute;\n}\n.landscape .hasMate .person[data-v-bff214f6]:first-child {\n    left: auto;\n    right: -4em;\n}\n.landscape .hasMate .person[data-v-bff214f6]:last-child {\n    left: -4em;\n    margin-left: 0;\n}\n#tree-page .avat[data-v-bff214f6] {\n    background-color: #ffffff00;\n    border: 0;\n    position: relative;\n}\n#tree-page .name[data-v-bff214f6]{\n    font-weight:700;\n}\n.person.selected_node[data-v-bff214f6] {\n    border: 4px solid red !important;\n}\n.childLevel.selected[data-v-bff214f6]:last-child:after {\n    border-color: red red transparent transparent;\n}\n.extend[data-v-bff214f6]::after {\n    border-left: 3px solid red;\n}\n.childLevel.selected[data-v-bff214f6]:first-child:after {\n    border-color: red transparent transparent red;\n}\n.use_guaranty div.name.text[data-v-bff214f6] {\n    color: #ff00ff\n}\n.child_node div.name.title[data-v-bff214f6] {\n    margin-bottom: 20px;\n}\n@media (max-width: 911px) {\n.node .person .name[data-v-bff214f6] { \n        font-size: 12px;\n}\n.node .person.child_node[data-v-bff214f6] {\n        padding: 5px;\n        min-width: 200px;\n        min-height: 130px;\n}\n}\n@media (max-width: 525px) {\n.node .person .name[data-v-bff214f6] { \n        font-size: 11px;\n}\n.node .person.child_node[data-v-bff214f6] {\n        padding: 5px;\n        min-width: 180px;\n        min-height: 120px;\n}\n}\n@media (max-width: 425px) {\n.node .person .name[data-v-bff214f6] { \n        font-size: 10px;\n}\n.node .person.child_node[data-v-bff214f6] {\n        padding: 5px;\n        min-width: 160px;\n        min-height: 110px;\n}\n}\n@media (max-width: 390px) {\n.node .person .name[data-v-bff214f6] { \n        font-size: 9px;\n}\n.node .person.child_node[data-v-bff214f6] {\n        padding: 5px;\n        min-width: 150px;\n        min-height: 110px;\n}\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\ntable[data-v-bff214f6] {\n    border-collapse: separate!important;\n    border-spacing: 0!important;\n}\ntd[data-v-bff214f6] {\n    position: relative;\n    vertical-align: top;\n    padding: 0 0 50px 0;\n    text-align: center;\n}\n.extend_handle[data-v-bff214f6] {\n    position: absolute;\n    left: 50%;\n    bottom: 30px;\n    width: 10px;\n    height: 10px;\n    padding: 10px;\n    transform: translate3d(-15px, 0, 0);\n    cursor: pointer;\n}\n.extend_handle[data-v-bff214f6]:before {\n    content: \"\";\n    display: block;\n    width: 10px;\n    height: 10px;\n    box-sizing: border-box;\n    border: 4px solid;\n    border-color: red red transparent transparent;\n    transform: rotateZ(135deg);\n    transform-origin: 50% 50% 0;\n    transition: transform ease 300ms;\n}\n.extend_handle[data-v-bff214f6]:hover:before {\n    border-color: #333 #333 transparent transparent;\n}\n.extend .extend_handle[data-v-bff214f6]:before {\n    transform: rotateZ(-45deg);\n}\n.extend[data-v-bff214f6]::after {\n    content: \"\";\n    position: absolute;\n    left: 50%;\n    bottom: 10px;\n    height: 21px;\n    border-left: 3px solid #4e2716;\n    transform: translate3d(-1px, 0, 0);\n    z-index: 100;\n}\n.childLevel[data-v-bff214f6]::before {\n    content: \"\";\n    position: absolute;\n    left: 50%;\n    bottom: 100%;\n    height: 15px;\n    border-left: 2px solid #4e2716;\n    transform: translate3d(-1px, 0, 0)\n}\n.childLevel[data-v-bff214f6]::after {\n    content: \"\";\n    position: absolute;\n    left: 0;\n    right: 0;\n    top: -15px;\n    border-top: 2px solid #4e2716;\n}\n.childLevel[data-v-bff214f6]:first-child:before,\n.childLevel[data-v-bff214f6]:last-child:before {\n    display: none;\n}\n.childLevel[data-v-bff214f6]:first-child:after {\n    left: 50%;\n    height: 21px;\n    border: 5px solid;\n    border-color: #4e2716 transparent transparent #4e2716;\n    border-radius: 6px 0 0 0;\n    transform: translate3d(1px, 0, 0);\n    border-right-width: 0;\n}\n.childLevel[data-v-bff214f6]:last-child:after {\n    right: 50%;\n    height: 21px;\n    border: 5px solid;\n    border-color: #4e2716 #4e2716 transparent transparent;\n    border-radius: 0 6px 0 0;\n    transform: translate3d(-1px, 0, 0);\n    border-left-width: 0;\n}\n.childLevel:first-child.childLevel[data-v-bff214f6]:last-child::after {\n    left: auto;\n    border-radius: 0;\n    border-color: transparent #4e2716 transparent transparent;\n    transform: translate3d(1px, 0, 0)\n}\n.node[data-v-bff214f6] {\n    position: relative;\n    display: inline-block;\n    margin: 0 1em;\n    box-sizing: border-box;\n    text-align: center;\n}\n.node>div[data-v-bff214f6] {\n    border: 1px solid #4e2716;\n    border-radius: 10px;\n    padding: 10px;\n}\n.node .person[data-v-bff214f6] {\n    position: relative;\n    display: inline-block;\n    z-index: 2;\n    overflow: hidden;\n    background-color: #4e2716EE !important;\n    padding: 10px 30px;\n    border: 4px solid #6666ff !important;\n    min-width: 220px;\n    min-height: 150px;\n}\n.node .person.child_node[data-v-bff214f6] {\n    padding: 20px;\n}\n.node .person .avat[data-v-bff214f6] {\n    display: block;\n    width: 4em;\n    height: 4em;\n    margin: auto;\n    overflow: hidden;\n    background: #fff;\n    border: 1px solid white;\n    box-sizing: border-box;\n}\n.node .person .avat img[data-v-bff214f6] {\n    width: 100%;\n    height: 100%;\n    border-radius: 2em;\n    border-width: 2px;\n    border: 2px solid white;\n    background-color: transparent;\n}\n.node .person .name[data-v-bff214f6] {\n    height: 2em;\n    line-height: 2em;\n    overflow: hidden;\n    width: 100%;\n    color: white;\n}\n.node.hasMate[data-v-bff214f6]::after {\n    content: \"\";\n    position: absolute;\n    left: 2em;\n    right: 2em;\n    top: 2em;\n    border-top: 2px solid #4e2716;\n    z-index: 1;\n}\n\n\n/* 横板 */\n.landscape[data-v-bff214f6] {\n    transform: translate(-100%, 0) rotate(-90deg);\n    transform-origin: 100% 0;\n}\n.landscape .node[data-v-bff214f6] {\n    text-align: left;\n    height: 8em;\n    width: 8em;\n}\n.landscape .person[data-v-bff214f6] {\n    position: relative;\n    transform: rotate(90deg);\n    padding-left: 4.5em;\n    height: 4em;\n    top: 4em;\n    left: -1em;\n}\n.landscape .person .avat[data-v-bff214f6] {\n    position: absolute;\n    left: 0;\n}\n.landscape .person .name[data-v-bff214f6] {\n    height: 4em;\n    line-height: 4em;\n}\n.landscape .hasMate[data-v-bff214f6] {\n    position: relative;\n}\n.landscape .hasMate .person[data-v-bff214f6] {\n    position: absolute;\n}\n.landscape .hasMate .person[data-v-bff214f6]:first-child {\n    left: auto;\n    right: -4em;\n}\n.landscape .hasMate .person[data-v-bff214f6]:last-child {\n    left: -4em;\n    margin-left: 0;\n}\n#tree-page .avat[data-v-bff214f6] {\n    background-color: #ffffff00;\n    border: 0;\n    position: relative;\n}\n#tree-page .name[data-v-bff214f6] {\n    font-weight:700;\n}\n.person.selected_node[data-v-bff214f6] {\n    border: 4px solid red !important;\n}\n.childLevel.selected[data-v-bff214f6]:last-child:after {\n    border-color: red red transparent transparent;\n}\n.extend[data-v-bff214f6]::after {\n    border-left: 3px solid red;\n}\n.childLevel.selected[data-v-bff214f6]:first-child:after {\n    border-color: red transparent transparent red;\n}\n.use_guaranty div.name.text[data-v-bff214f6] {\n    color: #ff00ff\n}\n.child_node div.name.title[data-v-bff214f6] {\n    margin-bottom: 20px;\n}\n@media (max-width: 911px) {\n.node .person .name[data-v-bff214f6] { \n        font-size: 12px;\n}\n.node .person.child_node[data-v-bff214f6] {\n        padding: 5px;\n        min-width: 200px;\n        min-height: 130px;\n}\n}\n@media (max-width: 525px) {\n.node .person .name[data-v-bff214f6] { \n        font-size: 11px;\n}\n.node .person.child_node[data-v-bff214f6] {\n        padding: 5px;\n        min-width: 180px;\n        min-height: 120px;\n}\n}\n@media (max-width: 425px) {\n.node .person .name[data-v-bff214f6] { \n        font-size: 10px;\n}\n.node .person.child_node[data-v-bff214f6] {\n        padding: 5px;\n        min-width: 160px;\n        min-height: 110px;\n}\n}\n@media (max-width: 390px) {\n.node .person .name[data-v-bff214f6] { \n        font-size: 9px;\n}\n.node .person.child_node[data-v-bff214f6] {\n        padding: 5px;\n        min-width: 150px;\n        min-height: 110px;\n}\n}\n", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/RealTreeComponent.vue?vue&type=style&index=0&id=64a272b4&scoped=true&lang=css&":
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/RealTreeComponent.vue?vue&type=style&index=0&id=64a272b4&scoped=true&lang=css& ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "\ntable[data-v-64a272b4] {\n    border-collapse: separate!important;\n    border-spacing: 0!important;\n}\ntd[data-v-64a272b4] {\n    position: relative;\n    vertical-align: top;\n    padding: 0 0 50px 0;\n    text-align: center;\n}\n.extend_handle[data-v-64a272b4] {\n    position: absolute;\n    left: 50%;\n    bottom: 30px;\n    width: 10px;\n    height: 10px;\n    padding: 10px;\n    transform: translate3d(-15px, 0, 0);\n    cursor: pointer;\n}\n.extend_handle[data-v-64a272b4]:before {\n    content: \"\";\n    display: block;\n    width: 10px;\n    height: 10px;\n    box-sizing: border-box;\n    border: 4px solid;\n    border-color: red red transparent transparent;\n    transform: rotateZ(135deg);\n    transform-origin: 50% 50% 0;\n    transition: transform ease 300ms;\n}\n.extend_handle[data-v-64a272b4]:hover:before {\n    border-color: #333 #333 transparent transparent;\n}\n.extend .extend_handle[data-v-64a272b4]:before {\n    transform: rotateZ(-45deg);\n}\n.extend[data-v-64a272b4]::after {\n    content: \"\";\n    position: absolute;\n    left: 50%;\n    bottom: 10px;\n    height: 21px;\n    border-left: 3px solid #4e2716;\n    transform: translate3d(-1px, 0, 0);\n    z-index: 100;\n}\n.childLevel[data-v-64a272b4]::before {\n    content: \"\";\n    position: absolute;\n    left: 50%;\n    bottom: 100%;\n    height: 15px;\n    border-left: 2px solid #4e2716;\n    transform: translate3d(-1px, 0, 0)\n}\n.childLevel[data-v-64a272b4]::after {\n    content: \"\";\n    position: absolute;\n    left: 0;\n    right: 0;\n    top: -15px;\n    border-top: 2px solid #4e2716;\n}\n.childLevel[data-v-64a272b4]:first-child:before,\n.childLevel[data-v-64a272b4]:last-child:before {\n    display: none;\n}\n.childLevel[data-v-64a272b4]:first-child:after {\n    left: 50%;\n    height: 21px;\n    border: 5px solid;\n    border-color: #4e2716 transparent transparent #4e2716;\n    border-radius: 6px 0 0 0;\n    transform: translate3d(1px, 0, 0);\n    border-right-width: 0;\n}\n.childLevel[data-v-64a272b4]:last-child:after {\n    right: 50%;\n    height: 21px;\n    border: 5px solid;\n    border-color: #4e2716 #4e2716 transparent transparent;\n    border-radius: 0 6px 0 0;\n    transform: translate3d(-1px, 0, 0);\n    border-left-width: 0;\n}\n.childLevel:first-child.childLevel[data-v-64a272b4]:last-child::after {\n    left: auto;\n    border-radius: 0;\n    border-color: transparent #4e2716 transparent transparent;\n    transform: translate3d(1px, 0, 0)\n}\n.node[data-v-64a272b4] {\n    position: relative;\n    display: inline-block;\n    margin: 0 1em;\n    box-sizing: border-box;\n    text-align: center;\n}\n.node>div[data-v-64a272b4] {\n    border: 1px solid #4e2716;\n    border-radius: 10px;\n    padding: 10px;\n}\n.node .person[data-v-64a272b4] {\n    position: relative;\n    display: inline-block;\n    z-index: 2;\n    overflow: hidden;\n    background-color: #4e2716EE !important;\n    padding: 10px 30px;\n    min-width: 220px;\n    min-height: 150px;\n}\n.node .person.child_node[data-v-64a272b4] {\n    padding: 20px;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n}\n.node .person .avat[data-v-64a272b4] {\n    display: block;\n    width: 4em;\n    height: 4em;\n    margin: auto;\n    overflow: hidden;\n    background: #fff;\n    border: 1px solid white;\n    box-sizing: border-box;\n}\n.node .person .avat img[data-v-64a272b4] {\n    width: 100%;\n    height: 100%;\n    border-radius: 2em;\n    border-width: 2px;\n    border: 2px solid white;\n    background-color: transparent;\n}\n.node .person .name[data-v-64a272b4] {\n    height: 2em;\n    line-height: 2em;\n    overflow: hidden;\n    width: 100%;\n    color: white;\n}\n.node.hasMate[data-v-64a272b4]::after {\n    content: \"\";\n    position: absolute;\n    left: 2em;\n    right: 2em;\n    top: 2em;\n    border-top: 2px solid #4e2716;\n    z-index: 1;\n}\n\n\n/* 横板 */\n.landscape[data-v-64a272b4] {\n    transform: translate(-100%, 0) rotate(-90deg);\n    transform-origin: 100% 0;\n}\n.landscape .node[data-v-64a272b4] {\n    text-align: left;\n    height: 8em;\n    width: 8em;\n}\n.landscape .person[data-v-64a272b4] {\n    position: relative;\n    transform: rotate(90deg);\n    padding-left: 4.5em;\n    height: 4em;\n    top: 4em;\n    left: -1em;\n}\n.landscape .person .avat[data-v-64a272b4] {\n    position: absolute;\n    left: 0;\n}\n.landscape .person .name[data-v-64a272b4] {\n    height: 4em;\n    line-height: 4em;\n}\n.landscape .hasMate[data-v-64a272b4] {\n    position: relative;\n}\n.landscape .hasMate .person[data-v-64a272b4] {\n    position: absolute;\n}\n.landscape .hasMate .person[data-v-64a272b4]:first-child {\n    left: auto;\n    right: -4em;\n}\n.landscape .hasMate .person[data-v-64a272b4]:last-child {\n    left: -4em;\n    margin-left: 0;\n}\n#realtree-page .avat[data-v-64a272b4] {\n    background-color: #ffffff00;\n    border: 0;\n    position: relative;\n}\n#realtree-page .name[data-v-64a272b4] {\n    font-weight:700;\n}\n.person.selected_node[data-v-64a272b4] {\n    border: 4px solid red !important;\n}\n.childLevel.selected[data-v-64a272b4]:last-child:after {\n    border-color: red red transparent transparent;\n}\n.extend[data-v-64a272b4]::after {\n    border-left: 3px solid red;\n}\n.childLevel.selected[data-v-64a272b4]:first-child:after {\n    border-color: red transparent transparent red;\n}\n.use_guaranty div.name.text[data-v-64a272b4] {\n    color: #ff00ff\n}\n.child_node div.name.title[data-v-64a272b4] {\n    margin-bottom: 20px;\n}\n@media (max-width: 911px) {\n.node .person .name[data-v-64a272b4] { \n        font-size: 12px;\n}\n.node .person.child_node[data-v-64a272b4] {\n        padding: 5px;\n        min-width: 200px;\n        min-height: 130px;\n}\n}\n@media (max-width: 525px) {\n.node .person .name[data-v-64a272b4] { \n        font-size: 11px;\n}\n.node .person.child_node[data-v-64a272b4] {\n        padding: 5px;\n        min-width: 180px;\n        min-height: 120px;\n}\n}\n@media (max-width: 425px) {\n.node .person .name[data-v-64a272b4] { \n        font-size: 10px;\n}\n.node .person.child_node[data-v-64a272b4] {\n        padding: 5px;\n        min-width: 160px;\n        min-height: 110px;\n}\n}\n@media (max-width: 390px) {\n.node .person .name[data-v-64a272b4] { \n        font-size: 9px;\n}\n.node .person.child_node[data-v-64a272b4] {\n        padding: 5px;\n        min-width: 150px;\n        min-height: 110px;\n}\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -3344,6 +3459,36 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/RealTreeComponent.vue?vue&type=style&index=0&id=64a272b4&scoped=true&lang=css&":
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/RealTreeComponent.vue?vue&type=style&index=0&id=64a272b4&scoped=true&lang=css& ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_RealTreeComponent_vue_vue_type_style_index_0_id_64a272b4_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./RealTreeComponent.vue?vue&type=style&index=0&id=64a272b4&scoped=true&lang=css& */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/RealTreeComponent.vue?vue&type=style&index=0&id=64a272b4&scoped=true&lang=css&");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_RealTreeComponent_vue_vue_type_style_index_0_id_64a272b4_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_RealTreeComponent_vue_vue_type_style_index_0_id_64a272b4_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js":
 /*!****************************************************************************!*\
   !*** ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js ***!
@@ -3664,6 +3809,47 @@ component.options.__file = "resources/js/components/HomeTreeComponent.vue"
 
 /***/ }),
 
+/***/ "./resources/js/components/RealTreeComponent.vue":
+/*!*******************************************************!*\
+  !*** ./resources/js/components/RealTreeComponent.vue ***!
+  \*******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _RealTreeComponent_vue_vue_type_template_id_64a272b4_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./RealTreeComponent.vue?vue&type=template&id=64a272b4&scoped=true& */ "./resources/js/components/RealTreeComponent.vue?vue&type=template&id=64a272b4&scoped=true&");
+/* harmony import */ var _RealTreeComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./RealTreeComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/RealTreeComponent.vue?vue&type=script&lang=js&");
+/* harmony import */ var _RealTreeComponent_vue_vue_type_style_index_0_id_64a272b4_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./RealTreeComponent.vue?vue&type=style&index=0&id=64a272b4&scoped=true&lang=css& */ "./resources/js/components/RealTreeComponent.vue?vue&type=style&index=0&id=64a272b4&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+;
+
+
+/* normalize component */
+
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _RealTreeComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _RealTreeComponent_vue_vue_type_template_id_64a272b4_scoped_true___WEBPACK_IMPORTED_MODULE_0__.render,
+  _RealTreeComponent_vue_vue_type_template_id_64a272b4_scoped_true___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  "64a272b4",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/RealTreeComponent.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/components/HomeTreeComponent.vue?vue&type=script&lang=js&":
 /*!********************************************************************************!*\
   !*** ./resources/js/components/HomeTreeComponent.vue?vue&type=script&lang=js& ***!
@@ -3680,6 +3866,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/RealTreeComponent.vue?vue&type=script&lang=js&":
+/*!********************************************************************************!*\
+  !*** ./resources/js/components/RealTreeComponent.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_RealTreeComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./RealTreeComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/RealTreeComponent.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_RealTreeComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
 /***/ "./resources/js/components/HomeTreeComponent.vue?vue&type=style&index=0&id=bff214f6&scoped=true&lang=css&":
 /*!****************************************************************************************************************!*\
   !*** ./resources/js/components/HomeTreeComponent.vue?vue&type=style&index=0&id=bff214f6&scoped=true&lang=css& ***!
@@ -3689,6 +3891,19 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_HomeTreeComponent_vue_vue_type_style_index_0_id_bff214f6_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader/dist/cjs.js!../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./HomeTreeComponent.vue?vue&type=style&index=0&id=bff214f6&scoped=true&lang=css& */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/HomeTreeComponent.vue?vue&type=style&index=0&id=bff214f6&scoped=true&lang=css&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/RealTreeComponent.vue?vue&type=style&index=0&id=64a272b4&scoped=true&lang=css&":
+/*!****************************************************************************************************************!*\
+  !*** ./resources/js/components/RealTreeComponent.vue?vue&type=style&index=0&id=64a272b4&scoped=true&lang=css& ***!
+  \****************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_RealTreeComponent_vue_vue_type_style_index_0_id_64a272b4_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader/dist/cjs.js!../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./RealTreeComponent.vue?vue&type=style&index=0&id=64a272b4&scoped=true&lang=css& */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/RealTreeComponent.vue?vue&type=style&index=0&id=64a272b4&scoped=true&lang=css&");
 
 
 /***/ }),
@@ -3706,6 +3921,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_HomeTreeComponent_vue_vue_type_template_id_bff214f6_scoped_true___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_HomeTreeComponent_vue_vue_type_template_id_bff214f6_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./HomeTreeComponent.vue?vue&type=template&id=bff214f6&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/HomeTreeComponent.vue?vue&type=template&id=bff214f6&scoped=true&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/RealTreeComponent.vue?vue&type=template&id=64a272b4&scoped=true&":
+/*!**************************************************************************************************!*\
+  !*** ./resources/js/components/RealTreeComponent.vue?vue&type=template&id=64a272b4&scoped=true& ***!
+  \**************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_RealTreeComponent_vue_vue_type_template_id_64a272b4_scoped_true___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_RealTreeComponent_vue_vue_type_template_id_64a272b4_scoped_true___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_RealTreeComponent_vue_vue_type_template_id_64a272b4_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./RealTreeComponent.vue?vue&type=template&id=64a272b4&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/RealTreeComponent.vue?vue&type=template&id=64a272b4&scoped=true&");
 
 
 /***/ }),
@@ -3792,6 +4024,190 @@ var render = function () {
                       _vm._v(" "),
                       _c("div", { staticClass: "name text" }, [
                         _vm._v(_vm._s(_vm.treeData.text)),
+                      ]),
+                    ]
+                  ),
+                  _vm._v(" "),
+                  Array.isArray(_vm.treeData.mate) && _vm.treeData.mate.length
+                    ? _vm._l(_vm.treeData.mate, function (mate, mateIndex) {
+                        return _c(
+                          "div",
+                          {
+                            key: _vm.treeData.name + mateIndex,
+                            staticClass: "person",
+                            class: Array.isArray(mate.class) ? mate.class : [],
+                            on: {
+                              click: function ($event) {
+                                return _vm.$emit("click-node", mate)
+                              },
+                            },
+                          },
+                          [
+                            _c("div", { staticClass: "avat" }, [
+                              _c("img", { attrs: { src: mate.image_url } }),
+                              _vm._v(" "),
+                              mate.is_premium
+                                ? _c("img", {
+                                    staticClass:
+                                      "bottom-0 end-0 award-small position-absolute",
+                                  })
+                                : _vm._e(),
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "name" }, [
+                              _vm._v(_vm._s(mate.name)),
+                            ]),
+                          ]
+                        )
+                      })
+                    : _vm._e(),
+                ],
+                2
+              ),
+              _vm._v(" "),
+              Array.isArray(_vm.treeData.children) &&
+              _vm.treeData.children.length
+                ? _c("div", {
+                    staticClass: "extend_handle",
+                    on: {
+                      click: function ($event) {
+                        return _vm.toggleExtend(_vm.treeData)
+                      },
+                    },
+                  })
+                : _vm._e(),
+            ]
+          ),
+        ]),
+        _vm._v(" "),
+        Array.isArray(_vm.treeData.children) &&
+        _vm.treeData.children.length &&
+        _vm.treeData.extend
+          ? _c(
+              "tr",
+              _vm._l(_vm.treeData.children, function (children, index) {
+                return _c(
+                  "td",
+                  {
+                    key: index,
+                    staticClass: "childLevel",
+                    class: { selected: children.selected },
+                    attrs: { colspan: "2" },
+                  },
+                  [
+                    _c("TreeChart", {
+                      attrs: { json: children },
+                      on: {
+                        "click-node": function ($event) {
+                          return _vm.$emit("click-node", $event)
+                        },
+                      },
+                    }),
+                  ],
+                  1
+                )
+              }),
+              0
+            )
+          : _vm._e(),
+      ])
+    : _vm._e()
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/RealTreeComponent.vue?vue&type=template&id=64a272b4&scoped=true&":
+/*!*****************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/RealTreeComponent.vue?vue&type=template&id=64a272b4&scoped=true& ***!
+  \*****************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm.treeData.title
+    ? _c("table", [
+        _c("tr", [
+          _c(
+            "td",
+            {
+              class: {
+                parentLevel:
+                  Array.isArray(_vm.treeData.children) &&
+                  _vm.treeData.children.length,
+                extend:
+                  Array.isArray(_vm.treeData.children) &&
+                  _vm.treeData.children.length &&
+                  _vm.treeData.extend,
+              },
+              attrs: {
+                colspan: Array.isArray(_vm.treeData.children)
+                  ? _vm.treeData.children.length * 2
+                  : 1,
+              },
+            },
+            [
+              _c(
+                "div",
+                { class: { node: true, hasMate: _vm.treeData.mate } },
+                [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "person",
+                      class: Array.isArray(_vm.treeData.class)
+                        ? _vm.treeData.class
+                        : [],
+                      on: {
+                        click: function ($event) {
+                          return _vm.$emit("click-node", _vm.treeData)
+                        },
+                      },
+                    },
+                    [
+                      _c("div", { staticClass: "person-container" }, [
+                        _vm.treeData.image_url.length !== 0
+                          ? _c("div", { staticClass: "name title" }, [
+                              _vm._v(_vm._s(_vm.treeData.title)),
+                            ])
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.treeData.image_url.length !== 0
+                          ? _c("div", { staticClass: "avat" }, [
+                              _c("img", {
+                                attrs: { src: _vm.treeData.image_url },
+                              }),
+                            ])
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.treeData.desc.length !== 0
+                          ? _c("div", { staticClass: "name desc" }, [
+                              _vm._v(_vm._s(_vm.treeData.desc)),
+                            ])
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.treeData.hp.length !== 0
+                          ? _c("div", { staticClass: "name hp" }, [
+                              _vm._v(_vm._s(_vm.treeData.hp)),
+                            ])
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.treeData.text.length !== 0
+                          ? _c("div", { staticClass: "name text" }, [
+                              _vm._v(_vm._s(_vm.treeData.text)),
+                            ])
+                          : _vm._e(),
                       ]),
                     ]
                   ),
@@ -4089,19 +4505,21 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 
 Vue.component('home-tree', (__webpack_require__(/*! ../components/HomeTreeComponent.vue */ "./resources/js/components/HomeTreeComponent.vue")["default"]));
+Vue.component('home-real', (__webpack_require__(/*! ../components/RealTreeComponent.vue */ "./resources/js/components/RealTreeComponent.vue")["default"]));
 var tree = new Vue({
-  name: 'HomeTree',
   el: '#app',
   data: function data() {
     return {
       landscape: [],
       data: {},
+      realTree: {},
       trans: trans,
       intervalfunction: null
     };
   },
   mounted: function mounted() {
     this.intervalfunction = setInterval(this.loadAlerts, 10000);
+    this.loadRealTree();
     this.loadNodes();
   },
   methods: {
@@ -4127,6 +4545,30 @@ var tree = new Vue({
             }
           }
         }, _callee);
+      }))();
+    },
+    loadRealTree: function loadRealTree() {
+      var _this2 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
+        var self;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                self = _this2;
+                axios__WEBPACK_IMPORTED_MODULE_1___default().get(window.Laravel.baseUrl + '/home/real').then(function (response) {
+                  self.realTree = response.data;
+                })["catch"](function (error) {
+                  console.log(error);
+                }).then(function (data) {});
+
+              case 2:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2);
       }))();
     },
     showAlliance: function showAlliance() {

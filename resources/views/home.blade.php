@@ -20,56 +20,107 @@
                     <div class="col-lg-6 col-12 center text-light animate__animated rounded"
                         data-animate="animate__fadeInRight">
                         <div class="hero-heading-2 text-light back-theme-trans" style="border: 2px solid #6666ff">
-                            @if (isset($userInfo->battleInfo))
-                                @if ($lastData)
-                                    <h4 class="m-b-0">@lang('home.at_moment', ['time' => serverTime2Local($lastData->display_time?? $lastData->created_at)])</h4>
-                                @endif
-                                <h4 class="m-t-0 text-bold pink-emphass">
-                                    {!! trans('home.your_level', ['level' => $userInfo->battleInfo->levelInfo->name->level]) !!}
-                                </h4>
+                            @if ($lastData)
+                                <h5 class="m-b-0">@lang('home.at_moment', ['time' => serverTime2Local($lastData->display_time?? $lastData->created_at)])</h5>
+                            @endif
+                            @if (isset($realInfo))
+                                <br>
+                                <h5 class="m-t-0 text-bold pink-emphass">@lang('home.realdesc')</h5>
+                                <h5 class="m-t-0 pink-emphass">
+                                    {!! trans('home.your_real_level', ['level' => $realInfo->levelInfo->name->level]) !!}
+                                </h5>
 
-                                <h4 class="m-t-0 text-bold pink-emphass">
+                                <h5 class="m-t-0 pink-emphass">
                                     {{ trans('home.current_bonus', [
-                                        'amount' => _number_format($userInfo->battleInfo->basic_bonus * $userInfo->battleInfo->bonus_rate / 100, 0)
+                                        'amount' => _number_format($realInfo->basic_bonus * $realInfo->bonus_rate / 100, 0)
                                     ])}}
-                                </h4>
+                                </h5>
                                 
-                                @if ($userInfo->battleInfo->level == 10)
-                                    <h4 class="m-t-0 text-bold pink-emphass">@lang('home.current_is_max')</h4>
+                                @if ($realInfo->level == 10)
+                                    <h5 class="m-t-0 pink-emphass">@lang('home.current_is_max')</h5>
                                 @else
-                                    @if (isset($userInfo->binaryGradeUp))
-                                        <h4 class="m-t-0 text-bold pink-emphass">@lang('home.can_upgrade', [
-                                            'amount' => _number_format($userInfo->binaryGradeUp->need_bet, 0)
-                                    ])</h4>
+                                    @if (isset($realGradeUp))
+                                        <h5 class="m-t-0 pink-emphass">@lang('home.can_real_upgrade', [
+                                            'amount' => _number_format($realGradeUp->need_bet, 0)
+                                    ])</h5>
                                     @endif
                                 @endif
+                            @endif
+                            @if (isset($binaryInfo))
+                                <br>
+                                <h5 class="m-t-0 text-bold pink-emphass">@lang('home.binarydesc')</h5>
+                                <h5 class="m-t-0 pink-emphass">
+                                    {!! trans('home.your_binary_level', ['level' => $binaryInfo->levelInfo->name->level]) !!}
+                                </h5>
+
+                                <h5 class="m-t-0 pink-emphass">
+                                    {{ trans('home.current_bonus', [
+                                        'amount' => _number_format($binaryInfo->basic_bonus * $binaryInfo->bonus_rate / 100, 0)
+                                    ])}}
+                                </h5>
                                 
-                                {{-- @if (isset($userInfo->binaryGradeDown) && $userInfo->binaryGradeDown->need_loss != 0)
-                                <h4 class="lead mb-0">@lang('home.may_graydown', [
-                                    'direct' => $userInfo->binaryGradeDown->position == 1? trans('home.direct.left') : trans('home.direct.right'),
-                                    'amount' => _number_format($userInfo->binaryGradeDown->need_loss, 0)
-                                ])</h4>
-                                @endif --}}
-                            @else
-                                <h4 class="m-b-0 text-center">{!! trans('home.welcome') !!}</h4>
+                                @if ($binaryInfo->level == 10)
+                                    <h5 class="m-t-0 pink-emphass">@lang('home.current_is_max')</h5>
+                                @else
+                                    @if (isset($binaryGradeUp))
+                                        <h5 class="m-t-0 pink-emphass">@lang('home.can_binary_upgrade', [
+                                            'amount' => _number_format($binaryGradeUp->need_bet, 0)
+                                    ])</h5>
+                                    @endif
+                                @endif
+                            @endif
+                            @if (!isset($realInfo) && !isset($binaryInfo))
+                                <h5 class="m-b-0 text-center">{!! trans('home.welcome') !!}</h5>
                             @endif
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="container home-tree mt-0 position-relative">
-                @if (isset($userInfo->battleInfo))
-                <div class="equipment home-tool text-center" data-animate="animate__fadeInLeft">
-                    <img class="img-fluid mb-sm-5 pt-5" src="{{ $userInfo->battleInfo->levelInfo->image }}"/>
+            <div class="container home-tree mt-0 position-relative" id="home-tree-container">
+                <div class="tabs tabs-clean col-lg-6 col-12 center pt-5">
+                    <ul class="nav nav-tabs mb-0" id="home-tab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#home2" role="tab" aria-controls="home" aria-selected="true">@lang('home.realtree')</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#profile2" role="tab" aria-controls="profile" aria-selected="false">@lang('home.binarytree')</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content mt-2" id="myTabContent2">
+                        <div class="tab-pane fade show active" id="home2" role="tabpanel" aria-labelledby="home-tab">
+                            <div class="container home-tree mt-0 position-relative p-0">
+                                @if (isset($realInfo))
+                                <div class="equipment home-tool text-center" data-animate="animate__fadeInLeft">
+                                    <img class="img-fluid mb-5" src="{{ $realInfo->levelInfo->image }}"/>
+                                </div>
+                                @endif
+                            </div>
+                            <div class="container home-tree mt-0 position-relative container-tree">
+                                <home-real id="realtree-page"
+                                    :json="realTree" 
+                                    :class="{landscape: landscape.length}" 
+                                    :trans="trans"></home-real>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="profile2" role="tabpanel" aria-labelledby="profile-tab">
+                            <div class="container home-tree mt-0 position-relative p-0">
+                                @if (isset($binaryInfo))
+                                <div class="equipment home-tool text-center" data-animate="animate__fadeInLeft">
+                                    <img class="img-fluid mb-5" src="{{ $binaryInfo->levelInfo->image }}"/>
+                                </div>
+                                @endif
+                            </div>
+                            <div class="container home-tree mt-0 position-relative container-tree">
+                                <home-tree id="tree-page"
+                                    :json="data" 
+                                    :class="{landscape: landscape.length}" 
+                                    :trans="trans"></home-tree>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                @endif
             </div>
-            <div class="container home-tree mt-0 pt-5 position-relative container-tree">
-                <home-tree id="tree-page"
-                    :json="data" 
-                    :class="{landscape: landscape.length}" 
-                    :trans="trans"></home-tree>
-            </div>
+            
         </section>
         
         <section class="background-transparent pt-0" id="alliance">

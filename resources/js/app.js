@@ -109,7 +109,6 @@ if (environment == 'production') {
         },
         async loadAlerts() {
             let self = this;
-            console.log('kkk');
             if (window.Laravel.user !== undefined && window.Laravel.user !== null) {
                 axios.get(window.Laravel.baseUrl + '/notice/alert')
                     .then( (response) => {
