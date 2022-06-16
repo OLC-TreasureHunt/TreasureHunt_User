@@ -13113,6 +13113,8 @@ var tree = new Vue({
       this.temp = data.account_id;
     },
     search_upward: function search_upward() {
+      debugger;
+
       if (this.currentUser.parent_id == 0) {
         return;
       } else {
