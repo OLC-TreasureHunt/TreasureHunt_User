@@ -112,4 +112,15 @@ class User extends Authenticatable
         return $this->hasMany(Referral::class, 'parent_id');
     }
 
+    public function scopeActiveChildren($query) {
+        return $query->when($this->status == 1, function($q) {
+            return $q->with('currentChildren');
+        });
+    }
+
+    public function actvieChildrens() {
+        return $this->currentChildren()->whereHas('user', function($q) {
+            $q->where('status', 1);
+        });
+    }
 }

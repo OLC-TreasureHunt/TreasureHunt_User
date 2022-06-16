@@ -99,11 +99,12 @@ class ReferralService extends Service {
         }
 
         $current_id = $request->get('current');
-        $children = User::find($current_id)->currentChildren()->paginate($filter['limit']);;
+
+        $children = User::find($current_id)->actvieChildrens()->paginate($filter['limit']);;
         foreach ($children as $child) {
             try {
                 $user = User::find($child->id);
-                $childrens = count($user->currentChildren?? array());
+                $childrens = count($user->actvieChildrens()->get());
                 $child->children_count = $childrens;
                 $child->affiliate_id = $user->affiliate_id?? '';
             } catch (\Exception $e) {

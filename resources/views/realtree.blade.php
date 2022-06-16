@@ -64,7 +64,10 @@
 
                             <div id="realmap_list" class="card back-semi-theme border-theme  border-theme ">
                                 <div class="card-body">
-                                    <real-map trans='@json(trans('real'))' :target='current' @update-steps="updateSteps"></real-map>
+                                    <real-map trans='@json(trans('real'))' 
+                                        :target='current' 
+                                        @update-steps="updateSteps"
+                                        @update-current="updateCurrent"></real-map>
                                 </div>
                             </div>
                         </div>

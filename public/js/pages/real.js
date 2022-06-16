@@ -2309,8 +2309,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       tdComp: 'CustomCell'
     }];
     this.xprops.eventbus.$on('RELOAD_CURRENT', function (val) {
-      debugger;
-      _this.current = val;
+      _this.$emit('update-current', val);
     });
   },
   mounted: function mounted() {
@@ -13109,12 +13108,13 @@ var tree = new Vue({
       this.currentUser = data;
       this.temp = data.parent_id;
     },
+    updateCurrent: function updateCurrent(data) {
+      this.current = data;
+    },
     updateValue: function updateValue(data) {
       this.temp = data.account_id;
     },
     search_upward: function search_upward() {
-      debugger;
-
       if (this.currentUser.parent_id == 0) {
         return;
       } else {

@@ -22,4 +22,7 @@ class Referral extends BaseModel
         'updated_at'
     ];
     
+    public function user() {
+        return $this->hasOne(User::class, 'id', 'user_id');
+    }
 }

@@ -37,8 +37,7 @@
                 { title: this.lang.field.agent_count, field: 'children_count', thClass:'text-center word-keep', tdClass: 'text-end', tdComp: 'CustomCell' },
             ];
             this.xprops.eventbus.$on('RELOAD_CURRENT', (val) => {
-                debugger;
-                this.current = val;
+                this.$emit('update-current', val);
             })
         },
         mounted: function () {

@@ -50,11 +50,13 @@ var tree = new Vue({
             this.currentUser = data;
             this.temp = data.parent_id;
         },
+        updateCurrent(data) {
+            this.current = data;
+        },
         updateValue(data) {
             this.temp = data.account_id;
         },
         search_upward() {
-            debugger;
             if (this.currentUser.parent_id == 0 ) {
                 return;
             } else {
