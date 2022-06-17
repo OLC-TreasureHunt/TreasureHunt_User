@@ -10,6 +10,7 @@ use App\Enums\UserBonusStatus;
 use App\Repositories\BinaryRepositoryInterface;
 use App\Repositories\ReferralRepositoryInterface;
 use App\Services\Service;
+use Auth;
 use Log;
 
 
@@ -117,12 +118,12 @@ class ReferralService extends Service {
 
     public function stepFromTop($current) {
         $user = User::find($current);
-        $referral = $user->referral;
-        $parent_id = $referral->parent_id;
-
-        if ($parent_id == 0) {
+        
+        if ($current == Auth::user()->id) {
             return 1;
         } else {
+            $referral = $user->referral;
+            $parent_id = $referral->parent_id;
             return 1 + $this->stepFromTop($parent_id);
         }
     }
